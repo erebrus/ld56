@@ -1,9 +1,8 @@
 name: "godot-ci export"
 on:
   push:
-    push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - '[0-9]+.[0-9]+.[0-9]+'
 
 env:
   GODOT_VERSION: 4.3.stable
