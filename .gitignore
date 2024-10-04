@@ -15,3 +15,7 @@ mono_crash.*.json
 godot/debug.log
 /build
 .DS_Store
+
+tools/godot_helper/__pycache__
+tools/godot_helper/venv
+
