@@ -53,7 +53,7 @@ func update_rope() -> void:
 	rope.add_point(player.tongue_position - global_position)
 	
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(area) -> void:
 	if area is Bug:
 		catch_bug(area)
 	else:
