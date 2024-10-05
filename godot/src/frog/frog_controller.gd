@@ -153,6 +153,8 @@ func get_body()->CharacterBody2D:
 func set_x_acc():
 	acc.x = 0
 	var input = Input.get_axis(input_left, input_right)
+	if sign(input)==sign(acc.x) and abs(acc.x) > max_acceleration:
+		return
 	acc.x = sign(input)*max_acceleration
 		
 	check_direction_change(input)
