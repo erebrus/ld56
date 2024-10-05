@@ -5,6 +5,17 @@
 
 [node name="Fly" instance=ExtResource("1_u4u8t")]
 type = 3
+speed = 100.0
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_6cm3v")
+
+[node name="xsm" parent="." index="2"]
+debug_mode = true
+next_state = NodePath("idle")
+
+[node name="idle" parent="xsm" index="0"]
+next_state = NodePath("../move")
+
+[node name="move" parent="xsm" index="1"]
+next_state = NodePath("../dodge")

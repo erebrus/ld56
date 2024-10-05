@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7ocbogo3h056"]
+[gd_scene load_steps=9 format=3 uid="uid://b7ocbogo3h056"]
 
 [ext_resource type="Texture2D" uid="uid://cp3e6kfi5ewqx" path="res://assets/gfx/bugs/bug1.png" id="1_lsri3"]
 [ext_resource type="Script" path="res://src/bugs/bug.gd" id="1_q0jaa"]
 [ext_resource type="Script" path="res://addons/xsm/state.gd" id="3_3w72b"]
 [ext_resource type="Script" path="res://addons/xsm/state_animation.gd" id="4_mu2lb"]
+[ext_resource type="Script" path="res://src/bugs/xsm/bug_idle.gd" id="4_w2ehl"]
+[ext_resource type="Script" path="res://src/bugs/xsm/bug_move.gd" id="5_lo3dr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4u5hm"]
 radius = 16.0312
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5lvjb"]
 
 [node name="Bug" type="CharacterBody2D"]
 collision_layer = 4
@@ -19,8 +23,6 @@ shape = SubResource("CircleShape2D_4u5hm")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lsri3")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
-
 [node name="xsm" type="Node" parent="."]
 script = ExtResource("3_3w72b")
 history_size = 0
@@ -31,17 +33,17 @@ timed = false
 next_state = NodePath("")
 
 [node name="idle" type="Node" parent="xsm"]
-script = ExtResource("4_mu2lb")
+script = ExtResource("4_w2ehl")
 animation_player = NodePath("../../AnimationPlayer")
 anim_on_enter = ""
 disabled = false
 debug_mode = false
-target_path = NodePath("")
+target_path = NodePath("../..")
 timed = false
 next_state = NodePath("")
 
 [node name="move" type="Node" parent="xsm"]
-script = ExtResource("4_mu2lb")
+script = ExtResource("5_lo3dr")
 animation_player = NodePath("../../AnimationPlayer")
 anim_on_enter = ""
 disabled = false
@@ -53,23 +55,25 @@ next_state = NodePath("")
 [node name="dodge" type="Node" parent="xsm"]
 script = ExtResource("4_mu2lb")
 animation_player = NodePath("../../AnimationPlayer")
-anim_on_enter = ""
+anim_on_enter = "dodge"
+loop_mode = 0
+on_finished = 1
 disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
 next_state = NodePath("")
-
-[node name="dead" type="Node" parent="xsm"]
-script = ExtResource("4_mu2lb")
-animation_player = NodePath("../../AnimationPlayer")
-anim_on_enter = ""
-disabled = false
-debug_mode = false
-target_path = NodePath("")
-timed = false
-next_state = NodePath("")
-
-[node name="dead" type="AudioListener2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5lvjb")
+}
+
+[node name="sfx_death" type="AudioStreamPlayer2D" parent="."]
+bus = &"Sound"
+
+[node name="sfx_walk" type="AudioStreamPlayer2D" parent="."]
+bus = &"Sound"
+
+[node name="sfx_dodge" type="AudioStreamPlayer2D" parent="."]
+bus = &"Sound"

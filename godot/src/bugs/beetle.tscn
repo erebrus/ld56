@@ -5,6 +5,7 @@
 
 [node name="Beetle" instance=ExtResource("1_drwt0")]
 type = 2
+energy_value = 40.0
 
 [node name="Sprite2D" parent="." index="1"]
 position = Vector2(9, -9)
