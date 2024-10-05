@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dama0h74olyv3"]
+[gd_scene load_steps=9 format=3 uid="uid://dama0h74olyv3"]
 
 [ext_resource type="Script" path="res://src/frog/head/tongue.gd" id="1_5vlru"]
 [ext_resource type="Texture2D" uid="uid://dg4guhimgot0c" path="res://assets/gfx/player/frog_tongue.png" id="2_ftwkn"]
 [ext_resource type="Texture2D" uid="uid://ddegkcp3xk7eg" path="res://assets/gfx/player/frog_tongue_tip.png" id="3_d22lr"]
+[ext_resource type="Script" path="res://addons/xsm/state.gd" id="4_55qrh"]
+[ext_resource type="Script" path="res://src/frog/head/xsm/hidden.gd" id="5_relmv"]
+[ext_resource type="Script" path="res://src/frog/head/xsm/extending.gd" id="6_40080"]
+[ext_resource type="Script" path="res://src/frog/head/xsm/retracting.gd" id="7_f3s4g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m0j2s"]
 
@@ -16,10 +20,36 @@ texture_mode = 1
 
 [node name="Tip" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Tip"]
 texture = ExtResource("3_d22lr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tip"]
 shape = SubResource("CircleShape2D_m0j2s")
+
+[node name="xsm" type="Node" parent="."]
+script = ExtResource("4_55qrh")
+history_size = 0
+disabled = false
+debug_mode = false
+target_path = NodePath("..")
+timed = false
+next_state = NodePath("")
+
+[node name="hidden" type="Node" parent="xsm"]
+script = ExtResource("5_relmv")
+
+[node name="extending" type="Node" parent="xsm"]
+script = ExtResource("6_40080")
+
+[node name="retracting" type="Node" parent="xsm"]
+script = ExtResource("7_f3s4g")
+
+[node name="attached" type="Node" parent="xsm"]
+script = ExtResource("4_55qrh")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
