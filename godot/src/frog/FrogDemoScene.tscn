@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://s4nhr6ey8tuu"]
+[gd_scene load_steps=6 format=3 uid="uid://s4nhr6ey8tuu"]
 
 [ext_resource type="PackedScene" uid="uid://b5lgniaadan1y" path="res://src/frog/frog.tscn" id="1_3dof5"]
+[ext_resource type="PackedScene" uid="uid://b7ocbogo3h056" path="res://src/bugs/bug.tscn" id="2_22b3p"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(1024, 112)
@@ -14,7 +15,7 @@ size = Vector2(64, 608)
 [node name="Main" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(520, 544)
+position = Vector2(675, 627)
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
 offset_left = -520.0
@@ -28,7 +29,7 @@ position = Vector2(-8, 0)
 shape = SubResource("1")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(1126, 359)
+position = Vector2(1281, 442)
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
 offset_left = -520.0
@@ -42,7 +43,21 @@ position = Vector2(-312, 72)
 shape = SubResource("2")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(520, 360)
+position = Vector2(675, 445)
+
+[node name="ColorRect2" type="ColorRect" parent="StaticBody2D3"]
+offset_left = -585.0
+offset_top = -370.0
+offset_right = -516.0
+offset_bottom = 238.0
+color = Color(0, 0.443137, 0.027451, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="StaticBody2D3"]
+offset_left = 504.0
+offset_top = -368.0
+offset_right = 571.0
+offset_bottom = 240.0
+color = Color(0, 0.443137, 0.027451, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(-552, -64)
@@ -53,4 +68,13 @@ position = Vector2(536, -64)
 shape = SubResource("3")
 
 [node name="Frog" parent="." instance=ExtResource("1_3dof5")]
-position = Vector2(329, 326)
+position = Vector2(484, 409)
+
+[node name="Bug" parent="." instance=ExtResource("2_22b3p")]
+position = Vector2(844, 204)
+
+[node name="Bug2" parent="." instance=ExtResource("2_22b3p")]
+position = Vector2(302, 395)
+
+[node name="Bug3" parent="." instance=ExtResource("2_22b3p")]
+position = Vector2(613, 221)

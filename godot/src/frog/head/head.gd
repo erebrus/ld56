@@ -32,7 +32,7 @@ func _ready() -> void:
 	var player_container = player.get_parent()
 	await player_container.ready
 	player_container.add_child(tongue)
-	#player_container.move_child(tongue,  player.get_index()) # tongue behind player
+	player_container.move_child(tongue,  player.get_index()) # tongue behind player
 	
 
 func point_at(target: Vector2) -> void:

@@ -1,6 +1,5 @@
 extends Node2D
 
-signal extended
 signal retracted
 
 @export var max_length:= 500
@@ -24,9 +23,12 @@ var is_shooting: bool:
 
 @onready var squared_length = pow(max_length, 2)
 
-@onready var rope = $Rope
-@onready var tip = $Tip
+@onready var rope: Line2D = $Rope
+@onready var tip: Area2D = $Tip
 
+func _ready() -> void:
+	tip.area_entered.connect(_on_area_entered)
+	
 
 func shoot(target: Vector2, _player: FrogHead) -> void:
 	player = _player
@@ -36,6 +38,15 @@ func shoot(target: Vector2, _player: FrogHead) -> void:
 	state = State.Extending
 	visible = true
 	
+
+func retract() -> void:
+	state = State.Retracting
+	
+
+func idle() -> void:
+	state = State.Idle
+	hide()
+	retracted.emit()
 	
 
 func _physics_process(delta: float) -> void:
@@ -46,8 +57,7 @@ func _physics_process(delta: float) -> void:
 			var new_position = global_position + delta * extension_speed * direction
 			if new_position.distance_squared_to(player.tongue_position) > squared_length:
 				global_position = player.tongue_position + player.tongue_position.direction_to(new_position) * max_length
-				extended.emit()
-				state = State.Retracting
+				retract()
 			else:
 				global_position = new_position
 		State.Retracting:
@@ -55,11 +65,19 @@ func _physics_process(delta: float) -> void:
 			
 			if global_position.distance_squared_to(player.tongue_position) < 10:
 				global_position = player.tongue_position
-				retracted.emit()
-				state = State.Idle
-				visible = false
+				idle()
+				
 			
 	
 	rope.remove_point(1)
 	rope.add_point(player.tongue_position - global_position)
+	
+
+func _on_area_entered(area: Area2D) -> void:
+	var bug = area as Bug
+	if bug == null:
+		return
+	
+	bug.catch()
+	retract()
 	
