@@ -14,6 +14,7 @@ func _on_update(_delta) -> void:
 	if not get_ctl()._was_falling and get_ctl().is_falling():
 		get_ctl().started_falling.emit()
 		return
+	get_ctl().set_x_acc()
 	get_ctl().gravity = get_ctl().default_gravity
 	get_ctl().process_movement(_delta)
 func _after_update(_delta) -> void:

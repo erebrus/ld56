@@ -21,6 +21,8 @@ func _on_update(_delta) -> void:
 		if get_ctl().can_double_jump():
 			get_ctl().jump()
 			return
+			
+	get_ctl().set_x_acc()
 	get_ctl().gravity = get_ctl().apply_falling_gravity(get_ctl().default_gravity)
 	get_ctl().process_movement(_delta)
 func _after_update(_delta) -> void:
