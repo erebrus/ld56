@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnqbkbby1d1sd"]
+
+[ext_resource type="PackedScene" uid="uid://b5lgniaadan1y" path="res://src/frog/frog.tscn" id="1_nfuix"]
+
+[node name="BaseLevel" type="Node2D"]
+
+[node name="Scenery" type="Node2D" parent="."]
+
+[node name="Bugs" type="Node2D" parent="."]
+
+[node name="Frog" parent="." instance=ExtResource("1_nfuix")]
+position = Vector2(278, 700)
