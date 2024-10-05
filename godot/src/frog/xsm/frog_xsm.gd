@@ -25,3 +25,10 @@ func get_ctl()->FrogController:
 	
 func get_body()->Frog:
 	return target
+
+
+func _on_tongue_attached(anchor: Vector2) -> void:
+	if get_ctl().is_feet_on_ground():
+		change_state("attached", anchor)
+	else:
+		change_state("swing", anchor)

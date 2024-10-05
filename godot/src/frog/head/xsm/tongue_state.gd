@@ -12,3 +12,11 @@ var tip: Area2D:
 var head: FrogHead:
 	get:
 		return target.player
+
+
+func hide_if_retracted() -> void:
+	if target.global_position.distance_squared_to(head.tongue_position) < 10:
+		target.global_position = head.tongue_position
+		change_state("hidden")
+		return
+	

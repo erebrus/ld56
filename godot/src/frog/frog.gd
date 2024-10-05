@@ -13,19 +13,28 @@ class_name Frog
 
 func _ready():
 	velocity.y=1
+	Events.tongue_attached.connect(_on_tongue_attached)
+	Events.tongue_detached.connect(_on_tongue_detached)
+	
+
 #
 #func _process(delta: float) -> void:
 	#sprite.offset.x = 0 if not sprite.flip_h else +400
 
 func _on_controller_hit_ground() -> void:
-	
 	_on_generic_controller_forward("_on_controller_hit_ground")
+	
 
-func _on_generic_controller_forward(method_name):
+
+func _on_generic_controller_forward(method_name: String, args = null):
 	for  s in xsm.active_states:
 		var state= xsm.get_state(s)
 		if state.has_method(method_name):
-			state.call(method_name)
+			if args == null:
+				state.call(method_name)
+			else:
+				state.call(method_name, args)
+			
 			
 func _on_controller_jumped(is_ground_jump: bool) -> void:
 	xsm.change_state("jump")
@@ -60,3 +69,11 @@ func _on_health_component_died() -> void:
 
 func _on_health_component_energy_changed(value: Variant) -> void:
 	Logger.info("new health is: %d" % value)
+	
+
+func _on_tongue_attached(to: Vector2i) -> void:
+	_on_generic_controller_forward("_on_tongue_attached", to)
+	
+
+func _on_tongue_detached() -> void:
+	_on_generic_controller_forward("_on_tongue_detached")

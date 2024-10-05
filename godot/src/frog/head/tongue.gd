@@ -6,8 +6,6 @@ signal retracted
 @export var extension_speed:= 1000.0
 @export var retraction_speed:= 2000.0
 
-
-var direction: Vector2
 var player: FrogHead
 
 var is_shooting: bool:
@@ -30,9 +28,8 @@ func _ready() -> void:
 func shoot(target: Vector2, _player: FrogHead) -> void:
 	player = _player
 	global_position = player.tongue_position
-	direction = global_position.direction_to(target)
 	
-	xsm.change_state("extending")
+	xsm.change_state("extending", target)
 	
 
 func retract() -> void:
@@ -45,7 +42,7 @@ func catch_bug(bug: Bug) -> void:
 	
 
 func attach() -> void:
-	pass
+	xsm.change_state("attached")
 	
 
 func update_rope() -> void:

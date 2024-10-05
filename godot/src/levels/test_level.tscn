@@ -57,7 +57,21 @@ color = Color(0, 0.443137, 0.027451, 1)
 position = Vector2(-312, 72)
 shape = SubResource("RectangleShape2D_bqlqj")
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="Scenery" index="3"]
+[node name="StaticBody2D7" type="StaticBody2D" parent="Scenery" index="3"]
+position = Vector2(1424, 41)
+
+[node name="ColorRect" type="ColorRect" parent="Scenery/StaticBody2D7" index="0"]
+offset_left = -520.0
+offset_top = 16.0
+offset_right = -104.0
+offset_bottom = 128.0
+color = Color(0, 0.443137, 0.027451, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/StaticBody2D7" index="1"]
+position = Vector2(-312, 72)
+shape = SubResource("RectangleShape2D_bqlqj")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Scenery" index="4"]
 position = Vector2(2021, 581)
 
 [node name="ColorRect" type="ColorRect" parent="Scenery/StaticBody2D6" index="0"]
@@ -71,7 +85,7 @@ color = Color(0, 0.443137, 0.027451, 1)
 position = Vector2(-312, 72)
 shape = SubResource("RectangleShape2D_bqlqj")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Scenery" index="4"]
+[node name="StaticBody2D3" type="StaticBody2D" parent="Scenery" index="5"]
 position = Vector2(1352, 368)
 
 [node name="ColorRect3" type="ColorRect" parent="Scenery/StaticBody2D3" index="0"]
@@ -85,7 +99,7 @@ color = Color(0, 0.443137, 0.027451, 1)
 position = Vector2(536, -64)
 shape = SubResource("RectangleShape2D_acc83")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Scenery" index="5"]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Scenery" index="6"]
 position = Vector2(587, 838)
 
 [node name="ColorRect2" type="ColorRect" parent="Scenery/StaticBody2D4" index="0"]

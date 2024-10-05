@@ -1,6 +1,8 @@
 extends Node
 
 signal bug_caught(type: Types.BugType)
+signal tongue_attached(to: Vector2)
+signal tongue_detached
 
 
 func _ready() -> void:

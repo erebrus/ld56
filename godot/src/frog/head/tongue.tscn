@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dama0h74olyv3"]
+[gd_scene load_steps=10 format=3 uid="uid://dama0h74olyv3"]
 
 [ext_resource type="Script" path="res://src/frog/head/tongue.gd" id="1_5vlru"]
 [ext_resource type="Texture2D" uid="uid://dg4guhimgot0c" path="res://assets/gfx/player/frog_tongue.png" id="2_ftwkn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://src/frog/head/xsm/hidden.gd" id="5_relmv"]
 [ext_resource type="Script" path="res://src/frog/head/xsm/extending.gd" id="6_40080"]
 [ext_resource type="Script" path="res://src/frog/head/xsm/retracting.gd" id="7_f3s4g"]
+[ext_resource type="Script" path="res://src/frog/head/attached.gd" id="8_axmxl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m0j2s"]
 
@@ -47,9 +48,4 @@ script = ExtResource("6_40080")
 script = ExtResource("7_f3s4g")
 
 [node name="attached" type="Node" parent="xsm"]
-script = ExtResource("4_55qrh")
-disabled = false
-debug_mode = false
-target_path = NodePath("")
-timed = false
-next_state = NodePath("")
+script = ExtResource("8_axmxl")
