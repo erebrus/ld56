@@ -18,6 +18,7 @@ resource_name = "idle"
 
 [sub_resource type="Animation" id="Animation_4ue2v"]
 resource_name = "land"
+length = 0.3
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_praai"]
 _data = {
@@ -46,7 +47,7 @@ hop_duration = 0.2
 jump_duration = 0.5
 falling_gravity_multiplier = 2.0
 friction = 50
-jump_buffer = 0.3
+can_hold_jump = true
 x_speed = 2000.0
 
 [node name="xsm" type="Node" parent="."]
@@ -92,7 +93,6 @@ next_state = NodePath("../idle")
 
 [node name="fall" type="Node" parent="xsm"]
 script = ExtResource("7_c7jib")
-no_stop_land_time = 0.5
 animation_player = NodePath("../../AnimationPlayer")
 anim_on_enter = ""
 disabled = false

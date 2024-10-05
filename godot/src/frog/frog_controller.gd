@@ -113,7 +113,7 @@ var _jump_duration: float = DEFAULT_JUMP_DURATION
 @export var coyote_time : float = 0.1
 ## Pressing jump this many seconds before hitting the ground will still make you jump.
 ## Only neccessary when can_hold_jump is unchecked.
-@export var jump_buffer : float = 0.1
+#@export var jump_buffer : float = 0.1
 @export var x_speed :float = 100
 
 # These will be calcualted automatically
@@ -143,7 +143,7 @@ var acc = Vector2()
 var last_direction:=Vector2.RIGHT
 # coyote_time and jump_buffer must be above zero to work. Otherwise, godot will throw an error.
 @onready var is_coyote_time_enabled = coyote_time > 0
-@onready var is_jump_buffer_enabled = jump_buffer > 0
+#@onready var is_jump_buffer_enabled = jump_buffer > 0
 @onready var coyote_timer = Timer.new()
 @onready var jump_buffer_timer = Timer.new()
 
@@ -162,20 +162,20 @@ func _ready():
 		#add_child(coyote_timer)
 		#coyote_timer.wait_time = coyote_time
 		#coyote_timer.one_shot = true
-	
-	if is_jump_buffer_enabled:
-		add_child(jump_buffer_timer)
-		jump_buffer_timer.wait_time = jump_buffer
-		jump_buffer_timer.one_shot = true
-		jump_buffer_timer.timeout.connect(func(): Logger.info("buffer timeout at %d" % Time.get_ticks_msec()))
-		Logger.info("jump buffer timeout set to %.2f" % jump_buffer)
-
+	#
+	#if is_jump_buffer_enabled:
+		#add_child(jump_buffer_timer)
+		#jump_buffer_timer.wait_time = jump_buffer
+		#jump_buffer_timer.one_shot = true
+		#jump_buffer_timer.timeout.connect(func(): Logger.info("buffer timeout at %d" % Time.get_ticks_msec()))
+		#Logger.info("jump buffer timeout set to %.2f" % jump_buffer)
+	pass
 
 
 func _input(e):
 	if Input.is_action_just_pressed(input_jump):
 		holding_jump=true
-		start_jump_buffer_timer()
+		#start_jump_buffer_timer()
 		Logger.info("Started jump buffer at %d" % Time.get_ticks_msec())
 		jump_requested.emit()		
 
@@ -187,7 +187,7 @@ func _input(e):
 func check_jump_input()->bool:
 	if Input.is_action_just_pressed(input_jump):
 		holding_jump = true
-		start_jump_buffer_timer()
+		#start_jump_buffer_timer()
 		if (not can_hold_jump and can_ground_jump()) or can_double_jump():
 			jump()
 			return true
@@ -233,13 +233,13 @@ func reset_jumps_left():
 	#print("speed:%.2f %s %s" % [get_body().velocity.x, _was_moving, is_moving()])
 	#print("speed:%.2f %s %s [floor: %s %s]" % [get_body().velocity.y, _was_falling, is_falling(), _was_on_ground, is_feet_on_ground()])
 
-func check_process_jump_input():
-	# Cannot do this in _input because it needs to be checked every frame
-	if Input.is_action_pressed(input_jump):
-		if can_ground_jump() and can_hold_jump:
-			jump()
-			return true
-	return false
+#func check_process_jump_input():
+	## Cannot do this in _input because it needs to be checked every frame
+	#if Input.is_action_pressed(input_jump):
+		#if can_ground_jump() and can_hold_jump:
+			#jump()
+			#return true
+	#return false
 
 func process_movement(delta):	
 	_was_falling = is_falling()
@@ -268,10 +268,10 @@ func start_coyote_timer():
 	if is_coyote_time_enabled:
 		coyote_timer.start()
 
-## Use this instead of jump_buffer_timer.start() to check if the jump_buffer is enabled first
-func start_jump_buffer_timer():
-	if is_jump_buffer_enabled:
-		jump_buffer_timer.start()
+### Use this instead of jump_buffer_timer.start() to check if the jump_buffer is enabled first
+#func start_jump_buffer_timer():
+	#if is_jump_buffer_enabled:
+		#jump_buffer_timer.start()
 
 ## Use this instead of `not coyote_timer.is_stopped()`. This will always return false if 
 ## the coyote_timer is disabled
@@ -281,13 +281,13 @@ func is_coyote_timer_running():
 	
 	return false
 
-## Use this instead of `not jump_buffer_timer.is_stopped()`. This will always return false if 
-## the jump_buffer_timer is disabled
-func is_jump_buffer_timer_running():
-	if is_jump_buffer_enabled and not jump_buffer_timer.is_stopped():
-		return true
-	
-	return false
+### Use this instead of `not jump_buffer_timer.is_stopped()`. This will always return false if 
+### the jump_buffer_timer is disabled
+#func is_jump_buffer_timer_running():
+	#if is_jump_buffer_enabled and not jump_buffer_timer.is_stopped():
+		#return true
+	#
+	#return false
 
 
 func can_ground_jump() -> bool:
