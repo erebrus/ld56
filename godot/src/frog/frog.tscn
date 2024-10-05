@@ -47,8 +47,6 @@ hop_duration = 0.2
 jump_duration = 0.5
 falling_gravity_multiplier = 2.0
 friction = 50
-can_hold_jump = true
-x_speed = 2000.0
 
 [node name="xsm" type="Node" parent="."]
 script = ExtResource("2_ucc1o")
