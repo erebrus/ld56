@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=7 format=3 uid="uid://dqphm78ljeqcb"]
+[gd_resource type="AnimationLibrary" load_steps=7 format=3 uid="uid://dxk5x3vpu2xy5"]
 
 [sub_resource type="Animation" id="Animation_7p5xm"]
 length = 0.001
@@ -187,10 +187,10 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.25),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [1, 1, 2, 3]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
