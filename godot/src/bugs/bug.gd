@@ -4,6 +4,8 @@ class_name Bug extends CharacterBody2D
 
 @export var energy_value:float = 10
 @export var dodge_chance:float = 0
+@export var speed:float = 20
+@onready var path_follow_2d: PathFollow2D = $PathFollow2D
 
 func catch() -> bool:
 	if Globals.rng.randf() > dodge_chance:

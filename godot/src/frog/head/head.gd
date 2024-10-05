@@ -1,6 +1,7 @@
 class_name FrogHead extends Node2D
 
 signal shot_finished
+signal shot_fired
 
 var flip_h: bool = false:
 	set(value):
@@ -52,7 +53,7 @@ func point_at(target: Vector2) -> void:
 func shoot() -> void:
 	if tongue.is_shooting:
 		return
-	
+	shot_fired.emit()
 	head_sprite.frame = 1
 	
 	# Shoot at facing direction

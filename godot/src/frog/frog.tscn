@@ -224,11 +224,36 @@ target_position = Vector2(60, 0)
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("29_ioey7")
 
+[node name="sfx" type="Node2D" parent="."]
+
+[node name="sfx_hop" type="AudioStreamPlayer2D" parent="sfx"]
+bus = &"Sound"
+
+[node name="sfx_jump" type="AudioStreamPlayer2D" parent="sfx"]
+bus = &"Sound"
+
+[node name="sfx_soft_landing" type="AudioStreamPlayer2D" parent="sfx"]
+bus = &"Sound"
+
+[node name="sfx_hard_landing" type="AudioStreamPlayer2D" parent="sfx"]
+bus = &"Sound"
+
+[node name="sfx_hard_landing2" type="AudioStreamPlayer2D" parent="sfx"]
+bus = &"Sound"
+
+[node name="sfx_eat" type="AudioStreamPlayer2D" parent="sfx"]
+bus = &"Sound"
+
+[node name="sfx_tongue_attack" type="AudioStreamPlayer2D" parent="sfx"]
+bus = &"Sound"
+
 [connection signal="direction_changed" from="Controller" to="." method="_on_controller_direction_changed"]
 [connection signal="hit_ground" from="Controller" to="." method="_on_controller_hit_ground"]
 [connection signal="hopped" from="Controller" to="." method="_on_controller_hopped"]
 [connection signal="jump_requested" from="Controller" to="." method="_on_controller_jump_requested"]
 [connection signal="jumped" from="Controller" to="." method="_on_controller_jumped"]
 [connection signal="started_falling" from="Controller" to="." method="_on_controller_started_falling"]
+[connection signal="shot_finished" from="Head" to="." method="_on_head_shot_finished"]
+[connection signal="shot_fired" from="Head" to="." method="_on_head_shot_fired"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="energy_changed" from="HealthComponent" to="." method="_on_health_component_energy_changed"]
