@@ -5,6 +5,10 @@ class_name Frog
 @onready var xsm: State = $xsm
 @onready var rc_front: RayCast2D = $rc_front
 
+@onready var head: FrogHead = $Head
+@onready var legs: Sprite2D = $Legs
+
+
 func _ready():
 	velocity.y=1
 
@@ -39,3 +43,7 @@ func is_facing_wall()->bool:
 func _on_controller_direction_changed() -> void:
 	rc_front.target_position.x=abs(rc_front.target_position.x)*controller.last_direction.x
 	rc_front.force_raycast_update()
+	
+	legs.flip_h = controller.last_direction.x < 0
+	head.flip_h = controller.last_direction.x < 0
+	

@@ -1,17 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://dama0h74olyv3"]
 
-[ext_resource type="Texture2D" uid="uid://dg4guhimgot0c" path="res://assets/gfx/player/frog_tongue.png" id="1_oww4a"]
-[ext_resource type="Script" path="res://src/player/tongue.gd" id="1_rg2no"]
-[ext_resource type="Texture2D" uid="uid://ddegkcp3xk7eg" path="res://assets/gfx/player/frog_tongue_tip.png" id="2_fmohp"]
+[ext_resource type="Script" path="res://src/frog/head/tongue.gd" id="1_5vlru"]
+[ext_resource type="Texture2D" uid="uid://dg4guhimgot0c" path="res://assets/gfx/player/frog_tongue.png" id="2_ftwkn"]
+[ext_resource type="Texture2D" uid="uid://ddegkcp3xk7eg" path="res://assets/gfx/player/frog_tongue_tip.png" id="3_d22lr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m0j2s"]
 
 [node name="Tongue" type="Node2D"]
-script = ExtResource("1_rg2no")
+script = ExtResource("1_5vlru")
 
 [node name="Rope" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 0, 0)
-texture = ExtResource("1_oww4a")
+texture = ExtResource("2_ftwkn")
 texture_mode = 1
 
 [node name="Tip" type="Area2D" parent="."]
@@ -19,7 +19,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Tip"]
-texture = ExtResource("2_fmohp")
+texture = ExtResource("3_d22lr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tip"]
 shape = SubResource("CircleShape2D_m0j2s")

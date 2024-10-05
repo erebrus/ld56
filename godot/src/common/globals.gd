@@ -1,6 +1,6 @@
 extends Node
 
-const GAME_SCENE_PATH = "res://src/player/test_scene.tscn"
+const GAME_SCENE_PATH = "res://src/main.tscn"
 
 var master_volume:float = 100
 var music_volume:float = 100
@@ -38,7 +38,7 @@ func _ready():
 	Logger.info("Starting menu music")
 	music_manager.fade_in_menu_music()
 
-	start_game()
+	#start_game()
 	
 func start_game():
 	in_game=true

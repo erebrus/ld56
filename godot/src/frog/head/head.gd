@@ -83,9 +83,6 @@ func _inside_boundary(angle: float) -> bool:
 	
 
 func _input(event: InputEvent) -> void:
-	if not Globals.in_game:
-		return
-	
 	if event is InputEventMouseMotion:
 		var mouse_position = get_global_mouse_position()
 		point_at(mouse_position)
