@@ -32,10 +32,4 @@ func _on_controller_started_falling() -> void:
 	change_state("fall")
 
 
-func _on_controller_started_moving() -> void:
-	change_state("move")
-
-
-func _on_controller_stopped() -> void:
-	change_state("idle")
 		

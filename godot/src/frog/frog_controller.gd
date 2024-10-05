@@ -175,7 +175,6 @@ func process_movement(delta):
 	# Apply friction
 	get_body().velocity.x *= 1 / (1 + (delta * friction))
 	get_body().velocity += acc * delta
-	
 	_was_on_ground = is_feet_on_ground()
 	
 	#var v = get_body().velocity
