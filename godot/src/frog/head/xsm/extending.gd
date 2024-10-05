@@ -15,6 +15,10 @@ func _on_update(delta: float) -> void:
 	
 	target.update_rope()
 	
+	if Input.is_action_just_pressed("left_click"):
+		change_state("retracting")
+		return
+	
 
 func _on_exit(_args) -> void:
 	target.retracted.emit()
