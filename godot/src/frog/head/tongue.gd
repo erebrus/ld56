@@ -21,6 +21,7 @@ var is_shooting: bool:
 
 
 func _ready() -> void:
+	xsm.change_state("hidden")
 	tip.area_entered.connect(_on_area_entered)
 	tip.body_entered.connect(_on_body_entered)
 	
@@ -51,12 +52,18 @@ func update_rope() -> void:
 	
 
 func _on_area_entered(area) -> void:
+	if !is_shooting:
+		return
+	
 	if area is Bug:
 		catch_bug(area)
 	else:
 		attach()
 
 func _on_body_entered(body) -> void:
+	if !is_shooting:
+		return
+	
 	if body is Bug:
 		catch_bug(body)
 	else: 
