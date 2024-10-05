@@ -111,7 +111,7 @@ shape = SubResource("RectangleShape2D_acc83")
 metadata/_edit_lock_ = true
 
 [node name="Branch" parent="Scenery" index="6" instance=ExtResource("2_cged4")]
-position = Vector2(1414, 664)
+position = Vector2(1389, 280)
 
 [node name="rock1" parent="Scenery" index="7" instance=ExtResource("3_3j135")]
 position = Vector2(590, 861)
