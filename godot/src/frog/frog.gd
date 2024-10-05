@@ -5,7 +5,7 @@ class_name Frog
 @onready var xsm: State = $xsm
 @onready var rc_front: RayCast2D = $rc_front
 
-#@onready var head: FrogHead = $H@onready var head: FrogHead = $Head
+@onready var head: FrogHead = $Head
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
@@ -49,5 +49,5 @@ func _on_controller_direction_changed() -> void:
 	sprite.flip_h= controller.last_direction.x < 0
 	 
 	#legs.flip_h = controller.last_direction.x < 0
-	#head.flip_h = controller.last_direction.x < 0
+	head.flip_h = controller.last_direction.x < 0
 	

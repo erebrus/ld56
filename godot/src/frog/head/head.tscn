@@ -9,6 +9,7 @@ script = ExtResource("1_vuvqe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+visible = false
 texture = ExtResource("2_axq3c")
 hframes = 2
 
