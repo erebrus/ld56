@@ -39,33 +39,6 @@ jobs:
         CHANNEL: web
         PACKAGE: godot/build/html
   
-  export-mac:
-    name: Mac Export
-    runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:4.3
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          lfs: true
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/export_templates
-          mv /root/.local/share/godot/export_templates/${GODOT_VERSION} ~/.local/share/godot/export_templates/${GODOT_VERSION}
-          ls ~/.local/share/godot/export_templates/${GODOT_VERSION}
-      - name: Mac Build
-        run: |
-          cd godot
-          mkdir -v -p build/mac
-          godot -v --headless --export-release "macOS" build/mac/$EXPORT_NAME.zip
-      - name: Publish to Itch.io
-        uses: josephbmanley/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
-          CHANNEL: mac
-          PACKAGE: godot/build/mac
-
   export-windows:
     name: Windows Export
     runs-on: ubuntu-latest
@@ -93,31 +66,3 @@ jobs:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
           CHANNEL: windows
           PACKAGE: godot/build/windows
-
-  export-linux:
-    name: Linux Export
-    runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:4.3
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          lfs: true
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/export_templates
-          mv /root/.local/share/godot/export_templates/${GODOT_VERSION} ~/.local/share/godot/export_templates/${GODOT_VERSION}
-          ls ~/.local/share/godot/export_templates/${GODOT_VERSION}
-      - name: Linux Build
-        run: |
-          cd godot
-          mkdir -v -p build/linux
-          godot -v --headless --export-release "Linux/X11" build/linux/$EXPORT_NAME.x86_64
-          godot -v --headless --export-release "Linux/X11" build/linux/$EXPORT_NAME.x86_64
-      - name: Publish to Itch.io
-        uses: josephbmanley/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
-          CHANNEL: linux
-          PACKAGE: godot/build/linux
