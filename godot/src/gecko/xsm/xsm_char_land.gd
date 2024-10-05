@@ -8,7 +8,10 @@ func _on_enter(_args) -> void:
 	#super._on_enter(_args)
 	#get_ctl().get_parent().velocity=Vector2.ZERO
 	#get_ctl().acc=Vector2.ZERO
-	change_state("idle")
+	#Logger.info("fall hit ground")
+
+	#change_state("idle")
+	pass
 
 
 func _on_update(_delta) -> void:

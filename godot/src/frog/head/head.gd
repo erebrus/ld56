@@ -38,10 +38,10 @@ func _ready() -> void:
 func point_at(target: Vector2) -> void:
 	var angle = global_position.angle_to_point(target)
 	angle = fposmod(angle, 2*PI)
-	Logger.debug("Angle: %.4fº" % rad_to_deg(angle))
+	Logger.trace("Angle: %.4fº" % rad_to_deg(angle))
 	if flip_h:
 		angle = fposmod(angle - PI, 2*PI)
-		Logger.debug("Flipped angle: %.4fº" % rad_to_deg(angle))
+		Logger.trace("Flipped angle: %.4fº" % rad_to_deg(angle))
 		if _inside_boundary(fposmod(2*PI - angle, 2*PI)):
 			rotation = angle
 	else:
@@ -73,7 +73,7 @@ func shoot() -> void:
 	
 
 func _inside_boundary(angle: float) -> bool:
-	Logger.debug("%.4fº should be between %.4fº , %.4fº" % [rad_to_deg(angle), rad_to_deg(min_angle), rad_to_deg(max_angle)])
+	Logger.trace("%.4fº should be between %.4fº , %.4fº" % [rad_to_deg(angle), rad_to_deg(min_angle), rad_to_deg(max_angle)])
 	if angle < min_angle:
 		return true
 	if angle > max_angle:

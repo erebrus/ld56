@@ -20,6 +20,8 @@ func _on_update(_delta) -> void:
 		get_ctl().gravity = get_ctl().apply_release_gravity(get_ctl().gravity)	
 	get_ctl().set_x_acc()
 	get_ctl().process_movement(_delta)
+	Logger.debug("new velocity %.2f  acc %s" % [get_body().velocity.x, get_ctl().acc])
+
 func _after_update(_delta) -> void:
 	pass
 func _before_exit(_args) -> void:
