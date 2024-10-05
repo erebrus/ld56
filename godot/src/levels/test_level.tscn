@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://jbwrx60ac223"]
+[gd_scene load_steps=6 format=3 uid="uid://jbwrx60ac223"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_yfdoh"]
+[ext_resource type="PackedScene" uid="uid://b7ocbogo3h056" path="res://src/bugs/bug.tscn" id="2_ohemg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf487"]
 size = Vector2(1024, 112)
@@ -96,3 +97,15 @@ color = Color(0, 0.443137, 0.027451, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/StaticBody2D4" index="1"]
 position = Vector2(-552, -64)
 shape = SubResource("RectangleShape2D_acc83")
+
+[node name="Bug" parent="Bugs" index="0" instance=ExtResource("2_ohemg")]
+position = Vector2(844, 204)
+
+[node name="Bug2" parent="Bugs" index="1" instance=ExtResource("2_ohemg")]
+position = Vector2(302, 395)
+
+[node name="Bug3" parent="Bugs" index="2" instance=ExtResource("2_ohemg")]
+position = Vector2(613, 221)
+
+[node name="Bug4" parent="Bugs" index="3" instance=ExtResource("2_ohemg")]
+position = Vector2(1417, 194)
