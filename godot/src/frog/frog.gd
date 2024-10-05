@@ -1,6 +1,10 @@
 extends CharacterBody2D
 class_name Frog
 
+@export var swing_gravity:= 1000
+@export var swing_speed:= 5
+@export var reel_speed:= 20
+
 @onready var controller: FrogController = $Controller
 @onready var xsm: State = $xsm
 @onready var rc_front: RayCast2D = $rc_front
@@ -79,8 +83,8 @@ func _on_head_shot_fired() -> void:
 	$sfx/sfx_tongue_attack.play()
 	
 
-func _on_tongue_attached(to: Vector2i) -> void:
-	_on_generic_controller_forward("_on_tongue_attached", to)
+func _on_tongue_attached(to: Vector2) -> void:
+	_on_generic_controller_forward("_on_tongue_attached", to - (head.tongue_position - global_position))
 	
 
 func _on_tongue_detached() -> void:
