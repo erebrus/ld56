@@ -16,3 +16,5 @@ hframes = 2
 [node name="Tongue" parent="." instance=ExtResource("3_n5akw")]
 unique_name_in_owner = true
 position = Vector2(16, 3)
+
+[connection signal="missed" from="Tongue" to="." method="_on_tongue_missed"]

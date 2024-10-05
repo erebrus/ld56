@@ -1,6 +1,8 @@
 extends Node2D
 
+
 signal retracted
+signal missed
 
 @export var max_length:= 500
 @export var extension_speed:= 1000.0
@@ -12,7 +14,7 @@ var is_shooting: bool:
 	get:
 		return visible
 	
-
+var caught_bug:=false
 @onready var xsm: State = $xsm
 @onready var squared_length = pow(max_length, 2)
 
@@ -26,6 +28,7 @@ func _ready() -> void:
 	
 
 func shoot(target: Vector2, _player: FrogHead) -> void:
+	caught_bug=false
 	player = _player
 	global_position = player.tongue_position
 	
@@ -37,7 +40,8 @@ func retract() -> void:
 	
 
 func catch_bug(bug: Bug) -> void:
-	bug.catch()
+	caught_bug=true
+	bug.catch()	
 	retract()
 	
 

@@ -13,6 +13,7 @@ func _on_update(delta: float) -> void:
 	if new_position.distance_squared_to(head.tongue_position) > target.squared_length:
 		target.global_position = head.tongue_position + head.tongue_position.direction_to(new_position) * target.max_length
 		change_state("retracting")
+		target.missed.emit()
 		return
 	else:
 		target.global_position = new_position

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b5lgniaadan1y"]
+[gd_scene load_steps=63 format=3 uid="uid://b5lgniaadan1y"]
 
 [ext_resource type="Script" path="res://src/frog/frog.gd" id="1_mohle"]
 [ext_resource type="Script" path="res://src/frog/frog_controller.gd" id="2_mpehw"]
@@ -31,16 +31,28 @@
 [ext_resource type="Script" path="res://src/frog/xsm/frog_attached.gd" id="28_evnt1"]
 [ext_resource type="Script" path="res://src/frog/xsm/frog_swing.gd" id="29_bxkrg"]
 [ext_resource type="Script" path="res://src/frog/health_component.gd" id="29_ioey7"]
-[ext_resource type="AudioStream" uid="uid://blik27yvxxi8l" path="res://assets/sfx/MC_Walk_1.wav" id="30_5un18"]
-[ext_resource type="AudioStream" uid="uid://cfvxavlkb2pom" path="res://assets/sfx/MC_Walk_2.wav" id="31_galr7"]
-[ext_resource type="AudioStream" uid="uid://cvp770wwghx36" path="res://assets/sfx/MC_Walk_3.wav" id="32_gumdw"]
-[ext_resource type="AudioStream" uid="uid://cek8411v3lkeg" path="res://assets/sfx/MC_Walk_4.wav" id="33_ssug3"]
+[ext_resource type="AudioStream" uid="uid://djtyq6jqlfbf3" path="res://assets/sfx/MC_Tiny_Jump_1.wav" id="32_jw7f3"]
+[ext_resource type="AudioStream" uid="uid://d1frs78c8cqsi" path="res://assets/sfx/MC_Tiny_Jump_2.wav" id="33_y4kwk"]
+[ext_resource type="AudioStream" uid="uid://ceua2ufuwkd3t" path="res://assets/sfx/MC_Tiny_Jump_3.wav" id="34_2vrdg"]
 [ext_resource type="AudioStream" uid="uid://b8ionb2k02iw1" path="res://assets/sfx/MC_Big_Jump_1.wav" id="34_y1s18"]
 [ext_resource type="AudioStream" uid="uid://b1swufjgsc76o" path="res://assets/sfx/MC_Big_Jump_2.wav" id="35_34bxl"]
 [ext_resource type="AudioStream" uid="uid://cf70u60a7hts0" path="res://assets/sfx/MC_Big_Jump_3.wav" id="36_h51po"]
 [ext_resource type="AudioStream" uid="uid://c3s0g26tvdyi0" path="res://assets/sfx/MC_hardlanding_dirt_1.wav" id="37_12bx8"]
 [ext_resource type="AudioStream" uid="uid://brwythwaa35xf" path="res://assets/sfx/MC_hardlanding_dirt_2.wav" id="38_2c6rn"]
 [ext_resource type="AudioStream" uid="uid://caehsnllwc636" path="res://assets/sfx/MC_hardlanding_dirt_3.wav" id="39_hxkld"]
+[ext_resource type="AudioStream" uid="uid://dw6hxvt81se" path="res://assets/sfx/MC_Eat_1.wav" id="42_8v0jr"]
+[ext_resource type="AudioStream" uid="uid://6aomblsdvv1r" path="res://assets/sfx/MC_Eat_2.wav" id="43_q5s5p"]
+[ext_resource type="AudioStream" uid="uid://ba3sw8mkpu6nm" path="res://assets/sfx/MC_Eat_3.wav" id="44_1o8f7"]
+[ext_resource type="AudioStream" uid="uid://r20qkbp4bedq" path="res://assets/sfx/MC_Tongue_Attack_1.wav" id="45_obtm1"]
+[ext_resource type="AudioStream" uid="uid://b7mc5xl4fwyp1" path="res://assets/sfx/MC_Tongue_Attack_2.wav" id="46_7gxek"]
+[ext_resource type="AudioStream" uid="uid://de4pihhawki6o" path="res://assets/sfx/MC_Tongue_Attack_3.wav" id="47_hpjw2"]
+[ext_resource type="AudioStream" uid="uid://dblbonruriad6" path="res://assets/sfx/MC_Tongue_Attack_4.wav" id="48_0ncqs"]
+[ext_resource type="AudioStream" uid="uid://drdny6ubai4u5" path="res://assets/sfx/MC_Tongue_rope_1.wav" id="49_o84bu"]
+[ext_resource type="AudioStream" uid="uid://bv4pvknclj8ag" path="res://assets/sfx/MC_Tongue_rope_2.wav" id="50_k1ph7"]
+[ext_resource type="AudioStream" uid="uid://xh0db6tbhqmg" path="res://assets/sfx/MC_Tongue_rope_3.wav" id="51_0t26b"]
+[ext_resource type="AudioStream" uid="uid://behiheh1nyxlv" path="res://assets/sfx/MC_Tongue_Hit_Miss_1.wav" id="52_u7j7m"]
+[ext_resource type="AudioStream" uid="uid://cf300jocm08ih" path="res://assets/sfx/MC_Tongue_Hit_Miss_2.wav" id="53_qmnij"]
+[ext_resource type="AudioStream" uid="uid://bntblipjfkf7a" path="res://assets/sfx/MC_Tongue_Hit_Miss_3.wav" id="54_t1b2p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g36ww"]
 animations = [{
@@ -129,11 +141,10 @@ radius = 67.0
 height = 156.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xim31"]
-streams_count = 4
-stream_0/stream = ExtResource("30_5un18")
-stream_1/stream = ExtResource("31_galr7")
-stream_2/stream = ExtResource("32_gumdw")
-stream_3/stream = ExtResource("33_ssug3")
+streams_count = 3
+stream_0/stream = ExtResource("32_jw7f3")
+stream_1/stream = ExtResource("33_y4kwk")
+stream_2/stream = ExtResource("34_2vrdg")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3ricb"]
 streams_count = 3
@@ -146,6 +157,31 @@ streams_count = 3
 stream_0/stream = ExtResource("37_12bx8")
 stream_1/stream = ExtResource("38_2c6rn")
 stream_2/stream = ExtResource("39_hxkld")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_msen8"]
+streams_count = 3
+stream_0/stream = ExtResource("42_8v0jr")
+stream_1/stream = ExtResource("43_q5s5p")
+stream_2/stream = ExtResource("44_1o8f7")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ilc28"]
+streams_count = 4
+stream_0/stream = ExtResource("45_obtm1")
+stream_1/stream = ExtResource("46_7gxek")
+stream_2/stream = ExtResource("47_hpjw2")
+stream_3/stream = ExtResource("48_0ncqs")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_44nny"]
+streams_count = 3
+stream_0/stream = ExtResource("49_o84bu")
+stream_1/stream = ExtResource("50_k1ph7")
+stream_2/stream = ExtResource("51_0t26b")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ggimj"]
+streams_count = 3
+stream_0/stream = ExtResource("52_u7j7m")
+stream_1/stream = ExtResource("53_qmnij")
+stream_2/stream = ExtResource("54_t1b2p")
 
 [node name="Frog" type="CharacterBody2D"]
 collision_layer = 2
@@ -300,9 +336,19 @@ stream = SubResource("AudioStreamRandomizer_5sd1v")
 bus = &"Sound"
 
 [node name="sfx_eat" type="AudioStreamPlayer2D" parent="sfx"]
+stream = SubResource("AudioStreamRandomizer_msen8")
 bus = &"Sound"
 
 [node name="sfx_tongue_attack" type="AudioStreamPlayer2D" parent="sfx"]
+stream = SubResource("AudioStreamRandomizer_ilc28")
+bus = &"Sound"
+
+[node name="sfx_tongue_rope" type="AudioStreamPlayer2D" parent="sfx"]
+stream = SubResource("AudioStreamRandomizer_44nny")
+bus = &"Sound"
+
+[node name="sfx_tongue_miss" type="AudioStreamPlayer2D" parent="sfx"]
+stream = SubResource("AudioStreamRandomizer_ggimj")
 bus = &"Sound"
 
 [connection signal="direction_changed" from="Controller" to="." method="_on_controller_direction_changed"]
@@ -312,5 +358,7 @@ bus = &"Sound"
 [connection signal="jumped" from="Controller" to="." method="_on_controller_jumped"]
 [connection signal="started_falling" from="Controller" to="." method="_on_controller_started_falling"]
 [connection signal="shot_finished" from="Head" to="." method="_on_head_shot_finished"]
+[connection signal="shot_missed" from="Head" to="." method="_on_head_shot_missed"]
+[connection signal="shot_started" from="Head" to="." method="_on_head_shot_started"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="energy_changed" from="HealthComponent" to="." method="_on_health_component_energy_changed"]
