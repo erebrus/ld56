@@ -14,3 +14,4 @@ hframes = 2
 
 [node name="Tongue" parent="." instance=ExtResource("3_kfaq3")]
 unique_name_in_owner = true
+position = Vector2(16, 3)

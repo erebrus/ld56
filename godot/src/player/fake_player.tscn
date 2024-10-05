@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bajmr10nfg8pe" path="res://src/player/head.tscn" id="2_jkx4c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4004f"]
-radius = 85.74
+radius = 42.0476
 
 [node name="FakePlayer" type="CharacterBody2D"]
 collision_layer = 2
