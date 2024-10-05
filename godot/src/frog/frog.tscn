@@ -162,7 +162,7 @@ jump_duration = 0.5
 falling_gravity_multiplier = 2.0
 max_jump_amount = 2
 max_acceleration = 15000
-friction = 50
+friction = 30
 
 [node name="Head" parent="." instance=ExtResource("2_pyle1")]
 position = Vector2(0, -106)
@@ -256,7 +256,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("")
+next_state = NodePath("../swing")
 
 [node name="swing" type="Node" parent="xsm"]
 script = ExtResource("29_bxkrg")
