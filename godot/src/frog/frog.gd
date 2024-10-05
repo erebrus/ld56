@@ -69,6 +69,13 @@ func _on_health_component_died() -> void:
 
 func _on_health_component_energy_changed(value: Variant) -> void:
 	Logger.info("new health is: %d" % value)
+
+
+func _on_head_shot_finished() -> void:
+	$sfx/sfx_eat.play()
+
+func _on_head_shot_fired() -> void:
+	$sfx/sfx_tongue_attack.play()
 	
 
 func _on_tongue_attached(to: Vector2i) -> void:

@@ -17,6 +17,10 @@ func _on_update(_delta) -> void:
 		get_ctl().current_jump_type = get_ctl().JumpType.NONE	
 		get_ctl().hit_ground.emit()
 		return
+	if Input.is_action_just_pressed(get_ctl().input_jump):
+		if get_ctl().can_double_jump():
+			get_ctl().jump()
+			return
 	get_ctl().gravity = get_ctl().apply_falling_gravity(get_ctl().default_gravity)
 	get_ctl().process_movement(_delta)
 func _after_update(_delta) -> void:

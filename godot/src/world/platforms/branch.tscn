@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://boenkwcf4c06o"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_2asir"]
+[ext_resource type="Texture2D" uid="uid://cacvkwpnwyuhq" path="res://assets/gfx/environment/logPlatform1.png" id="2_u8aih"]
+
+[node name="Branch" instance=ExtResource("1_2asir")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(10, 108)
+scale = Vector2(1, 1)
+texture = ExtResource("2_u8aih")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-454, -100, -326, -107, -44, -72, 50, -70, 345, -125, 457, -144, 547, -114, 550, -50, 474, 16, -76, 103, -444, 46, -523, 7, -525, -51)
+one_way_collision = true

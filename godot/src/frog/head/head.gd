@@ -53,7 +53,7 @@ func point_at(target: Vector2) -> void:
 func shoot() -> void:
 	if tongue.is_shooting:
 		return
-	
+
 	shot_started.emit()
 	head_sprite.frame = 1
 	
