@@ -7,6 +7,8 @@ class_name Frog
 
 @onready var head: FrogHead = $Head
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var health_component: HealthComponent = $HealthComponent
+
 
 
 func _ready():
@@ -51,3 +53,10 @@ func _on_controller_direction_changed() -> void:
 	#legs.flip_h = controller.last_direction.x < 0
 	head.flip_h = controller.last_direction.x < 0
 	
+
+
+func _on_health_component_died() -> void:
+	Globals.do_lose()
+
+func _on_health_component_energy_changed(value: Variant) -> void:
+	Logger.info("new health is: %d" % value)

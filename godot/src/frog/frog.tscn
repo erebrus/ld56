@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b5lgniaadan1y"]
+[gd_scene load_steps=32 format=3 uid="uid://b5lgniaadan1y"]
 
 [ext_resource type="Script" path="res://src/frog/frog.gd" id="1_mohle"]
 [ext_resource type="Script" path="res://src/frog/frog_controller.gd" id="2_mpehw"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://c3fwuup67vmoc" path="res://assets/gfx/player/jump/7.png" id="15_1vupu"]
 [ext_resource type="Texture2D" uid="uid://bcsgmex2qdfvy" path="res://assets/gfx/player/jump/8.png" id="16_55ago"]
 [ext_resource type="AnimationLibrary" uid="uid://dxk5x3vpu2xy5" path="res://src/frog/animations.tres" id="27_c4hqj"]
+[ext_resource type="Script" path="res://src/frog/health_component.gd" id="29_ioey7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g36ww"]
 animations = [{
@@ -220,9 +221,14 @@ libraries = {
 position = Vector2(0, -31)
 target_position = Vector2(60, 0)
 
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("29_ioey7")
+
 [connection signal="direction_changed" from="Controller" to="." method="_on_controller_direction_changed"]
 [connection signal="hit_ground" from="Controller" to="." method="_on_controller_hit_ground"]
 [connection signal="hopped" from="Controller" to="." method="_on_controller_hopped"]
 [connection signal="jump_requested" from="Controller" to="." method="_on_controller_jump_requested"]
 [connection signal="jumped" from="Controller" to="." method="_on_controller_jumped"]
 [connection signal="started_falling" from="Controller" to="." method="_on_controller_started_falling"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="energy_changed" from="HealthComponent" to="." method="_on_health_component_energy_changed"]

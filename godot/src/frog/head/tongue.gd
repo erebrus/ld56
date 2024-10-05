@@ -78,6 +78,6 @@ func _on_area_entered(area: Area2D) -> void:
 	if bug == null:
 		return
 	
-	bug.catch()
-	retract()
+	if bug.catch():
+		retract()
 	
