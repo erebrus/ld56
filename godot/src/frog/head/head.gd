@@ -1,5 +1,6 @@
 class_name FrogHead extends Node2D
 
+signal shot_started
 signal shot_finished
 
 var flip_h: bool = false:
@@ -53,6 +54,7 @@ func shoot() -> void:
 	if tongue.is_shooting:
 		return
 	
+	shot_started.emit()
 	head_sprite.frame = 1
 	
 	# Shoot at facing direction
@@ -70,6 +72,7 @@ func shoot() -> void:
 	await tongue.retracted
 	
 	head_sprite.frame = 0
+	shot_finished.emit()
 	
 
 func _inside_boundary(angle: float) -> bool:
