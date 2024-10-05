@@ -17,6 +17,11 @@ var state:= State.Idle
 var direction: Vector2
 var player: FrogHead # TODO: change for player class
 
+var is_shooting: bool:
+	get:
+		return state != State.Idle
+	
+
 @onready var squared_length = pow(max_length, 2)
 
 @onready var rope = $Rope

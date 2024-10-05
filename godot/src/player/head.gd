@@ -9,6 +9,8 @@ var flip_h: bool = false:
 		flip_h = value
 		head_sprite.flip_h = flip_h
 		rotation = 2 * PI - rotation
+		start_tongue_position.x = -start_tongue_position.x
+	
 	
 var max_angle: float = deg_to_rad(280)
 var min_angle: float = deg_to_rad(15)
@@ -30,7 +32,7 @@ func _ready() -> void:
 	var player_container = player.get_parent()
 	await player_container.ready
 	player_container.add_child(tongue)
-	player_container.move_child(tongue,  player.get_index())
+	#player_container.move_child(tongue,  player.get_index()) # tongue behind player
 	
 
 func point_at(target: Vector2) -> void:
@@ -48,6 +50,9 @@ func point_at(target: Vector2) -> void:
 	
 
 func shoot() -> void:
+	if tongue.is_shooting:
+		return
+	
 	head_sprite.frame = 1
 	
 	# Shoot at facing direction
