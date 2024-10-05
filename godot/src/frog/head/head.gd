@@ -1,6 +1,7 @@
 class_name FrogHead extends Node2D
 
 signal shot_started
+signal shot_missed
 signal shot_finished
 
 var flip_h: bool = false:
@@ -93,3 +94,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
 		shoot()
 		
+
+
+func _on_tongue_missed() -> void:
+	shot_missed.emit()

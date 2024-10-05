@@ -76,7 +76,8 @@ func _on_health_component_energy_changed(value: Variant) -> void:
 
 
 func _on_head_shot_finished() -> void:
-	$sfx/sfx_eat.play()
+	if head.tongue.caught_bug:
+		$sfx/sfx_eat.play()
 
 func _on_head_shot_fired() -> void:
 	$sfx/sfx_tongue_attack.play()
@@ -88,3 +89,11 @@ func _on_tongue_attached(to: Vector2) -> void:
 
 func _on_tongue_detached() -> void:
 	_on_generic_controller_forward("_on_tongue_detached")
+
+
+func _on_head_shot_started() -> void:
+	$sfx/sfx_tongue_attack.play()
+
+
+func _on_head_shot_missed() -> void:
+	$sfx/sfx_tongue_miss.play()
