@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://jbwrx60ac223"]
+[gd_scene load_steps=12 format=3 uid="uid://jbwrx60ac223"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_yfdoh"]
+[ext_resource type="PackedScene" uid="uid://boenkwcf4c06o" path="res://src/world/platforms/branch.tscn" id="2_cged4"]
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="2_eqc4j"]
 [ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="3_1tpcs"]
+[ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="3_3j135"]
+[ext_resource type="PackedScene" uid="uid://b7uuo8dxsl8qr" path="res://src/world/platforms/rock_2.tscn" id="6_1x2p6"]
+[ext_resource type="PackedScene" uid="uid://i1m1wvlfxwsi" path="res://src/world/platforms/flower.tscn" id="7_s5uym"]
+[ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="8_oru44"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf487"]
-size = Vector2(1024, 112)
+size = Vector2(3178, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bqlqj"]
 size = Vector2(416, 112)
@@ -21,16 +26,16 @@ position = Vector2(587, 1020)
 [node name="ColorRect" type="ColorRect" parent="Scenery/StaticBody2D" index="0"]
 offset_left = -520.0
 offset_top = -56.0
-offset_right = 504.0
+offset_right = 2665.0
 offset_bottom = 56.0
 color = Color(0, 0.443137, 0.027451, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/StaticBody2D" index="1"]
-position = Vector2(-8, 0)
+position = Vector2(1069, 0)
 shape = SubResource("RectangleShape2D_xf487")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Scenery" index="1"]
-position = Vector2(1412, 778)
+position = Vector2(3707, 832)
 
 [node name="ColorRect" type="ColorRect" parent="Scenery/StaticBody2D2" index="0"]
 offset_left = -520.0
@@ -38,13 +43,14 @@ offset_top = 16.0
 offset_right = -104.0
 offset_bottom = 128.0
 color = Color(0, 0.443137, 0.027451, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/StaticBody2D2" index="1"]
 position = Vector2(-312, 72)
 shape = SubResource("RectangleShape2D_bqlqj")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Scenery" index="2"]
-position = Vector2(1707, 676)
+position = Vector2(4002, 730)
 
 [node name="ColorRect" type="ColorRect" parent="Scenery/StaticBody2D5" index="0"]
 offset_left = -520.0
@@ -52,13 +58,14 @@ offset_top = 16.0
 offset_right = -104.0
 offset_bottom = 128.0
 color = Color(0, 0.443137, 0.027451, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/StaticBody2D5" index="1"]
 position = Vector2(-312, 72)
 shape = SubResource("RectangleShape2D_bqlqj")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Scenery" index="3"]
-position = Vector2(2021, 581)
+position = Vector2(4316, 635)
 
 [node name="ColorRect" type="ColorRect" parent="Scenery/StaticBody2D6" index="0"]
 offset_left = -520.0
@@ -66,13 +73,14 @@ offset_top = 16.0
 offset_right = -104.0
 offset_bottom = 128.0
 color = Color(0, 0.443137, 0.027451, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/StaticBody2D6" index="1"]
 position = Vector2(-312, 72)
 shape = SubResource("RectangleShape2D_bqlqj")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Scenery" index="4"]
-position = Vector2(1352, 368)
+position = Vector2(3647, 422)
 
 [node name="ColorRect3" type="ColorRect" parent="Scenery/StaticBody2D3" index="0"]
 offset_left = 504.0
@@ -80,13 +88,14 @@ offset_top = -368.0
 offset_right = 571.0
 offset_bottom = 240.0
 color = Color(0, 0.443137, 0.027451, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Scenery/StaticBody2D3" index="1"]
 position = Vector2(536, -64)
 shape = SubResource("RectangleShape2D_acc83")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Scenery" index="5"]
-position = Vector2(587, 838)
+position = Vector2(512, 736)
 
 [node name="ColorRect2" type="ColorRect" parent="Scenery/StaticBody2D4" index="0"]
 offset_left = -585.0
@@ -94,16 +103,33 @@ offset_top = -370.0
 offset_right = -516.0
 offset_bottom = 238.0
 color = Color(0, 0.443137, 0.027451, 1)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/StaticBody2D4" index="1"]
 position = Vector2(-552, -64)
 shape = SubResource("RectangleShape2D_acc83")
+metadata/_edit_lock_ = true
+
+[node name="Branch" parent="Scenery" index="6" instance=ExtResource("2_cged4")]
+position = Vector2(1414, 664)
+
+[node name="rock1" parent="Scenery" index="7" instance=ExtResource("3_3j135")]
+position = Vector2(590, 861)
+
+[node name="rock2" parent="Scenery" index="8" instance=ExtResource("6_1x2p6")]
+position = Vector2(2157, 858)
+
+[node name="Flower" parent="Scenery" index="9" instance=ExtResource("7_s5uym")]
+position = Vector2(3344, 424)
+
+[node name="Leaf" parent="Scenery" index="10" instance=ExtResource("8_oru44")]
+position = Vector2(2709, 484)
 
 [node name="Fly" parent="Bugs" index="0" instance=ExtResource("2_eqc4j")]
-position = Vector2(743, 363)
+position = Vector2(2136, 453)
 
 [node name="Beetle" parent="Bugs" index="1" instance=ExtResource("3_1tpcs")]
-position = Vector2(1648, 575)
+position = Vector2(3041, 665)
 
 [node name="Beetle2" parent="Bugs" index="2" instance=ExtResource("3_1tpcs")]
-position = Vector2(1278, 668)
+position = Vector2(2671, 758)
