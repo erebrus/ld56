@@ -27,7 +27,8 @@ var is_shooting: bool:
 @onready var tip: Area2D = $Tip
 
 func _ready() -> void:
-	tip.area_entered.connect(_on_area_entered)
+	tip.body_entered.connect(_on_body_entered)
+	#tip.area_entered.connect(_on_area_entered)
 	
 
 func shoot(target: Vector2, _player: FrogHead) -> void:
@@ -73,8 +74,8 @@ func _physics_process(delta: float) -> void:
 	rope.add_point(player.tongue_position - global_position)
 	
 
-func _on_area_entered(area: Area2D) -> void:
-	var bug = area as Bug
+func _on_body_entered(body: Node2D) -> void:
+	var bug = body as Bug
 	if bug == null:
 		return
 	

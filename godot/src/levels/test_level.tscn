@@ -99,11 +99,11 @@ color = Color(0, 0.443137, 0.027451, 1)
 position = Vector2(-552, -64)
 shape = SubResource("RectangleShape2D_acc83")
 
-[node name="Fly" parent="." index="3" instance=ExtResource("2_eqc4j")]
+[node name="Fly" parent="Bugs" index="0" instance=ExtResource("2_eqc4j")]
 position = Vector2(743, 363)
 
-[node name="Beetle" parent="." index="4" instance=ExtResource("3_1tpcs")]
+[node name="Beetle" parent="Bugs" index="1" instance=ExtResource("3_1tpcs")]
 position = Vector2(1648, 575)
 
-[node name="Beetle2" parent="." index="5" instance=ExtResource("3_1tpcs")]
+[node name="Beetle2" parent="Bugs" index="2" instance=ExtResource("3_1tpcs")]
 position = Vector2(1278, 668)
