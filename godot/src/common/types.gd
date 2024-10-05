@@ -4,6 +4,8 @@ extends Node
 enum BugType {
 	Slug,
 	Spider,
+	Beetle,
+	Fly
 }
 
 

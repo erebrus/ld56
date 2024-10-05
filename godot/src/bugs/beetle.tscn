@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c41fukcg1ahwd"]
+
+[ext_resource type="PackedScene" uid="uid://b7ocbogo3h056" path="res://src/bugs/bug.tscn" id="1_drwt0"]
+[ext_resource type="Texture2D" uid="uid://c8cag2lxf6087" path="res://assets/gfx/bugs/beetle.png" id="2_nnq3u"]
+
+[node name="Beetle" instance=ExtResource("1_drwt0")]
+type = 2
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(9, -9)
+texture = ExtResource("2_nnq3u")

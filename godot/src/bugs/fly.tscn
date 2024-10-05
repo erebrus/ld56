@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://duxcjbsoqoa2n"]
+
+[ext_resource type="PackedScene" uid="uid://b7ocbogo3h056" path="res://src/bugs/bug.tscn" id="1_u4u8t"]
+[ext_resource type="Texture2D" uid="uid://dolg4h58td1if" path="res://assets/gfx/bugs/fly.png" id="2_6cm3v"]
+
+[node name="Fly" instance=ExtResource("1_u4u8t")]
+type = 3
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_6cm3v")

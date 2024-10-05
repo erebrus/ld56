@@ -12,7 +12,7 @@ var config:ConfigFile
 var debug_build := false
 var in_game:=false
 var in_dialogue:=false
-
+var rng = RandomNumberGenerator.new()
 var music_on:=true:
 	set(v):
 		music_on=v
@@ -34,6 +34,7 @@ var sound_on:=true:
 
 
 func _ready():
+	rng.randomize()
 	_init_logger()
 	Logger.info("Starting menu music")
 	music_manager.fade_in_menu_music()
