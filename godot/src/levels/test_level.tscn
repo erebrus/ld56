@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://jbwrx60ac223"]
+[gd_scene load_steps=8 format=3 uid="uid://jbwrx60ac223"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_yfdoh"]
-[ext_resource type="PackedScene" uid="uid://b7ocbogo3h056" path="res://src/bugs/bug.tscn" id="2_ohemg"]
+[ext_resource type="PackedScene" uid="uid://b7ocbogo3h056" path="res://src/bugs/bug.tscn" id="2_acscl"]
+[ext_resource type="Texture2D" uid="uid://c8cag2lxf6087" path="res://assets/gfx/bugs/beetle.png" id="3_uv6ss"]
+[ext_resource type="Texture2D" uid="uid://dolg4h58td1if" path="res://assets/gfx/bugs/fly.png" id="4_aqt8u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf487"]
 size = Vector2(1024, 112)
@@ -98,14 +100,20 @@ color = Color(0, 0.443137, 0.027451, 1)
 position = Vector2(-552, -64)
 shape = SubResource("RectangleShape2D_acc83")
 
-[node name="Bug" parent="Bugs" index="0" instance=ExtResource("2_ohemg")]
-position = Vector2(844, 204)
+[node name="Bug" parent="." index="3" instance=ExtResource("2_acscl")]
+position = Vector2(1794, 566)
 
-[node name="Bug2" parent="Bugs" index="1" instance=ExtResource("2_ohemg")]
-position = Vector2(302, 395)
+[node name="Sprite2D2" type="Sprite2D" parent="Bug" index="2"]
+texture = ExtResource("3_uv6ss")
 
-[node name="Bug3" parent="Bugs" index="2" instance=ExtResource("2_ohemg")]
-position = Vector2(613, 221)
+[node name="Bug3" parent="." index="4" instance=ExtResource("2_acscl")]
+position = Vector2(708, 488)
 
-[node name="Bug4" parent="Bugs" index="3" instance=ExtResource("2_ohemg")]
-position = Vector2(1417, 194)
+[node name="Sprite2D2" type="Sprite2D" parent="Bug3" index="2"]
+texture = ExtResource("4_aqt8u")
+
+[node name="Bug2" parent="." index="5" instance=ExtResource("2_acscl")]
+position = Vector2(1406, 665)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Bug2" index="2"]
+texture = ExtResource("3_uv6ss")
