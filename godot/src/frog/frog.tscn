@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b5lgniaadan1y"]
+[gd_scene load_steps=31 format=3 uid="uid://b5lgniaadan1y"]
 
 [ext_resource type="Script" path="res://src/frog/frog.gd" id="1_mohle"]
 [ext_resource type="Script" path="res://src/frog/frog_controller.gd" id="2_mpehw"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bte1i1wwnobrq" path="res://assets/gfx/player/jump/4.png" id="13_djaso"]
 [ext_resource type="Texture2D" uid="uid://cpdto5kkpxvco" path="res://assets/gfx/player/idle/5.png" id="13_rikfb"]
 [ext_resource type="Texture2D" uid="uid://gsdmfyoeckf" path="res://assets/gfx/player/jump/6.png" id="14_h6tu2"]
+[ext_resource type="Texture2D" uid="uid://ytrwpp3guvba" path="res://assets/gfx/player/idle/6.png" id="14_t0vdt"]
 [ext_resource type="Texture2D" uid="uid://c3fwuup67vmoc" path="res://assets/gfx/player/jump/7.png" id="15_1vupu"]
 [ext_resource type="Texture2D" uid="uid://bcsgmex2qdfvy" path="res://assets/gfx/player/jump/8.png" id="16_55ago"]
 [ext_resource type="AnimationLibrary" uid="uid://dxk5x3vpu2xy5" path="res://src/frog/animations.tres" id="27_c4hqj"]
@@ -70,6 +71,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("13_rikfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t0vdt")
 }],
 "loop": true,
 "name": &"idle",
