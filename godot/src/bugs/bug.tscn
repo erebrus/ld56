@@ -38,7 +38,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../move")
+next_state = NodePath("")
 
 [node name="move" type="Node" parent="xsm"]
 script = ExtResource("4_mu2lb")
@@ -48,7 +48,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../dodge")
+next_state = NodePath("")
 
 [node name="dodge" type="Node" parent="xsm"]
 script = ExtResource("4_mu2lb")
@@ -58,7 +58,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../dead")
+next_state = NodePath("")
 
 [node name="dead" type="Node" parent="xsm"]
 script = ExtResource("4_mu2lb")

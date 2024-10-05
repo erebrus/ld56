@@ -125,9 +125,11 @@ script = ExtResource("2_mpehw")
 max_jump_height = 350.0
 hop_height = 60.0
 min_jump_height = 100.0
+double_jump_height = 300.0
 hop_duration = 0.2
 jump_duration = 0.5
 falling_gravity_multiplier = 2.0
+max_jump_amount = 2
 max_acceleration = 15000
 friction = 50
 
@@ -255,6 +257,5 @@ bus = &"Sound"
 [connection signal="jumped" from="Controller" to="." method="_on_controller_jumped"]
 [connection signal="started_falling" from="Controller" to="." method="_on_controller_started_falling"]
 [connection signal="shot_finished" from="Head" to="." method="_on_head_shot_finished"]
-[connection signal="shot_fired" from="Head" to="." method="_on_head_shot_fired"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="energy_changed" from="HealthComponent" to="." method="_on_health_component_energy_changed"]

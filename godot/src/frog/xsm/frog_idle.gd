@@ -45,6 +45,6 @@ func _on_timeout(_name) -> void:
 	
 func _on_controller_jump_requested():
 	Logger.info("Jump instance on idle")
-	if get_ctl().can_ground_jump() or get_ctl().can_double_jump():
+	if get_ctl().can_ground_jump():
 		get_ctl().jump()
 		
