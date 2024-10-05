@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bajmr10nfg8pe"]
+
+[ext_resource type="Texture2D" uid="uid://damf7i33dp41a" path="res://assets/gfx/player/frog_head.png" id="1_1fytu"]
+[ext_resource type="Script" path="res://src/player/head.gd" id="1_dvkew"]
+[ext_resource type="PackedScene" uid="uid://dama0h74olyv3" path="res://src/player/tongue.tscn" id="3_kfaq3"]
+
+[node name="Head" type="Node2D"]
+script = ExtResource("1_dvkew")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("1_1fytu")
+hframes = 2
+
+[node name="Tongue" parent="." instance=ExtResource("3_kfaq3")]
+unique_name_in_owner = true
