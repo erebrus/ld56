@@ -119,7 +119,6 @@ var double_jump_velocity : float
 var hop_velocity : float
 # Multiplies the gravity by this when we release jump
 var release_gravity_multiplier : float
-var holding_jump = false
 
 
 var jumps_left : int
@@ -147,13 +146,6 @@ func _init():
 			jump_velocity, min_jump_height, default_gravity)
 
 
-func _input(e):
-	if Input.is_action_just_pressed(input_jump):
-		holding_jump = false	
-
-	if Input.is_action_just_released(input_jump):
-		holding_jump = false
-		
 
 func get_body()->CharacterBody2D:
 	return get_parent() as CharacterBody2D
