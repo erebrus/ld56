@@ -28,6 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://c3fwuup67vmoc" path="res://assets/gfx/player/jump/7.png" id="15_1vupu"]
 [ext_resource type="Texture2D" uid="uid://bcsgmex2qdfvy" path="res://assets/gfx/player/jump/8.png" id="16_55ago"]
 [ext_resource type="AnimationLibrary" uid="uid://dxk5x3vpu2xy5" path="res://src/frog/animations.tres" id="27_c4hqj"]
+[ext_resource type="Script" path="res://src/frog/xsm/frog_attached.gd" id="28_evnt1"]
+[ext_resource type="Script" path="res://src/frog/xsm/frog_swing.gd" id="29_bxkrg"]
 [ext_resource type="Script" path="res://src/frog/health_component.gd" id="29_ioey7"]
 [ext_resource type="AudioStream" uid="uid://blik27yvxxi8l" path="res://assets/sfx/MC_Walk_1.wav" id="30_5un18"]
 [ext_resource type="AudioStream" uid="uid://cfvxavlkb2pom" path="res://assets/sfx/MC_Walk_2.wav" id="31_galr7"]
