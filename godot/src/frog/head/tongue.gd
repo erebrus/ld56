@@ -6,28 +6,25 @@ signal retracted
 @export var extension_speed:= 1000.0
 @export var retraction_speed:= 2000.0
 
-enum State {
-	Idle,
-	Extending,
-	Retracting
-}
 
-var state:= State.Idle
 var direction: Vector2
-var player: FrogHead # TODO: change for player class
+var player: FrogHead
 
 var is_shooting: bool:
 	get:
-		return state != State.Idle
+		return visible
 	
 
+@onready var xsm: State = $xsm
 @onready var squared_length = pow(max_length, 2)
 
 @onready var rope: Line2D = $Rope
 @onready var tip: Area2D = $Tip
 
+
 func _ready() -> void:
 	tip.area_entered.connect(_on_area_entered)
+	tip.body_entered.connect(_on_body_entered)
 	
 
 func shoot(target: Vector2, _player: FrogHead) -> void:
@@ -35,49 +32,35 @@ func shoot(target: Vector2, _player: FrogHead) -> void:
 	global_position = player.tongue_position
 	direction = global_position.direction_to(target)
 	
-	state = State.Extending
-	visible = true
+	xsm.change_state("extending")
 	
 
 func retract() -> void:
-	state = State.Retracting
+	xsm.change_state("retracting")
 	
 
-func idle() -> void:
-	state = State.Idle
-	hide()
-	retracted.emit()
+func catch_bug(bug: Bug) -> void:
+	bug.catch()
+	retract()
 	
 
-func _physics_process(delta: float) -> void:
-	match state:
-		State.Idle:
-			return
-		State.Extending:
-			var new_position = global_position + delta * extension_speed * direction
-			if new_position.distance_squared_to(player.tongue_position) > squared_length:
-				global_position = player.tongue_position + player.tongue_position.direction_to(new_position) * max_length
-				retract()
-			else:
-				global_position = new_position
-		State.Retracting:
-			global_position = global_position.move_toward(player.tongue_position, delta * retraction_speed)
-			
-			if global_position.distance_squared_to(player.tongue_position) < 10:
-				global_position = player.tongue_position
-				idle()
-				
-			
+func attach() -> void:
+	pass
 	
+
+func update_rope() -> void:
 	rope.remove_point(1)
 	rope.add_point(player.tongue_position - global_position)
 	
 
 func _on_area_entered(area: Area2D) -> void:
-	var bug = area as Bug
-	if bug == null:
-		return
-	
-	bug.catch()
-	retract()
-	
+	if area is Bug:
+		catch_bug(area)
+	else:
+		attach()
+
+func _on_body_entered(body) -> void:
+	if body is Bug:
+		catch_bug(body)
+	else: 
+		attach()
