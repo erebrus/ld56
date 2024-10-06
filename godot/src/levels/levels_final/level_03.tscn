@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://f8txl8vhgc67"]
+
+[ext_resource type="Script" path="res://src/levels/base_level.gd" id="1_prhww"]
+[ext_resource type="Texture2D" uid="uid://bpj7fwfxeafy4" path="res://assets/gfx/environment/Background_Back.png" id="2_5t3a7"]
+[ext_resource type="Texture2D" uid="uid://dqackkt1tgskd" path="res://assets/gfx/environment/Background_Mid.png" id="3_hleug"]
+[ext_resource type="Texture2D" uid="uid://d1m5ne1avac35" path="res://assets/gfx/environment/Background_Front.png" id="4_ubp6t"]
+[ext_resource type="PackedScene" uid="uid://b5lgniaadan1y" path="res://src/frog/frog.tscn" id="5_35610"]
+[ext_resource type="PackedScene" uid="uid://bfsfbydiqr0gr" path="res://src/eagle/eagle.tscn" id="6_sst6f"]
+[ext_resource type="AudioStream" uid="uid://c21xktcb61m7j" path="res://assets/sfx/Amb_rain_forest_loop.mp3" id="7_curlu"]
+
+[node name="BaseLevel" type="Node2D"]
+script = ExtResource("1_prhww")
+
+[node name="BG" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(3840, 0)
+
+[node name="TextureRect" type="TextureRect" parent="BG"]
+offset_left = -1654.0
+offset_top = -467.0
+offset_right = 2186.0
+offset_bottom = 1693.0
+texture = ExtResource("2_5t3a7")
+
+[node name="MG" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(3840, 0)
+
+[node name="TextureRect" type="TextureRect" parent="MG"]
+offset_left = -1654.0
+offset_top = -467.0
+offset_right = 2186.0
+offset_bottom = 1693.0
+texture = ExtResource("3_hleug")
+
+[node name="FG" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.6, 0.6)
+repeat_size = Vector2(3840, 0)
+
+[node name="TextureRect" type="TextureRect" parent="FG"]
+offset_left = -1654.0
+offset_top = -467.0
+offset_right = 2186.0
+offset_bottom = 1693.0
+texture = ExtResource("4_ubp6t")
+
+[node name="Scenery" type="Node2D" parent="."]
+
+[node name="Bugs" type="Node2D" parent="."]
+
+[node name="Frog" parent="." instance=ExtResource("5_35610")]
+position = Vector2(278, 700)
+
+[node name="Camera2D" type="Camera2D" parent="Frog"]
+position = Vector2(0, -200)
+position_smoothing_enabled = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+
+[node name="Version" type="Label" parent="HUD/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.0.0"
+
+[node name="Eagle" parent="." instance=ExtResource("6_sst6f")]
+
+[node name="ambient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_curlu")
