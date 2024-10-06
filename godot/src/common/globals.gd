@@ -9,7 +9,7 @@ var sfx_volume:float = 100
 const GameDataPath = "user://conf.cfg"
 var config:ConfigFile
 
-var debug_build := false
+var debug_build := true
 var in_game:=false
 var in_dialogue:=false
 var rng = RandomNumberGenerator.new()
