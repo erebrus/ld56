@@ -30,6 +30,7 @@ func catch() -> bool:
 		return false
 
 func do_death():
+	visible=false
 	if sfx_death.stream:
 		sfx_death.play()
 		await sfx_death.finished
@@ -49,13 +50,16 @@ func move(_delta):
 		
 func set_path():
 	var path:Path2D=null
+	var offset:=Vector2.ZERO
 	if get_parent() is Path2D:
 		path=get_parent()
+		offset = get_parent().position
 	else:
 		for idx in range(get_child_count()):
 			var child = get_child(idx)
 			if child is Path2D:
 				path=child
+				offset = get_parent().position+path.position
 				remove_child(path)
 				break
 

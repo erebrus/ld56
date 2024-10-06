@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7ocbogo3h056"]
+[gd_scene load_steps=8 format=3 uid="uid://b7ocbogo3h056"]
 
 [ext_resource type="Texture2D" uid="uid://cp3e6kfi5ewqx" path="res://assets/gfx/bugs/bug1.png" id="1_lsri3"]
 [ext_resource type="Script" path="res://src/bugs/bug.gd" id="1_q0jaa"]
@@ -9,8 +9,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4u5hm"]
 radius = 16.0312
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5lvjb"]
 
 [node name="Bug" type="CharacterBody2D"]
 collision_layer = 4
@@ -65,11 +63,6 @@ debug_mode = false
 target_path = NodePath("")
 timed = false
 next_state = NodePath("")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_5lvjb")
-}
 
 [node name="sfx_death" type="AudioStreamPlayer2D" parent="."]
 bus = &"Sound"

@@ -1,7 +1,61 @@
-[gd_scene load_steps=3 format=3 uid="uid://c41fukcg1ahwd"]
+[gd_scene load_steps=12 format=3 uid="uid://c41fukcg1ahwd"]
 
 [ext_resource type="PackedScene" uid="uid://b7ocbogo3h056" path="res://src/bugs/bug.tscn" id="1_drwt0"]
 [ext_resource type="Texture2D" uid="uid://c8cag2lxf6087" path="res://assets/gfx/bugs/beetle.png" id="2_nnq3u"]
+[ext_resource type="AudioStream" uid="uid://hmt6jupvd6dr" path="res://assets/sfx/Bug_walk_1.wav" id="3_1of80"]
+[ext_resource type="AudioStream" uid="uid://vckq377gf6hr" path="res://assets/sfx/Bug_crush_1.wav" id="3_ap6af"]
+[ext_resource type="AudioStream" uid="uid://cwqt2iahfrkoq" path="res://assets/sfx/Bug_crush_2.wav" id="4_2nqps"]
+[ext_resource type="AudioStream" uid="uid://clx1jr44cou7r" path="res://assets/sfx/Bug_crush_3.wav" id="5_8t8bp"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1qudq"]
+streams_count = 3
+stream_0/stream = ExtResource("3_ap6af")
+stream_1/stream = ExtResource("4_2nqps")
+stream_2/stream = ExtResource("5_8t8bp")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fedfs"]
+random_pitch = 1.2
+random_volume_offset_db = 0.9
+streams_count = 1
+stream_0/stream = ExtResource("3_1of80")
+
+[sub_resource type="Animation" id="Animation_r1dwy"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_8r6tv"]
+resource_name = "move"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sfx_walk")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c6fxo"]
+_data = {
+"idle": SubResource("Animation_r1dwy"),
+"move": SubResource("Animation_8r6tv")
+}
 
 [node name="Beetle" instance=ExtResource("1_drwt0")]
 type = 2
@@ -10,3 +64,26 @@ energy_value = 40.0
 [node name="Sprite2D" parent="." index="1"]
 position = Vector2(9, -9)
 texture = ExtResource("2_nnq3u")
+
+[node name="idle" parent="xsm" index="0"]
+anim_on_enter = "idle"
+loop_mode = 0
+on_finished = 1
+
+[node name="move" parent="xsm" index="1"]
+anim_on_enter = "move"
+loop_mode = 0
+on_finished = 1
+
+[node name="sfx_death" parent="." index="3"]
+stream = SubResource("AudioStreamRandomizer_1qudq")
+
+[node name="sfx_walk" parent="." index="4"]
+stream = SubResource("AudioStreamRandomizer_fedfs")
+volume_db = -6.0
+max_distance = 1000.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_c6fxo")
+}

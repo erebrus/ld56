@@ -24,9 +24,9 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="Curve2D" id="Curve2D_b0yu8"]
+[sub_resource type="Curve2D" id="Curve2D_0e7vn"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2542, 950, 0, 0, 0, 0, 2860, 951)
+"points": PackedVector2Array(0, 0, 0, 0, -14.962, 10, 0, 0, 0, 0, 321.014, 10)
 }
 point_count = 2
 
@@ -147,18 +147,17 @@ position = Vector2(2709, 484)
 position = Vector2(1997, 422)
 collision_mask = 1
 
-[node name="Path2D" type="Path2D" parent="Bugs/Fly" index="7"]
+[node name="Path2D" type="Path2D" parent="Bugs/Fly" index="6"]
 position = Vector2(-1997, -422)
 curve = SubResource("Curve2D_6r8bl")
 
-[node name="Path2D2" type="Path2D" parent="Bugs" index="1"]
-position = Vector2(1282, -318)
-curve = SubResource("Curve2D_b0yu8")
-
-[node name="Beetle" parent="Bugs/Path2D2" index="0" instance=ExtResource("3_1tpcs")]
-position = Vector2(2542, 950)
+[node name="Beetle" parent="Bugs" index="1" instance=ExtResource("3_1tpcs")]
+position = Vector2(3824, 632)
 rotation = 0.00314464
 collision_mask = 1
+
+[node name="Path2D" type="Path2D" parent="Bugs/Beetle" index="7"]
+curve = SubResource("Curve2D_0e7vn")
 
 [node name="Path2D3" type="Path2D" parent="Bugs" index="2"]
 curve = SubResource("Curve2D_srp33")
