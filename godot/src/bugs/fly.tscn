@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://duxcjbsoqoa2n"]
+[gd_scene load_steps=18 format=3 uid="uid://duxcjbsoqoa2n"]
 
 [ext_resource type="PackedScene" uid="uid://b7ocbogo3h056" path="res://src/bugs/bug.tscn" id="1_u4u8t"]
 [ext_resource type="Texture2D" uid="uid://bk253d7evx1nt" path="res://assets/gfx/bugs/fly/1.png" id="3_05kff"]
@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://u4e0oeg03d65" path="res://assets/sfx/Bug_fly_flying_3.wav" id="5_owxnf"]
 [ext_resource type="Texture2D" uid="uid://bw40ymb1rredi" path="res://assets/gfx/bugs/fly/3.png" id="5_p78a3"]
 [ext_resource type="Texture2D" uid="uid://cdw0f5rxn2nsn" path="res://assets/gfx/bugs/fly/4.png" id="6_080lp"]
+[ext_resource type="AudioStream" uid="uid://vrhub2gkrj4" path="res://assets/sfx/Bug_fly_crush_1.wav" id="6_r3meu"]
+[ext_resource type="AudioStream" uid="uid://ctl77vdpr646a" path="res://assets/sfx/Bug_fly_crush_2.wav" id="7_t621r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bxn0i"]
 radius = 20.0
@@ -48,6 +50,11 @@ animations = [{
 "name": &"move",
 "speed": 10.0
 }]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qmv1m"]
+streams_count = 2
+stream_0/stream = ExtResource("6_r3meu")
+stream_1/stream = ExtResource("7_t621r")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mq136"]
 streams_count = 3
@@ -137,7 +144,7 @@ shape = SubResource("CircleShape2D_bxn0i")
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_tsxt0")
 animation = &"idle"
-frame_progress = 0.448196
+frame_progress = 0.0528743
 flip_h = true
 
 [node name="xsm" parent="." index="2"]
@@ -153,6 +160,9 @@ on_finished = 1
 anim_on_enter = "move"
 loop_mode = 0
 on_finished = 1
+
+[node name="sfx_death" parent="." index="3"]
+stream = SubResource("AudioStreamRandomizer_qmv1m")
 
 [node name="sfx_walk" parent="." index="4"]
 stream = SubResource("AudioStreamRandomizer_mq136")
