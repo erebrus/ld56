@@ -381,6 +381,9 @@ bus = &"Sound"
 stream = ExtResource("57_jrolm")
 bus = &"Sound"
 
+[node name="EnergyTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="direction_changed" from="Controller" to="." method="_on_controller_direction_changed"]
 [connection signal="hit_ground" from="Controller" to="." method="_on_controller_hit_ground"]
 [connection signal="hopped" from="Controller" to="." method="_on_controller_hopped"]
@@ -392,3 +395,4 @@ bus = &"Sound"
 [connection signal="shot_started" from="Head" to="." method="_on_head_shot_started"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="energy_changed" from="HealthComponent" to="." method="_on_health_component_energy_changed"]
+[connection signal="timeout" from="EnergyTimer" to="." method="_on_energy_timer_timeout"]

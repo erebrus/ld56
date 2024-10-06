@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c06tqqbevl64b"]
+
+[ext_resource type="Script" path="res://src/ui/healthbar.gd" id="1_6oxel"]
+[ext_resource type="Texture2D" uid="uid://bpaj0twqvqt6o" path="res://assets/gfx/ui/EnergyBar.png" id="1_jbgwo"]
+[ext_resource type="Texture2D" uid="uid://dyvujrtlcdfwn" path="res://assets/gfx/ui/EnergyFill.png" id="2_6rdb5"]
+
+[node name="HealthBar" type="Control"]
+custom_minimum_size = Vector2(595, 196)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6oxel")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_jbgwo")
+
+[node name="Progress" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 71.0
+offset_right = 510.0
+offset_bottom = 133.0
+value = 100.0
+texture_progress = ExtResource("2_6rdb5")

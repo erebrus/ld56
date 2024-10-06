@@ -32,10 +32,10 @@ func catch() -> bool:
 
 func do_death():
 	visible=false
+	collision_mask=0
 	if sfx_death.stream:
 		sfx_death.play()
 		await sfx_death.finished
-	call_deferred("queue_free")
 	
 func do_dodge():
 	xsm.change_state("dodge")

@@ -14,12 +14,13 @@ var is_shooting: bool:
 	get:
 		return visible
 	
-var caught_bug:=false
+var caught_bug:Bug
 @onready var xsm: State = $xsm
 @onready var squared_length = pow(max_length, 2)
 
 @onready var rope: Line2D = $Rope
 @onready var tip: Area2D = $Tip
+
 
 
 func _ready() -> void:
@@ -29,7 +30,7 @@ func _ready() -> void:
 	
 
 func shoot(target: Vector2, _player: FrogHead) -> void:
-	caught_bug=false
+	caught_bug=null
 	player = _player
 	global_position = player.tongue_position
 	
@@ -41,7 +42,7 @@ func retract() -> void:
 	
 
 func catch_bug(bug: Bug) -> void:
-	caught_bug=true
+	caught_bug=bug
 	bug.catch()	
 	retract()
 	
