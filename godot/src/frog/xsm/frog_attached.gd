@@ -5,11 +5,9 @@ extends XSMFrogRope
 
 func _on_update(delta: float) -> void:
 	_update_rope_length(delta)
-	_ensure_rope_length()
+	_move(Vector2.ZERO)
 	
-	get_body().move_and_slide()
-	
-	if not get_ctl().is_feet_on_ground():
+	if not is_on_floor:
 		change_state("swing", anchor)
 	
 

@@ -14,6 +14,7 @@ func _on_enter(args) -> void:
 	
 	gravity = get_body().swing_gravity * Vector2.DOWN
 	speed = get_body().swing_speed * Vector2.RIGHT
+	last_velocity = get_body().velocity
 	
 
 func _on_update(delta: float) -> void:
@@ -24,15 +25,13 @@ func _on_update(delta: float) -> void:
 	var tangent = direction.normalized().rotated(PI/2)
 	var length = velocity.dot(tangent)
 	last_velocity = length * tangent
-	get_body().global_position += last_velocity * delta
+	var motion = last_velocity * delta
 	
 	_update_rope_length(delta)
-	_ensure_rope_length()
-	
-	get_body().move_and_slide()
+	_move(motion)
 	get_ctl().check_direction_change(length)
 	
-	if get_ctl().is_feet_on_ground():
+	if is_on_floor:
 		change_state("attached", anchor)
 	
  

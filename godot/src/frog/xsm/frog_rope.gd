@@ -7,13 +7,11 @@ var reel_speed: float
 
 var anchor: Vector2
 var max_length: float
-var max_length_squared: float
-
+var is_on_floor: bool
 
 func _on_enter(args) -> void:
 	anchor = args
 	max_length = get_body().global_position.distance_to(anchor)
-	max_length_squared = pow(max_length + 1, 2)
 	
 	reel_speed = get_body().reel_speed
 	
@@ -24,9 +22,16 @@ func _update_rope_length(delta: float) -> void:
 		
 	if Input.is_action_pressed("move_up"):
 		max_length -= reel_speed * delta
-		max_length_squared = pow(max_length + 1, 2)
 	
 
-func _ensure_rope_length() -> void:
-	get_body().global_position = anchor + anchor.direction_to(get_body().global_position) * max_length
+func _move(motion: Vector2) -> void:
+	var desired_position = get_body().global_position + motion
+	var new_position = anchor + anchor.direction_to(desired_position) * max_length
+	var collision = get_body().move_and_collide(new_position - get_body().global_position)
+	
+	if collision == null:
+		is_on_floor = false
+	else:
+		is_on_floor = collision.get_normal().dot(Vector2.UP) > 0.9
+		
 	
