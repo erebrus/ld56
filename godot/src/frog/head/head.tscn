@@ -9,12 +9,15 @@ script = ExtResource("1_vuvqe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-visible = false
+position = Vector2(0, -78)
 texture = ExtResource("2_axq3c")
-hframes = 2
 
 [node name="Tongue" parent="." instance=ExtResource("3_n5akw")]
 unique_name_in_owner = true
-position = Vector2(16, 3)
+visible = true
+position = Vector2(15, -67)
+
+[node name="Guide" type="Line2D" parent="."]
+visible = false
 
 [connection signal="missed" from="Tongue" to="." method="_on_tongue_missed"]

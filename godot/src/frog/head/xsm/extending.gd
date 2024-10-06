@@ -24,6 +24,3 @@ func _on_update(delta: float) -> void:
 		change_state("retracting")
 		return
 	
-
-func _on_exit(_args) -> void:
-	target.retracted.emit()
