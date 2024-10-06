@@ -1,13 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://i1m1wvlfxwsi"]
 
 [ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_akupi"]
-[ext_resource type="Texture2D" uid="uid://cc862c2ldo7sh" path="res://assets/gfx/environment/flowerPlatform.png" id="2_waqap"]
+[ext_resource type="Texture2D" uid="uid://bwmnjk6tq44hm" path="res://assets/gfx/environment/flowerPlatform.png" id="2_b50hs"]
 
 [node name="Flower" instance=ExtResource("1_akupi")]
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_waqap")
+scale = Vector2(1, 1)
+texture = ExtResource("2_b50hs")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
-polygon = PackedVector2Array(-177, -316, -1, -210, 28, -210, 200, -285, 202, -321, 134, -350, 35, -325, -25, -325, -90, -350, -137, -348)
+position = Vector2(-16, -187)
+polygon = PackedVector2Array(-273, -357, -1, -210, 28, -210, 285, -326, 268, -392, 159, -416, 55, -398, -26, -396, -166, -421, -265, -395)
 one_way_collision = true
