@@ -9,6 +9,9 @@ var sfx_volume:float = 100
 const GameDataPath = "user://conf.cfg"
 var config:ConfigFile
 
+@export var levels:Array[PackedScene]
+var current_level=0
+
 var debug_build := true
 var in_game:=false
 var in_dialogue:=false
@@ -50,11 +53,20 @@ func start_game():
 	await get_tree().create_timer(1).timeout
 	#music_manager.reset_synchronized_stream()
 
-	get_tree().change_scene_to_file(GAME_SCENE_PATH)
-	music_manager.fade_in_game_music()
-	
-	
+	#get_tree().change_scene_to_file(GAME_SCENE_PATH)
+	get_tree().change_scene_to_packed(levels[current_level])
 
+	#music_manager.fade_in_game_music()
+	
+	
+func next_level():
+	current_level += 1
+	if current_level >= levels.size():
+		do_win()
+	else:
+		get_tree().change_scene_to_packed(levels[current_level])
+
+	
 
 	
 func _init_logger():
