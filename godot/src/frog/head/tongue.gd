@@ -47,7 +47,8 @@ func catch_bug(bug: Bug) -> void:
 	retract()
 	
 
-func attach() -> void:
+func attach(anchor: Vector2) -> void:
+	global_position = anchor
 	xsm.change_state("attached")
 	
 
@@ -63,7 +64,7 @@ func _on_area_entered(area) -> void:
 	if area is Bug:
 		catch_bug(area)
 	else:
-		attach()
+		attach(area.global_position)
 
 func _on_body_entered(body) -> void:
 	if !is_shooting:
@@ -72,4 +73,4 @@ func _on_body_entered(body) -> void:
 	if body is Bug:
 		catch_bug(body)
 	else: 
-		attach()
+		attach(body.global_position)
