@@ -63,19 +63,31 @@ point_count = 7
 repeat_times = 6
 metadata/_edit_lock_ = true
 
+[node name="TextureRect" parent="BG" index="0"]
+offset_left = -1705.0
+offset_top = -1559.0
+offset_right = 2135.0
+offset_bottom = 1755.0
+
 [node name="MG" parent="." index="1"]
 repeat_times = 6
 metadata/_edit_lock_ = true
+
+[node name="TextureRect" parent="MG" index="0"]
+offset_left = -1286.0
+offset_top = -1559.0
+offset_right = 2554.0
+offset_bottom = 1755.0
 
 [node name="FG" parent="." index="2"]
 repeat_times = 6
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" parent="FG" index="0"]
-offset_left = -1230.0
-offset_top = -469.0
-offset_right = 2610.0
-offset_bottom = 1691.0
+offset_left = -1249.0
+offset_top = -1557.0
+offset_right = 2591.0
+offset_bottom = 1757.0
 
 [node name="Ground" type="Node2D" parent="." index="3"]
 metadata/_edit_lock_ = true
