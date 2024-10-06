@@ -31,6 +31,7 @@ var sound_on:=true:
 
 @onready var music_manager: MusicManager = $MusicManager
 
+var player: Frog
 
 
 func _ready():

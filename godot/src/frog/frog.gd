@@ -13,6 +13,7 @@ signal energy_changed(value:float)
 @onready var xsm: State = $xsm
 @onready var rc_front: RayCast2D = $rc_front
 @onready var rc_down: RayCast2D = $rc_down
+@onready var rc_up: RayCast2D = $rc_up
 
 @onready var head: FrogHead = $Head
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -24,6 +25,8 @@ var state_name:String
 
 
 func _ready():
+	Globals.player = self
+	
 	velocity.y=1
 	Events.tongue_attached.connect(_on_tongue_attached)
 	Events.tongue_detached.connect(_on_tongue_detached)
@@ -31,6 +34,10 @@ func _ready():
 
 func is_near_floor() -> bool:
 	return rc_down.is_colliding()
+	
+
+func is_under_cover() -> bool:
+	return rc_up.is_colliding()
 	
 
 func _on_debug_toggled(debug:bool):

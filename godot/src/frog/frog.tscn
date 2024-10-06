@@ -347,6 +347,10 @@ libraries = {
 position = Vector2(0, -75)
 target_position = Vector2(75, 0)
 
+[node name="rc_up" type="RayCast2D" parent="."]
+position = Vector2(0, -100)
+target_position = Vector2(0, -800)
+
 [node name="rc_down" type="RayCast2D" parent="."]
 target_position = Vector2(0, 10)
 
