@@ -53,7 +53,8 @@ func start_game():
 	music_manager.fade_in_game_music()
 	
 	
-
+func next_level():
+	get_tree().quit()
 
 	
 func _init_logger():
