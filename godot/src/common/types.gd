@@ -24,7 +24,7 @@ func key_of(value) -> String:
 	BugType.Slug:  preload("res://src/frog/debufs/double_jump_debuf.tscn"),
 	BugType.Spider:preload("res://src/frog/debufs/ep_max_debuf.tscn"),
 	BugType.Beetle:preload("res://src/frog/debufs/ep_debuf.tscn"),
-	BugType.Fly:preload("res://src/frog/debufs/ep_debuf.tscn"),
+	BugType.Fly:preload("res://src/frog/debufs/ep_max_debuf.tscn"),
 	BugType.Moth:preload("res://src/frog/debufs/invisible_debuf.tscn"),
 	BugType.Snail:preload("res://src/frog/debufs/slowdown_debuf.tscn"),
 	BugType.Worm:preload("res://src/frog/debufs/tongue_debuf.tscn"),
