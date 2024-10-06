@@ -46,11 +46,14 @@ func _on_update(delta: float) -> void:
 		 
 	get_ctl().check_direction_change(length)
 	
+	get_head().rotation = get_head().angle_to_point(anchor)
+	
 	if get_ctl().is_feet_on_ground():
 		change_state("attached", anchor)
 	
  
 func _on_tongue_detached() -> void:
+	get_head().rotation = 0
 	#Logger.info("Last v: %s" % last_velocity)
 	get_ctl().set_x_acc()
 	get_ctl().acc.x*=abs(last_velocity.x)/max_x_speeed *acc_x_factor
