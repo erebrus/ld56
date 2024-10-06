@@ -11,5 +11,20 @@ texture = ExtResource("2_b50hs")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 position = Vector2(-16, -187)
-polygon = PackedVector2Array(-273, -357, -1, -210, 28, -210, 285, -326, 268, -392, 159, -416, 55, -398, -26, -396, -166, -421, -265, -395)
+polygon = PackedVector2Array(-251, -375, -102, -285, -34, -258, -4, -224, 33, -232, 89, -271, 179, -290, 273, -344, 229, -385, 73, -378, -30, -376, -161, -403)
 one_way_collision = true
+
+[node name="SwingOnly" type="Area2D" parent="." index="2"]
+collision_mask = 0
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="SwingOnly" index="0"]
+position = Vector2(-16, -187)
+polygon = PackedVector2Array(-140, -74, -50, -118, -20, -109, -47, -97, -99, -76)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="SwingOnly" index="1"]
+position = Vector2(-16, -187)
+polygon = PackedVector2Array(94, -135, 200, -42, 122, -59, 73, -123)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="SwingOnly" index="2"]
+position = Vector2(-16, -187)
+polygon = PackedVector2Array(-16, 287, -39, 304, -95, 303)
