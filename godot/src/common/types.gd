@@ -17,7 +17,7 @@ func key_of(value) -> String:
 	
 	return str(value)
 
-const DEBUF_MAP = {
+@onready var DEBUF_MAP = {
 	BugType.Slug:  SCENE,
 	BugType.Spider:SCENE,
 	BugType.Beetle:SCENE,

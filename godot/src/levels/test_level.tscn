@@ -194,7 +194,7 @@ curve = SubResource("Curve2D_p3fml")
 position = Vector2(775, 1485)
 swing_gravity = 1000
 
-[node name="Camera2D" parent="Frog" index="10"]
+[node name="Camera2D" parent="Frog" index="12"]
 limit_left = 0
 limit_right = 7500
 limit_bottom = 1700

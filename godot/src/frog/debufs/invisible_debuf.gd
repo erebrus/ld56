@@ -1,10 +1,10 @@
 extends Debuf
 class_name InvisibleDebuf
 
-func apply(frog:Frog):
-	super.apply(frog)
-	frog.visible=false
+func apply_debuf(frog:Frog):
+	super.apply_debuf(frog)
+	#frog.visible=false
 	
-func cancel(frog:Frog):
-	super.cancel(frog)
-	frog.visible=true
+func cancel_debuf(frog:Frog):
+	super.cancel_debuf(frog)
+	#frog.visible=true
