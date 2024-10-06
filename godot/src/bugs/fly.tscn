@@ -148,7 +148,6 @@ frame_progress = 0.0528743
 flip_h = true
 
 [node name="xsm" parent="." index="2"]
-debug_mode = true
 next_state = NodePath("idle")
 
 [node name="idle" parent="xsm" index="0"]
@@ -166,7 +165,6 @@ stream = SubResource("AudioStreamRandomizer_qmv1m")
 
 [node name="sfx_walk" parent="." index="4"]
 stream = SubResource("AudioStreamRandomizer_mq136")
-max_distance = 800.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
 libraries = {
