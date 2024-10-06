@@ -9,6 +9,8 @@ func _on_enter(_args) -> void:
 	
 	end_position = camera_position + Vector2(screen_size.x, -screen_size.y)
 	target.grab_sfx.play(0.11)
+	Events.frog_grabbed.emit()
+	
 
 func _on_update(delta) -> void:
 	var motion = target.dive_speed * delta
