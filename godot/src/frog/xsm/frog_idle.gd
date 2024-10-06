@@ -9,14 +9,15 @@ func _on_enter(_args) -> void:
 	if get_ctl():
 		get_ctl().reset_jumps_left()
 		get_ctl().acc.x=0
-		if (get_ctl().is_falling() or not get_body().is_on_floor()) :
-			get_ctl().started_falling.emit()
+		#if we just started falling, do return because we will be changing state
+		if get_ctl().check_just_started_falling():
+			return
 			
 func _after_enter(_args) -> void:
 	pass
 func _on_update(_delta) -> void:
-	if not get_body().is_on_floor() or get_ctl().is_falling():
-		get_ctl().started_falling.emit()
+	#if we just started falling, do return because we will be changing state
+	if get_ctl().check_just_started_falling():
 		return
 		
 
@@ -25,10 +26,16 @@ func _on_update(_delta) -> void:
 	get_ctl().check_direction_change(input)
 	get_ctl().set_x_acc()
 	
-	if Input.is_action_pressed(get_ctl().input_jump):
+	if Input.is_action_pressed(get_ctl().input_jump):		
+		Logger.info("jump is pressed %d" % Time.get_ticks_msec())
 		if get_ctl().can_ground_jump():
+			Logger.info("can jump")
 			get_ctl().jump_requested.emit()
 			return
+		else:
+			Logger.info("can't jump %d %d" % [get_ctl().jumps_left, get_ctl().current_jump_type])
+				
+
 	#if we're not jumping, check for hop, otherwise jump will be triggered by controller
 	if not get_body().is_facing_wall() and input != 0:
 		get_ctl().hop()

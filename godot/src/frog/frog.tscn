@@ -190,10 +190,10 @@ reel_speed = 100
 
 [node name="Controller" type="Node" parent="."]
 script = ExtResource("2_mpehw")
-max_jump_height = 350.0
+max_jump_height = 400.0
 hop_height = 60.0
 min_jump_height = 100.0
-double_jump_height = 300.0
+double_jump_height = 350.0
 hop_duration = 0.2
 jump_duration = 0.5
 falling_gravity_multiplier = 2.0
@@ -293,7 +293,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("")
+next_state = NodePath("../swing")
 
 [node name="swing" type="Node" parent="xsm"]
 script = ExtResource("29_bxkrg")

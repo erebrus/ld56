@@ -67,7 +67,6 @@ func _on_controller_direction_changed() -> void:
 	head.flip_h = controller.last_direction.x < 0
 	
 
-
 func _on_health_component_died() -> void:
 	Globals.do_lose()
 
