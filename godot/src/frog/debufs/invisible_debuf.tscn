@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpcipmmtrgulc"]
+[gd_scene load_steps=5 format=3 uid="uid://dpcipmmtrgulc"]
 
 [ext_resource type="PackedScene" uid="uid://bv0h252ykncnm" path="res://src/frog/debufs/debuf.tscn" id="1_sfoji"]
 [ext_resource type="Script" path="res://src/frog/debufs/invisible_debuf.gd" id="2_sisup"]
+[ext_resource type="AudioStream" uid="uid://b18i4706ref3g" path="res://assets/sfx/Debuf_MC_invisible.wav" id="3_b44to"]
+[ext_resource type="AudioStream" uid="uid://c05xsngdddbqc" path="res://assets/sfx/Debuf_visible_again.wav" id="4_jq7hn"]
 
 [node name="InvisibleDebuf" instance=ExtResource("1_sfoji")]
 script = ExtResource("2_sisup")
 
 [node name="Node2D" type="Node2D" parent="." index="1"]
+
+[node name="sfx_on" parent="." index="2"]
+stream = ExtResource("3_b44to")
+
+[node name="sfx_off" parent="." index="3"]
+stream = ExtResource("4_jq7hn")

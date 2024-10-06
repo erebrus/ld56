@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://c842muq7ym1x2"]
+
+[ext_resource type="PackedScene" uid="uid://bv0h252ykncnm" path="res://src/frog/debufs/debuf.tscn" id="1_j02go"]
+[ext_resource type="Script" path="res://src/frog/debufs/tongue_debuf.gd" id="2_2ex5n"]
+[ext_resource type="AudioStream" uid="uid://cwc035ps320vf" path="res://assets/sfx/Debuf_no_tongue.wav" id="2_2stbs"]
+
+[node name="TongueDebuf" instance=ExtResource("1_j02go")]
+script = ExtResource("2_2ex5n")
+
+[node name="sfx_on" parent="." index="1"]
+stream = ExtResource("2_2stbs")

@@ -39,6 +39,7 @@ var tongue_position: Vector2:
 @onready var start_tongue_position = tongue.position
 
 @onready var guide: Line2D = $Guide
+var can_shoot:bool = true
 
 
 func _ready() -> void:
@@ -144,7 +145,7 @@ func _input(event: InputEvent) -> void:
 		var mouse_position = get_global_mouse_position()
 		point_at(mouse_position)
 		
-	if event.is_action_pressed("left_click"):
+	if can_shoot and event.is_action_pressed("left_click"):
 		shoot()
 	
 

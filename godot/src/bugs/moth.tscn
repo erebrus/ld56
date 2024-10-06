@@ -135,7 +135,8 @@ _data = {
 
 [node name="Moth" instance=ExtResource("1_rv6bt")]
 type = 4
-speed = 220.0
+energy_value = 3.0
+speed = 180.0
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_bxn0i")

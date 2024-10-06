@@ -1,10 +1,11 @@
 extends Debuf
-class_name InvisibleDebuf
+
+
 
 func apply_debuf(frog):
 	super.apply_debuf(frog)
-	frog.visible=false
+	frog.controller.max_jump_amount-=1
 	
 func cancel_debuf(frog):
 	super.cancel_debuf(frog)
-	frog.visible=true
+	frog.controller.max_jump_amount+=1

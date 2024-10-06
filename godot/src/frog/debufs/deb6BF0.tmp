@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv0h252ykncnm"]
+[gd_scene load_steps=2 format=3 uid="uid://bv0h252ykncnm"]
 
 [ext_resource type="Script" path="res://src/frog/debufs/debuf.gd" id="1_pta72"]
-[ext_resource type="AudioStream" uid="uid://bkig6dhlksbsd" path="res://assets/sfx/Debuf_debuf_ends.wav" id="2_fou78"]
 
 [node name="Debuf" type="Node"]
 script = ExtResource("1_pta72")
@@ -10,10 +9,7 @@ script = ExtResource("1_pta72")
 one_shot = true
 
 [node name="sfx_on" type="AudioStreamPlayer" parent="."]
-volume_db = -6.0
 
 [node name="sfx_off" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_fou78")
-volume_db = -6.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

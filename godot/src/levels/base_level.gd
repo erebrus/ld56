@@ -11,6 +11,7 @@ func _ready() -> void:
 	version.text=ProjectSettings.get_setting("application/config/version") # Replace with function body.
 	version.visible=Globals.debug_build
 	ambient.play()
+	frog.health_component.max_changed.connect(func (x):health_bar.set_max(frog.health_component.max_energy);Logger.info("Changing healthbar"))
 	health_bar.set_max(frog.health_component.max_energy)
 
 func _input(event: InputEvent) -> void:

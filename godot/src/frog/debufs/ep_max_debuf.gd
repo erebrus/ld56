@@ -1,10 +1,12 @@
 extends Debuf
-class_name InvisibleDebuf
+
+@export var value:float=30
+
 
 func apply_debuf(frog):
 	super.apply_debuf(frog)
-	frog.visible=false
+	frog.health_component.max_energy-=value
 	
 func cancel_debuf(frog):
 	super.cancel_debuf(frog)
-	frog.visible=true
+	frog.health_component.max_energy+=value
