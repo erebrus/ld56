@@ -12,6 +12,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_m0j2s"]
 
 [node name="Tongue" type="Node2D"]
+visible = false
 script = ExtResource("1_5vlru")
 
 [node name="Rope" type="Line2D" parent="."]
