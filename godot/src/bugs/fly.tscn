@@ -38,9 +38,3 @@ animation = &"idle"
 
 [node name="xsm" parent="." index="2"]
 next_state = NodePath("idle")
-
-[node name="idle" parent="xsm" index="0"]
-next_state = NodePath("../move")
-
-[node name="move" parent="xsm" index="1"]
-next_state = NodePath("../dodge")

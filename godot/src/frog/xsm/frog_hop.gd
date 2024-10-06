@@ -12,7 +12,14 @@ func _after_enter(_args) -> void:
 func _on_update(_delta) -> void:
 	if get_ctl().check_just_hit_ground():
 		return
-	
+	if Input.is_action_just_pressed(get_ctl().input_jump):		
+		Logger.info("jump is pressed %d" % Time.get_ticks_msec())
+		if get_ctl().can_ground_jump():
+			Logger.info("can jump")
+			get_ctl().jump()
+			return
+		else:
+			Logger.info("can't jump %d %d" % [get_ctl().jumps_left, get_ctl().current_jump_type])
 	#if we just started falling, do return because we will be changing state
 	if get_ctl().check_just_started_falling():
 		return

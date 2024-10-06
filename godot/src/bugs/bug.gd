@@ -8,7 +8,6 @@ class_name Bug extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-@onready var path_follow: PathFollow2D = $PathFollow2D
 @onready var xsm: State = $xsm
 @onready var sfx_death: AudioStreamPlayer2D = $sfx_death
 
@@ -41,15 +40,7 @@ func do_death():
 func do_dodge():
 	xsm.change_state("dodge")
 
-func move(_delta):
-	var path_follow = get_parent() as PathFollow2D
-	if not path_follow:
-		return
-	path_follow.progress+=speed*_delta*direction
-	
-	if path_follow.progress_ratio==0 or path_follow.progress_ratio==1:
-		xsm.change_state("idle")
-		
+
 func set_path():
 	var path:Path2D=null
 	var offset:=Vector2.ZERO

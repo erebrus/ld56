@@ -6,7 +6,7 @@ class_name XSMFrogFall
 @export var no_stop_land_time:=.3
 var soft_land:=true
 func _on_enter(_args) -> void:
-	Logger.info("state:%s " % name)
+	Logger.info("state:%s %d " % [name, Time.get_ticks_msec()])
 	add_timer("land", no_stop_land_time)
 	soft_land=true
 func _after_enter(_args) -> void:
@@ -16,7 +16,7 @@ func _on_update(_delta) -> void:
 	if get_ctl().check_just_hit_ground():
 		return
 	if Input.is_action_just_pressed(get_ctl().input_jump):
-		if get_ctl().can_double_jump():
+		if get_ctl().current_jump_type!=get_ctl().JumpType.NONE and get_ctl().can_double_jump():
 			get_ctl().jump()
 			return
 			

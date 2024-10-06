@@ -173,11 +173,13 @@ animation = &"idle"
 anim_on_enter = "idle"
 loop_mode = 0
 on_finished = 1
+next_state = NodePath("../move")
 
 [node name="move" parent="xsm" index="1"]
 anim_on_enter = "move"
 loop_mode = 0
 on_finished = 1
+next_state = NodePath("../dodge")
 
 [node name="sfx_death" parent="." index="3"]
 stream = SubResource("AudioStreamRandomizer_1qudq")
@@ -185,7 +187,7 @@ stream = SubResource("AudioStreamRandomizer_1qudq")
 [node name="sfx_walk" parent="." index="4"]
 stream = SubResource("AudioStreamRandomizer_fedfs")
 volume_db = -6.0
-max_distance = 1000.0
+max_distance = 800.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
 libraries = {

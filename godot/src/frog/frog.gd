@@ -40,7 +40,7 @@ func _on_generic_controller_forward(method_name: String, args = null):
 				state.call(method_name, args)
 			
 			
-func _on_controller_jumped(is_ground_jump: bool) -> void:
+func _on_controller_jumped(_is_ground_jump: bool) -> void:
 	xsm.change_state("jump")
 
 func _on_controller_started_falling() -> void:
