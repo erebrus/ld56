@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://d2w1trabeinsa"]
+[gd_scene load_steps=40 format=3 uid="uid://d2w1trabeinsa"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_d2fqf"]
 [ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="2_se6ue"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://s84l8xg2tkdy" path="res://src/world/platforms/sproud_platform.tscn" id="11_7xt3b"]
 [ext_resource type="PackedScene" uid="uid://cb3kn2b1tbveq" path="res://src/world/platforms/blue_flower.tscn" id="12_fk3r3"]
 [ext_resource type="PackedScene" uid="uid://bhj1t1n07qiw8" path="res://src/world/platforms/leaf_variant.tscn" id="13_fweki"]
+[ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="14_pfmk0"]
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="17_1pv6n"]
 [ext_resource type="PackedScene" uid="uid://daidqd7n3terl" path="res://src/world/next_level.tscn" id="18_ixeje"]
 
@@ -364,6 +365,29 @@ position = Vector2(4259, 1204)
 [node name="Flower7" parent="Scenery/Platforms" index="32" instance=ExtResource("6_glhnv")]
 position = Vector2(10945, 725)
 scale = Vector2(1.5, 1.5)
+
+[node name="Mushrooms" type="Node2D" parent="Scenery" index="3"]
+
+[node name="Mushroom" parent="Scenery/Mushrooms" index="0" instance=ExtResource("14_pfmk0")]
+position = Vector2(5672, 314)
+
+[node name="Mushroom2" parent="Scenery/Mushrooms" index="1" instance=ExtResource("14_pfmk0")]
+position = Vector2(5410, -204)
+
+[node name="Mushroom3" parent="Scenery/Mushrooms" index="2" instance=ExtResource("14_pfmk0")]
+position = Vector2(7076, -103)
+
+[node name="Mushroom4" parent="Scenery/Mushrooms" index="3" instance=ExtResource("14_pfmk0")]
+position = Vector2(6516, -636)
+
+[node name="Mushroom5" parent="Scenery/Mushrooms" index="4" instance=ExtResource("14_pfmk0")]
+position = Vector2(10378, 680)
+
+[node name="Mushroom6" parent="Scenery/Mushrooms" index="5" instance=ExtResource("14_pfmk0")]
+position = Vector2(10592, -67)
+
+[node name="Mushroom7" parent="Scenery/Mushrooms" index="6" instance=ExtResource("14_pfmk0")]
+position = Vector2(3127, 627)
 
 [node name="Beetle" parent="Bugs" index="0" instance=ExtResource("5_aqaq6")]
 position = Vector2(1948, 882)

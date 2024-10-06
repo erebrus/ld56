@@ -140,7 +140,7 @@ position = Vector2(5392, -562)
 texture = ExtResource("3_or122")
 
 [node name="Vine3" type="Sprite2D" parent="Scenery/decorations" index="2"]
-position = Vector2(8370, -391)
+position = Vector2(8044, -396)
 texture = ExtResource("3_or122")
 
 [node name="Vine4" type="Sprite2D" parent="Scenery/decorations" index="3"]
@@ -167,15 +167,11 @@ texture = ExtResource("3_or122")
 position = Vector2(17010, -463)
 texture = ExtResource("3_or122")
 
-[node name="Mushrooms" type="Node2D" parent="Scenery" index="1"]
+[node name="Vine10" type="Sprite2D" parent="Scenery/decorations" index="9"]
+position = Vector2(8565, -465)
+texture = ExtResource("3_or122")
 
-[node name="Mushroom" parent="Scenery/Mushrooms" index="0" instance=ExtResource("4_ocil8")]
-position = Vector2(1033, -142)
-
-[node name="Mushroom2" parent="Scenery/Mushrooms" index="1" instance=ExtResource("4_ocil8")]
-position = Vector2(1813, -60)
-
-[node name="walls" type="Node2D" parent="Scenery" index="2"]
+[node name="walls" type="Node2D" parent="Scenery" index="1"]
 
 [node name="wall" type="StaticBody2D" parent="Scenery/walls" index="0"]
 position = Vector2(20461, 902)
@@ -192,7 +188,7 @@ position = Vector2(-552, -64)
 shape = SubResource("RectangleShape2D_acc83")
 metadata/_edit_lock_ = true
 
-[node name="Platforms" type="Node2D" parent="Scenery" index="3"]
+[node name="Platforms" type="Node2D" parent="Scenery" index="2"]
 
 [node name="Flower4" parent="Scenery/Platforms" index="0" instance=ExtResource("6_13qk1")]
 position = Vector2(11609, 1812)
@@ -241,7 +237,7 @@ position = Vector2(18365, -788)
 scale = Vector2(0.7, 0.7)
 
 [node name="Leaf4" parent="Scenery/Platforms" index="12" instance=ExtResource("8_82h1n")]
-position = Vector2(8714, 212)
+position = Vector2(8828, 466)
 scale = Vector2(0.25, 0.25)
 
 [node name="Leaf3" parent="Scenery/Platforms" index="13" instance=ExtResource("8_82h1n")]
@@ -339,6 +335,17 @@ position = Vector2(4605, 950)
 [node name="LeafVariantFlipped5" parent="Scenery/Platforms" index="39" instance=ExtResource("10_635f3")]
 position = Vector2(7433, 18)
 
+[node name="Mushrooms" type="Node2D" parent="Scenery" index="3"]
+
+[node name="Mushroom" parent="Scenery/Mushrooms" index="0" instance=ExtResource("4_ocil8")]
+position = Vector2(1033, -142)
+
+[node name="Mushroom2" parent="Scenery/Mushrooms" index="1" instance=ExtResource("4_ocil8")]
+position = Vector2(1813, -60)
+
+[node name="Mushroom" parent="Scenery" index="4" instance=ExtResource("4_ocil8")]
+position = Vector2(2464, -427)
+
 [node name="Frog" parent="." index="6"]
 position = Vector2(356, 496)
 swing_gravity = 1000
@@ -352,3 +359,42 @@ scroll_offset = Vector2(-832, 6)
 
 [node name="NextLevel" parent="." index="11" instance=ExtResource("18_ioq1w")]
 position = Vector2(18844, 1216)
+
+[node name="Mushroom" parent="." index="12" instance=ExtResource("4_ocil8")]
+position = Vector2(2865, -122)
+
+[node name="Mushroom2" parent="." index="13" instance=ExtResource("4_ocil8")]
+position = Vector2(3680, -501)
+
+[node name="Mushroom3" parent="." index="14" instance=ExtResource("4_ocil8")]
+position = Vector2(4555, -188)
+
+[node name="Mushroom4" parent="." index="15" instance=ExtResource("4_ocil8")]
+position = Vector2(5369, -734)
+
+[node name="Mushroom5" parent="." index="16" instance=ExtResource("4_ocil8")]
+position = Vector2(8017, -600)
+
+[node name="Branch" parent="." index="17" instance=ExtResource("5_vm8ul")]
+position = Vector2(19052, -986)
+
+[node name="Mushroom6" parent="." index="18" instance=ExtResource("4_ocil8")]
+position = Vector2(8546, -739)
+
+[node name="Mushroom7" parent="." index="19" instance=ExtResource("4_ocil8")]
+position = Vector2(11437, -795)
+
+[node name="Mushroom8" parent="." index="20" instance=ExtResource("4_ocil8")]
+position = Vector2(10508, -282)
+
+[node name="Mushroom9" parent="." index="21" instance=ExtResource("4_ocil8")]
+position = Vector2(11430, -316)
+
+[node name="Mushroom10" parent="." index="22" instance=ExtResource("4_ocil8")]
+position = Vector2(16980, -429)
+
+[node name="Mushroom11" parent="." index="23" instance=ExtResource("4_ocil8")]
+position = Vector2(17330, -886)
+
+[node name="Mushroom12" parent="." index="24" instance=ExtResource("4_ocil8")]
+position = Vector2(19377, -958)
