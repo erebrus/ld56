@@ -1,12 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://lr0vv82sbdo3"]
+[gd_scene load_steps=15 format=3 uid="uid://lr0vv82sbdo3"]
 
 [ext_resource type="Script" path="res://src/levels/base_level.gd" id="1_nyubp"]
 [ext_resource type="Texture2D" uid="uid://bpj7fwfxeafy4" path="res://assets/gfx/environment/Background_Back.png" id="2_dac7q"]
 [ext_resource type="Texture2D" uid="uid://dqackkt1tgskd" path="res://assets/gfx/environment/Background_Mid.png" id="3_w03ny"]
 [ext_resource type="Texture2D" uid="uid://d1m5ne1avac35" path="res://assets/gfx/environment/Background_Front.png" id="4_e3tlc"]
 [ext_resource type="PackedScene" uid="uid://b5lgniaadan1y" path="res://src/frog/frog.tscn" id="5_dhl37"]
+[ext_resource type="PackedScene" uid="uid://boenkwcf4c06o" path="res://src/world/platforms/branch.tscn" id="6_1j2j6"]
 [ext_resource type="PackedScene" uid="uid://bfsfbydiqr0gr" path="res://src/eagle/eagle.tscn" id="6_3c5m2"]
 [ext_resource type="AudioStream" uid="uid://c21xktcb61m7j" path="res://assets/sfx/Amb_rain_forest_loop.mp3" id="7_aou6l"]
+[ext_resource type="PackedScene" uid="uid://i1m1wvlfxwsi" path="res://src/world/platforms/flower.tscn" id="7_qfexh"]
+[ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="8_pwkfr"]
+[ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="8_xr7bv"]
+[ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="9_vypn4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybkim"]
+size = Vector2(3818, 147)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74c5e"]
+size = Vector2(531, 2061)
 
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource("1_nyubp")
@@ -46,13 +57,70 @@ texture = ExtResource("4_e3tlc")
 
 [node name="Scenery" type="Node2D" parent="."]
 
+[node name="Ground" type="Node2D" parent="Scenery"]
+metadata/_edit_lock_ = true
+
+[node name="grass" type="StaticBody2D" parent="Scenery/Ground"]
+position = Vector2(568, 1023)
+
+[node name="Sprite2D" type="Sprite2D" parent="Scenery/Ground/grass"]
+position = Vector2(1346, 540)
+texture = ExtResource("8_pwkfr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/Ground/grass"]
+position = Vector2(1353, 617.5)
+shape = SubResource("RectangleShape2D_ybkim")
+
+[node name="grass2" type="StaticBody2D" parent="Scenery/Ground"]
+position = Vector2(4406, 1023)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/Ground/grass2"]
+position = Vector2(1353, 617.5)
+shape = SubResource("RectangleShape2D_ybkim")
+
+[node name="Sprite2D" type="Sprite2D" parent="Scenery/Ground/grass2"]
+position = Vector2(1346, 540)
+texture = ExtResource("8_pwkfr")
+
+[node name="wall2" type="StaticBody2D" parent="Scenery"]
+position = Vector2(7609, 1606)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Scenery/wall2"]
+position = Vector2(302.5, -790.5)
+shape = SubResource("RectangleShape2D_74c5e")
+
+[node name="wall" type="StaticBody2D" parent="Scenery"]
+position = Vector2(259, 1476)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Scenery/wall"]
+position = Vector2(302.5, -790.5)
+shape = SubResource("RectangleShape2D_74c5e")
+
+[node name="Platforms" type="Node" parent="Scenery"]
+
+[node name="Branch" parent="Scenery/Platforms" instance=ExtResource("6_1j2j6")]
+position = Vector2(4437, 604)
+
+[node name="Flower" parent="Scenery/Platforms" instance=ExtResource("7_qfexh")]
+position = Vector2(2800, 1840)
+
+[node name="Leaf" parent="Scenery/Platforms" instance=ExtResource("8_xr7bv")]
+position = Vector2(5152, 514)
+
+[node name="Flower2" parent="Scenery/Platforms" instance=ExtResource("7_qfexh")]
+position = Vector2(3471, 1596)
+
+[node name="rock1" parent="Scenery" instance=ExtResource("9_vypn4")]
+position = Vector2(61, 746)
+scale = Vector2(3, 3)
+
 [node name="Bugs" type="Node2D" parent="."]
 
 [node name="Frog" parent="." instance=ExtResource("5_dhl37")]
-position = Vector2(278, 700)
+position = Vector2(1626, 1560)
 
 [node name="Camera2D" type="Camera2D" parent="Frog"]
-position = Vector2(0, -200)
+position = Vector2(0, -400)
 position_smoothing_enabled = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -68,6 +136,7 @@ layout_mode = 2
 text = "0.0.0"
 
 [node name="Eagle" parent="." instance=ExtResource("6_3c5m2")]
+scroll_offset = Vector2(502, 178)
 
 [node name="ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_aou6l")
