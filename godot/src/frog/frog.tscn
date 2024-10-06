@@ -203,6 +203,7 @@ stream_2/stream = ExtResource("54_t1b2p")
 [node name="Frog" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_mohle")
+swing_gravity = 3000
 reel_speed = 100
 
 [node name="Controller" type="Node" parent="."]
