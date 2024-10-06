@@ -145,7 +145,7 @@ curve = SubResource("Curve2D_srp33")
 [node name="Frog" parent="." index="6"]
 position = Vector2(775, 1485)
 
-[node name="Camera2D" parent="Frog" index="11"]
+[node name="Camera2D" parent="Frog" index="12"]
 limit_left = 0
 limit_right = 7500
 limit_bottom = 1700
