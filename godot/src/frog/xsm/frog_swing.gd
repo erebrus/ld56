@@ -40,4 +40,5 @@ func _on_tongue_detached() -> void:
 	get_ctl().set_x_acc()
 	get_ctl().acc.x*=abs(last_velocity.x)/max_x_speeed *acc_x_factor
 	#Logger.info("acc %s" % get_ctl().acc)
-	change_state("fall")
+	#change_state("fall")
+	get_ctl().jump()
