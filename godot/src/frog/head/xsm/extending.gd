@@ -3,8 +3,8 @@ extends TongeState
 var direction: Vector2
 
 
-func _on_enter(point: Vector2) -> void:
-	direction = target.global_position.direction_to(point)
+func _on_enter(_direction: Vector2) -> void:
+	direction = _direction
 	target.show()
 	
 

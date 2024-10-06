@@ -27,11 +27,9 @@ func _update_rope_length(delta: float) -> void:
 func _move(motion: Vector2) -> void:
 	var desired_position = get_body().global_position + motion
 	var new_position = anchor + anchor.direction_to(desired_position) * max_length
-	var collision = get_body().move_and_collide(new_position - get_body().global_position)
+	get_body().move_and_collide(new_position - get_body().global_position)
 	
-	if collision == null:
-		is_on_floor = false
-	else:
-		is_on_floor = collision.get_normal().dot(Vector2.UP) > 0.9
+	is_on_floor = get_body().is_near_floor()
+	
 		
 	
