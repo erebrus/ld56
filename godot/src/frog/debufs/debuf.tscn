@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv0h252ykncnm"]
+
+[ext_resource type="Script" path="res://src/frog/debufs/debuf.gd" id="1_pta72"]
+
+[node name="Debuf" type="Node"]
+script = ExtResource("1_pta72")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
