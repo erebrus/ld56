@@ -53,7 +53,7 @@ func attach() -> void:
 func update_rope() -> void:
 	rope.remove_point(1)
 	rope.add_point(player.tongue_position - global_position)
-	
+	tip.rotation = (global_position - player.tongue_position).angle()
 
 func _on_area_entered(area) -> void:
 	if !is_shooting:

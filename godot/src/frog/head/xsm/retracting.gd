@@ -7,6 +7,3 @@ func _on_update(delta: float) -> void:
 	
 	hide_if_retracted()
 	
-
-func _on_exit(_args) -> void:
-	target.retracted.emit()
