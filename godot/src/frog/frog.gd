@@ -12,6 +12,7 @@ class_name Frog
 @onready var head: FrogHead = $Head
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var state_name:String
 
@@ -45,7 +46,10 @@ func _on_generic_controller_forward(method_name: String, args = null):
 			else:
 				state.call(method_name, args)
 			
-			
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("dead"):
+		_on_health_component_died()
+		
 func _on_controller_jumped(_is_ground_jump: bool) -> void:
 	xsm.change_state("jump")
 
@@ -74,6 +78,8 @@ func _on_controller_direction_changed() -> void:
 	
 
 func _on_health_component_died() -> void:
+	xsm.change_state("death")
+	await animation_player.animation_finished
 	Globals.do_lose()
 
 func _on_health_component_energy_changed(value: Variant) -> void:

@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=7 format=3 uid="uid://dxk5x3vpu2xy5"]
+[gd_resource type="AnimationLibrary" load_steps=8 format=3 uid="uid://dxk5x3vpu2xy5"]
 
 [sub_resource type="Animation" id="Animation_7p5xm"]
 length = 0.001
@@ -287,9 +287,50 @@ tracks/3/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_b7uut"]
+resource_name = "death"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [resource]
 _data = {
 "RESET": SubResource("Animation_7p5xm"),
+"death": SubResource("Animation_b7uut"),
 "fall": SubResource("Animation_qn42l"),
 "hop": SubResource("Animation_0ndo4"),
 "idle": SubResource("Animation_77ydr"),

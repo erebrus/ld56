@@ -137,7 +137,7 @@ shape = SubResource("CircleShape2D_bxn0i")
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_tsxt0")
 animation = &"idle"
-frame_progress = 0.660607
+frame_progress = 0.448196
 flip_h = true
 
 [node name="xsm" parent="." index="2"]
@@ -148,13 +148,11 @@ next_state = NodePath("idle")
 anim_on_enter = "idle"
 loop_mode = 0
 on_finished = 1
-next_state = NodePath("../move")
 
 [node name="move" parent="xsm" index="1"]
 anim_on_enter = "move"
 loop_mode = 0
 on_finished = 1
-next_state = NodePath("../dodge")
 
 [node name="sfx_walk" parent="." index="4"]
 stream = SubResource("AudioStreamRandomizer_mq136")
