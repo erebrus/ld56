@@ -177,7 +177,6 @@ swing_gravity = 1000
 
 [node name="Camera2D" parent="Frog" index="12"]
 limit_left = 0
-limit_right = 7500
 limit_bottom = 1700
 
 [node name="LevelEndIndicator" type="Sprite2D" parent="." index="10"]

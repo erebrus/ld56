@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://muk11sb6kcpn"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_nbxmi"]
+[ext_resource type="Texture2D" uid="uid://b8b5jgthrtj4s" path="res://assets/gfx/environment/Vine.png" id="2_3qa7p"]
+
+[node name="LeafVariant" instance=ExtResource("1_nbxmi")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1, 1)
+texture = ExtResource("2_3qa7p")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-33, 533, -30, -131, -8, -137, -5, 536)
+one_way_collision = true
