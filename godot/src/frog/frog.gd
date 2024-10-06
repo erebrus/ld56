@@ -6,7 +6,7 @@ signal energy_changed(value:float)
 @export var swing_gravity:= 1000
 @export var swing_speed:= 5
 @export var reel_speed:= 20
-@export var energy_drop_rate:float = 1
+@export var energy_drop_rate:float = 2
 
 
 @onready var controller: FrogController = $Controller
@@ -22,8 +22,7 @@ signal energy_changed(value:float)
 @onready var debufs: Node = %Debufs
 
 var state_name:String
-
-
+var max_heal=100
 func _ready():
 	Globals.player = self
 	
@@ -117,9 +116,12 @@ func _on_head_shot_finished() -> void:
 	if head.tongue.caught_bug:
 		$sfx/sfx_eat.play()
 		process_bug(head.tongue.caught_bug)
-		
+
+
 func process_bug(bug:Bug)->void:
-	health_component.on_heal(bug.energy_value)
+	var heal_value:float = min(max_heal,bug.energy_value)
+	Logger.info("Healing for %.2f" % heal_value)
+	health_component.on_heal(heal_value)
 	var scene:PackedScene = Types.DEBUF_MAP[bug.type]
 	var new_debuf = scene.instantiate()
 	var existing_debuf = find_debuf(new_debuf)
