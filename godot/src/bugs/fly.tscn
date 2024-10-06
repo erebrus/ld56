@@ -1,14 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://duxcjbsoqoa2n"]
+[gd_scene load_steps=4 format=3 uid="uid://duxcjbsoqoa2n"]
 
 [ext_resource type="PackedScene" uid="uid://b7ocbogo3h056" path="res://src/bugs/bug.tscn" id="1_u4u8t"]
 [ext_resource type="Texture2D" uid="uid://dolg4h58td1if" path="res://assets/gfx/bugs/fly.png" id="2_6cm3v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tsxt0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6cm3v")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6cm3v")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
 
 [node name="Fly" instance=ExtResource("1_u4u8t")]
 type = 3
 speed = 220.0
 
-[node name="Sprite2D" parent="." index="1"]
-texture = ExtResource("2_6cm3v")
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_tsxt0")
+animation = &"idle"
 
 [node name="xsm" parent="." index="2"]
 next_state = NodePath("idle")
+
+[node name="idle" parent="xsm" index="0"]
+next_state = NodePath("../move")
+
+[node name="move" parent="xsm" index="1"]
+next_state = NodePath("../dodge")
