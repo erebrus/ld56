@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="10_eddgy"]
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="11_d42lr"]
 [ext_resource type="PackedScene" uid="uid://dkyx6xyum3prp" path="res://src/bugs/slug.tscn" id="11_mndri"]
-[ext_resource type="Texture2D" uid="uid://c4v6pycwrki6u" path="res://assets/gfx/environment/Level_End_Indicator.png" id="12_mo0c0"]
 [ext_resource type="PackedScene" uid="uid://g0ammwgw85c0" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="12_o3e6v"]
+[ext_resource type="PackedScene" uid="uid://daidqd7n3terl" path="res://src/world/next_level.tscn" id="14_2skva"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf487"]
 size = Vector2(3818, 147)
@@ -309,6 +309,5 @@ limit_bottom = 1700
 [node name="Eagle" parent="." index="8"]
 scroll_offset = Vector2(-832, 6)
 
-[node name="LevelEndIndicator" type="Sprite2D" parent="." index="10"]
-position = Vector2(12896, 1240)
-texture = ExtResource("12_mo0c0")
+[node name="NextLevel" parent="." index="11" instance=ExtResource("14_2skva")]
+position = Vector2(12682, 1212)
