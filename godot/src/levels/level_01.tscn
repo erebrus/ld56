@@ -57,7 +57,7 @@ _data = {
 }
 point_count = 7
 
-[node name="TestLevel" instance=ExtResource("1_1orqk")]
+[node name="Level_01" instance=ExtResource("1_1orqk")]
 
 [node name="BG" parent="." index="0"]
 repeat_times = 6
@@ -128,109 +128,125 @@ visible = false
 position = Vector2(1353, 618.5)
 shape = SubResource("RectangleShape2D_xf487")
 
-[node name="wall" type="StaticBody2D" parent="Scenery" index="0"]
+[node name="decorations" type="Node2D" parent="Scenery" index="0"]
+
+[node name="Vine3" type="Sprite2D" parent="Scenery/decorations" index="0"]
+position = Vector2(3318, -346)
+texture = ExtResource("8_35nry")
+
+[node name="Vine2" type="Sprite2D" parent="Scenery/decorations" index="1"]
+position = Vector2(11788, -98)
+texture = ExtResource("8_35nry")
+
+[node name="Vine" type="Sprite2D" parent="Scenery/decorations" index="2"]
+position = Vector2(10424, 373)
+texture = ExtResource("8_35nry")
+
+[node name="Vine4" type="Sprite2D" parent="Scenery/decorations" index="3"]
+position = Vector2(1750, 155)
+texture = ExtResource("8_35nry")
+
+[node name="walls" type="Node2D" parent="Scenery" index="1"]
+
+[node name="wall" type="StaticBody2D" parent="Scenery/walls" index="0"]
 position = Vector2(7632, 1316)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Scenery/wall" index="0"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Scenery/walls/wall" index="0"]
 position = Vector2(5991, -760)
 shape = SubResource("RectangleShape2D_acc83")
 
-[node name="wall2" type="StaticBody2D" parent="Scenery" index="1"]
+[node name="wall2" type="StaticBody2D" parent="Scenery/walls" index="1"]
 position = Vector2(315, 745)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/wall2" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/walls/wall2" index="0"]
 position = Vector2(-552, -64)
 shape = SubResource("RectangleShape2D_acc83")
 metadata/_edit_lock_ = true
 
-[node name="rock1" parent="Scenery" index="2" instance=ExtResource("4_xmgx1")]
+[node name="Platforms" type="Node2D" parent="Scenery" index="2"]
+
+[node name="rock1" parent="Scenery/Platforms" index="0" instance=ExtResource("4_xmgx1")]
 position = Vector2(-584, 751)
 scale = Vector2(3, 3)
 
-[node name="Branch2" parent="Scenery" index="3" instance=ExtResource("3_m6781")]
+[node name="Branch2" parent="Scenery/Platforms" index="1" instance=ExtResource("3_m6781")]
 position = Vector2(6578, 432)
 
-[node name="Flower3" parent="Scenery" index="4" instance=ExtResource("6_kor0l")]
+[node name="Flower3" parent="Scenery/Platforms" index="2" instance=ExtResource("6_kor0l")]
 position = Vector2(4870, 1134)
 
-[node name="Flower" parent="Scenery" index="5" instance=ExtResource("6_kor0l")]
+[node name="Flower" parent="Scenery/Platforms" index="3" instance=ExtResource("6_kor0l")]
 position = Vector2(5422, 1672)
 
-[node name="rock6" parent="Scenery" index="6" instance=ExtResource("5_nmy6l")]
+[node name="rock6" parent="Scenery/Platforms" index="4" instance=ExtResource("5_nmy6l")]
 position = Vector2(5143, 1459)
-scale = Vector2(-1, 1)
+rotation = 3.14159
+scale = Vector2(1, -1)
 
-[node name="Flower5" parent="Scenery" index="7" instance=ExtResource("6_kor0l")]
+[node name="Flower5" parent="Scenery/Platforms" index="5" instance=ExtResource("6_kor0l")]
 position = Vector2(12149, 1168)
 
-[node name="Flower4" parent="Scenery" index="8" instance=ExtResource("6_kor0l")]
+[node name="Flower4" parent="Scenery/Platforms" index="6" instance=ExtResource("6_kor0l")]
 position = Vector2(11652, 1343)
 
-[node name="Flower2" parent="Scenery" index="9" instance=ExtResource("6_kor0l")]
+[node name="Flower2" parent="Scenery/Platforms" index="7" instance=ExtResource("6_kor0l")]
 position = Vector2(7716, 1349)
 
-[node name="Branch" parent="Scenery" index="10" instance=ExtResource("3_m6781")]
+[node name="Branch" parent="Scenery/Platforms" index="8" instance=ExtResource("3_m6781")]
 position = Vector2(7579, 1516)
 
-[node name="Vine2" type="Sprite2D" parent="Scenery" index="11"]
-position = Vector2(11788, -98)
-texture = ExtResource("8_35nry")
-
-[node name="Branch3" parent="Scenery" index="12" instance=ExtResource("3_m6781")]
+[node name="Branch3" parent="Scenery/Platforms" index="9" instance=ExtResource("3_m6781")]
 position = Vector2(11619, -372)
 
-[node name="Leaf2" parent="Scenery" index="13" instance=ExtResource("7_v3wlw")]
+[node name="Leaf2" parent="Scenery/Platforms" index="10" instance=ExtResource("7_v3wlw")]
 position = Vector2(6826, 1379)
 
-[node name="Leaf9" parent="Scenery" index="14" instance=ExtResource("7_v3wlw")]
+[node name="Leaf9" parent="Scenery/Platforms" index="11" instance=ExtResource("7_v3wlw")]
 position = Vector2(11087, 268)
 scale = Vector2(0.7, 0.7)
 
-[node name="Leaf4" parent="Scenery" index="15" instance=ExtResource("7_v3wlw")]
+[node name="Leaf4" parent="Scenery/Platforms" index="12" instance=ExtResource("7_v3wlw")]
 position = Vector2(11071, 1171)
 scale = Vector2(0.25, 0.25)
 
-[node name="Leaf3" parent="Scenery" index="16" instance=ExtResource("7_v3wlw")]
+[node name="Leaf3" parent="Scenery/Platforms" index="13" instance=ExtResource("7_v3wlw")]
 position = Vector2(7138, 537)
 scale = Vector2(0.5, 0.5)
 
-[node name="Leaf8" parent="Scenery" index="17" instance=ExtResource("7_v3wlw")]
+[node name="Leaf8" parent="Scenery/Platforms" index="14" instance=ExtResource("7_v3wlw")]
 position = Vector2(10930, 3810)
 
-[node name="Leaf7" parent="Scenery" index="18" instance=ExtResource("7_v3wlw")]
+[node name="Leaf7" parent="Scenery/Platforms" index="15" instance=ExtResource("7_v3wlw")]
 position = Vector2(2841, 1327)
 scale = Vector2(0.5, 0.5)
 
-[node name="Leaf5" parent="Scenery" index="19" instance=ExtResource("7_v3wlw")]
+[node name="Leaf5" parent="Scenery/Platforms" index="16" instance=ExtResource("7_v3wlw")]
 position = Vector2(11911, 1524)
 
-[node name="Vine" type="Sprite2D" parent="Scenery" index="20"]
-position = Vector2(10424, 373)
-texture = ExtResource("8_35nry")
-
-[node name="Leaf6" parent="Scenery" index="21" instance=ExtResource("7_v3wlw")]
+[node name="Leaf6" parent="Scenery/Platforms" index="17" instance=ExtResource("7_v3wlw")]
 position = Vector2(10743, -277)
 
-[node name="Leaf" parent="Scenery" index="22" instance=ExtResource("7_v3wlw")]
+[node name="Leaf" parent="Scenery/Platforms" index="18" instance=ExtResource("7_v3wlw")]
 position = Vector2(5715, 603)
 
-[node name="LedgePlatform" parent="Scenery" index="23" instance=ExtResource("8_k5vyn")]
+[node name="LedgePlatform" parent="Scenery/Platforms" index="19" instance=ExtResource("8_k5vyn")]
 position = Vector2(8833, 174)
 
-[node name="LeafVariantFlipped" parent="Scenery" index="24" instance=ExtResource("12_o3e6v")]
+[node name="LeafVariantFlipped" parent="Scenery/Platforms" index="20" instance=ExtResource("12_o3e6v")]
 position = Vector2(3374, 1204)
 
-[node name="LeafVariantFlipped3" parent="Scenery" index="25" instance=ExtResource("12_o3e6v")]
+[node name="LeafVariantFlipped3" parent="Scenery/Platforms" index="21" instance=ExtResource("12_o3e6v")]
 position = Vector2(8878, 1106)
 
-[node name="LeafVariantFlipped4" parent="Scenery" index="26" instance=ExtResource("12_o3e6v")]
+[node name="LeafVariantFlipped4" parent="Scenery/Platforms" index="22" instance=ExtResource("12_o3e6v")]
 position = Vector2(9952, 1356)
 rotation = 3.14159
 scale = Vector2(2, -2)
 
-[node name="LeafVariantFlipped2" parent="Scenery" index="27" instance=ExtResource("12_o3e6v")]
+[node name="LeafVariantFlipped2" parent="Scenery/Platforms" index="23" instance=ExtResource("12_o3e6v")]
 position = Vector2(4194, 1030)
-scale = Vector2(-1, 1)
+rotation = 3.14159
+scale = Vector2(1, -1)
 
 [node name="Slug" parent="Bugs" index="0" instance=ExtResource("11_mndri")]
 position = Vector2(8840, 1534)
