@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfsfbydiqr0gr"]
+
+[ext_resource type="Script" path="res://src/eagle/eagle.gd" id="1_2whi5"]
+[ext_resource type="Texture2D" uid="uid://bvjsvy2ponp8o" path="res://assets/gfx/eagle/eagle.png" id="1_6askw"]
+[ext_resource type="AudioStream" uid="uid://cwtfuvx388sjm" path="res://assets/sfx/Death_zero_energy.wav" id="3_68rhs"]
+[ext_resource type="AudioStream" uid="uid://tbb7cr7m417p" path="res://assets/sfx/Death_by_predator.wav" id="4_1c6fs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kf7yx"]
+radius = 161.199
+
+[sub_resource type="Animation" id="Animation_kj2vo"]
+resource_name = "fly_by"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Claw:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-779, -0.25, 0, 0.566667, 1094.96, 2699, -0.4, -905.576, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Claw:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-53, -0.25, 0, 0.0666667, 64.2708, 59.8705, -0.0333333, -48.5996, 0.166667, 246.243, 487, -0.158476, -6.2002, 0.157937, -3.34708, 59.87, -0.166667, 261.155, 0.0370122, -64.0996, -53, -0.0629878, 57.3298, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.5, 0.9, 1)
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.995168),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"schedule_next_flyby"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_g2qtp"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Claw:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-779, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Claw:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-53, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u5qev"]
+_data = {
+"RESET": SubResource("Animation_g2qtp"),
+"fly_by": SubResource("Animation_kj2vo")
+}
+
+[node name="Eagle" type="Parallax2D"]
+scroll_scale = Vector2(0, 0)
+script = ExtResource("1_2whi5")
+
+[node name="Claw" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-779, -53)
+collision_layer = 8
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Claw"]
+texture = ExtResource("1_6askw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Claw"]
+position = Vector2(21, 102)
+shape = SubResource("CircleShape2D_kf7yx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_u5qev")
+}
+
+[node name="WarningSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_68rhs")
+
+[node name="DeathSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1c6fs")
