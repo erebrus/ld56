@@ -6,6 +6,8 @@ class_name Bug extends CharacterBody2D
 @export var dodge_chance:float = 0
 @export var speed:float = 20
 
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 @onready var path_follow: PathFollow2D = $PathFollow2D
 @onready var xsm: State = $xsm
 @onready var sfx_death: AudioStreamPlayer2D = $sfx_death
@@ -13,7 +15,7 @@ class_name Bug extends CharacterBody2D
 var direction = 1 if Globals.rng.randf()>.5 else -1:
 	set(v):
 		direction=v
-		$Sprite2D.flip_h=direction==1
+		sprite.flip_h=direction==1
 var wp_idx=0
 var waypoints=[]
 

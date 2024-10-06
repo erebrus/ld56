@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7ocbogo3h056"]
+[gd_scene load_steps=7 format=3 uid="uid://b7ocbogo3h056"]
 
-[ext_resource type="Texture2D" uid="uid://cp3e6kfi5ewqx" path="res://assets/gfx/bugs/bug1.png" id="1_lsri3"]
 [ext_resource type="Script" path="res://src/bugs/bug.gd" id="1_q0jaa"]
 [ext_resource type="Script" path="res://addons/xsm/state.gd" id="3_3w72b"]
 [ext_resource type="Script" path="res://addons/xsm/state_animation.gd" id="4_mu2lb"]
@@ -19,8 +18,7 @@ type = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4u5hm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_lsri3")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
 [node name="xsm" type="Node" parent="."]
 script = ExtResource("3_3w72b")

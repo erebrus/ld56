@@ -12,6 +12,7 @@ func _after_enter(_args) -> void:
 func _on_update(_delta) -> void:
 	if get_ctl().check_just_hit_ground():
 		return
+	
 	#if we just started falling, do return because we will be changing state
 	if get_ctl().check_just_started_falling():
 		return
