@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://lr0vv82sbdo3"]
+[gd_scene load_steps=23 format=3 uid="uid://lr0vv82sbdo3"]
 
 [ext_resource type="Script" path="res://src/levels/base_level.gd" id="1_nyubp"]
 [ext_resource type="Texture2D" uid="uid://bpj7fwfxeafy4" path="res://assets/gfx/environment/Background_Back.png" id="2_dac7q"]
@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="8_pwkfr"]
 [ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="8_xr7bv"]
 [ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="9_vypn4"]
+[ext_resource type="PackedScene" uid="uid://b7uuo8dxsl8qr" path="res://src/world/platforms/rock_2.tscn" id="11_h3rbj"]
+[ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="12_b2075"]
+[ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="15_tu3vm"]
+[ext_resource type="Texture2D" uid="uid://c4v6pycwrki6u" path="res://assets/gfx/environment/Level_End_Indicator.png" id="16_qb5g3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybkim"]
 size = Vector2(3818, 147)
@@ -19,12 +23,37 @@ size = Vector2(3818, 147)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74c5e"]
 size = Vector2(531, 2061)
 
+[sub_resource type="Curve2D" id="Curve2D_bo1qb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -83, 28, 0, 0, 0, 0, 92, -3, 0, 0, 0, 0, 315, 28, 0, 0, 0, 0, 561, 14, 0, 0, 0, 0, 666, -4, 0, 0, 0, 0, -83, 28)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_5wdmm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3, 1, 0, 0, 0, 0, -313, -123, 0, 0, 0, 0, -448, 76, 0, 0, 0, 0, -103, 246, 0, 0, 0, 0, 453, -166, 0, 0, 0, 0, 553, 55, 0, 0, 0, 0, 484, 221, 0, 0, 0, 0, -3, 1)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_2wr06"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -442, -192, 0, 0, 0, 0, 35, -277, 0, 0, 0, 0, 317, -199, 0, 0, 0, 0, 271, -44, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, -444, -188, 0, 0, 0, 0, -442, -192)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_h4nir"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -415, 4, 0, 0, 0, 0, -1, 4, 0, 0, 0, 0, 315, 4, 0, 0, 0, 0, 626, 1, 0, 0, 0, 0, 199, 9)
+}
+point_count = 5
+
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource("1_nyubp")
 
 [node name="BG" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0, 0)
 repeat_size = Vector2(3840, 0)
+repeat_times = 5
 
 [node name="TextureRect" type="TextureRect" parent="BG"]
 offset_left = -1654.0
@@ -36,11 +65,12 @@ texture = ExtResource("2_dac7q")
 [node name="MG" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(3840, 0)
+repeat_times = 5
 
 [node name="TextureRect" type="TextureRect" parent="MG"]
-offset_left = -1654.0
+offset_left = -1524.0
 offset_top = -467.0
-offset_right = 2186.0
+offset_right = 2316.0
 offset_bottom = 1693.0
 texture = ExtResource("3_w03ny")
 
@@ -49,9 +79,9 @@ scroll_scale = Vector2(0.6, 0.6)
 repeat_size = Vector2(3840, 0)
 
 [node name="TextureRect" type="TextureRect" parent="FG"]
-offset_left = -1654.0
+offset_left = -1279.0
 offset_top = -467.0
-offset_right = 2186.0
+offset_right = 2561.0
 offset_bottom = 1693.0
 texture = ExtResource("4_e3tlc")
 
@@ -60,11 +90,22 @@ texture = ExtResource("4_e3tlc")
 [node name="Ground" type="Node2D" parent="Scenery"]
 metadata/_edit_lock_ = true
 
+[node name="grass3" type="StaticBody2D" parent="Scenery/Ground"]
+position = Vector2(8812, 2046)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/Ground/grass3"]
+position = Vector2(627, -411)
+shape = SubResource("RectangleShape2D_ybkim")
+
+[node name="Sprite2D" type="Sprite2D" parent="Scenery/Ground/grass3"]
+position = Vector2(521, -503)
+texture = ExtResource("8_pwkfr")
+
 [node name="grass" type="StaticBody2D" parent="Scenery/Ground"]
 position = Vector2(568, 1023)
 
 [node name="Sprite2D" type="Sprite2D" parent="Scenery/Ground/grass"]
-position = Vector2(1346, 540)
+position = Vector2(1342, 520)
 texture = ExtResource("8_pwkfr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/Ground/grass"]
@@ -79,14 +120,14 @@ position = Vector2(1353, 617.5)
 shape = SubResource("RectangleShape2D_ybkim")
 
 [node name="Sprite2D" type="Sprite2D" parent="Scenery/Ground/grass2"]
-position = Vector2(1346, 540)
+position = Vector2(1336, 520)
 texture = ExtResource("8_pwkfr")
 
 [node name="wall2" type="StaticBody2D" parent="Scenery"]
 position = Vector2(7609, 1606)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Scenery/wall2"]
-position = Vector2(302.5, -790.5)
+position = Vector2(2512, -798)
 shape = SubResource("RectangleShape2D_74c5e")
 
 [node name="wall" type="StaticBody2D" parent="Scenery"]
@@ -96,7 +137,7 @@ position = Vector2(259, 1476)
 position = Vector2(302.5, -790.5)
 shape = SubResource("RectangleShape2D_74c5e")
 
-[node name="Platforms" type="Node" parent="Scenery"]
+[node name="Platforms" type="Node2D" parent="Scenery"]
 
 [node name="Branch" parent="Scenery/Platforms" instance=ExtResource("6_1j2j6")]
 position = Vector2(4437, 604)
@@ -116,12 +157,28 @@ scale = Vector2(3, 3)
 
 [node name="Bugs" type="Node2D" parent="."]
 
+[node name="Beetle" parent="Bugs" instance=ExtResource("12_b2075")]
+position = Vector2(4021, 487)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Beetle"]
+curve = SubResource("Curve2D_bo1qb")
+
+[node name="Fly" parent="Bugs" instance=ExtResource("15_tu3vm")]
+position = Vector2(4230, 815)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Fly"]
+position = Vector2(0, 38)
+curve = SubResource("Curve2D_5wdmm")
+
 [node name="Frog" parent="." instance=ExtResource("5_dhl37")]
 position = Vector2(1626, 1560)
 
 [node name="Camera2D" type="Camera2D" parent="Frog"]
-position = Vector2(0, -400)
+position = Vector2(0, -300)
 position_smoothing_enabled = true
+
+[node name="rock2" parent="Frog" instance=ExtResource("11_h3rbj")]
+position = Vector2(2917, -131)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -140,3 +197,35 @@ scroll_offset = Vector2(502, 178)
 
 [node name="ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_aou6l")
+
+[node name="Leaf" parent="." instance=ExtResource("8_xr7bv")]
+position = Vector2(6059, 1235)
+
+[node name="Flower" parent="." instance=ExtResource("7_qfexh")]
+position = Vector2(6971, 1399)
+
+[node name="Branch" parent="." instance=ExtResource("6_1j2j6")]
+position = Vector2(7218, 129)
+
+[node name="Flower2" parent="." instance=ExtResource("7_qfexh")]
+position = Vector2(7608, 1680)
+
+[node name="Fly" parent="." instance=ExtResource("15_tu3vm")]
+position = Vector2(7392, 531)
+
+[node name="Path2D" type="Path2D" parent="Fly"]
+curve = SubResource("Curve2D_2wr06")
+
+[node name="LevelEndIndicator" type="Sprite2D" parent="Fly"]
+position = Vector2(2163, 662)
+texture = ExtResource("16_qb5g3")
+
+[node name="Beetle" parent="." instance=ExtResource("12_b2075")]
+position = Vector2(7179, 1544)
+
+[node name="Path2D" type="Path2D" parent="Beetle"]
+curve = SubResource("Curve2D_h4nir")
+
+[node name="rock1" parent="." instance=ExtResource("9_vypn4")]
+position = Vector2(8491, 1018)
+scale = Vector2(2, 2)
