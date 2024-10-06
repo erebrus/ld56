@@ -94,12 +94,12 @@ func _shoot_at_angle(shoot_angle: float):
 		tmp = fposmod(shoot_angle+PI, 2*PI)
 	
 	Logger.info("Shooting at angle %.4fº" % rad_to_deg(tmp))
-	tongue.shoot(tongue_position + Vector2(100,0).rotated(tmp), self)
+	tongue.shoot(Vector2.RIGHT.rotated(tmp), self)
 	
 
 func _shoot_at_mouse_raw():
 	Logger.info("Shooting at target %s" % get_global_mouse_position())
-	tongue.shoot(get_global_mouse_position(), self)
+	tongue.shoot(tongue_position.direction_to(get_global_mouse_position()), self)
 	
 
 func _shoot_at_mouse_limited() -> bool:

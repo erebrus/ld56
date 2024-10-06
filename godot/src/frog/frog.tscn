@@ -347,6 +347,9 @@ libraries = {
 position = Vector2(0, -75)
 target_position = Vector2(75, 0)
 
+[node name="rc_down" type="RayCast2D" parent="."]
+target_position = Vector2(0, 10)
+
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("29_ioey7")
 

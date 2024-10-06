@@ -12,6 +12,7 @@ signal energy_changed(value:float)
 @onready var controller: FrogController = $Controller
 @onready var xsm: State = $xsm
 @onready var rc_front: RayCast2D = $rc_front
+@onready var rc_down: RayCast2D = $rc_down
 
 @onready var head: FrogHead = $Head
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -26,6 +27,10 @@ func _ready():
 	Events.tongue_attached.connect(_on_tongue_attached)
 	Events.tongue_detached.connect(_on_tongue_detached)
 	Events.debug_toggled.connect(_on_debug_toggled)
+
+func is_near_floor() -> bool:
+	return rc_down.is_colliding()
+	
 
 func _on_debug_toggled(debug:bool):
 		HyperLog.text("position", self)
