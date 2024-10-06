@@ -10,5 +10,5 @@ func _on_enter(_args) -> void:
 
 func _on_timeout(_name) -> void:
 	if _name == "lookout":
-		target.direction*=-1
+		target.next_wp()
 		change_state("move")
