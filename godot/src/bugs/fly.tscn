@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://duxcjbsoqoa2n"]
+[gd_scene load_steps=15 format=3 uid="uid://duxcjbsoqoa2n"]
 
 [ext_resource type="PackedScene" uid="uid://b7ocbogo3h056" path="res://src/bugs/bug.tscn" id="1_u4u8t"]
-[ext_resource type="Texture2D" uid="uid://dolg4h58td1if" path="res://assets/gfx/bugs/fly.png" id="2_6cm3v"]
+[ext_resource type="Texture2D" uid="uid://bk253d7evx1nt" path="res://assets/gfx/bugs/fly/1.png" id="3_05kff"]
 [ext_resource type="AudioStream" uid="uid://5wdwmphr43lg" path="res://assets/sfx/Bug_fly_flying_1.wav" id="3_p0s32"]
 [ext_resource type="AudioStream" uid="uid://b0ss5pkyhvu2n" path="res://assets/sfx/Bug_fly_flying_2.wav" id="4_5ectv"]
+[ext_resource type="Texture2D" uid="uid://by0mfilj0573n" path="res://assets/gfx/bugs/fly/2.png" id="4_l8glh"]
 [ext_resource type="AudioStream" uid="uid://u4e0oeg03d65" path="res://assets/sfx/Bug_fly_flying_3.wav" id="5_owxnf"]
+[ext_resource type="Texture2D" uid="uid://bw40ymb1rredi" path="res://assets/gfx/bugs/fly/3.png" id="5_p78a3"]
+[ext_resource type="Texture2D" uid="uid://cdw0f5rxn2nsn" path="res://assets/gfx/bugs/fly/4.png" id="6_080lp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bxn0i"]
 radius = 20.0
@@ -13,7 +16,16 @@ radius = 20.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6cm3v")
+"texture": ExtResource("3_05kff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l8glh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p78a3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_080lp")
 }],
 "loop": true,
 "name": &"idle",
@@ -21,11 +33,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6cm3v")
+"texture": ExtResource("3_05kff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l8glh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p78a3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_080lp")
 }],
 "loop": true,
 "name": &"move",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mq136"]
@@ -36,6 +57,35 @@ stream_2/stream = ExtResource("5_owxnf")
 
 [sub_resource type="Animation" id="Animation_24mtn"]
 resource_name = "idle"
+length = 0.4
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"idle", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sfx_walk")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_6u6gg"]
 resource_name = "move"
@@ -55,6 +105,20 @@ tracks/0/keys = {
 "method": &"play"
 }]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"move", 1.0, false],
+"method": &"play"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g3eiv"]
 _data = {
@@ -70,8 +134,11 @@ speed = 220.0
 shape = SubResource("CircleShape2D_bxn0i")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_tsxt0")
 animation = &"idle"
+frame_progress = 0.660607
+flip_h = true
 
 [node name="xsm" parent="." index="2"]
 debug_mode = true
@@ -81,11 +148,13 @@ next_state = NodePath("idle")
 anim_on_enter = "idle"
 loop_mode = 0
 on_finished = 1
+next_state = NodePath("../move")
 
 [node name="move" parent="xsm" index="1"]
 anim_on_enter = "move"
 loop_mode = 0
 on_finished = 1
+next_state = NodePath("../dodge")
 
 [node name="sfx_walk" parent="." index="4"]
 stream = SubResource("AudioStreamRandomizer_mq136")
