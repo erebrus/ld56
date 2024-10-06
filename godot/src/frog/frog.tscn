@@ -222,6 +222,7 @@ sprite_frames = SubResource("SpriteFrames_g36ww")
 animation = &"idle"
 
 [node name="Head" parent="." instance=ExtResource("2_pyle1")]
+shooting_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -78)
