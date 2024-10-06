@@ -120,7 +120,7 @@ position = Vector2(4714, 1060)
 scale = Vector2(0.5, 0.5)
 
 [node name="Fly" parent="Bugs" index="0" instance=ExtResource("2_eqc4j")]
-position = Vector2(2435, 326)
+position = Vector2(873, 833)
 collision_mask = 1
 
 [node name="Path2D" type="Path2D" parent="Bugs/Fly" index="6"]

@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://duxcjbsoqoa2n"]
+[gd_scene load_steps=12 format=3 uid="uid://duxcjbsoqoa2n"]
 
 [ext_resource type="PackedScene" uid="uid://b7ocbogo3h056" path="res://src/bugs/bug.tscn" id="1_u4u8t"]
 [ext_resource type="Texture2D" uid="uid://dolg4h58td1if" path="res://assets/gfx/bugs/fly.png" id="2_6cm3v"]
+[ext_resource type="AudioStream" uid="uid://5wdwmphr43lg" path="res://assets/sfx/Bug_fly_flying_1.wav" id="3_p0s32"]
+[ext_resource type="AudioStream" uid="uid://b0ss5pkyhvu2n" path="res://assets/sfx/Bug_fly_flying_2.wav" id="4_5ectv"]
+[ext_resource type="AudioStream" uid="uid://u4e0oeg03d65" path="res://assets/sfx/Bug_fly_flying_3.wav" id="5_owxnf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bxn0i"]
 radius = 20.0
@@ -25,6 +28,40 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mq136"]
+streams_count = 3
+stream_0/stream = ExtResource("3_p0s32")
+stream_1/stream = ExtResource("4_5ectv")
+stream_2/stream = ExtResource("5_owxnf")
+
+[sub_resource type="Animation" id="Animation_24mtn"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_6u6gg"]
+resource_name = "move"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sfx_walk")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g3eiv"]
+_data = {
+"idle": SubResource("Animation_24mtn"),
+"move": SubResource("Animation_6u6gg")
+}
+
 [node name="Fly" instance=ExtResource("1_u4u8t")]
 type = 3
 speed = 220.0
@@ -37,4 +74,26 @@ sprite_frames = SubResource("SpriteFrames_tsxt0")
 animation = &"idle"
 
 [node name="xsm" parent="." index="2"]
+debug_mode = true
 next_state = NodePath("idle")
+
+[node name="idle" parent="xsm" index="0"]
+anim_on_enter = "idle"
+loop_mode = 0
+on_finished = 1
+next_state = NodePath("../move")
+
+[node name="move" parent="xsm" index="1"]
+anim_on_enter = "move"
+loop_mode = 0
+on_finished = 1
+next_state = NodePath("../dodge")
+
+[node name="sfx_walk" parent="." index="4"]
+stream = SubResource("AudioStreamRandomizer_mq136")
+max_distance = 800.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_g3eiv")
+}
