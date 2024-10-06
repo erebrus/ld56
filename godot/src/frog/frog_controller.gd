@@ -137,6 +137,7 @@ var gravity:float
 var acc = Vector2()
 var last_direction:=Vector2.RIGHT
 
+var debug_on_ground:bool
 
 func _init():
 	default_gravity = calculate_gravity(max_jump_height, jump_duration)
@@ -228,11 +229,14 @@ func can_double_jump():
 
 ## Same as is_on_floor(), but also returns true if gravity is reversed and you are on the ceiling
 func is_feet_on_ground():
+	
 	if get_body().is_on_floor() and default_gravity >= 0:
+		debug_on_ground=true
 		return true
 	if get_body().is_on_ceiling() and default_gravity <= 0:
+		debug_on_ground=true
 		return true
-	
+	debug_on_ground=false
 	return false
 
 

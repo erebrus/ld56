@@ -7,6 +7,8 @@ class_name XSMFrogFall
 var soft_land:=true
 func _on_enter(_args) -> void:
 	Logger.info("state:%s %d " % [name, Time.get_ticks_msec()])
+	if target:
+		target.state_name=name
 	add_timer("land", no_stop_land_time)
 	soft_land=true
 func _after_enter(_args) -> void:

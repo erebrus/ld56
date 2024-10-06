@@ -311,8 +311,8 @@ libraries = {
 }
 
 [node name="rc_front" type="RayCast2D" parent="."]
-position = Vector2(0, -31)
-target_position = Vector2(60, 0)
+position = Vector2(0, -75)
+target_position = Vector2(75, 0)
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("29_ioey7")

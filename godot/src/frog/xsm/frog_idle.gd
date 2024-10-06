@@ -6,6 +6,8 @@ class_name XSMFrogIdle
 
 func _on_enter(_args) -> void:
 	Logger.info("state:%s " % name)
+	if target:
+		target.state_name=name
 	if get_ctl():
 		get_ctl().reset_jumps_left()
 		get_ctl().acc.x=0

@@ -81,13 +81,11 @@ next_state = NodePath("idle")
 anim_on_enter = "idle"
 loop_mode = 0
 on_finished = 1
-next_state = NodePath("../move")
 
 [node name="move" parent="xsm" index="1"]
 anim_on_enter = "move"
 loop_mode = 0
 on_finished = 1
-next_state = NodePath("../dodge")
 
 [node name="sfx_walk" parent="." index="4"]
 stream = SubResource("AudioStreamRandomizer_mq136")

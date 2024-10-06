@@ -13,14 +13,20 @@ class_name Frog
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_component: HealthComponent = $HealthComponent
 
+var state_name:String
 
 
 func _ready():
 	velocity.y=1
 	Events.tongue_attached.connect(_on_tongue_attached)
 	Events.tongue_detached.connect(_on_tongue_detached)
-	
+	Events.debug_toggled.connect(_on_debug_toggled)
 
+func _on_debug_toggled(debug:bool):
+		HyperLog.text("position", self)
+		HyperLog.text("state_name", self)
+		HyperLog.text("controller:acc", self)
+		HyperLog.text("controller:debug_on_ground", self)
 #
 #func _process(delta: float) -> void:
 	#sprite.offset.x = 0 if not sprite.flip_h else +400

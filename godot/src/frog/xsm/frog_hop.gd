@@ -6,7 +6,8 @@ class_name XSMFrogHop
 
 func _on_enter(_args) -> void:
 	Logger.info("state:%s %d" % [name, Time.get_ticks_msec()])
-
+	if target:
+		target.state_name=name
 func _after_enter(_args) -> void:
 	pass
 func _on_update(_delta) -> void:
