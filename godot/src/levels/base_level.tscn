@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnqbkbby1d1sd"]
+[gd_scene load_steps=9 format=3 uid="uid://cnqbkbby1d1sd"]
 
 [ext_resource type="Script" path="res://src/levels/base_level.gd" id="1_mo5ug"]
 [ext_resource type="PackedScene" uid="uid://b5lgniaadan1y" path="res://src/frog/frog.tscn" id="1_nfuix"]
 [ext_resource type="Texture2D" uid="uid://bpj7fwfxeafy4" path="res://assets/gfx/environment/Background_Back.png" id="1_shssx"]
 [ext_resource type="Texture2D" uid="uid://dqackkt1tgskd" path="res://assets/gfx/environment/Background_Mid.png" id="2_wx1s1"]
 [ext_resource type="Texture2D" uid="uid://d1m5ne1avac35" path="res://assets/gfx/environment/Background_Front.png" id="3_f1ro6"]
+[ext_resource type="PackedScene" uid="uid://c06tqqbevl64b" path="res://src/ui/healthbar.tscn" id="6_16uxq"]
 [ext_resource type="PackedScene" uid="uid://bfsfbydiqr0gr" path="res://src/eagle/eagle.tscn" id="6_x2vej"]
 [ext_resource type="AudioStream" uid="uid://c21xktcb61m7j" path="res://assets/sfx/Amb_rain_forest_loop.mp3" id="7_eodqv"]
 
@@ -49,6 +50,7 @@ texture = ExtResource("3_f1ro6")
 [node name="Bugs" type="Node2D" parent="."]
 
 [node name="Frog" parent="." instance=ExtResource("1_nfuix")]
+unique_name_in_owner = true
 position = Vector2(278, 700)
 
 [node name="Camera2D" type="Camera2D" parent="Frog"]
@@ -58,8 +60,12 @@ position_smoothing_enabled = true
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="HUD"]
-offset_right = 40.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -47.0
 offset_bottom = 40.0
+grow_horizontal = 0
 theme_override_constants/margin_left = 10
 
 [node name="Version" type="Label" parent="HUD/MarginContainer"]
@@ -67,7 +73,18 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "0.0.0"
 
+[node name="MarginContainer2" type="MarginContainer" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" parent="HUD/MarginContainer2" instance=ExtResource("6_16uxq")]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="Eagle" parent="." instance=ExtResource("6_x2vej")]
 
 [node name="ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_eodqv")
+volume_db = -3.0
+
+[connection signal="energy_changed" from="Frog" to="HUD/MarginContainer2/HealthBar" method="_on_frog_energy_changed"]

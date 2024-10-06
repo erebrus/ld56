@@ -173,13 +173,11 @@ animation = &"idle"
 anim_on_enter = "idle"
 loop_mode = 0
 on_finished = 1
-next_state = NodePath("../move")
 
 [node name="move" parent="xsm" index="1"]
 anim_on_enter = "move"
 loop_mode = 0
 on_finished = 1
-next_state = NodePath("../dodge")
 
 [node name="sfx_death" parent="." index="3"]
 stream = SubResource("AudioStreamRandomizer_mfj5l")

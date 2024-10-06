@@ -1,9 +1,13 @@
 extends CharacterBody2D
 class_name Frog
 
+signal energy_changed(value:float)
+
 @export var swing_gravity:= 1000
 @export var swing_speed:= 5
 @export var reel_speed:= 20
+@export var energy_drop_rate:float = 1
+
 
 @onready var controller: FrogController = $Controller
 @onready var xsm: State = $xsm
@@ -83,7 +87,7 @@ func _on_health_component_died() -> void:
 	Globals.do_lose()
 
 func _on_health_component_energy_changed(value: Variant) -> void:
-	Logger.info("new health is: %d" % value)
+	energy_changed.emit(value)
 
 
 func _on_tongue_attached(to: Vector2) -> void:
@@ -99,6 +103,12 @@ func _on_head_shot_finished() -> void:
 	sprite.show()
 	if head.tongue.caught_bug:
 		$sfx/sfx_eat.play()
+		process_bug(head.tongue.caught_bug)
+		
+func process_bug(bug:Bug)->void:
+	health_component.on_heal(bug.energy_value)
+	#TODO debuff
+	bug.queue_free()
 
 func _on_head_shot_started() -> void:
 	head.show()
@@ -108,3 +118,7 @@ func _on_head_shot_started() -> void:
 
 func _on_head_shot_missed() -> void:
 	$sfx/sfx_tongue_miss.play()
+
+
+func _on_energy_timer_timeout() -> void:
+	health_component.on_take_damage(energy_drop_rate)

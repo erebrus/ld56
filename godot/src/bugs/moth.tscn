@@ -147,7 +147,6 @@ animation = &"move"
 flip_h = true
 
 [node name="xsm" parent="." index="2"]
-debug_mode = true
 next_state = NodePath("idle")
 
 [node name="idle" parent="xsm" index="0"]
