@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://jbwrx60ac223"]
+[gd_scene load_steps=19 format=3 uid="uid://jbwrx60ac223"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_yfdoh"]
 [ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="2_7ar4w"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b7uuo8dxsl8qr" path="res://src/world/platforms/rock_2.tscn" id="6_1x2p6"]
 [ext_resource type="PackedScene" uid="uid://i1m1wvlfxwsi" path="res://src/world/platforms/flower.tscn" id="7_s5uym"]
 [ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="8_oru44"]
+[ext_resource type="PackedScene" uid="uid://dn40sagnjlvbk" path="res://src/bugs/moth.tscn" id="10_8w067"]
+[ext_resource type="PackedScene" uid="uid://dkyx6xyum3prp" path="res://src/bugs/slug.tscn" id="11_mc7c5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf487"]
 size = Vector2(3818, 147)
@@ -34,6 +36,18 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Curve2D" id="Curve2D_5fv0s"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 305, 253, 0, 0, 0, 0, -166, 319, 0, 0, 0, 0, -689, 210, 0, 0, 0, 0, -589, -14, 0, 0, 0, 0, -28, 24)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_p3fml"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -204, 1, 0, 0, 0, 0, 97, 1)
+}
+point_count = 2
+
 [node name="TestLevel" instance=ExtResource("1_yfdoh")]
 
 [node name="BG" parent="." index="0"]
@@ -52,23 +66,25 @@ metadata/_edit_lock_ = true
 position = Vector2(568, 1023)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground/grass" index="0"]
-position = Vector2(1346, 540)
+position = Vector2(1346, 520)
 texture = ExtResource("2_7ar4w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass" index="1"]
-position = Vector2(1353, 617.5)
+visible = false
+position = Vector2(1353, 618.5)
 shape = SubResource("RectangleShape2D_xf487")
 
 [node name="grass2" type="StaticBody2D" parent="Ground" index="1"]
-position = Vector2(4406, 1023)
+position = Vector2(4409, 1023)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass2" index="0"]
-position = Vector2(1353, 617.5)
-shape = SubResource("RectangleShape2D_xf487")
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass2" index="1"]
-position = Vector2(1346, 540)
+[node name="Sprite2D" type="Sprite2D" parent="Ground/grass2" index="0"]
+position = Vector2(1346, 520)
 texture = ExtResource("2_7ar4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass2" index="1"]
+visible = false
+position = Vector2(1353, 618.5)
+shape = SubResource("RectangleShape2D_xf487")
 
 [node name="wall" type="StaticBody2D" parent="Scenery" index="0"]
 position = Vector2(7632, 1316)
@@ -120,7 +136,7 @@ position = Vector2(4714, 1060)
 scale = Vector2(0.5, 0.5)
 
 [node name="Fly" parent="Bugs" index="0" instance=ExtResource("2_eqc4j")]
-position = Vector2(873, 833)
+position = Vector2(2562, 272)
 collision_mask = 1
 
 [node name="Path2D" type="Path2D" parent="Bugs/Fly" index="6"]
@@ -141,6 +157,18 @@ collision_mask = 1
 
 [node name="Path2D3" type="Path2D" parent="Bugs/Beetle2" index="7"]
 curve = SubResource("Curve2D_srp33")
+
+[node name="Moth" parent="Bugs" index="3" instance=ExtResource("10_8w067")]
+position = Vector2(1142, 832)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Moth" index="7"]
+curve = SubResource("Curve2D_5fv0s")
+
+[node name="Slug" parent="Bugs" index="4" instance=ExtResource("11_mc7c5")]
+position = Vector2(4205, 1220)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Slug" index="7"]
+curve = SubResource("Curve2D_p3fml")
 
 [node name="Frog" parent="." index="6"]
 position = Vector2(775, 1485)

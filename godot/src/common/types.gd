@@ -5,7 +5,8 @@ enum BugType {
 	Slug,
 	Spider,
 	Beetle,
-	Fly
+	Fly,
+	Moth,
 }
 
 

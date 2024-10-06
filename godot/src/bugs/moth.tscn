@@ -1,0 +1,172 @@
+[gd_scene load_steps=18 format=3 uid="uid://dn40sagnjlvbk"]
+
+[ext_resource type="PackedScene" uid="uid://b7ocbogo3h056" path="res://src/bugs/bug.tscn" id="1_rv6bt"]
+[ext_resource type="Texture2D" uid="uid://b38m33uu2f6nc" path="res://assets/gfx/bugs/moth/1.png" id="2_1xcwr"]
+[ext_resource type="Texture2D" uid="uid://bmubbmjv3pemt" path="res://assets/gfx/bugs/moth/2.png" id="3_222la"]
+[ext_resource type="Texture2D" uid="uid://t5jsbpo6w60t" path="res://assets/gfx/bugs/moth/3.png" id="4_qj5ci"]
+[ext_resource type="Texture2D" uid="uid://w7pe7b1ndi50" path="res://assets/gfx/bugs/moth/4.png" id="5_y74wx"]
+[ext_resource type="AudioStream" uid="uid://vrhub2gkrj4" path="res://assets/sfx/Bug_fly_crush_1.wav" id="6_05500"]
+[ext_resource type="AudioStream" uid="uid://ctl77vdpr646a" path="res://assets/sfx/Bug_fly_crush_2.wav" id="7_sdckx"]
+[ext_resource type="AudioStream" uid="uid://5wdwmphr43lg" path="res://assets/sfx/Bug_fly_flying_1.wav" id="8_jogou"]
+[ext_resource type="AudioStream" uid="uid://b0ss5pkyhvu2n" path="res://assets/sfx/Bug_fly_flying_2.wav" id="9_sykbf"]
+[ext_resource type="AudioStream" uid="uid://u4e0oeg03d65" path="res://assets/sfx/Bug_fly_flying_3.wav" id="10_kcial"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bxn0i"]
+radius = 20.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tsxt0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1xcwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_222la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qj5ci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y74wx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1xcwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_222la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qj5ci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y74wx")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qmv1m"]
+streams_count = 2
+stream_0/stream = ExtResource("6_05500")
+stream_1/stream = ExtResource("7_sdckx")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mq136"]
+streams_count = 3
+stream_0/stream = ExtResource("8_jogou")
+stream_1/stream = ExtResource("9_sykbf")
+stream_2/stream = ExtResource("10_kcial")
+
+[sub_resource type="Animation" id="Animation_24mtn"]
+resource_name = "idle"
+length = 0.4
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"idle", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sfx_walk")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6u6gg"]
+resource_name = "move"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sfx_walk")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"move", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g3eiv"]
+_data = {
+"idle": SubResource("Animation_24mtn"),
+"move": SubResource("Animation_6u6gg")
+}
+
+[node name="Moth" instance=ExtResource("1_rv6bt")]
+type = 4
+speed = 220.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_bxn0i")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_tsxt0")
+animation = &"move"
+flip_h = true
+
+[node name="xsm" parent="." index="2"]
+debug_mode = true
+next_state = NodePath("idle")
+
+[node name="idle" parent="xsm" index="0"]
+anim_on_enter = "idle"
+loop_mode = 0
+on_finished = 1
+
+[node name="move" parent="xsm" index="1"]
+anim_on_enter = "move"
+loop_mode = 0
+on_finished = 1
+
+[node name="sfx_death" parent="." index="3"]
+stream = SubResource("AudioStreamRandomizer_qmv1m")
+
+[node name="sfx_walk" parent="." index="4"]
+stream = SubResource("AudioStreamRandomizer_mq136")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_g3eiv")
+}
