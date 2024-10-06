@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://br6usfo70b445"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_xwux0"]
+[ext_resource type="Texture2D" uid="uid://dhtpyyqu5gujh" path="res://assets/gfx/environment/rockledge.png" id="2_r5261"]
+
+[node name="LedgePlatform" instance=ExtResource("1_xwux0")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1, 1)
+texture = ExtResource("2_r5261")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-375, -170, 366, -172, 363, -86, 250, 99, 180, 117, 112, 170, -97, 185, -185, 95, -223, 96, -325, 2)
+one_way_collision = true

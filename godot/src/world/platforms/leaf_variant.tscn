@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhj1t1n07qiw8"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_2vivp"]
+[ext_resource type="Texture2D" uid="uid://ihg86cet8hue" path="res://assets/gfx/environment/leafvariantplatform.png" id="2_c4u3l"]
+
+[node name="LeafVariant" instance=ExtResource("1_2vivp")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1, 1)
+texture = ExtResource("2_c4u3l")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(406, 144, 80, 34, -91, 23, -390, 35, -400, -38, -298, -108, -53, -109, 60, -62, 159, -43, 318, 52)
+one_way_collision = true

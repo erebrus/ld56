@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://jbwrx60ac223"]
+[gd_scene load_steps=24 format=3 uid="uid://jbwrx60ac223"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_yfdoh"]
 [ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="2_7ar4w"]
@@ -10,7 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://i1m1wvlfxwsi" path="res://src/world/platforms/flower.tscn" id="7_s5uym"]
 [ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="8_oru44"]
 [ext_resource type="PackedScene" uid="uid://dn40sagnjlvbk" path="res://src/bugs/moth.tscn" id="10_8w067"]
+[ext_resource type="PackedScene" uid="uid://cb3kn2b1tbveq" path="res://src/world/platforms/blue_flower.tscn" id="10_dok86"]
 [ext_resource type="PackedScene" uid="uid://dkyx6xyum3prp" path="res://src/bugs/slug.tscn" id="11_mc7c5"]
+[ext_resource type="PackedScene" uid="uid://br6usfo70b445" path="res://src/world/platforms/rockledge.tscn" id="12_ddkcb"]
+[ext_resource type="PackedScene" uid="uid://s84l8xg2tkdy" path="res://src/world/platforms/sproud_platform.tscn" id="13_qfhfx"]
+[ext_resource type="PackedScene" uid="uid://bhj1t1n07qiw8" path="res://src/world/platforms/leaf_variant.tscn" id="15_ukt0i"]
+[ext_resource type="PackedScene" uid="uid://g0ammwgw85c0" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="16_s1usn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf487"]
 size = Vector2(3818, 147)
@@ -135,6 +140,21 @@ position = Vector2(3474, 173)
 position = Vector2(4714, 1060)
 scale = Vector2(0.5, 0.5)
 
+[node name="LedgePlatform" parent="Scenery" index="13" instance=ExtResource("12_ddkcb")]
+position = Vector2(7086, 930)
+
+[node name="SproutPlatform" parent="Scenery" index="14" instance=ExtResource("13_qfhfx")]
+position = Vector2(5394, 458)
+
+[node name="BlueFlower" parent="Scenery" index="15" instance=ExtResource("10_dok86")]
+position = Vector2(292, 1221)
+
+[node name="LeafVariant" parent="Scenery" index="16" instance=ExtResource("15_ukt0i")]
+position = Vector2(1429, 521)
+
+[node name="LeafVariantFlipped" parent="Scenery" index="17" instance=ExtResource("16_s1usn")]
+position = Vector2(5819, 1415)
+
 [node name="Fly" parent="Bugs" index="0" instance=ExtResource("2_eqc4j")]
 position = Vector2(2562, 272)
 collision_mask = 1
@@ -172,8 +192,9 @@ curve = SubResource("Curve2D_p3fml")
 
 [node name="Frog" parent="." index="6"]
 position = Vector2(775, 1485)
+swing_gravity = 1000
 
-[node name="Camera2D" parent="Frog" index="9"]
+[node name="Camera2D" parent="Frog" index="10"]
 limit_left = 0
 limit_right = 7500
 limit_bottom = 1700

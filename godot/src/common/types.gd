@@ -1,5 +1,6 @@
 extends Node
 
+const SCENE:PackedScene = preload("res://src/frog/debufs/invisible_debuf.tscn")
 
 enum BugType {
 	Slug,
@@ -15,3 +16,11 @@ func key_of(value) -> String:
 		return BugType.keys()[value]
 	
 	return str(value)
+
+const DEBUF_MAP = {
+	BugType.Slug:  SCENE,
+	BugType.Spider:SCENE,
+	BugType.Beetle:SCENE,
+	BugType.Fly:SCENE,
+	BugType.Moth:SCENE
+}

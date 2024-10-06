@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://s84l8xg2tkdy"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_v16f4"]
+[ext_resource type="Texture2D" uid="uid://cnyf5ucuv1mmn" path="res://assets/gfx/environment/sproutplatform_1.png" id="2_mibwq"]
+
+[node name="SproutPlatform" instance=ExtResource("1_v16f4")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1, 1)
+texture = ExtResource("2_mibwq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-205, 53, -121, -21, -227, -33, -227, 26)
+one_way_collision = true
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-89, -35, 22, -100, 20, -132, -55, -127, -77, -93)
+one_way_collision = true
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="." index="3"]
+polygon = PackedVector2Array(93, -171, 170, -174, 246, -123, 172, -111, 96, -140)
+one_way_collision = true

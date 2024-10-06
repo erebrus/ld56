@@ -17,6 +17,7 @@ signal energy_changed(value:float)
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var debufs: Node = %Debufs
 
 var state_name:String
 
@@ -107,9 +108,22 @@ func _on_head_shot_finished() -> void:
 		
 func process_bug(bug:Bug)->void:
 	health_component.on_heal(bug.energy_value)
-	#TODO debuff
+	var scene:PackedScene = Types.DEBUF_MAP[bug.type]
+	var new_debuf = scene.instantiate()
+	var existing_debuf = find_debuf(new_debuf)
+	if existing_debuf:
+		existing_debuf.extend()
+	else:
+		debufs.add_child(new_debuf)
+		new_debuf.apply(self)
+		new_debuf.expired.connect(func(debuf):debuf.cancel(self))
 	bug.queue_free()
 
+func find_debuf(debuf:Debuf):
+	for child in debufs.get_children():
+		if child.name == debuf.name:
+			return child
+	return null
 func _on_head_shot_started() -> void:
 	head.show()
 	sprite.hide()
