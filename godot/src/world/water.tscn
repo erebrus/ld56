@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2sdddiyem7db"]
+
+[ext_resource type="Shader" path="res://src/world/water.gdshader" id="1_hyvdb"]
+[ext_resource type="Script" path="res://src/world/water.gd" id="2_758wv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_n7aoh"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_le1e7"]
+seamless = true
+noise = SubResource("FastNoiseLite_n7aoh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sfbgm"]
+shader = ExtResource("1_hyvdb")
+shader_parameter/CAST_COLOR = Color(0.1083, 0.146775, 0.57, 1)
+shader_parameter/speed = Vector2(0.03, 0.07)
+shader_parameter/wave_strength = 2.0
+shader_parameter/scale_y = 2000.0
+shader_parameter/y_zoom = 0.166855
+shader_parameter/fast_noise = SubResource("NoiseTexture2D_le1e7")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hk87o"]
+
+[node name="Water" type="Sprite2D"]
+z_index = 1
+material = SubResource("ShaderMaterial_sfbgm")
+position = Vector2(3831, 2221.25)
+scale = Vector2(7708, 1029.5)
+texture = SubResource("CanvasTexture_hk87o")
+script = ExtResource("2_758wv")
