@@ -16,8 +16,13 @@ func _on_update(_delta) -> void:
 		get_ctl().started_falling.emit()
 		return
 	get_ctl().gravity = get_ctl().default_gravity
-	if not Input.is_action_pressed(get_ctl().input_jump): 
+	if Input.is_action_just_pressed(get_ctl().input_jump):
+		if get_ctl().can_double_jump():
+			get_ctl().jump()
+			return
+	elif not Input.is_action_pressed(get_ctl().input_jump): 
 		get_ctl().gravity = get_ctl().apply_release_gravity(get_ctl().gravity)	
+	
 	get_ctl().set_x_acc()
 	get_ctl().process_movement(_delta)
 	Logger.debug("new velocity %.2f  acc %s" % [get_body().velocity.x, get_ctl().acc])

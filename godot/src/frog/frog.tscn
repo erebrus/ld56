@@ -293,7 +293,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("")
+next_state = NodePath("../swing")
 
 [node name="swing" type="Node" parent="xsm"]
 script = ExtResource("29_bxkrg")

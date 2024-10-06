@@ -1,6 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://jbwrx60ac223"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_yfdoh"]
+[ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="2_7ar4w"]
 [ext_resource type="PackedScene" uid="uid://boenkwcf4c06o" path="res://src/world/platforms/branch.tscn" id="2_cged4"]
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="2_eqc4j"]
 [ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="3_1tpcs"]
@@ -10,159 +11,147 @@
 [ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="8_oru44"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf487"]
-size = Vector2(3178, 112)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqlqj"]
-size = Vector2(416, 112)
+size = Vector2(3818, 147)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acc83"]
-size = Vector2(64, 608)
+size = Vector2(531, 2061)
 
 [sub_resource type="Curve2D" id="Curve2D_6r8bl"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1997, 422, 0, 0, 0, 0, 1517, 417, 0, 0, 0, 0, 1170, 656, 0, 0, 0, 0, 2165, 632, 0, 0, 0, 0, 2291, -109)
+"points": PackedVector2Array(0, 0, 0, 0, -46, -3, 0, 0, 0, 0, -729, 18, 0, 0, 0, 0, -699, 237, 0, 0, 0, 0, 110, 435, 0, 0, 0, 0, 565, 282, 0, 0, 0, 0, 218, -57)
 }
-point_count = 5
+point_count = 6
 
 [sub_resource type="Curve2D" id="Curve2D_0e7vn"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -14.962, 10, 0, 0, 0, 0, 321.014, 10)
+"points": PackedVector2Array(0, 0, 0, 0, -36.0093, -2.88684, 0, 0, 0, 0, -302.121, -38.0502, 0, 0, 0, 0, -360.111, -34.8677, 0, 0, 0, 0, -289.121, -38.0911, 0, 0, 0, 0, 9.01245, 3.97168, 0, 0, 0, 0, 122.021, 6.61627, 0, 0, 0, 0, 448.815, -59.4117, 0, 0, 0, 0, 112.012, 3.64777)
 }
-point_count = 2
+point_count = 8
 
 [sub_resource type="Curve2D" id="Curve2D_srp33"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2542, 950, 0, 0, 0, 0, 3151, 946)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -146.004, 4, 0, 0, 0, 0, 178.976, 4)
 }
-point_count = 2
+point_count = 3
 
 [node name="TestLevel" instance=ExtResource("1_yfdoh")]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Scenery" index="0"]
-position = Vector2(587, 1020)
-
-[node name="ColorRect" type="ColorRect" parent="Scenery/StaticBody2D" index="0"]
-offset_left = -520.0
-offset_top = -56.0
-offset_right = 2665.0
-offset_bottom = 56.0
-color = Color(0, 0.443137, 0.027451, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/StaticBody2D" index="1"]
-position = Vector2(1069, 0)
-shape = SubResource("RectangleShape2D_xf487")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Scenery" index="1"]
-position = Vector2(3707, 832)
-
-[node name="ColorRect" type="ColorRect" parent="Scenery/StaticBody2D2" index="0"]
-offset_left = -520.0
-offset_top = 16.0
-offset_right = -104.0
-offset_bottom = 128.0
-color = Color(0, 0.443137, 0.027451, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/StaticBody2D2" index="1"]
-position = Vector2(-312, 72)
-shape = SubResource("RectangleShape2D_bqlqj")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="Scenery" index="2"]
-position = Vector2(4002, 730)
-
-[node name="ColorRect" type="ColorRect" parent="Scenery/StaticBody2D5" index="0"]
-offset_left = -520.0
-offset_top = 16.0
-offset_right = -104.0
-offset_bottom = 128.0
-color = Color(0, 0.443137, 0.027451, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/StaticBody2D5" index="1"]
-position = Vector2(-312, 72)
-shape = SubResource("RectangleShape2D_bqlqj")
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="Scenery" index="3"]
-position = Vector2(4316, 635)
-
-[node name="ColorRect" type="ColorRect" parent="Scenery/StaticBody2D6" index="0"]
-offset_left = -520.0
-offset_top = 16.0
-offset_right = -104.0
-offset_bottom = 128.0
-color = Color(0, 0.443137, 0.027451, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/StaticBody2D6" index="1"]
-position = Vector2(-312, 72)
-shape = SubResource("RectangleShape2D_bqlqj")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Scenery" index="4"]
-position = Vector2(3647, 422)
-
-[node name="ColorRect3" type="ColorRect" parent="Scenery/StaticBody2D3" index="0"]
-offset_left = 504.0
-offset_top = -368.0
-offset_right = 571.0
-offset_bottom = 240.0
-color = Color(0, 0.443137, 0.027451, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Scenery/StaticBody2D3" index="1"]
-position = Vector2(536, -64)
-shape = SubResource("RectangleShape2D_acc83")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Scenery" index="5"]
-position = Vector2(512, 736)
-
-[node name="ColorRect2" type="ColorRect" parent="Scenery/StaticBody2D4" index="0"]
-offset_left = -585.0
-offset_top = -370.0
-offset_right = -516.0
-offset_bottom = 238.0
-color = Color(0, 0.443137, 0.027451, 1)
+[node name="BG" parent="." index="0"]
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/StaticBody2D4" index="1"]
+[node name="MG" parent="." index="1"]
+metadata/_edit_lock_ = true
+
+[node name="FG" parent="." index="2"]
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="Node2D" parent="." index="3"]
+metadata/_edit_lock_ = true
+
+[node name="grass" type="StaticBody2D" parent="Ground" index="0"]
+position = Vector2(568, 1023)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/grass" index="0"]
+position = Vector2(1346, 540)
+texture = ExtResource("2_7ar4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass" index="1"]
+position = Vector2(1353, 617.5)
+shape = SubResource("RectangleShape2D_xf487")
+
+[node name="grass2" type="StaticBody2D" parent="Ground" index="1"]
+position = Vector2(4406, 1023)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass2" index="0"]
+position = Vector2(1353, 617.5)
+shape = SubResource("RectangleShape2D_xf487")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/grass2" index="1"]
+position = Vector2(1346, 540)
+texture = ExtResource("2_7ar4w")
+
+[node name="wall" type="StaticBody2D" parent="Scenery" index="0"]
+position = Vector2(7632, 1316)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Scenery/wall" index="0"]
+position = Vector2(302.5, -790.5)
+shape = SubResource("RectangleShape2D_acc83")
+
+[node name="wall2" type="StaticBody2D" parent="Scenery" index="1"]
+position = Vector2(315, 745)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/wall2" index="0"]
 position = Vector2(-552, -64)
 shape = SubResource("RectangleShape2D_acc83")
 metadata/_edit_lock_ = true
 
-[node name="Branch" parent="Scenery" index="6" instance=ExtResource("2_cged4")]
-position = Vector2(1389, 280)
+[node name="Branch" parent="Scenery" index="2" instance=ExtResource("2_cged4")]
+position = Vector2(2510, 922)
 
-[node name="rock1" parent="Scenery" index="7" instance=ExtResource("3_3j135")]
-position = Vector2(590, 861)
+[node name="Branch2" parent="Scenery" index="3" instance=ExtResource("2_cged4")]
+position = Vector2(5409, 724)
 
-[node name="rock2" parent="Scenery" index="8" instance=ExtResource("6_1x2p6")]
-position = Vector2(2157, 858)
+[node name="rock1" parent="Scenery" index="4" instance=ExtResource("3_3j135")]
+position = Vector2(1749, 1290)
 
-[node name="Flower" parent="Scenery" index="9" instance=ExtResource("7_s5uym")]
-position = Vector2(3442, 609)
+[node name="rock2" parent="Scenery" index="5" instance=ExtResource("6_1x2p6")]
+position = Vector2(3316, 1290)
 
-[node name="Leaf" parent="Scenery" index="10" instance=ExtResource("8_oru44")]
-position = Vector2(2709, 484)
+[node name="rock3" parent="Scenery" index="6" instance=ExtResource("3_3j135")]
+position = Vector2(2739, 1290)
+
+[node name="rock4" parent="Scenery" index="7" instance=ExtResource("6_1x2p6")]
+position = Vector2(4306, 1290)
+
+[node name="rock5" parent="Scenery" index="8" instance=ExtResource("3_3j135")]
+position = Vector2(5047, 1290)
+
+[node name="rock6" parent="Scenery" index="9" instance=ExtResource("6_1x2p6")]
+position = Vector2(6614, 1290)
+
+[node name="Flower" parent="Scenery" index="10" instance=ExtResource("7_s5uym")]
+position = Vector2(4573, 909)
+
+[node name="Flower2" parent="Scenery" index="11" instance=ExtResource("7_s5uym")]
+position = Vector2(6293, 909)
+
+[node name="Leaf" parent="Scenery" index="12" instance=ExtResource("8_oru44")]
+position = Vector2(3840, 784)
+
+[node name="Leaf2" parent="Scenery" index="13" instance=ExtResource("8_oru44")]
+position = Vector2(3474, 173)
+
+[node name="Leaf3" parent="Scenery" index="14" instance=ExtResource("8_oru44")]
+position = Vector2(4714, 1060)
+scale = Vector2(0.5, 0.5)
 
 [node name="Fly" parent="Bugs" index="0" instance=ExtResource("2_eqc4j")]
-position = Vector2(1997, 422)
+position = Vector2(2435, 326)
 collision_mask = 1
 
 [node name="Path2D" type="Path2D" parent="Bugs/Fly" index="6"]
-position = Vector2(-1997, -422)
 curve = SubResource("Curve2D_6r8bl")
 
 [node name="Beetle" parent="Bugs" index="1" instance=ExtResource("3_1tpcs")]
-position = Vector2(3824, 632)
+position = Vector2(2456, 840)
 rotation = 0.00314464
 collision_mask = 1
 
 [node name="Path2D" type="Path2D" parent="Bugs/Beetle" index="7"]
 curve = SubResource("Curve2D_0e7vn")
 
-[node name="Path2D3" type="Path2D" parent="Bugs" index="2"]
-curve = SubResource("Curve2D_srp33")
-
-[node name="Beetle2" parent="Bugs/Path2D3" index="0" instance=ExtResource("3_1tpcs")]
-position = Vector2(2542, 950)
+[node name="Beetle2" parent="Bugs" index="2" instance=ExtResource("3_1tpcs")]
+position = Vector2(2761, 1214)
 rotation = -0.00656805
 collision_mask = 1
+
+[node name="Path2D3" type="Path2D" parent="Bugs/Beetle2" index="7"]
+curve = SubResource("Curve2D_srp33")
+
+[node name="Frog" parent="." index="6"]
+position = Vector2(775, 1485)
+
+[node name="Camera2D" parent="Frog" index="9"]
+limit_left = 0
+limit_right = 7500
+limit_bottom = 1700
