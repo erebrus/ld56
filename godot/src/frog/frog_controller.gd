@@ -123,6 +123,7 @@ var release_gravity_multiplier : float
 
 var jumps_left : int
 
+
 enum JumpType {NONE, GROUND, AIR}
 ## The type of jump the player is performing. Is JumpType.NONE if they player is on the ground.
 var current_jump_type: JumpType = JumpType.NONE
@@ -146,7 +147,9 @@ func _init():
 			jump_velocity, min_jump_height, default_gravity)
 
 
-
+func _input(_e):
+	if Input.is_action_just_pressed(input_jump):
+		Logger.info("detected jump press at %d" % Time.get_ticks_msec())
 func get_body()->CharacterBody2D:
 	return get_parent() as CharacterBody2D
 
@@ -183,7 +186,21 @@ func process_movement(delta):
 
 	get_body().move_and_slide()
 	
-
+func check_just_started_falling()->bool:
+	if not _was_falling and is_falling():
+		started_falling.emit()
+		return true
+	return false
+	
+func check_just_hit_ground()->bool:
+		# Check if we just hit the ground this frame
+	if not _was_on_ground and is_feet_on_ground():
+		current_jump_type = JumpType.NONE	
+		hit_ground.emit()
+		return true
+	else:
+		return false
+		
 func is_moving()->bool:
 	return abs(get_body().velocity.x) > 100.0
 func is_falling()->bool:
