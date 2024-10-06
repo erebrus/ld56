@@ -311,7 +311,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../swing")
+next_state = NodePath("")
 
 [node name="swing" type="Node" parent="xsm"]
 script = ExtResource("29_bxkrg")
@@ -323,7 +323,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../death")
+next_state = NodePath("")
 
 [node name="death" type="Node" parent="xsm"]
 script = ExtResource("31_tdm7d")
@@ -384,6 +384,7 @@ bus = &"Sound"
 
 [node name="sfx_death" type="AudioStreamPlayer2D" parent="sfx"]
 stream = ExtResource("57_jrolm")
+volume_db = 3.0
 bus = &"Sound"
 
 [node name="EnergyTimer" type="Timer" parent="."]

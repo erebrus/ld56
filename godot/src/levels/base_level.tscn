@@ -85,6 +85,6 @@ layout_mode = 2
 
 [node name="ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_eodqv")
-volume_db = -10.0
+volume_db = -3.0
 
 [connection signal="energy_changed" from="Frog" to="HUD/MarginContainer2/HealthBar" method="_on_frog_energy_changed"]
