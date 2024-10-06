@@ -6,7 +6,7 @@ func _on_enter(_args) -> void:
 	
 
 func _on_update(_delta: float) -> void:
-	if Input.is_action_just_pressed("right_click"):
+	if Input.is_action_just_pressed("jump"):
 		change_state("retracting")
 	
 	target.update_rope()
