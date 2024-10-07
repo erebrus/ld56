@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3evg886be6fd"]
+[gd_scene load_steps=16 format=3 uid="uid://c3evg886be6fd"]
 
 [ext_resource type="FontFile" uid="uid://b46k1dayka58c" path="res://assets/fonts/jack-armstrong-bold.ttf" id="1_7rxwv"]
 [ext_resource type="Script" path="res://src/almanac/almanac.gd" id="1_aftyg"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cq7f3vestvylc" path="res://assets/gfx/ui/ComboIcons/Beetle_Almanac.png" id="8_tab3h"]
 [ext_resource type="Texture2D" uid="uid://e3lfa1s5brn6" path="res://assets/gfx/ui/ComboIcons/Worm_Almanac.png" id="9_qip5i"]
 [ext_resource type="Texture2D" uid="uid://cni4fel4aup25" path="res://assets/gfx/ui/ComboIcons/Roach_Almanac.png" id="10_0cwj8"]
+[ext_resource type="PackedScene" uid="uid://c5i48h3g4lo5r" path="res://src/almanac/combo.tscn" id="12_nvp7d"]
+[ext_resource type="Texture2D" uid="uid://docyrtagox800" path="res://assets/gfx/ui/Almanac/tabs1.png" id="13_sb0in"]
+[ext_resource type="Texture2D" uid="uid://d4bnrx4173caw" path="res://assets/gfx/ui/Almanac/tabs2.png" id="14_bnajd"]
 
 [sub_resource type="Theme" id="Theme_dyw4r"]
 default_font = ExtResource("1_7rxwv")
@@ -41,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_y4i3l")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Debuffs" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,62 +56,173 @@ theme_override_constants/margin_top = 140
 theme_override_constants/margin_right = 360
 theme_override_constants/margin_bottom = 140
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Debuffs"]
 custom_minimum_size = Vector2(1200, 800)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 50
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Debuffs/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "DEBUFFs"
+text = "DEBUFFS"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Debuffs/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 120
 
-[node name="LeftPage" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="LeftPage" type="VBoxContainer" parent="Debuffs/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 50
 
-[node name="Snail" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("2_mh75g")]
+[node name="Snail" parent="Debuffs/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("2_mh75g")]
 layout_mode = 2
 texture = ExtResource("4_71lm4")
 text = "They’re known for their slow pace, and therefore are easy to catch. But this slow-moving creature leaves behind a trail of sticky mucus, which will slow you down after eating it."
 
-[node name="Slug" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("2_mh75g")]
+[node name="Slug" parent="Debuffs/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("2_mh75g")]
 layout_mode = 2
 texture = ExtResource("5_r5dtv")
 text = "Similar to snails, they’re slow and easy to catch, making them a perfect little snack on the road. But be careful! They are very slimy and will make you feel heavy, making you unable to use double jump."
 
-[node name="Moths" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("2_mh75g")]
+[node name="Moths" parent="Debuffs/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("2_mh75g")]
 layout_mode = 2
 texture = ExtResource("6_iyb00")
 text = "They are known for their typically nocturnal nature, with most species being active during the night or twilight hours. Due to its devotion to light and shadows, consuming it will make you invisible."
 
-[node name="Flies" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("2_mh75g")]
+[node name="Flies" parent="Debuffs/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("2_mh75g")]
 layout_mode = 2
 texture = ExtResource("7_n8fif")
 text = " They are small, winged insects with slender bodies. Once eaten, they will viciously use their wings causing you to hiccup. "
 
-[node name="RightPage" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="RightPage" type="VBoxContainer" parent="Debuffs/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 50
 
-[node name="Beetle" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPage" instance=ExtResource("2_mh75g")]
+[node name="Beetle" parent="Debuffs/VBoxContainer/HBoxContainer/RightPage" instance=ExtResource("2_mh75g")]
 layout_mode = 2
 texture = ExtResource("8_tab3h")
 text = "Their streamlined bodies, and hard outer wings, are full of nutrients and will increase your Energy Points. But because they’re feisty creatures, they’ll try to use their legs to get out and therefore deplete your speed."
 
-[node name="Worms" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPage" instance=ExtResource("2_mh75g")]
+[node name="Worms" parent="Debuffs/VBoxContainer/HBoxContainer/RightPage" instance=ExtResource("2_mh75g")]
 layout_mode = 2
 texture = ExtResource("9_qip5i")
 text = "Due to their elongated and boneless form, they can squeeze in anywhere, but also tangle around things. Once consumed, they’ll entangle your tongue, preventing you from using its whole length. "
 
-[node name="Cockroaches" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPage" instance=ExtResource("2_mh75g")]
+[node name="Cockroaches" parent="Debuffs/VBoxContainer/HBoxContainer/RightPage" instance=ExtResource("2_mh75g")]
 layout_mode = 2
 texture = ExtResource("10_0cwj8")
 text = "Famous for their ability to survive in extreme conditions, some species can live for weeks without food. After consuming it’ll increase all insects’ dodge chance, so they can survive your attacks better."
+
+[node name="Combos" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 380
+theme_override_constants/margin_top = 140
+theme_override_constants/margin_right = 360
+theme_override_constants/margin_bottom = 140
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Combos"]
+custom_minimum_size = Vector2(1200, 800)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="Combos/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "COMBOS"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Combos/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="LeftPage" type="VBoxContainer" parent="Combos/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="TripleTrouble" parent="Combos/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("12_nvp7d")]
+layout_mode = 2
+title = "Triple Trouble"
+description = "Replenish extra energy"
+bug1 = 2
+bug2 = 3
+bug3 = 2
+
+[node name="GourmetKebab" parent="Combos/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("12_nvp7d")]
+layout_mode = 2
+title = "Gourmet Kebab"
+description = "Triple Jump"
+bug1 = 2
+bug2 = 4
+bug3 = 5
+
+[node name="Combo" parent="Combos/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("12_nvp7d")]
+layout_mode = 2
+title = "Flying Taste"
+description = "Speed Up"
+bug1 = 3
+bug2 = 4
+bug3 = 7
+
+[node name="RightPage" type="VBoxContainer" parent="Combos/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="Combo2" parent="Combos/VBoxContainer/HBoxContainer/RightPage" instance=ExtResource("12_nvp7d")]
+layout_mode = 2
+title = "Take It Slow"
+description = "Freeze Energy Depletion"
+bug1 = 5
+bug3 = 6
+
+[node name="Combo" parent="Combos/VBoxContainer/HBoxContainer/RightPage" instance=ExtResource("12_nvp7d")]
+layout_mode = 2
+title = "Crunchy Sandwitch"
+description = "All bugs stop moving"
+bug1 = 6
+bug2 = 7
+
+[node name="DebuffButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 0
+offset_left = 1607.0
+offset_top = 253.0
+offset_right = 1882.0
+offset_bottom = 595.0
+toggle_mode = true
+texture_normal = ExtResource("13_sb0in")
+texture_pressed = ExtResource("14_bnajd")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1649.0
+offset_top = 286.0
+offset_right = 1798.0
+offset_bottom = 314.0
+rotation = 0.307178
+theme_type_variation = &"HeaderMedium"
+text = "DEBUFFS"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1639.0
+offset_top = 359.0
+offset_right = 1788.0
+offset_bottom = 387.0
+rotation = 0.307178
+theme_type_variation = &"HeaderMedium"
+text = "COMBOS"
+
+[connection signal="toggled" from="DebuffButton" to="." method="_on_debuff_button_toggled"]
