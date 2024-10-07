@@ -75,6 +75,8 @@ func _input(event: InputEvent) -> void:
 		Events.combo_achieved.emit(3)
 	if Input.is_action_just_pressed("buf_5"):
 		Events.combo_achieved.emit(4)
+	if Input.is_action_just_pressed("next_level"):
+		Events.reached_level_end.emit()
 		
 		
 func _on_reached_level_end():

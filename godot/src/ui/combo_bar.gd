@@ -38,7 +38,8 @@ func update_bar():
 		icons[i].texture=null if bugs[i]==null else textures[bugs[i]]
 	
 
-func _on_bug_caught(type:Types.BugType):
+func _on_bug_caught(bug: Bug):
+	var type = bug.type
 	for i in range(bugs.size()):
 		if bugs[i] == null:
 			bugs[i]=type

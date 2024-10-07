@@ -1,6 +1,6 @@
 extends Node
 
-signal bug_caught(type: Types.BugType)
+signal bug_caught(bug: Bug)
 signal tongue_attached(to: Vector2)
 signal tongue_detached
 
@@ -21,10 +21,3 @@ signal game_lost()
 signal combo_achieved(idx:int)
 
 signal bug_freeze_toggle(val:bool)
-
-
-func _ready() -> void:
-	bug_caught.connect(func(type): Logger.info("Caught bug of type: %s" % Types.key_of(type)))
-	eagle_incoming.connect(func(): Logger.info("Eagle incoming!"))
-	eagle_left.connect(func(): Logger.info("Eagle left"))
-	

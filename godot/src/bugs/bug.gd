@@ -24,7 +24,7 @@ func _ready():
 	
 func catch() -> bool:
 	if Globals.rng.randf() > dodge_chance:
-		Events.bug_caught.emit(type)
+		Events.bug_caught.emit(self)
 		do_death()
 		return true
 	else:
