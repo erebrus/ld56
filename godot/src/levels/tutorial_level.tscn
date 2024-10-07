@@ -275,6 +275,9 @@ autowrap_mode = 3
 [node name="Frog" parent="." index="6"]
 position = Vector2(1051, 1524)
 
+[node name="HealthComponent" parent="Frog" index="9"]
+max_energy = 500.0
+
 [node name="NextLevel" parent="." index="7" instance=ExtResource("9_ytgtn")]
 position = Vector2(15248, 1210)
 
@@ -294,3 +297,5 @@ position = Vector2(12237, 1051.5)
 shape = SubResource("RectangleShape2D_wia2p")
 
 [connection signal="body_entered" from="TriggerEagle" to="." method="_on_trigger_eagle_body_entered"]
+
+[editable path="Frog"]
