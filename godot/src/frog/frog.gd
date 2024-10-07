@@ -123,7 +123,9 @@ func _on_head_shot_finished() -> void:
 	if head.tongue.caught_bug:
 		$sfx/sfx_eat.play()
 		process_bug(head.tongue.caught_bug)
-
+		head.tongue.caught_bug.free_if_done()
+		head.tongue.caught_bug=null
+		
 func _on_combo_achieved(combo_idx:int):
 	var new_buf=Types.COMBO_BUFS[combo_idx].instantiate() as Debuf
 	process_debuf(new_buf)

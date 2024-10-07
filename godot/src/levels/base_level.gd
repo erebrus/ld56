@@ -17,8 +17,10 @@ func _ready() -> void:
 	version.text=ProjectSettings.get_setting("application/config/version") # Replace with function body.
 	version.visible=Globals.debug_build
 	ambient.play()
-	frog.health_component.max_changed.connect(func (x):health_bar.set_max(frog.health_component.max_energy);Logger.info("Changing healthbar"))
+	frog.health_component.max_changed.connect(func (x):health_bar.set_max(x);Logger.info("Changing healthbar"))
 	health_bar.set_max(frog.health_component.max_energy)
+	health_bar._on_frog_energy_changed(frog.health_component.max_energy)
+
 	Globals.music_manager.fade_in_stream(music)
 	Events.reached_level_end.connect(_on_reached_level_end)
 	Events.frog_grabbed.connect(func(): camera_follow_player = false)

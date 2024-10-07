@@ -37,6 +37,10 @@ func do_death():
 	if sfx_death.stream:
 		sfx_death.play()
 		await sfx_death.finished
+
+func free_if_done():
+	if sfx_death.playing:
+		await sfx_death.finished
 	queue_free()
 	
 func do_dodge():

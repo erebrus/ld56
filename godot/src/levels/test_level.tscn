@@ -84,38 +84,29 @@ point_count = 2
 
 [node name="TestLevel" instance=ExtResource("1_yfdoh")]
 
-[node name="BG" parent="." index="0"]
+[node name="Ground2" type="Node2D" parent="." index="3"]
 metadata/_edit_lock_ = true
 
-[node name="MG" parent="." index="1"]
-metadata/_edit_lock_ = true
-
-[node name="FG" parent="." index="2"]
-metadata/_edit_lock_ = true
-
-[node name="Ground" type="Node2D" parent="." index="3"]
-metadata/_edit_lock_ = true
-
-[node name="grass" type="StaticBody2D" parent="Ground" index="0"]
+[node name="grass7" type="StaticBody2D" parent="Ground" index="0"]
 position = Vector2(568, 1023)
 
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass" index="0"]
+[node name="grass8" type="StaticBody2D" parent="Ground" index="1"]
+position = Vector2(4409, 1023)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ground/grass" index="0"]
 position = Vector2(1346, 520)
 texture = ExtResource("2_7ar4w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass" index="1"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground/grass" index="1"]
 visible = false
 position = Vector2(1353, 618.5)
 shape = SubResource("RectangleShape2D_xf487")
 
-[node name="grass2" type="StaticBody2D" parent="Ground" index="1"]
-position = Vector2(4409, 1023)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass2" index="0"]
+[node name="Sprite2D2" type="Sprite2D" parent="Ground/grass2" index="0"]
 position = Vector2(1346, 520)
 texture = ExtResource("2_7ar4w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass2" index="1"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground/grass2" index="1"]
 position = Vector2(1353, 618.5)
 shape = SubResource("RectangleShape2D_xf487")
 
@@ -249,6 +240,6 @@ position = Vector2(3441, 1544)
 [node name="Path2D" type="Path2D" parent="Bugs/Beetle3" index="7"]
 curve = SubResource("Curve2D_4c5rx")
 
-[node name="Frog" parent="." index="6"]
+[node name="Frog" parent="." index="7"]
 position = Vector2(775, 1485)
 swing_gravity = 1000

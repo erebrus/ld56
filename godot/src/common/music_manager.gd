@@ -1,6 +1,7 @@
 class_name MusicManager extends Node
 
-@export var music_bus_volume:=-9.0
+@export var music_bus_volume:=-7.0
+@export var ambient_volume:=0
 @onready var menu_music: AudioStreamPlayer = $menu_music
 @onready var game_music: AudioStreamPlayer = $game_music
 
@@ -31,11 +32,11 @@ func play_music(node:AudioStreamPlayer):
 		#else:
 			#game_music_stream.set_sync_stream_volume(i,-60)
 
-func fade_in_stream(node:AudioStreamPlayer, duration := 1.0):
+func fade_in_stream(node:AudioStreamPlayer, duration := 1.0, volume_db:=0.0):
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	node.volume_db=-20
 	node.play()
-	tween.tween_property(node,"volume_db",0 , duration)
+	tween.tween_property(node,"volume_db",volume_db , duration)
 	
 
 func fade_stream(node:AudioStreamPlayer, duration := 1.0):
