@@ -213,12 +213,12 @@ stream_2/stream = ExtResource("49_s3fru")
 script = ExtResource("1_d535o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4, -78)
 sprite_frames = SubResource("SpriteFrames_2cpot")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="Head" parent="." instance=ExtResource("26_0l4g6")]
+position = Vector2(1, 84)
 
 [node name="sfx" type="Node2D" parent="."]
 

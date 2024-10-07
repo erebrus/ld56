@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://ccrqd0ewe40jp"]
+
+[ext_resource type="Texture2D" uid="uid://1r4om13ema3v" path="res://assets/gfx/ui/Button.png" id="1_8dx8b"]
+[ext_resource type="Texture2D" uid="uid://chee1wf730wys" path="res://assets/gfx/ui/ToggleOFF.png" id="2_w2jve"]
+[ext_resource type="Texture2D" uid="uid://cj7nu1gj8n70x" path="res://assets/gfx/ui/ToggleON.png" id="3_wdyib"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b44as"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrc5f"]
+texture = ExtResource("1_8dx8b")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msyo6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_udc1m"]
+texture = ExtResource("2_w2jve")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwte6"]
+texture = ExtResource("3_wdyib")
+
+[resource]
+default_font_size = 48
+Button/font_sizes/font_size = 68
+Button/styles/focus = SubResource("StyleBoxEmpty_b44as")
+Button/styles/hover = SubResource("StyleBoxTexture_yrc5f")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_yrc5f")
+Button/styles/normal = SubResource("StyleBoxTexture_yrc5f")
+Button/styles/pressed = SubResource("StyleBoxTexture_yrc5f")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_msyo6")
+CheckBox/styles/hover = SubResource("StyleBoxTexture_udc1m")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxTexture_cwte6")
+CheckBox/styles/normal = SubResource("StyleBoxTexture_udc1m")
+CheckBox/styles/pressed = SubResource("StyleBoxTexture_cwte6")
