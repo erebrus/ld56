@@ -12,11 +12,16 @@ const textures={
 }
 
 @export var reset_delay=1
+@export var combo_timeout=3
+
 @onready var icons:=[$HBoxContainer/Icons/Icon1, $HBoxContainer/Icons/Icon2, $HBoxContainer/Icons/Icon3]
 var bugs=[null,null,null]
+@onready var timer: Timer = $Timer
 
 func _ready():
 	_reset_combo()
+	Events.bug_caught.connect(_on_bug_caught)
+	timer.wait_time=combo_timeout
 	#for bug in [Types.BugType.Snail,Types.BugType.Worm,Types.BugType.Fly,Types.BugType.Fly,Types.BugType.Moth]:
 		#await get_tree().create_timer(.5).timeout
 		#_on_bug_caught(bug)
@@ -25,6 +30,7 @@ func _reset_combo():
 	for i in range(bugs.size()):
 		bugs[i]=null
 	update_bar()
+	timer.stop()
 
 func update_bar():
 	for i in range(bugs.size()):
@@ -36,12 +42,19 @@ func _on_bug_caught(type:Types.BugType):
 		if bugs[i] == null:
 			bugs[i]=type
 			update_bar()
+			timer.start()
 			return
 	for i in range(bugs.size()-1):
 		bugs[i]=bugs[i+1]
 	bugs[bugs.size()-1]=type
 	update_bar()
-	check_combo()
+	if not check_combo():
+		timer.start()
+	else:
+		timer.stop()
+		await get_tree().create_timer(reset_delay).timeout
+		_reset_combo()
+		
 	
 func matches(combo:Array)->bool:
 	for i in range(combo.size()):
@@ -50,11 +63,14 @@ func matches(combo:Array)->bool:
 	return true
 	_reset_combo()
 	
-func check_combo():
+func check_combo()->bool:
 	for combo_idx in range(Types.COMBOS.size()):
 		var combo = Types.COMBOS[combo_idx]
 		if matches(combo):
 			Events.combo_achieved.emit(combo_idx)
-			await get_tree().create_timer(reset_delay).timeout
-			_reset_combo()
-			return
+
+			return true
+	return false
+
+func _on_timer_timeout() -> void:
+	_reset_combo()

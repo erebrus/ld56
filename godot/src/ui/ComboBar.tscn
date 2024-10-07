@@ -18,6 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_2raw8")
 script = ExtResource("1_vtrm4")
+combo_timeout = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -57,3 +58,8 @@ texture = ExtResource("2_jabas")
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("3_hjrxa")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

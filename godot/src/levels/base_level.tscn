@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnqbkbby1d1sd"]
+[gd_scene load_steps=13 format=3 uid="uid://cnqbkbby1d1sd"]
 
 [ext_resource type="Script" path="res://src/levels/base_level.gd" id="1_mo5ug"]
 [ext_resource type="PackedScene" uid="uid://b5lgniaadan1y" path="res://src/frog/frog.tscn" id="1_nfuix"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c06tqqbevl64b" path="res://src/ui/healthbar.tscn" id="6_16uxq"]
 [ext_resource type="PackedScene" uid="uid://bfsfbydiqr0gr" path="res://src/eagle/eagle.tscn" id="6_x2vej"]
 [ext_resource type="AudioStream" uid="uid://c21xktcb61m7j" path="res://assets/sfx/Amb_rain_forest_loop.mp3" id="7_eodqv"]
+[ext_resource type="PackedScene" uid="uid://bi641rjvj6uib" path="res://src/ui/ComboBar.tscn" id="7_s8mqr"]
 [ext_resource type="AudioStream" uid="uid://wjyg14aw2lmc" path="res://assets/music/Frogs_Life.mp3" id="9_ojf7k"]
 [ext_resource type="AudioStream" uid="uid://bkdx738wd3yuf" path="res://assets/music/Frogs_Life_Hide.mp3" id="10_2l27k"]
 
@@ -102,6 +103,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="ComboBar" parent="HUD" instance=ExtResource("7_s8mqr")]
+offset_left = 1570.0
+offset_top = 54.0
+offset_right = 0.0
+offset_bottom = -962.0
 
 [node name="Eagle" parent="." instance=ExtResource("6_x2vej")]
 
