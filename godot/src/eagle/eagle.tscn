@@ -41,6 +41,7 @@ flip_h = true
 
 [node name="WarningSfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_7wko3")
+volume_db = 12.0
 
 [node name="FlyBySfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_e620g")

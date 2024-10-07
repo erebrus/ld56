@@ -1,13 +1,16 @@
 extends Node
 class_name HealthComponent
 
-signal max_changed(value)
+#signal max_changed(value)
 signal energy_changed(value)
 signal died
 @export var max_energy:float = 100:
 	set(v):
 		max_energy=v
-		max_changed.emit(v)
+		energy = clamp(energy, 0, max_energy)
+		energy_changed.emit(energy)
+		#max_changed.emit(v)
+		
 
 @onready var energy:float = max_energy
 
