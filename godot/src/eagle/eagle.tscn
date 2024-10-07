@@ -41,6 +41,7 @@ flip_h = true
 
 [node name="WarningSfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_7wko3")
+volume_db = 12.0
 
 [node name="FlyBySfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_e620g")
@@ -63,7 +64,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("../..")
 timed = false
-next_state = NodePath("")
+next_state = NodePath("../flyby")
 
 [node name="flyby" type="Node" parent="xsm"]
 script = ExtResource("8_bkve8")
