@@ -36,7 +36,7 @@ func do_death():
 	if sfx_death.stream:
 		sfx_death.play()
 		await sfx_death.finished
-		call_deferred("queue_free")
+	queue_free()
 	
 func do_dodge():
 	xsm.change_state("dodge")
