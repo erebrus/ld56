@@ -178,12 +178,12 @@ text = "Use A and D to move around "
 
 [node name="Tooltip11" type="Label" parent="Tutorial" index="1"]
 layout_mode = 0
-offset_left = 4912.0
-offset_top = 521.0
-offset_right = 5630.0
-offset_bottom = 718.0
-text = "To use your Tongue Attack, click LMB. Remember that you can use it only at certain angles! To aim, use your cursor. 
-"
+offset_left = 4914.0
+offset_top = 548.0
+offset_right = 5632.0
+offset_bottom = 689.0
+text = "To use your Tongue Attack, click LMB.
+ To aim, use your cursor."
 autowrap_mode = 3
 
 [node name="Tooltip2" type="Label" parent="Tutorial" index="2"]
