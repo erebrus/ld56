@@ -78,6 +78,7 @@ func check_combo()->bool:
 		if matches(combo):
 			Events.combo_achieved.emit(combo_idx)
 			$combo_success.play()
+			Logger.info("combo success")
 			return true
 
 	$combo_add.play()
@@ -86,3 +87,4 @@ func check_combo()->bool:
 func _on_timer_timeout() -> void:
 	_reset_combo()
 	$combo_drop.play()
+	Logger.info("Combo dropped.")
