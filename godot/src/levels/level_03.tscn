@@ -383,12 +383,12 @@ position = Vector2(1813, 40)
 [node name="EndGameArea" parent="Scenery" index="4" instance=ExtResource("15_7rmnv")]
 position = Vector2(20422, 1318)
 
-[node name="Frog" parent="." index="6"]
+[node name="Frog" parent="." index="4"]
 position = Vector2(356, 496)
 swing_gravity = 1000
 
-[node name="Camera2D" parent="." index="7"]
+[node name="Camera2D" parent="." index="5"]
 limit_right = 20700
 
-[node name="music" parent="." index="11"]
+[node name="music" parent="." index="9"]
 stream = SubResource("AudioStreamSynchronized_4awan")
