@@ -9,6 +9,7 @@ func _on_enter(_args) -> void:
 	Logger.info("state:%s " % name)
 	if target:
 		target.state_name=name
+	get_body().head.can_shoot=false
 	get_body().velocity.y = -get_ctl().hop_velocity
 	
 func _after_enter(_args) -> void:
@@ -31,6 +32,6 @@ func _after_update(_delta) -> void:
 func _before_exit(_args) -> void:
 	pass
 func _on_exit(_args) -> void:
-	pass
+	get_body().head.can_shoot=true
 func _on_timeout(_name) -> void:
 	pass
