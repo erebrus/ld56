@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cd7ph3p1q0yhi"]
+[gd_scene load_steps=13 format=3 uid="uid://cd7ph3p1q0yhi"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_c56io"]
 [ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="2_yokkj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dkyx6xyum3prp" path="res://src/bugs/slug.tscn" id="4_yqxac"]
 [ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="5_ww8ov"]
 [ext_resource type="PackedScene" uid="uid://dn40sagnjlvbk" path="res://src/bugs/moth.tscn" id="6_ea8q5"]
+[ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="7_74ymq"]
 
 [sub_resource type="Curve2D" id="Curve2D_ulvv2"]
 _data = {
@@ -24,6 +25,18 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -187, -65, 0, 0, 0, 0, 165, -148, 0, 0, 0, 0, 348, -29, 0, 0, 0, 0, 198, 164, 0, 0, 0, 0, -51, 76, 0, 0, 0, 0, 1925, 153)
 }
 point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_n5x4y"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -50.1318, 17.7399, 0, 0, 0, 0, 291.868, 3.73987)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_d1rh2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 206.868, 84.6942, 0, 0, 0, 0, -82.1322, 52.6942, 0, 0, 0, 0, -73.1322, -52.3058, 0, 0, 0, 0, 84.8678, -66.3058)
+}
+point_count = 4
 
 [node name="TestLevel" instance=ExtResource("1_c56io")]
 
@@ -56,3 +69,15 @@ position = Vector2(709, 1266)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Moth" index="7"]
 curve = SubResource("Curve2D_4gxdp")
+
+[node name="Beetle2" parent="Bugs" index="3" instance=ExtResource("5_ww8ov")]
+position = Vector2(705.132, 1531.26)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Beetle2" index="7"]
+curve = SubResource("Curve2D_n5x4y")
+
+[node name="Fly" parent="Bugs" index="4" instance=ExtResource("7_74ymq")]
+position = Vector2(304.132, 1270.31)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Fly" index="7"]
+curve = SubResource("Curve2D_d1rh2")

@@ -48,6 +48,11 @@ const COMBOS=[
 	[Types.BugType.Worm,Types.BugType.Cockroach,Types.BugType.Slug]
 ]
 const DEBUF_ICONS={
+	#CrunchySandwishBuf:preload("res://src/frog/debufs/crunchy_sandwish_buf.tscn"),
+	#GourmetKebubBuf:preload("res://src/frog/debufs/gourmet_kebub_buf.tscn"),
+	#TakeItSlowBuff:preload("res://src/frog/debufs/take_it_slow_buff.tscn"),
+	#TripleDoubleBuff:preload("res://src/frog/debufs/triple_double_buff.tscn"),
+	#FlyingTasteDebuf:preload("res://src/frog/debufs/flying_taste_debuf.tscn"),	
 	"DoubleJumpDebuf":preload("res://assets/gfx/ui/DebuffIcons/DecreaBigJump.png"),
 	"TongueDebuf":preload("res://assets/gfx/ui/DebuffIcons/NoTongue.png"),
 	"SlowdownDebuf":preload("res://assets/gfx/ui/DebuffIcons/Slowdown.png"),
