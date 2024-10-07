@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cmvyygsdlxu3j"]
+[gd_scene load_steps=23 format=3 uid="uid://cmvyygsdlxu3j"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_mwynp"]
 [ext_resource type="Script" path="res://src/levels/tutorial_level.gd" id="2_j47jj"]
@@ -15,11 +15,23 @@
 [ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="11_8kdqw"]
 [ext_resource type="FontFile" uid="uid://b46k1dayka58c" path="res://assets/fonts/jack-armstrong-bold.ttf" id="14_7mo8o"]
 
+[sub_resource type="Curve2D" id="Curve2D_v7ocv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -12, -2, 0, 0, 0, 0, 190, -9)
+}
+point_count = 2
+
 [sub_resource type="Curve2D" id="Curve2D_8atrd"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -129, 18, 0, 0, 0, 0, 71, 57, 0, 0, 0, 0, 275, 65, 0, 0, 0, 0, 426, 53, 0, 0, 0, 0, 810, -17)
+"points": PackedVector2Array(0, 0, 0, 0, -129, 18, 0, 0, 0, 0, 71, 57, 0, 0, 0, 0, 293, 80, 0, 0, 0, 0, 433, 78, 0, 0, 0, 0, 598, 59)
 }
 point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_xfw1d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -204, 17, 0, 0, 0, 0, 356, 13)
+}
+point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_lqi2n"]
 _data = {
@@ -102,21 +114,33 @@ position = Vector2(10058, 1542)
 position = Vector2(11167, 1266)
 scale = Vector2(-1, 1)
 
-[node name="Slug" parent="Bugs" index="0" instance=ExtResource("9_jpj2v")]
-position = Vector2(9665, 1421)
+[node name="Beetle2" parent="Bugs" index="0" instance=ExtResource("11_8kdqw")]
+position = Vector2(5655, 897)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Beetle2" index="7"]
+curve = SubResource("Curve2D_v7ocv")
+
+[node name="Slug" parent="Bugs" index="1" instance=ExtResource("9_jpj2v")]
+position = Vector2(10788, 1126)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Slug" index="7"]
 position = Vector2(90, 0)
 curve = SubResource("Curve2D_8atrd")
 
-[node name="Fly" parent="Bugs" index="1" instance=ExtResource("10_rm72x")]
+[node name="Beetle3" parent="Bugs" index="2" instance=ExtResource("11_8kdqw")]
+position = Vector2(8538, 1555)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Beetle3" index="7"]
+curve = SubResource("Curve2D_xfw1d")
+
+[node name="Fly" parent="Bugs" index="3" instance=ExtResource("10_rm72x")]
 position = Vector2(9399, 1196)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Fly" index="7"]
 curve = SubResource("Curve2D_lqi2n")
 
-[node name="Beetle" parent="Bugs" index="2" instance=ExtResource("11_8kdqw")]
-position = Vector2(10883, 1159)
+[node name="Beetle" parent="Bugs" index="4" instance=ExtResource("11_8kdqw")]
+position = Vector2(9699, 1430)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Beetle" index="7"]
 position = Vector2(-18, 29)
@@ -152,7 +176,17 @@ offset_right = 1492.0
 offset_bottom = 1652.0
 text = "Use A and D to move around "
 
-[node name="Tooltip2" type="Label" parent="Tutorial" index="1"]
+[node name="Tooltip11" type="Label" parent="Tutorial" index="1"]
+layout_mode = 0
+offset_left = 4912.0
+offset_top = 521.0
+offset_right = 5630.0
+offset_bottom = 718.0
+text = "To use your Tongue Attack, click LMB. Remeber that you can use it only at certain angles! To aim, use your cursor. 
+"
+autowrap_mode = 3
+
+[node name="Tooltip2" type="Label" parent="Tutorial" index="2"]
 layout_mode = 0
 offset_left = 1846.0
 offset_top = 1612.0
@@ -160,7 +194,7 @@ offset_right = 2569.0
 offset_bottom = 1657.0
 text = "Press SPACE to jump one time"
 
-[node name="Tooltip3" type="Label" parent="Tutorial" index="2"]
+[node name="Tooltip3" type="Label" parent="Tutorial" index="3"]
 layout_mode = 0
 offset_left = 3620.0
 offset_top = 1613.0
@@ -168,7 +202,7 @@ offset_right = 4082.0
 offset_bottom = 1658.0
 text = "Pressing SPACE twice makes you jump higher"
 
-[node name="Tooltip4" type="Label" parent="Tutorial" index="3"]
+[node name="Tooltip4" type="Label" parent="Tutorial" index="4"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
 offset_left = 7040.0
@@ -178,7 +212,7 @@ offset_bottom = 1751.0
 text = "Do you see that blue mushroom? You can use your tongue to stick to it and swing!"
 autowrap_mode = 3
 
-[node name="Tooltip5" type="Label" parent="Tutorial" index="4"]
+[node name="Tooltip5" type="Label" parent="Tutorial" index="5"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
 offset_left = 7725.0
@@ -188,7 +222,7 @@ offset_bottom = 1367.0
 text = "Once your tongue sticks to the fungus, you can use W and S to pull yourself up and down. Using A and D allows you to swing"
 autowrap_mode = 3
 
-[node name="Tooltip6" type="Label" parent="Tutorial" index="5"]
+[node name="Tooltip6" type="Label" parent="Tutorial" index="6"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
 offset_left = 8681.0
@@ -198,7 +232,7 @@ offset_bottom = 1503.0
 text = "Remember that your energy is constantly going down. Consume the insects using your tongue to restore it"
 autowrap_mode = 3
 
-[node name="Tooltip7" type="Label" parent="Tutorial" index="6"]
+[node name="Tooltip7" type="Label" parent="Tutorial" index="7"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
 offset_left = 9952.0
@@ -208,7 +242,7 @@ offset_bottom = 1415.0
 text = "All the insects in the jungle are poisonous, eating them will give you different debuffs. Press TAB to see all possible bugs."
 autowrap_mode = 3
 
-[node name="Tooltip8" type="Label" parent="Tutorial" index="7"]
+[node name="Tooltip8" type="Label" parent="Tutorial" index="8"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
 offset_left = 10793.0
@@ -218,7 +252,7 @@ offset_bottom = 1591.0
 text = "However, a poison in one bug can be a cure for another insect! Combine different bugs, create combos and recieve buffs!"
 autowrap_mode = 3
 
-[node name="Tooltip9" type="Label" parent="Tutorial" index="8"]
+[node name="Tooltip9" type="Label" parent="Tutorial" index="9"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
 offset_left = 12180.0
@@ -228,7 +262,7 @@ offset_bottom = 1432.0
 text = "Did you hear that? You’ve been spotted by the Bird. You need you hide or the predator will eat you! "
 autowrap_mode = 3
 
-[node name="Tooltip10" type="Label" parent="Tutorial" index="9"]
+[node name="Tooltip10" type="Label" parent="Tutorial" index="10"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
 offset_left = 14537.0
