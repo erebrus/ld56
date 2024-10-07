@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddv7gymgo7qom"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_7dtjy"]
+[ext_resource type="Texture2D" uid="uid://dor6tev2jr2jp" path="res://assets/gfx/environment/MushroomPlatform2.png" id="2_g0wsq"]
+
+[node name="MushroomPlatformB" instance=ExtResource("1_7dtjy")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_g0wsq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-89, 34, -89, 13, -66, -16, -36, -29, 0, -34, 37, -30, 66, -18, 94, 15, 94, 36, 28, 60, -20, 60)
+one_way_collision = true

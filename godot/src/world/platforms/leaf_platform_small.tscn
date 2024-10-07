@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsa4q1xpbweyr"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_2ibip"]
+[ext_resource type="Texture2D" uid="uid://bls3vbqvlwp8r" path="res://assets/gfx/environment/LeafPlatformSmall.png" id="2_cc442"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_weghm"]
+size = Vector2(172, 16)
+
+[node name="LeafPlatformSmall" instance=ExtResource("1_2ibip")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_cc442")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(6, 21)
+shape = SubResource("RectangleShape2D_weghm")
+one_way_collision = true
