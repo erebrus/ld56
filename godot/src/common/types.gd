@@ -40,11 +40,11 @@ func key_of(value) -> String:
 	preload("res://src/frog/debufs/crunchy_sandwish_buf.tscn")
 ]
 const COMBOS=[
-	[Types.BugType.Beetle,Types.BugType.Beetle,Types.BugType.Beetle],
-	[Types.BugType.Beetle,Types.BugType.Fly,Types.BugType.Snail],
-	[Types.BugType.Fly,Types.BugType.Fly,Types.BugType.Moth],
-	[Types.BugType.Snail,Types.BugType.Snail,Types.BugType.Moth],
-	[Types.BugType.Beetle,Types.BugType.Snail,Types.BugType.Beetle]
+	[Types.BugType.Beetle,Types.BugType.Fly,Types.BugType.Beetle],
+	[Types.BugType.Beetle,Types.BugType.Moth,Types.BugType.Snail],
+	[Types.BugType.Fly,Types.BugType.Moth,Types.BugType.Cockroach],
+	[Types.BugType.Snail,Types.BugType.Slug,Types.BugType.Worm],
+	[Types.BugType.Worm,Types.BugType.Cockroach,Types.BugType.Slug]
 ]
 const DEBUF_ICONS={
 	"DoubleJumpDebuf":preload("res://assets/gfx/ui/DebuffIcons/DecreaBigJump.png"),
