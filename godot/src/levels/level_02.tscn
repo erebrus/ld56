@@ -1,7 +1,6 @@
-[gd_scene load_steps=43 format=3 uid="uid://bayfc11f0g7xn"]
+[gd_scene load_steps=41 format=3 uid="uid://bayfc11f0g7xn"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_d2fqf"]
-[ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="2_se6ue"]
 [ext_resource type="Texture2D" uid="uid://b8b5jgthrtj4s" path="res://assets/gfx/environment/Vine.png" id="3_ce5te"]
 [ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="4_07tmn"]
 [ext_resource type="PackedScene" uid="uid://dkyx6xyum3prp" path="res://src/bugs/slug.tscn" id="4_shqu2"]
@@ -21,9 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://daidqd7n3terl" path="res://src/world/next_level.tscn" id="18_ixeje"]
 [ext_resource type="AudioStream" uid="uid://dn184ut238off" path="res://assets/music/Bugs_Driven_Cutie.mp3" id="19_gdoaw"]
 [ext_resource type="AudioStream" uid="uid://0iujfpk6p3nb" path="res://assets/music/Bugs_Driven_Cutie_Hide.mp3" id="20_u408f"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf487"]
-size = Vector2(3818, 147)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acc83"]
 size = Vector2(531, 3167.5)
@@ -143,88 +139,7 @@ stream_0/volume = 0.0
 stream_1/stream = ExtResource("20_u408f")
 stream_1/volume = -60.0
 
-[node name="Level_01" instance=ExtResource("1_d2fqf")]
-
-[node name="BG" parent="." index="0"]
-repeat_times = 6
-metadata/_edit_lock_ = true
-
-[node name="TextureRect" parent="BG" index="0"]
-offset_left = -1606.0
-offset_top = -1579.0
-offset_right = 2234.0
-offset_bottom = 1735.0
-
-[node name="MG" parent="." index="1"]
-repeat_times = 6
-metadata/_edit_lock_ = true
-
-[node name="TextureRect" parent="MG" index="0"]
-offset_left = -1112.0
-offset_top = -1561.0
-offset_right = 2728.0
-offset_bottom = 1753.0
-
-[node name="FG" parent="." index="2"]
-repeat_times = 6
-metadata/_edit_lock_ = true
-
-[node name="TextureRect" parent="FG" index="0"]
-offset_left = -1213.0
-offset_top = -1582.0
-offset_right = 2627.0
-offset_bottom = 1732.0
-
-[node name="Ground" type="Node2D" parent="." index="3"]
-metadata/_edit_lock_ = true
-
-[node name="grass" type="StaticBody2D" parent="Ground" index="0"]
-position = Vector2(568, 1023)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass" index="0"]
-position = Vector2(1346, 520)
-texture = ExtResource("2_se6ue")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass" index="1"]
-visible = false
-position = Vector2(1353, 618.5)
-shape = SubResource("RectangleShape2D_xf487")
-
-[node name="grass2" type="StaticBody2D" parent="Ground" index="1"]
-position = Vector2(4409, 1023)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass2" index="0"]
-position = Vector2(1311, 520)
-texture = ExtResource("2_se6ue")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass2" index="1"]
-visible = false
-position = Vector2(1353, 618.5)
-shape = SubResource("RectangleShape2D_xf487")
-
-[node name="grass3" type="StaticBody2D" parent="Ground" index="2"]
-position = Vector2(8208, 1023)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass3" index="0"]
-position = Vector2(1346, 520)
-texture = ExtResource("2_se6ue")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass3" index="1"]
-visible = false
-position = Vector2(1353, 618.5)
-shape = SubResource("RectangleShape2D_xf487")
-
-[node name="grass4" type="StaticBody2D" parent="Ground" index="3"]
-position = Vector2(11955, 1023)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass4" index="0"]
-position = Vector2(1346, 520)
-texture = ExtResource("2_se6ue")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass4" index="1"]
-visible = false
-position = Vector2(1353, 618.5)
-shape = SubResource("RectangleShape2D_xf487")
+[node name="Level_02" instance=ExtResource("1_d2fqf")]
 
 [node name="decorations" type="Node2D" parent="Scenery" index="0"]
 
@@ -516,7 +431,7 @@ curve = SubResource("Curve2D_ymibe")
 position = Vector2(971, 1551)
 swing_gravity = 1000
 
-[node name="NextLevel" parent="." index="11" instance=ExtResource("18_ixeje")]
+[node name="NextLevel" parent="." index="10" instance=ExtResource("18_ixeje")]
 position = Vector2(12833, -364)
 
 [node name="music" parent="." index="12"]

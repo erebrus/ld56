@@ -1,7 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://bajrj1qpyvp16"]
+[gd_scene load_steps=23 format=3 uid="uid://bajrj1qpyvp16"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_1orqk"]
-[ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="2_myvpo"]
 [ext_resource type="PackedScene" uid="uid://boenkwcf4c06o" path="res://src/world/platforms/branch.tscn" id="3_m6781"]
 [ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="4_xmgx1"]
 [ext_resource type="PackedScene" uid="uid://b7uuo8dxsl8qr" path="res://src/world/platforms/rock_2.tscn" id="5_nmy6l"]
@@ -15,9 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="11_msv3w"]
 [ext_resource type="PackedScene" uid="uid://g0ammwgw85c0" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="12_o3e6v"]
 [ext_resource type="PackedScene" uid="uid://daidqd7n3terl" path="res://src/world/next_level.tscn" id="14_2skva"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf487"]
-size = Vector2(3818, 147)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acc83"]
 size = Vector2(531, 2061)
@@ -66,86 +62,23 @@ point_count = 9
 
 [node name="Level_01" instance=ExtResource("1_1orqk")]
 
-[node name="BG" parent="." index="0"]
-repeat_times = 6
-metadata/_edit_lock_ = true
-
-[node name="TextureRect" parent="BG" index="0"]
-offset_left = 8.0
-offset_top = -1559.0
-offset_right = 3848.0
-offset_bottom = 1755.0
-
-[node name="MG" parent="." index="1"]
-repeat_times = 6
-metadata/_edit_lock_ = true
-
-[node name="TextureRect" parent="MG" index="0"]
-offset_left = 427.0
-offset_top = -1559.0
-offset_right = 4267.0
-offset_bottom = 1755.0
-
-[node name="FG" parent="." index="2"]
-repeat_times = 6
-metadata/_edit_lock_ = true
-
 [node name="TextureRect" parent="FG" index="0"]
-offset_left = 464.0
 offset_top = -1557.0
-offset_right = 4304.0
 offset_bottom = 1757.0
 
-[node name="Ground" type="Node2D" parent="." index="3"]
-metadata/_edit_lock_ = true
+[node name="Mushrooms" type="Node2D" parent="." index="4"]
 
-[node name="grass" type="StaticBody2D" parent="Ground" index="0"]
-position = Vector2(568, 1023)
+[node name="Mushroom" parent="Mushrooms" index="0" instance=ExtResource("11_msv3w")]
+position = Vector2(8764, 352)
 
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass" index="0"]
-position = Vector2(1346, 520)
-texture = ExtResource("2_myvpo")
+[node name="Mushroom2" parent="Mushrooms" index="1" instance=ExtResource("11_msv3w")]
+position = Vector2(10524, 729)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass" index="1"]
-visible = false
-position = Vector2(1353, 618.5)
-shape = SubResource("RectangleShape2D_xf487")
+[node name="Mushroom3" parent="Mushrooms" index="2" instance=ExtResource("11_msv3w")]
+position = Vector2(11774, 38)
 
-[node name="grass2" type="StaticBody2D" parent="Ground" index="1"]
-position = Vector2(4409, 1023)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass2" index="0"]
-position = Vector2(1346, 520)
-texture = ExtResource("2_myvpo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass2" index="1"]
-visible = false
-position = Vector2(1353, 618.5)
-shape = SubResource("RectangleShape2D_xf487")
-
-[node name="grass3" type="StaticBody2D" parent="Ground" index="2"]
-position = Vector2(8208, 1023)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass3" index="0"]
-position = Vector2(1346, 520)
-texture = ExtResource("2_myvpo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass3" index="1"]
-visible = false
-position = Vector2(1353, 618.5)
-shape = SubResource("RectangleShape2D_xf487")
-
-[node name="grass4" type="StaticBody2D" parent="Ground" index="3"]
-position = Vector2(11955, 1023)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass4" index="0"]
-position = Vector2(1346, 520)
-texture = ExtResource("2_myvpo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass4" index="1"]
-visible = false
-position = Vector2(1353, 618.5)
-shape = SubResource("RectangleShape2D_xf487")
+[node name="Mushroom4" parent="Mushrooms" index="3" instance=ExtResource("11_msv3w")]
+position = Vector2(10520, -24)
 
 [node name="decorations" type="Node2D" parent="Scenery" index="0"]
 
@@ -268,20 +201,6 @@ position = Vector2(4194, 1030)
 rotation = 3.14159
 scale = Vector2(1, -1)
 
-[node name="Mushrooms" type="Node2D" parent="." index="5"]
-
-[node name="Mushroom" parent="Mushrooms" index="0" instance=ExtResource("11_msv3w")]
-position = Vector2(8764, 352)
-
-[node name="Mushroom2" parent="Mushrooms" index="1" instance=ExtResource("11_msv3w")]
-position = Vector2(10524, 729)
-
-[node name="Mushroom3" parent="Mushrooms" index="2" instance=ExtResource("11_msv3w")]
-position = Vector2(11774, 38)
-
-[node name="Mushroom4" parent="Mushrooms" index="3" instance=ExtResource("11_msv3w")]
-position = Vector2(10520, -24)
-
 [node name="Slug" parent="Bugs" index="0" instance=ExtResource("11_mndri")]
 position = Vector2(8840, 1534)
 
@@ -330,5 +249,5 @@ curve = SubResource("Curve2D_kjq0r")
 position = Vector2(1382, 1547)
 swing_gravity = 1000
 
-[node name="NextLevel" parent="." index="12" instance=ExtResource("14_2skva")]
+[node name="NextLevel" parent="." index="11" instance=ExtResource("14_2skva")]
 position = Vector2(12682, 1212)

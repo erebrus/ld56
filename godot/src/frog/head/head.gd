@@ -116,7 +116,7 @@ func _shoot_at_mouse_limited() -> bool:
 	
 
 func angle_to_point(target: Vector2) -> float:
-	var tmp = global_position.angle_to_point(target)
+	var tmp = tongue_position.angle_to_point(target)
 	tmp = fposmod(tmp, 2*PI)
 	Logger.trace("Angle: %.4fº" % rad_to_deg(tmp))
 	if flip_h:
