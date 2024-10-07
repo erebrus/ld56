@@ -16,6 +16,7 @@ func on_take_damage(value:float):
 	energy = clamp(energy-value, 0, max_energy)
 	energy_changed.emit(energy)
 	if energy == 0:
+		Events.energy_depleted.emit()
 		died.emit()
 		
 func on_heal(value:float):

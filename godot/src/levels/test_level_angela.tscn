@@ -127,7 +127,7 @@ position = Vector2(1018, 864)
 position = Vector2(1454, 584)
 
 [node name="Mushroom3" parent="Scenery" index="15" instance=ExtResource("8_nt54t")]
-position = Vector2(2014, 400)
+position = Vector2(2729, 104)
 
 [node name="Fly" parent="Bugs" index="0" instance=ExtResource("8_fr1dr")]
 position = Vector2(873, 833)
@@ -153,9 +153,9 @@ collision_mask = 1
 curve = SubResource("Curve2D_srp33")
 
 [node name="Frog" parent="." index="6"]
-position = Vector2(775, 1485)
+position = Vector2(3210, -37)
 
 [node name="Eagle" parent="." index="9"]
 warning_time = 2.0
-min_time_between_fly_bys = 3.0
+min_time_between_fly_bys = 120.0
 max_time_between_fly_bys = 5.0

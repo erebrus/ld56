@@ -15,3 +15,6 @@ func _on_update(_delta: float) -> void:
 
 func _on_exit(_args) -> void:
 	Events.tongue_detached.emit()
+
+func _on_energy_depleted() -> void:
+	change_state("retracting")

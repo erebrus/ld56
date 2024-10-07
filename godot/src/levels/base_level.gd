@@ -57,6 +57,7 @@ func _input(event: InputEvent) -> void:
 		debug = true
 		Events.debug_toggled.emit(debug)
 	if Input.is_action_just_pressed("dead"):
+		Events.energy_depleted.emit()
 		frog._on_health_component_died()
 	if Input.is_action_just_pressed("win"):
 		Globals.do_win()

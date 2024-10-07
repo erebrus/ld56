@@ -65,6 +65,9 @@ position = Vector2(278, 700)
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(278, 500)
+limit_left = 0
+limit_top = -1600
+limit_bottom = 1700
 position_smoothing_enabled = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
