@@ -18,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_2raw8")
 script = ExtResource("1_vtrm4")
-combo_timeout = 5
+combo_timeout = 10
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0

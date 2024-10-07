@@ -26,6 +26,8 @@ func _ready() -> void:
 	Events.eagle_left.connect(_on_eagle_left)
 	Events.game_lost.connect(_on_game_lost)
 	
+	
+	
 func _on_eagle_incoming():
 	Logger.debug("level eagle in")
 	Logger.debug("normal db=%d tense db=%d before incoming" % [music.stream.get_sync_stream_volume(0),music.stream.get_sync_stream_volume(1)])
@@ -61,8 +63,18 @@ func _input(event: InputEvent) -> void:
 		frog._on_health_component_died()
 	if Input.is_action_just_pressed("win"):
 		Globals.do_win()
-
-
+	if Input.is_action_just_pressed("buf_1"):
+		Events.combo_achieved.emit(0)
+	if Input.is_action_just_pressed("buf_2"):
+		Events.combo_achieved.emit(1)
+	if Input.is_action_just_pressed("buf_3"):
+		Events.combo_achieved.emit(2)
+	if Input.is_action_just_pressed("buf_4"):
+		Events.combo_achieved.emit(3)
+	if Input.is_action_just_pressed("buf_5"):
+		Events.combo_achieved.emit(4)
+		
+		
 func _on_reached_level_end():
 	frog.do_auto_hop(Types.HopDirection.RIGHT, 7500)
 	await get_tree().create_timer(.5).timeout

@@ -20,6 +20,7 @@ var waypoints=[]
 
 func _ready():
 	set_path()
+	Events.bug_freeze_toggle.connect(func(v): xsm.disabled=v)
 	
 func catch() -> bool:
 	if Globals.rng.randf() > dodge_chance:

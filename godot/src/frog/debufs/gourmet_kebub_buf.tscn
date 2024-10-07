@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bus4fuhtntwn3"]
+
+[ext_resource type="PackedScene" uid="uid://bv0h252ykncnm" path="res://src/frog/debufs/debuf.tscn" id="1_5v20q"]
+[ext_resource type="Script" path="res://src/frog/debufs/gourmet_kebub_buf.gd" id="2_tvico"]
+
+[node name="GourmetKebubBuf" instance=ExtResource("1_5v20q")]
+script = ExtResource("2_tvico")

@@ -22,7 +22,8 @@ func _ready():
 	_reset_combo()
 	Events.bug_caught.connect(_on_bug_caught)
 	timer.wait_time=combo_timeout
-	#for bug in [Types.BugType.Snail,Types.BugType.Worm,Types.BugType.Fly,Types.BugType.Fly,Types.BugType.Moth]:
+
+	#for bug in [Types.BugType.Snail,Types.BugType.Slug,Types.BugType.Fly,Types.BugType.Fly,Types.BugType.Moth]:
 		#await get_tree().create_timer(.5).timeout
 		#_on_bug_caught(bug)
 
@@ -34,7 +35,7 @@ func _reset_combo():
 
 func update_bar():
 	for i in range(bugs.size()):
-		icons[i].texture=null if not bugs[i] else textures[bugs[i]]
+		icons[i].texture=null if bugs[i]==null else textures[bugs[i]]
 	
 
 func _on_bug_caught(type:Types.BugType):

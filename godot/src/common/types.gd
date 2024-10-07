@@ -31,7 +31,13 @@ func key_of(value) -> String:
 	BugType.Worm:preload("res://src/frog/debufs/tongue_debuf.tscn"),
 	BugType.Cockroach:preload("res://src/frog/debufs/ep_max_debuf.tscn")
 }
-
+@onready var COMBO_BUFS=[
+	preload("res://src/frog/debufs/triple_double_buff.tscn"),
+	preload("res://src/frog/debufs/gourmet_kebub_buf.tscn"),
+	preload("res://src/frog/debufs/flying_taste_debuf.tscn"),
+	preload("res://src/frog/debufs/take_it_slow_buff.tscn"),
+	preload("res://src/frog/debufs/crunchy_sandwish_buf.tscn")
+]
 const COMBOS=[
 	[Types.BugType.Beetle,Types.BugType.Beetle,Types.BugType.Beetle],
 	[Types.BugType.Beetle,Types.BugType.Fly,Types.BugType.Snail],

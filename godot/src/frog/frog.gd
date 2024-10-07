@@ -24,6 +24,8 @@ signal energy_changed(value:float)
 
 var state_name:String
 var max_heal=100
+var immune:=false
+
 func _ready():
 	Globals.player = self
 	
@@ -32,7 +34,7 @@ func _ready():
 	Events.tongue_detached.connect(_on_tongue_detached)
 	Events.debug_toggled.connect(_on_debug_toggled)
 	Events.reached_level_end.connect(func():$sfx/sfx_win.play())
-
+	Events.combo_achieved.connect(_on_combo_achieved)
 func is_near_floor() -> bool:
 	return rc_down.is_colliding()
 	
@@ -122,26 +124,35 @@ func _on_head_shot_finished() -> void:
 		$sfx/sfx_eat.play()
 		process_bug(head.tongue.caught_bug)
 
+func _on_combo_achieved(combo_idx:int):
+	var new_buf=Types.COMBO_BUFS[combo_idx].instantiate() as Debuf
+	process_debuf(new_buf)
 
-func process_bug(bug:Bug)->void:
-	var heal_value:float = min(max_heal,bug.energy_value)
-	Logger.info("Healing for %.2f" % heal_value)
-	health_component.on_heal(heal_value)
-	var scene:PackedScene = Types.DEBUF_MAP[bug.type]
-	var new_debuf = scene.instantiate()
+func process_debuf(new_debuf:Debuf):
 	var existing_debuf = find_debuf(new_debuf)
 	if existing_debuf:
 		existing_debuf.extend()
 	else:
 		debufs.add_child(new_debuf)
 		new_debuf.apply_debuf(self)
-		new_debuf.expired.connect(func(debuf):debuf.cancel_debuf(self))
+		if new_debuf.immediate:		
+			new_debuf.cancel_debuf(self)
+		else:
+			new_debuf.expired.connect(func(debuf):debuf.cancel_debuf(self))
+func process_bug(bug:Bug)->void:
+	var heal_value:float = min(max_heal,bug.energy_value)
+	Logger.info("Healing for %.2f" % heal_value)
+	health_component.on_heal(heal_value)
+	var scene:PackedScene = Types.DEBUF_MAP[bug.type]
+	var new_debuf:Debuf = scene.instantiate() as Debuf
+	process_debuf(new_debuf)
 
 func find_debuf(debuf:Debuf):
 	for child in debufs.get_children():
 		if child.name == debuf.name:
 			return child
 	return null
+	
 func _on_head_shot_started() -> void:
 	head.show()
 	sprite.hide()
@@ -153,4 +164,5 @@ func _on_head_shot_missed() -> void:
 
 
 func _on_energy_timer_timeout() -> void:
-	health_component.on_take_damage(energy_drop_rate)
+	if not immune:
+		health_component.on_take_damage(energy_drop_rate)

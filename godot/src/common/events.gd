@@ -20,6 +20,9 @@ signal game_lost()
 
 signal combo_achieved(idx:int)
 
+signal bug_freeze_toggle(val:bool)
+
+
 func _ready() -> void:
 	bug_caught.connect(func(type): Logger.info("Caught bug of type: %s" % Types.key_of(type)))
 	eagle_incoming.connect(func(): Logger.info("Eagle incoming!"))
