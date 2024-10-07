@@ -352,6 +352,7 @@ target_position = Vector2(0, 10)
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("29_ioey7")
+max_energy = 200.0
 
 [node name="sfx" type="Node2D" parent="."]
 

@@ -185,7 +185,7 @@ shape = SubResource("RectangleShape2D_xf487")
 position = Vector2(4409, 1023)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground/grass2" index="0"]
-position = Vector2(1346, 520)
+position = Vector2(1311, 520)
 texture = ExtResource("2_se6ue")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass2" index="1"]
@@ -305,7 +305,7 @@ position = Vector2(3, 1005)
 rotation = 0.23911
 
 [node name="Leaf7" parent="Scenery/Platforms" index="15" instance=ExtResource("8_wgidt")]
-position = Vector2(2684, 4776)
+position = Vector2(1521, 1295)
 scale = Vector2(0.5, 0.5)
 
 [node name="Leaf5" parent="Scenery/Platforms" index="16" instance=ExtResource("8_wgidt")]
@@ -388,6 +388,12 @@ position = Vector2(10592, -67)
 
 [node name="Mushroom7" parent="Scenery/Mushrooms" index="6" instance=ExtResource("14_pfmk0")]
 position = Vector2(3127, 627)
+
+[node name="Mushroom8" parent="Scenery/Mushrooms" index="7" instance=ExtResource("14_pfmk0")]
+position = Vector2(4483, 462)
+
+[node name="Mushroom9" parent="Scenery/Mushrooms" index="8" instance=ExtResource("14_pfmk0")]
+position = Vector2(9676, 327)
 
 [node name="Beetle" parent="Bugs" index="0" instance=ExtResource("5_aqaq6")]
 position = Vector2(1948, 882)
@@ -498,7 +504,7 @@ position = Vector2(3213, 1542)
 curve = SubResource("Curve2D_ymibe")
 
 [node name="Frog" parent="." index="6"]
-position = Vector2(1568, 1543)
+position = Vector2(971, 1551)
 swing_gravity = 1000
 
 [node name="Camera2D" parent="Frog" index="12"]

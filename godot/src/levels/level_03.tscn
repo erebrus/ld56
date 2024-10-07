@@ -171,6 +171,14 @@ texture = ExtResource("3_or122")
 position = Vector2(8565, -465)
 texture = ExtResource("3_or122")
 
+[node name="Vine11" type="Sprite2D" parent="Scenery/decorations" index="10"]
+position = Vector2(17615, -514)
+texture = ExtResource("3_or122")
+
+[node name="Vine12" type="Sprite2D" parent="Scenery/decorations" index="11"]
+position = Vector2(18091, -184)
+texture = ExtResource("3_or122")
+
 [node name="walls" type="Node2D" parent="Scenery" index="1"]
 
 [node name="wall" type="StaticBody2D" parent="Scenery/walls" index="0"]
@@ -190,161 +198,241 @@ metadata/_edit_lock_ = true
 
 [node name="Platforms" type="Node2D" parent="Scenery" index="2"]
 
-[node name="Flower4" parent="Scenery/Platforms" index="0" instance=ExtResource("6_13qk1")]
+[node name="Leaf11" parent="Scenery/Platforms" index="0" instance=ExtResource("8_82h1n")]
+position = Vector2(3486, 1)
+scale = Vector2(0.5, 0.5)
+
+[node name="Flower4" parent="Scenery/Platforms" index="1" instance=ExtResource("6_13qk1")]
 position = Vector2(11609, 1812)
 
-[node name="LeafVariantFlipped2" parent="Scenery/Platforms" index="1" instance=ExtResource("10_635f3")]
+[node name="LeafVariantFlipped2" parent="Scenery/Platforms" index="2" instance=ExtResource("10_635f3")]
 position = Vector2(13217, -813)
 rotation = 3.14159
 scale = Vector2(1, -1)
 
-[node name="LeafVariantFlipped3" parent="Scenery/Platforms" index="2" instance=ExtResource("10_635f3")]
+[node name="LeafVariantFlipped3" parent="Scenery/Platforms" index="3" instance=ExtResource("10_635f3")]
 position = Vector2(13862, -252)
 
-[node name="rock1" parent="Scenery/Platforms" index="3" instance=ExtResource("4_3w3t2")]
+[node name="rock1" parent="Scenery/Platforms" index="4" instance=ExtResource("4_3w3t2")]
 position = Vector2(14024, 309)
 rotation = -0.837758
 scale = Vector2(3, 3)
 
-[node name="Branch2" parent="Scenery/Platforms" index="4" instance=ExtResource("5_vm8ul")]
+[node name="Branch2" parent="Scenery/Platforms" index="5" instance=ExtResource("5_vm8ul")]
 position = Vector2(7661, 1288)
 
-[node name="Flower3" parent="Scenery/Platforms" index="5" instance=ExtResource("6_13qk1")]
+[node name="Flower3" parent="Scenery/Platforms" index="6" instance=ExtResource("6_13qk1")]
 position = Vector2(16128, 564)
 scale = Vector2(1.2, 1.2)
 
-[node name="rock6" parent="Scenery/Platforms" index="6" instance=ExtResource("7_qlxgg")]
+[node name="rock6" parent="Scenery/Platforms" index="7" instance=ExtResource("7_qlxgg")]
 position = Vector2(11799, 1635)
 
-[node name="Flower2" parent="Scenery/Platforms" index="7" instance=ExtResource("6_13qk1")]
+[node name="Flower2" parent="Scenery/Platforms" index="8" instance=ExtResource("6_13qk1")]
 position = Vector2(12488, 458)
 scale = Vector2(-2, 2)
 
-[node name="Branch" parent="Scenery/Platforms" index="8" instance=ExtResource("5_vm8ul")]
+[node name="Branch" parent="Scenery/Platforms" index="9" instance=ExtResource("5_vm8ul")]
 position = Vector2(1304, -368)
 
-[node name="Branch3" parent="Scenery/Platforms" index="9" instance=ExtResource("5_vm8ul")]
+[node name="Branch3" parent="Scenery/Platforms" index="10" instance=ExtResource("5_vm8ul")]
 position = Vector2(17869, 962)
 rotation = -0.719076
 scale = Vector2(2, 2)
 
-[node name="Leaf2" parent="Scenery/Platforms" index="10" instance=ExtResource("8_82h1n")]
+[node name="Leaf2" parent="Scenery/Platforms" index="11" instance=ExtResource("8_82h1n")]
 position = Vector2(10947, 1017)
 rotation = 0.359538
 
-[node name="Leaf9" parent="Scenery/Platforms" index="11" instance=ExtResource("8_82h1n")]
+[node name="Leaf9" parent="Scenery/Platforms" index="12" instance=ExtResource("8_82h1n")]
 position = Vector2(18365, -788)
 scale = Vector2(0.7, 0.7)
 
-[node name="Leaf4" parent="Scenery/Platforms" index="12" instance=ExtResource("8_82h1n")]
+[node name="Leaf4" parent="Scenery/Platforms" index="13" instance=ExtResource("8_82h1n")]
 position = Vector2(8828, 466)
 scale = Vector2(0.25, 0.25)
 
-[node name="Leaf3" parent="Scenery/Platforms" index="13" instance=ExtResource("8_82h1n")]
+[node name="Leaf3" parent="Scenery/Platforms" index="14" instance=ExtResource("8_82h1n")]
 position = Vector2(7112, 1399)
 scale = Vector2(0.5, 0.5)
 
-[node name="LeafVariantFlipped" parent="Scenery/Platforms" index="14" instance=ExtResource("10_635f3")]
+[node name="LeafVariantFlipped" parent="Scenery/Platforms" index="15" instance=ExtResource("10_635f3")]
 position = Vector2(19370, -202)
 rotation = 3.14159
 scale = Vector2(1, -1)
 
-[node name="Leaf8" parent="Scenery/Platforms" index="15" instance=ExtResource("8_82h1n")]
+[node name="Leaf8" parent="Scenery/Platforms" index="16" instance=ExtResource("8_82h1n")]
 position = Vector2(18629, 514.999)
 rotation = -0.5044
 scale = Vector2(2, 2)
 
-[node name="Leaf7" parent="Scenery/Platforms" index="16" instance=ExtResource("8_82h1n")]
+[node name="Leaf7" parent="Scenery/Platforms" index="17" instance=ExtResource("8_82h1n")]
 position = Vector2(13696, 1267)
 scale = Vector2(0.5, 0.5)
 
-[node name="Leaf5" parent="Scenery/Platforms" index="17" instance=ExtResource("8_82h1n")]
+[node name="Leaf5" parent="Scenery/Platforms" index="18" instance=ExtResource("8_82h1n")]
 position = Vector2(10448, -436)
 
-[node name="Leaf6" parent="Scenery/Platforms" index="18" instance=ExtResource("8_82h1n")]
+[node name="Leaf6" parent="Scenery/Platforms" index="19" instance=ExtResource("8_82h1n")]
 position = Vector2(3925, 659)
 
-[node name="Leaf" parent="Scenery/Platforms" index="19" instance=ExtResource("8_82h1n")]
+[node name="Leaf" parent="Scenery/Platforms" index="20" instance=ExtResource("8_82h1n")]
 position = Vector2(2436, 1366)
 
-[node name="LedgePlatform" parent="Scenery/Platforms" index="20" instance=ExtResource("9_8rhp2")]
+[node name="LedgePlatform" parent="Scenery/Platforms" index="21" instance=ExtResource("9_8rhp2")]
 position = Vector2(8212, -1000)
 
-[node name="LeafVariantFlipped4" parent="Scenery/Platforms" index="21" instance=ExtResource("10_635f3")]
+[node name="LeafVariantFlipped4" parent="Scenery/Platforms" index="22" instance=ExtResource("10_635f3")]
 position = Vector2(5680, -970)
 rotation = 3.14159
 scale = Vector2(2, -2)
 
-[node name="rock2" parent="Scenery/Platforms" index="22" instance=ExtResource("7_qlxgg")]
+[node name="rock2" parent="Scenery/Platforms" index="23" instance=ExtResource("7_qlxgg")]
 position = Vector2(14992, 437)
 rotation = -0.541052
 scale = Vector2(2, 2)
 
-[node name="rock3" parent="Scenery/Platforms" index="23" instance=ExtResource("7_qlxgg")]
+[node name="rock3" parent="Scenery/Platforms" index="24" instance=ExtResource("7_qlxgg")]
 position = Vector2(15272, 721)
 scale = Vector2(-3, 3)
 
-[node name="Flower6" parent="Scenery/Platforms" index="24" instance=ExtResource("6_13qk1")]
-position = Vector2(20335, 904)
+[node name="Flower6" parent="Scenery/Platforms" index="25" instance=ExtResource("6_13qk1")]
+position = Vector2(20237, -115)
 
-[node name="LedgePlatform2" parent="Scenery/Platforms" index="25" instance=ExtResource("9_8rhp2")]
+[node name="LedgePlatform2" parent="Scenery/Platforms" index="26" instance=ExtResource("9_8rhp2")]
 position = Vector2(290, 695)
 
-[node name="SproutPlatform" parent="Scenery/Platforms" index="26" instance=ExtResource("11_1qvth")]
+[node name="SproutPlatform" parent="Scenery/Platforms" index="27" instance=ExtResource("11_1qvth")]
 position = Vector2(17334, 669)
 scale = Vector2(2.5, 2.5)
 
-[node name="BlueFlower" parent="Scenery/Platforms" index="27" instance=ExtResource("12_3du7s")]
+[node name="BlueFlower" parent="Scenery/Platforms" index="28" instance=ExtResource("12_3du7s")]
 position = Vector2(10152, 896)
 scale = Vector2(2, 2)
 
-[node name="Branch4" parent="Scenery/Platforms" index="28" instance=ExtResource("5_vm8ul")]
+[node name="Branch4" parent="Scenery/Platforms" index="29" instance=ExtResource("5_vm8ul")]
 position = Vector2(4142, -499)
 
-[node name="LeafVariant" parent="Scenery/Platforms" index="29" instance=ExtResource("13_aegc7")]
+[node name="LeafVariant" parent="Scenery/Platforms" index="30" instance=ExtResource("13_aegc7")]
 position = Vector2(14878, -736)
 
-[node name="BlueFlower2" parent="Scenery/Platforms" index="30" instance=ExtResource("12_3du7s")]
+[node name="BlueFlower2" parent="Scenery/Platforms" index="31" instance=ExtResource("12_3du7s")]
 position = Vector2(8453, 1205)
 
-[node name="Flower7" parent="Scenery/Platforms" index="31" instance=ExtResource("6_13qk1")]
+[node name="Flower7" parent="Scenery/Platforms" index="32" instance=ExtResource("6_13qk1")]
 position = Vector2(9420, 580)
 scale = Vector2(1.5, 1.5)
 
-[node name="Branch5" parent="Scenery/Platforms" index="32" instance=ExtResource("5_vm8ul")]
+[node name="Branch5" parent="Scenery/Platforms" index="33" instance=ExtResource("5_vm8ul")]
 position = Vector2(11147, -983)
 
-[node name="LedgePlatform3" parent="Scenery/Platforms" index="33" instance=ExtResource("9_8rhp2")]
+[node name="LedgePlatform3" parent="Scenery/Platforms" index="34" instance=ExtResource("9_8rhp2")]
 position = Vector2(2509, -592)
 
-[node name="Leaf10" parent="Scenery/Platforms" index="34" instance=ExtResource("8_82h1n")]
+[node name="Leaf10" parent="Scenery/Platforms" index="35" instance=ExtResource("8_82h1n")]
 position = Vector2(6492, 55)
 
-[node name="LedgePlatform4" parent="Scenery/Platforms" index="35" instance=ExtResource("9_8rhp2")]
+[node name="LedgePlatform4" parent="Scenery/Platforms" index="36" instance=ExtResource("9_8rhp2")]
 position = Vector2(17253, -1039)
 
-[node name="BlueFlower3" parent="Scenery/Platforms" index="36" instance=ExtResource("12_3du7s")]
+[node name="BlueFlower3" parent="Scenery/Platforms" index="37" instance=ExtResource("12_3du7s")]
 position = Vector2(3077, 1211)
 
-[node name="Flower" parent="Scenery/Platforms" index="37" instance=ExtResource("6_13qk1")]
+[node name="Flower" parent="Scenery/Platforms" index="38" instance=ExtResource("6_13qk1")]
 position = Vector2(5544, 916)
 
-[node name="LeafVariant2" parent="Scenery/Platforms" index="38" instance=ExtResource("13_aegc7")]
+[node name="LeafVariant2" parent="Scenery/Platforms" index="39" instance=ExtResource("13_aegc7")]
 position = Vector2(4605, 950)
 
-[node name="LeafVariantFlipped5" parent="Scenery/Platforms" index="39" instance=ExtResource("10_635f3")]
+[node name="Flower5" parent="Scenery/Platforms" index="40" instance=ExtResource("6_13qk1")]
+position = Vector2(913, 1341)
+
+[node name="Leaf12" parent="Scenery/Platforms" index="41" instance=ExtResource("8_82h1n")]
+position = Vector2(1498, 1220)
+
+[node name="Branch6" parent="Scenery/Platforms" index="42" instance=ExtResource("5_vm8ul")]
+position = Vector2(19052, -986)
+
+[node name="LeafVariantFlipped6" parent="Scenery/Platforms" index="43" instance=ExtResource("10_635f3")]
+position = Vector2(6701, -765)
+
+[node name="Leaf13" parent="Scenery/Platforms" index="44" instance=ExtResource("8_82h1n")]
+position = Vector2(7477, -872)
+scale = Vector2(0.5, 0.5)
+
+[node name="LeafVariantFlipped5" parent="Scenery/Platforms" index="45" instance=ExtResource("10_635f3")]
 position = Vector2(7433, 18)
+
+[node name="Flower8" parent="Scenery/Platforms" index="46" instance=ExtResource("6_13qk1")]
+position = Vector2(20350, 521)
+
+[node name="Leaf14" parent="Scenery/Platforms" index="47" instance=ExtResource("8_82h1n")]
+position = Vector2(20559, 1301)
+
+[node name="LeafVariantFlipped7" parent="Scenery/Platforms" index="48" instance=ExtResource("10_635f3")]
+position = Vector2(20129, 612)
+rotation = -0.47822
+scale = Vector2(0.5, 0.5)
+
+[node name="Flower9" parent="Scenery/Platforms" index="49" instance=ExtResource("6_13qk1")]
+position = Vector2(20542, 988)
+scale = Vector2(-1, 1)
 
 [node name="Mushrooms" type="Node2D" parent="Scenery" index="3"]
 
 [node name="Mushroom" parent="Scenery/Mushrooms" index="0" instance=ExtResource("4_ocil8")]
 position = Vector2(1033, -142)
 
-[node name="Mushroom2" parent="Scenery/Mushrooms" index="1" instance=ExtResource("4_ocil8")]
-position = Vector2(1813, -60)
-
-[node name="Mushroom" parent="Scenery" index="4" instance=ExtResource("4_ocil8")]
+[node name="Mushroom3" parent="Scenery/Mushrooms" index="1" instance=ExtResource("4_ocil8")]
 position = Vector2(2464, -427)
+
+[node name="Mushroom4" parent="Scenery/Mushrooms" index="2" instance=ExtResource("4_ocil8")]
+position = Vector2(2865, -122)
+
+[node name="Mushroom5" parent="Scenery/Mushrooms" index="3" instance=ExtResource("4_ocil8")]
+position = Vector2(3947, -412)
+
+[node name="Mushroom6" parent="Scenery/Mushrooms" index="4" instance=ExtResource("4_ocil8")]
+position = Vector2(4555, -188)
+
+[node name="Mushroom7" parent="Scenery/Mushrooms" index="5" instance=ExtResource("4_ocil8")]
+position = Vector2(5369, -734)
+
+[node name="Mushroom8" parent="Scenery/Mushrooms" index="6" instance=ExtResource("4_ocil8")]
+position = Vector2(8017, -600)
+
+[node name="Mushroom9" parent="Scenery/Mushrooms" index="7" instance=ExtResource("4_ocil8")]
+position = Vector2(8546, -739)
+
+[node name="Mushroom10" parent="Scenery/Mushrooms" index="8" instance=ExtResource("4_ocil8")]
+position = Vector2(11437, -795)
+
+[node name="Mushroom11" parent="Scenery/Mushrooms" index="9" instance=ExtResource("4_ocil8")]
+position = Vector2(10508, -282)
+
+[node name="Mushroom12" parent="Scenery/Mushrooms" index="10" instance=ExtResource("4_ocil8")]
+position = Vector2(11425, -221)
+
+[node name="Mushroom13" parent="Scenery/Mushrooms" index="11" instance=ExtResource("4_ocil8")]
+position = Vector2(16980, -429)
+
+[node name="Mushroom14" parent="Scenery/Mushrooms" index="12" instance=ExtResource("4_ocil8")]
+position = Vector2(17224, -886)
+
+[node name="Mushroom15" parent="Scenery/Mushrooms" index="13" instance=ExtResource("4_ocil8")]
+position = Vector2(8550, -143)
+
+[node name="Mushroom16" parent="Scenery/Mushrooms" index="14" instance=ExtResource("4_ocil8")]
+position = Vector2(19377, -958)
+
+[node name="Mushroom17" parent="Scenery/Mushrooms" index="15" instance=ExtResource("4_ocil8")]
+position = Vector2(17601, -575)
+
+[node name="Mushroom18" parent="Scenery/Mushrooms" index="16" instance=ExtResource("4_ocil8")]
+position = Vector2(18069, -242)
+
+[node name="Mushroom2" parent="Scenery/Mushrooms" index="17" instance=ExtResource("4_ocil8")]
+position = Vector2(1813, 40)
 
 [node name="Frog" parent="." index="6"]
 position = Vector2(356, 496)
@@ -359,42 +447,3 @@ scroll_offset = Vector2(-832, 6)
 
 [node name="NextLevel" parent="." index="11" instance=ExtResource("18_ioq1w")]
 position = Vector2(18844, 1216)
-
-[node name="Mushroom" parent="." index="12" instance=ExtResource("4_ocil8")]
-position = Vector2(2865, -122)
-
-[node name="Mushroom2" parent="." index="13" instance=ExtResource("4_ocil8")]
-position = Vector2(3680, -501)
-
-[node name="Mushroom3" parent="." index="14" instance=ExtResource("4_ocil8")]
-position = Vector2(4555, -188)
-
-[node name="Mushroom4" parent="." index="15" instance=ExtResource("4_ocil8")]
-position = Vector2(5369, -734)
-
-[node name="Mushroom5" parent="." index="16" instance=ExtResource("4_ocil8")]
-position = Vector2(8017, -600)
-
-[node name="Branch" parent="." index="17" instance=ExtResource("5_vm8ul")]
-position = Vector2(19052, -986)
-
-[node name="Mushroom6" parent="." index="18" instance=ExtResource("4_ocil8")]
-position = Vector2(8546, -739)
-
-[node name="Mushroom7" parent="." index="19" instance=ExtResource("4_ocil8")]
-position = Vector2(11437, -795)
-
-[node name="Mushroom8" parent="." index="20" instance=ExtResource("4_ocil8")]
-position = Vector2(10508, -282)
-
-[node name="Mushroom9" parent="." index="21" instance=ExtResource("4_ocil8")]
-position = Vector2(11430, -316)
-
-[node name="Mushroom10" parent="." index="22" instance=ExtResource("4_ocil8")]
-position = Vector2(16980, -429)
-
-[node name="Mushroom11" parent="." index="23" instance=ExtResource("4_ocil8")]
-position = Vector2(17330, -886)
-
-[node name="Mushroom12" parent="." index="24" instance=ExtResource("4_ocil8")]
-position = Vector2(19377, -958)
