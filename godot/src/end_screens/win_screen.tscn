@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0vobmak1lpo1"]
+[gd_scene load_steps=3 format=3 uid="uid://c0vobmak1lpo1"]
 
 [ext_resource type="Script" path="res://src/end_screens/win_screen.gd" id="1_e4pry"]
 [ext_resource type="Texture2D" uid="uid://b4qdj5t4ap3f4" path="res://assets/gfx/screens/EndScreen.png" id="1_qmfq4"]
-[ext_resource type="AudioStream" uid="uid://bbbycsuhpmebo" path="res://assets/music/Menu_Frog.mp3" id="3_8wlhd"]
-[ext_resource type="AudioStream" uid="uid://cyy5miqbvdyq7" path="res://assets/sfx/MainMenu_Amb_loop.mp3" id="4_c55t6"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -21,15 +19,9 @@ offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_qmfq4")
 
-[node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_8wlhd")
-bus = &"Music"
-
 [node name="Timer" type="Timer" parent="."]
-
-[node name="ambient" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_c55t6")
-bus = &"Sound"
+wait_time = 15.0
+autostart = true
 
 [node name="BlackOverlay" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

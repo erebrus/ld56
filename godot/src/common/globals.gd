@@ -2,6 +2,9 @@ extends Node
 
 const GAME_SCENE_PATH = "res://src/main.tscn"
 const WIN_SCENE_PATH = "res://src/end_screens/win_screen.tscn"
+const START_SCENE_PATH = "res://src/start_screen/start_screen.tscn"
+
+
 var master_volume:float = 100
 var music_volume:float = 100
 var sfx_volume:float = 100
@@ -42,6 +45,7 @@ func _ready():
 	_init_logger()
 	Logger.info("Starting menu music")
 	music_manager.fade_in_menu_music()
+	music_manager.fade_in_stream(music_manager.get_node("ambient"))
 
 	#start_game()
 	
@@ -95,3 +99,6 @@ func do_lose():
 
 func do_win():
 	get_tree().change_scene_to_file(WIN_SCENE_PATH)
+
+func show_start_screen():
+	get_tree().change_scene_to_file(START_SCENE_PATH)

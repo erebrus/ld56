@@ -66,7 +66,7 @@ func set_path():
 	waypoints=[]
 	for idx in range (path.curve.point_count):
 		waypoints.append(path.curve.get_point_position(idx)+offset)
-		Logger.info("%s: wp %d offset %s - %s -> %s" % [get_path(), idx, offset,path.curve.get_point_position(idx), path.curve.get_point_position(idx)+offset ])
+		Logger.trace("%s: wp %d offset %s - %s -> %s" % [get_path(), idx, offset,path.curve.get_point_position(idx), path.curve.get_point_position(idx)+offset ])
 	Logger.info("%s has path:%s" % [get_path(), waypoints])
 func next_wp():
 	if waypoints.is_empty():
