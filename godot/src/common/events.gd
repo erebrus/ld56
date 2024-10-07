@@ -21,3 +21,4 @@ signal game_lost()
 signal combo_achieved(idx:int)
 
 signal bug_freeze_toggle(val:bool)
+signal block_max_hp(val:float)

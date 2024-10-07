@@ -64,7 +64,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("../..")
 timed = false
-next_state = NodePath("../flyby")
+next_state = NodePath("")
 
 [node name="flyby" type="Node" parent="xsm"]
 script = ExtResource("8_bkve8")
