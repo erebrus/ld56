@@ -136,7 +136,6 @@ func process_bug(bug:Bug)->void:
 		debufs.add_child(new_debuf)
 		new_debuf.apply_debuf(self)
 		new_debuf.expired.connect(func(debuf):debuf.cancel_debuf(self))
-	bug.queue_free()
 
 func find_debuf(debuf:Debuf):
 	for child in debufs.get_children():
