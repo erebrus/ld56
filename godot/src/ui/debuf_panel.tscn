@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://chmb87l45qxc7"]
+
+[ext_resource type="Script" path="res://src/ui/debuf_panel.gd" id="1_aapaq"]
+[ext_resource type="PackedScene" uid="uid://d2o28eerfitbo" path="res://src/ui/debuf_icon.tscn" id="1_rhvpp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3fh2u"]
+
+[node name="DebufPanel" type="Panel"]
+custom_minimum_size = Vector2(300, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1620.0
+offset_bottom = -880.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3fh2u")
+script = ExtResource("1_aapaq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 5
+
+[node name="DebufIcon" parent="MarginContainer/GridContainer" instance=ExtResource("1_rhvpp")]
+layout_mode = 2
+
+[node name="DebufIcon2" parent="MarginContainer/GridContainer" instance=ExtResource("1_rhvpp")]
+layout_mode = 2
+
+[node name="DebufIcon3" parent="MarginContainer/GridContainer" instance=ExtResource("1_rhvpp")]
+layout_mode = 2
+
+[node name="DebufIcon4" parent="MarginContainer/GridContainer" instance=ExtResource("1_rhvpp")]
+layout_mode = 2
+
+[node name="DebufIcon5" parent="MarginContainer/GridContainer" instance=ExtResource("1_rhvpp")]
+layout_mode = 2
+
+[node name="DebufIcon6" parent="MarginContainer/GridContainer" instance=ExtResource("1_rhvpp")]
+layout_mode = 2

@@ -5,3 +5,4 @@
 
 [node name="GourmetKebubBuf" instance=ExtResource("1_5v20q")]
 script = ExtResource("2_tvico")
+show_in_ui = false

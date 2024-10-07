@@ -5,3 +5,4 @@
 
 [node name="CrunchySandwishBuf" instance=ExtResource("1_dqcq2")]
 script = ExtResource("2_sbbm1")
+show_in_ui = false

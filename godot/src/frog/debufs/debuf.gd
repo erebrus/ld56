@@ -3,6 +3,7 @@ class_name Debuf
 
 signal expired(debuf:Debuf)
 
+@export var show_in_ui:=true
 @export var immediate:=false
 @export var duration:float = 5
 @onready var timer: Timer = $Timer

@@ -1,8 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd7ph3p1q0yhi"]
+[gd_scene load_steps=10 format=3 uid="uid://cd7ph3p1q0yhi"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_c56io"]
 [ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="2_yokkj"]
 [ext_resource type="PackedScene" uid="uid://boenkwcf4c06o" path="res://src/world/platforms/branch.tscn" id="3_f3b5t"]
+[ext_resource type="PackedScene" uid="uid://dkyx6xyum3prp" path="res://src/bugs/slug.tscn" id="4_yqxac"]
+[ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="5_ww8ov"]
+[ext_resource type="PackedScene" uid="uid://dn40sagnjlvbk" path="res://src/bugs/moth.tscn" id="6_ea8q5"]
+
+[sub_resource type="Curve2D" id="Curve2D_ulvv2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -196.432, 6.724, 0, 0, 0, 0, 226.568, -1.276)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_70o6d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -91, 24, 0, 0, 0, 0, 204, 19)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_4gxdp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -187, -65, 0, 0, 0, 0, 165, -148, 0, 0, 0, 0, 348, -29, 0, 0, 0, 0, 198, 164, 0, 0, 0, 0, -51, 76)
+}
+point_count = 5
 
 [node name="TestLevel" instance=ExtResource("1_c56io")]
 
@@ -13,3 +34,21 @@ script = null
 [node name="Branch" parent="Scenery/rock1" index="2" instance=ExtResource("3_f3b5t")]
 position = Vector2(1224.38, 110.375)
 script = null
+
+[node name="Slug" parent="Bugs" index="0" instance=ExtResource("4_yqxac")]
+position = Vector2(395.432, 1535.28)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Slug" index="7"]
+curve = SubResource("Curve2D_ulvv2")
+
+[node name="Beetle" parent="Bugs" index="1" instance=ExtResource("5_ww8ov")]
+position = Vector2(1369, 1254)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Beetle" index="7"]
+curve = SubResource("Curve2D_70o6d")
+
+[node name="Moth" parent="Bugs" index="2" instance=ExtResource("6_ea8q5")]
+position = Vector2(709, 1266)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Moth" index="7"]
+curve = SubResource("Curve2D_4gxdp")

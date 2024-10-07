@@ -46,3 +46,12 @@ const COMBOS=[
 	[Types.BugType.Snail,Types.BugType.Snail,Types.BugType.Moth],
 	[Types.BugType.Beetle,Types.BugType.Snail,Types.BugType.Beetle]
 ]
+const DEBUF_ICONS={
+	"DoubleJumpDebuf":preload("res://assets/gfx/ui/DebuffIcons/DecreaBigJump.png"),
+	"TongueDebuf":preload("res://assets/gfx/ui/DebuffIcons/NoTongue.png"),
+	"SlowdownDebuf":preload("res://assets/gfx/ui/DebuffIcons/Slowdown.png"),
+	"LessHealDebuf":preload("res://assets/gfx/ui/DebuffIcons/BeetleEPDown.png"),
+	"InvisibleDebuf":preload("res://assets/gfx/ui/DebuffIcons/Invis_Dbuff.png"),
+	"EpMaxDebuf":preload("res://assets/gfx/ui/DebuffIcons/DecreMaxEP.png"),
+	"EPDebuf":preload("res://assets/gfx/ui/DebuffIcons/IncreasEPspeed.png")
+}
