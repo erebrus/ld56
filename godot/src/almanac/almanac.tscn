@@ -1,0 +1,112 @@
+[gd_scene load_steps=12 format=3 uid="uid://c3evg886be6fd"]
+
+[ext_resource type="Script" path="res://src/almanac/almanac.gd" id="1_aftyg"]
+[ext_resource type="Texture2D" uid="uid://dp5oa15acjul4" path="res://assets/gfx/ui/Almanac/Almanac_Container.png" id="1_y4i3l"]
+[ext_resource type="PackedScene" uid="uid://cgf1hf27g5g8p" path="res://src/almanac/entry.tscn" id="2_mh75g"]
+[ext_resource type="Texture2D" uid="uid://dg1gx56251pxk" path="res://assets/gfx/ui/DebuffsAlmanc/Snail_DebuffAlm.png" id="3_rvpwu"]
+[ext_resource type="Texture2D" uid="uid://jj88uhrxxeb7" path="res://assets/gfx/ui/DebuffsAlmanc/Slug_DebuffAlm.png" id="4_yd66n"]
+[ext_resource type="Texture2D" uid="uid://ddmq1cr5xm7dd" path="res://assets/gfx/ui/DebuffsAlmanc/Beetle_DebuffAlm.png" id="5_njo8l"]
+[ext_resource type="Texture2D" uid="uid://bgeoph1luwp6u" path="res://assets/gfx/ui/DebuffsAlmanc/Moth_DebuffAlm.png" id="6_2sm5e"]
+[ext_resource type="Texture2D" uid="uid://b55mkkumfrh70" path="res://assets/gfx/ui/DebuffsAlmanc/Worm_DebuffAlm.png" id="7_f6ec1"]
+[ext_resource type="Texture2D" uid="uid://jrohsdnjtxnm" path="res://assets/gfx/ui/DebuffsAlmanc/Roach_DebuffAlm.png" id="8_mq4pp"]
+[ext_resource type="Texture2D" uid="uid://m7qdfe4sxiwt" path="res://assets/gfx/ui/DebuffsAlmanc/Fly_DebufAlm.png" id="9_vfdtb"]
+
+[sub_resource type="Theme" id="Theme_dyw4r"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Almanac" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_dyw4r")
+script = ExtResource("1_aftyg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -698.0
+offset_top = -497.0
+offset_right = 698.0
+offset_bottom = 497.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_y4i3l")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 380
+theme_override_constants/margin_top = 140
+theme_override_constants/margin_right = 360
+theme_override_constants/margin_bottom = 140
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(1200, 800)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "DEBUFFs"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="LeftPage" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="Snail" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("2_mh75g")]
+layout_mode = 2
+texture = ExtResource("3_rvpwu")
+text = "They’re known for their slow pace, and therefore are easy to catch. But this slow-moving creature leaves behind a trail of sticky mucus, which will slow you down after eating it."
+
+[node name="Slug" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("2_mh75g")]
+layout_mode = 2
+texture = ExtResource("4_yd66n")
+text = "Similar to snails, they’re slow and easy to catch, making them a perfect little snack on the road. But be careful! They are very slimy and will make you feel heavy, making you unable to use double jump."
+
+[node name="Moths" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("2_mh75g")]
+layout_mode = 2
+texture = ExtResource("6_2sm5e")
+text = "They are known for their typically nocturnal nature, with most species being active during the night or twilight hours. Due to its devotion to light and shadows, consuming it will make you invisible."
+
+[node name="Flies" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("2_mh75g")]
+layout_mode = 2
+texture = ExtResource("9_vfdtb")
+text = " They are small, winged insects with slender bodies. Once eaten, they will viciously use their wings causing you to hiccup. "
+
+[node name="RightPage" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="Beetle" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPage" instance=ExtResource("2_mh75g")]
+layout_mode = 2
+texture = ExtResource("5_njo8l")
+text = "Their streamlined bodies, and hard outer wings, are full of nutrients and will increase your Energy Points. But because they’re feisty creatures, they’ll try to use their legs to get out and therefore deplete your speed."
+
+[node name="Worms" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPage" instance=ExtResource("2_mh75g")]
+layout_mode = 2
+texture = ExtResource("7_f6ec1")
+text = "Due to their elongated and boneless form, they can squeeze in anywhere, but also tangle around things. Once consumed, they’ll entangle your tongue, preventing you from using its whole length. "
+
+[node name="Cockroaches" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPage" instance=ExtResource("2_mh75g")]
+layout_mode = 2
+texture = ExtResource("8_mq4pp")
+text = "Famous for their ability to survive in extreme conditions, some species can live for weeks without food. After consuming it’ll increase all insects’ dodge chance, so they can survive your attacks better."

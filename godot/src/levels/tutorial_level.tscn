@@ -183,7 +183,7 @@ offset_left = 9920.0
 offset_top = 1234.0
 offset_right = 10599.0
 offset_bottom = 1375.0
-text = "All the insects in the jungle are poisonous, eating them will give you different debuffs"
+text = "All the insects in the jungle are poisonous, eating them will give you different debuffs. Press TAB to see all possible bugs."
 autowrap_mode = 3
 
 [node name="Tooltip8" type="Label" parent="Tutorial" index="7"]
