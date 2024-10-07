@@ -42,16 +42,20 @@ func _on_bug_caught(type:Types.BugType):
 	for i in range(bugs.size()):
 		if bugs[i] == null:
 			bugs[i]=type
-			update_bar()
-			timer.start()
+			process_check()
 			return
+			
 	for i in range(bugs.size()-1):
 		bugs[i]=bugs[i+1]
 	bugs[bugs.size()-1]=type
+	process_check()
+func process_check():
 	update_bar()
 	if not check_combo():
 		timer.start()
+		$combo_add.play()				
 	else:
+		$combo_success.play()
 		timer.stop()
 		await get_tree().create_timer(reset_delay).timeout
 		_reset_combo()
@@ -65,13 +69,19 @@ func matches(combo:Array)->bool:
 	_reset_combo()
 	
 func check_combo()->bool:
+	for i in range(bugs.size()):
+		if bugs[i]==null:
+			return false
 	for combo_idx in range(Types.COMBOS.size()):
 		var combo = Types.COMBOS[combo_idx]
 		if matches(combo):
 			Events.combo_achieved.emit(combo_idx)
-
+			$combo_success.play()
 			return true
+
+	$combo_add.play()
 	return false
 
 func _on_timer_timeout() -> void:
 	_reset_combo()
+	$combo_drop.play()

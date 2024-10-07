@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://jbwrx60ac223"]
+[gd_scene load_steps=33 format=3 uid="uid://jbwrx60ac223"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_yfdoh"]
 [ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="2_7ar4w"]
@@ -73,6 +73,12 @@ point_count = 2
 [sub_resource type="Curve2D" id="Curve2D_26sxe"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 74, -2, 0, 0, 0, 0, -655, 1)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_4c5rx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -72, 7, 0, 0, 0, 0, 100, 7)
 }
 point_count = 2
 
@@ -236,6 +242,12 @@ position = Vector2(7369, 742)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Worms" index="7"]
 curve = SubResource("Curve2D_26sxe")
+
+[node name="Beetle3" parent="Bugs" index="8" instance=ExtResource("3_1tpcs")]
+position = Vector2(3441, 1544)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Beetle3" index="7"]
+curve = SubResource("Curve2D_4c5rx")
 
 [node name="Frog" parent="." index="6"]
 position = Vector2(775, 1485)
