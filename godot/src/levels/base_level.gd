@@ -24,7 +24,8 @@ func _ready() -> void:
 	Events.frog_grabbed.connect(func(): camera_follow_player = false)
 	Events.eagle_incoming.connect(_on_eagle_incoming)
 	Events.eagle_left.connect(_on_eagle_left)
-
+	Events.game_lost.connect(_on_game_lost)
+	
 func _on_eagle_incoming():
 	Logger.debug("level eagle in")
 	Logger.debug("normal db=%d tense db=%d before incoming" % [music.stream.get_sync_stream_volume(0),music.stream.get_sync_stream_volume(1)])
@@ -37,8 +38,15 @@ func _on_eagle_left():
 		await get_tree().create_timer(5).timeout
 		Globals.music_manager.crossfade_synchronized(music.stream,0)
 		Logger.debug("normal db=%d tense db=%d after timeout" % [music.stream.get_sync_stream_volume(0),music.stream.get_sync_stream_volume(1)])
+	else:
+		Globals.fade_to_black(black_overlay)
 
-	
+func _on_game_lost():
+	Globals.fade_to_black(black_overlay)
+	await get_tree().create_timer(2).timeout
+	get_tree().quit()
+
+
 func _process(_delta):
 	if camera_follow_player:
 		camera.position = frog.position - Vector2(0, 200)

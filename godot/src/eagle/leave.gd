@@ -15,4 +15,4 @@ func _on_update(delta) -> void:
 	Globals.player.global_position = target.claw.global_position
 	
 	if target.claw.progress_ratio >= 1:
-		Globals.do_lose()
+		Events.game_lost.emit()
