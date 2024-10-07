@@ -14,12 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="10_rm72x"]
 [ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="11_8kdqw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mj6ik"]
-size = Vector2(531, 2061)
-
-[sub_resource type="Theme" id="Theme_4c6nq"]
-default_font_size = 32
-
 [sub_resource type="Curve2D" id="Curve2D_8atrd"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -129, 18, 0, 0, 0, 0, 71, 57, 0, 0, 0, 0, 275, 65, 0, 0, 0, 0, 426, 53, 0, 0, 0, 0, 810, -17)
@@ -38,28 +32,17 @@ _data = {
 }
 point_count = 6
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mj6ik"]
+size = Vector2(531, 2061)
+
+[sub_resource type="Theme" id="Theme_4c6nq"]
+default_font_size = 32
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wia2p"]
 size = Vector2(1388, 1373)
 
 [node name="Tutorial" instance=ExtResource("1_mwynp")]
 script = ExtResource("2_j47jj")
-
-[node name="walls" type="Node2D" parent="." index="4"]
-
-[node name="wall" type="StaticBody2D" parent="walls" index="0"]
-position = Vector2(7632, 1316)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/wall" index="0"]
-position = Vector2(8794, -741)
-shape = SubResource("RectangleShape2D_mj6ik")
-
-[node name="wall2" type="StaticBody2D" parent="walls" index="1"]
-position = Vector2(315, 745)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall2" index="0"]
-position = Vector2(-552, -64)
-shape = SubResource("RectangleShape2D_mj6ik")
-metadata/_edit_lock_ = true
 
 [node name="rock1" parent="Scenery" index="0" instance=ExtResource("2_vja34")]
 position = Vector2(-584, 751)
@@ -113,6 +96,46 @@ position = Vector2(10058, 1542)
 [node name="Branch3" parent="Scenery" index="14" instance=ExtResource("4_d82yh")]
 position = Vector2(11167, 1266)
 scale = Vector2(-1, 1)
+
+[node name="Slug" parent="Bugs" index="0" instance=ExtResource("9_jpj2v")]
+position = Vector2(9665, 1421)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Slug" index="7"]
+position = Vector2(90, 0)
+curve = SubResource("Curve2D_8atrd")
+
+[node name="Fly" parent="Bugs" index="1" instance=ExtResource("10_rm72x")]
+position = Vector2(9399, 1196)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Fly" index="7"]
+curve = SubResource("Curve2D_lqi2n")
+
+[node name="Beetle" parent="Bugs" index="2" instance=ExtResource("11_8kdqw")]
+position = Vector2(10883, 1159)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Beetle" index="7"]
+position = Vector2(-18, 29)
+curve = SubResource("Curve2D_rbfvp")
+
+[node name="walls" type="Node2D" parent="." index="4"]
+
+[node name="wall" type="StaticBody2D" parent="walls" index="0"]
+position = Vector2(7632, 1316)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/wall" index="0"]
+position = Vector2(8794, -741)
+shape = SubResource("RectangleShape2D_mj6ik")
+
+[node name="wall2" type="StaticBody2D" parent="walls" index="1"]
+position = Vector2(315, 745)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall2" index="0"]
+position = Vector2(-552, -64)
+shape = SubResource("RectangleShape2D_mj6ik")
+metadata/_edit_lock_ = true
+
+[node name="Frog" parent="." index="5"]
+position = Vector2(1051, 1524)
 
 [node name="NextLevel" parent="." index="6" instance=ExtResource("9_ytgtn")]
 position = Vector2(15248, 1210)
@@ -216,37 +239,14 @@ offset_bottom = 1744.0
 text = "Run, find shelter before the hurricane arrives!"
 autowrap_mode = 3
 
-[node name="Slug" parent="Bugs" index="0" instance=ExtResource("9_jpj2v")]
-position = Vector2(9665, 1421)
-
-[node name="Path2D" type="Path2D" parent="Bugs/Slug" index="7"]
-position = Vector2(90, 0)
-curve = SubResource("Curve2D_8atrd")
-
-[node name="Fly" parent="Bugs" index="1" instance=ExtResource("10_rm72x")]
-position = Vector2(9399, 1196)
-
-[node name="Path2D" type="Path2D" parent="Bugs/Fly" index="7"]
-curve = SubResource("Curve2D_lqi2n")
-
-[node name="Beetle" parent="Bugs" index="2" instance=ExtResource("11_8kdqw")]
-position = Vector2(10883, 1159)
-
-[node name="Path2D" type="Path2D" parent="Bugs/Beetle" index="7"]
-position = Vector2(-18, 29)
-curve = SubResource("Curve2D_rbfvp")
-
-[node name="Frog" parent="." index="9"]
-position = Vector2(1051, 1524)
-
-[node name="Camera2D" parent="." index="10"]
+[node name="Camera2D" parent="." index="8"]
 position = Vector2(1053, 1224)
 
-[node name="Eagle" parent="." index="11"]
+[node name="Eagle" parent="." index="9"]
 warning_time = 10.0
 enabled = false
 
-[node name="TriggerEagle" type="Area2D" parent="." index="15"]
+[node name="TriggerEagle" type="Area2D" parent="." index="13"]
 collision_layer = 0
 collision_mask = 2
 
