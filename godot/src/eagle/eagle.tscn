@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfsfbydiqr0gr"]
+[gd_scene load_steps=15 format=3 uid="uid://bfsfbydiqr0gr"]
 
 [ext_resource type="Script" path="res://src/eagle/eagle.gd" id="1_2whi5"]
 [ext_resource type="Texture2D" uid="uid://dk2bvfybsiqx6" path="res://assets/gfx/eagle/Eagle_Closed.png" id="2_o2b0p"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://src/eagle/dive.gd" id="9_fx0c1"]
 [ext_resource type="Script" path="res://src/eagle/grab.gd" id="10_0bwhh"]
 [ext_resource type="Script" path="res://src/eagle/leave.gd" id="11_wg8cd"]
+[ext_resource type="Script" path="res://src/eagle/disabled.gd" id="13_nwk32"]
 
 [sub_resource type="Curve2D" id="Curve2D_4ng8i"]
 _data = {
@@ -58,13 +59,11 @@ target_path = NodePath("..")
 timed = false
 next_state = NodePath("waiting")
 
+[node name="disabled" type="Node" parent="xsm"]
+script = ExtResource("13_nwk32")
+
 [node name="waiting" type="Node" parent="xsm"]
 script = ExtResource("7_sq710")
-disabled = false
-debug_mode = false
-target_path = NodePath("../..")
-timed = false
-next_state = NodePath("")
 
 [node name="flyby" type="Node" parent="xsm"]
 script = ExtResource("8_bkve8")
@@ -82,11 +81,3 @@ script = ExtResource("10_0bwhh")
 
 [node name="leave" type="Node" parent="xsm"]
 script = ExtResource("11_wg8cd")
-
-[node name="disabled" type="Node" parent="xsm"]
-script = ExtResource("6_drs0q")
-disabled = false
-debug_mode = false
-target_path = NodePath("")
-timed = false
-next_state = NodePath("")
