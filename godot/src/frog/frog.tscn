@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://b5lgniaadan1y"]
+[gd_scene load_steps=78 format=3 uid="uid://b5lgniaadan1y"]
 
 [ext_resource type="Script" path="res://src/frog/frog.gd" id="1_mohle"]
 [ext_resource type="Script" path="res://src/frog/frog_controller.gd" id="2_mpehw"]
@@ -55,7 +55,10 @@
 [ext_resource type="AudioStream" uid="uid://r20qkbp4bedq" path="res://assets/sfx/MC_Tongue_Attack_1.wav" id="45_obtm1"]
 [ext_resource type="AudioStream" uid="uid://b7mc5xl4fwyp1" path="res://assets/sfx/MC_Tongue_Attack_2.wav" id="46_7gxek"]
 [ext_resource type="AudioStream" uid="uid://de4pihhawki6o" path="res://assets/sfx/MC_Tongue_Attack_3.wav" id="47_hpjw2"]
+[ext_resource type="AudioStream" uid="uid://d2ocid1y3ana8" path="res://assets/sfx/MC_hardlanding_rocks_1.wav" id="47_q5bkg"]
 [ext_resource type="AudioStream" uid="uid://dblbonruriad6" path="res://assets/sfx/MC_Tongue_Attack_4.wav" id="48_0ncqs"]
+[ext_resource type="AudioStream" uid="uid://clstpu3vt35t4" path="res://assets/sfx/MC_hardlanding_rocks_2.wav" id="48_v6tlu"]
+[ext_resource type="AudioStream" uid="uid://c1j88mgmnxhg3" path="res://assets/sfx/MC_hardlanding_rocks_3.wav" id="49_f0umu"]
 [ext_resource type="AudioStream" uid="uid://drdny6ubai4u5" path="res://assets/sfx/MC_Tongue_rope_1.wav" id="49_o84bu"]
 [ext_resource type="AudioStream" uid="uid://bv4pvknclj8ag" path="res://assets/sfx/MC_Tongue_rope_2.wav" id="50_k1ph7"]
 [ext_resource type="AudioStream" uid="uid://xh0db6tbhqmg" path="res://assets/sfx/MC_Tongue_rope_3.wav" id="51_0t26b"]
@@ -194,6 +197,12 @@ streams_count = 3
 stream_0/stream = ExtResource("34_y1s18")
 stream_1/stream = ExtResource("35_34bxl")
 stream_2/stream = ExtResource("36_h51po")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yb6i3"]
+streams_count = 3
+stream_0/stream = ExtResource("47_q5bkg")
+stream_1/stream = ExtResource("48_v6tlu")
+stream_2/stream = ExtResource("49_f0umu")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5sd1v"]
 streams_count = 3
@@ -416,7 +425,8 @@ bus = &"Sound"
 stream = SubResource("AudioStreamRandomizer_3ricb")
 bus = &"Sound"
 
-[node name="sfx_soft_landing" type="AudioStreamPlayer2D" parent="sfx"]
+[node name="sfx_hard_rock_landing" type="AudioStreamPlayer2D" parent="sfx"]
+stream = SubResource("AudioStreamRandomizer_yb6i3")
 bus = &"Sound"
 
 [node name="sfx_hard_landing" type="AudioStreamPlayer2D" parent="sfx"]

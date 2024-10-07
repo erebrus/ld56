@@ -1,5 +1,6 @@
 extends Node
 
+enum FloorType{Grass, Rock}
 
 
 enum BugType {

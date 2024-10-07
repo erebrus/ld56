@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsvfh3bfo6b40"]
+[gd_scene load_steps=3 format=3 uid="uid://bsvfh3bfo6b40"]
 
 [ext_resource type="Texture2D" uid="uid://0xquwe087e4q" path="res://assets/gfx/environment/branchPlatform.png" id="1_5jiwb"]
+[ext_resource type="Script" path="res://src/world/platforms/platform.gd" id="1_g838b"]
 
 [node name="Platform" type="StaticBody2D"]
+script = ExtResource("1_g838b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

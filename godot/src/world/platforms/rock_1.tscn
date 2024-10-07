@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cvvukmtoi22om" path="res://assets/gfx/environment/rock1.png" id="2_hdw2l"]
 
 [node name="rock1" instance=ExtResource("1_03wcx")]
+floor_type = 1
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_hdw2l")
