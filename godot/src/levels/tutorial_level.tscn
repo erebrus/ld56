@@ -219,7 +219,7 @@ offset_left = 7725.0
 offset_top = 1226.0
 offset_right = 8404.0
 offset_bottom = 1367.0
-text = "Once your tongue sticks to the fungus, you can use W and S to pull yourself up and down. Using A and D allows you to swing"
+text = "Once your tongue sticks to the fungus, you can use W and S to pull yourself up and down. Using A and D allows you to swing. Space jumps off."
 autowrap_mode = 3
 
 [node name="Tooltip6" type="Label" parent="Tutorial" index="6"]
