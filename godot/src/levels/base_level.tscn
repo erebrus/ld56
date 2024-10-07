@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://src/levels/base_level.gd" id="1_mo5ug"]
 [ext_resource type="PackedScene" uid="uid://b5lgniaadan1y" path="res://src/frog/frog.tscn" id="1_nfuix"]
-[ext_resource type="PackedScene" path="res://src/levels/background.tscn" id="2_6kg0q"]
-[ext_resource type="PackedScene" path="res://src/world/grass.tscn" id="5_ejkmm"]
+[ext_resource type="PackedScene" uid="uid://cr32fdxdvmlqy" path="res://src/levels/background.tscn" id="2_6kg0q"]
+[ext_resource type="PackedScene" uid="uid://b8wiaokjcgunm" path="res://src/world/grass.tscn" id="5_ejkmm"]
 [ext_resource type="PackedScene" uid="uid://c06tqqbevl64b" path="res://src/ui/healthbar.tscn" id="6_16uxq"]
 [ext_resource type="PackedScene" uid="uid://bfsfbydiqr0gr" path="res://src/eagle/eagle.tscn" id="6_x2vej"]
 [ext_resource type="AudioStream" uid="uid://c21xktcb61m7j" path="res://assets/sfx/Amb_rain_forest_loop.mp3" id="7_eodqv"]
@@ -124,6 +124,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ambient" type="AudioStreamPlayer" parent="."]
