@@ -1,10 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cnqbkbby1d1sd"]
+[gd_scene load_steps=13 format=3 uid="uid://cnqbkbby1d1sd"]
 
 [ext_resource type="Script" path="res://src/levels/base_level.gd" id="1_mo5ug"]
 [ext_resource type="PackedScene" uid="uid://b5lgniaadan1y" path="res://src/frog/frog.tscn" id="1_nfuix"]
-[ext_resource type="Texture2D" uid="uid://bpj7fwfxeafy4" path="res://assets/gfx/environment/Background_Back.png" id="1_shssx"]
-[ext_resource type="Texture2D" uid="uid://dqackkt1tgskd" path="res://assets/gfx/environment/Background_Mid.png" id="2_wx1s1"]
-[ext_resource type="Texture2D" uid="uid://d1m5ne1avac35" path="res://assets/gfx/environment/Background_Front.png" id="3_f1ro6"]
+[ext_resource type="PackedScene" uid="uid://cr32fdxdvmlqy" path="res://src/levels/background.tscn" id="2_6kg0q"]
 [ext_resource type="PackedScene" uid="uid://b8wiaokjcgunm" path="res://src/world/grass.tscn" id="5_ejkmm"]
 [ext_resource type="PackedScene" uid="uid://c06tqqbevl64b" path="res://src/ui/healthbar.tscn" id="6_16uxq"]
 [ext_resource type="PackedScene" uid="uid://bfsfbydiqr0gr" path="res://src/eagle/eagle.tscn" id="6_x2vej"]
@@ -24,40 +22,10 @@ stream_1/volume = -60.0
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource("1_mo5ug")
 
-[node name="BG" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0, 0)
-repeat_size = Vector2(3840, 0)
-metadata/_edit_lock_ = true
-
-[node name="TextureRect" type="TextureRect" parent="BG"]
-offset_top = -1560.0
-offset_right = 3840.0
-offset_bottom = 1754.0
-texture = ExtResource("1_shssx")
-
-[node name="MG" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.2, 0.2)
-repeat_size = Vector2(3840, 0)
-metadata/_edit_lock_ = true
-
-[node name="TextureRect" type="TextureRect" parent="MG"]
-offset_top = -1560.0
-offset_right = 3840.0
-offset_bottom = 1754.0
-texture = ExtResource("2_wx1s1")
-
-[node name="FG" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.6, 0.6)
-repeat_size = Vector2(3840, 0)
-metadata/_edit_lock_ = true
-
-[node name="TextureRect" type="TextureRect" parent="FG"]
-offset_top = -1560.0
-offset_right = 3840.0
-offset_bottom = 1754.0
-texture = ExtResource("3_f1ro6")
+[node name="Background" parent="." instance=ExtResource("2_6kg0q")]
 
 [node name="TheRealGround" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Grass" parent="TheRealGround" instance=ExtResource("5_ejkmm")]
 position = Vector2(0, 1524)

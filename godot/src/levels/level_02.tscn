@@ -427,12 +427,12 @@ position = Vector2(3213, 1542)
 [node name="Path2D" type="Path2D" parent="Bugs/Beetle5" index="7"]
 curve = SubResource("Curve2D_ymibe")
 
-[node name="Frog" parent="." index="6"]
+[node name="Frog" parent="." index="4"]
 position = Vector2(971, 1551)
 swing_gravity = 1000
 
+[node name="music" parent="." index="9"]
+stream = SubResource("AudioStreamSynchronized_6xx52")
+
 [node name="NextLevel" parent="." index="10" instance=ExtResource("18_ixeje")]
 position = Vector2(12833, -364)
-
-[node name="music" parent="." index="12"]
-stream = SubResource("AudioStreamSynchronized_6xx52")
