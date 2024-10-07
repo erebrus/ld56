@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://b5lgniaadan1y"]
+[gd_scene load_steps=73 format=3 uid="uid://b5lgniaadan1y"]
 
 [ext_resource type="Script" path="res://src/frog/frog.gd" id="1_mohle"]
 [ext_resource type="Script" path="res://src/frog/frog_controller.gd" id="2_mpehw"]
@@ -47,6 +47,7 @@
 [ext_resource type="AudioStream" uid="uid://cf70u60a7hts0" path="res://assets/sfx/MC_Big_Jump_3.wav" id="36_h51po"]
 [ext_resource type="AudioStream" uid="uid://c3s0g26tvdyi0" path="res://assets/sfx/MC_hardlanding_dirt_1.wav" id="37_12bx8"]
 [ext_resource type="AudioStream" uid="uid://brwythwaa35xf" path="res://assets/sfx/MC_hardlanding_dirt_2.wav" id="38_2c6rn"]
+[ext_resource type="Script" path="res://src/frog/xsm/frog_autohop.gd" id="38_y7k0a"]
 [ext_resource type="AudioStream" uid="uid://caehsnllwc636" path="res://assets/sfx/MC_hardlanding_dirt_3.wav" id="39_hxkld"]
 [ext_resource type="AudioStream" uid="uid://dw6hxvt81se" path="res://assets/sfx/MC_Eat_1.wav" id="42_8v0jr"]
 [ext_resource type="AudioStream" uid="uid://6aomblsdvv1r" path="res://assets/sfx/MC_Eat_2.wav" id="43_q5s5p"]
@@ -336,7 +337,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../swing")
+next_state = NodePath("../animations/death")
 
 [node name="swing" type="Node" parent="xsm"]
 script = ExtResource("29_bxkrg")
@@ -348,17 +349,39 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../death")
+next_state = NodePath("../animations/death")
 
-[node name="death" type="Node" parent="xsm"]
+[node name="animations" type="Node" parent="xsm"]
+script = ExtResource("2_ucc1o")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("auto_hop")
+
+[node name="death" type="Node" parent="xsm/animations"]
 script = ExtResource("31_tdm7d")
-animation_player = NodePath("../../AnimationPlayer")
+animation_player = NodePath("../../../AnimationPlayer")
 anim_on_enter = "death"
 loop_mode = 0
 on_finished = 0
 disabled = false
 debug_mode = false
-target_path = NodePath("../..")
+target_path = NodePath("../../..")
+timed = false
+next_state = NodePath("..")
+
+[node name="auto_hop" type="Node" parent="xsm/animations"]
+unique_name_in_owner = true
+script = ExtResource("38_y7k0a")
+acc = 7500.0
+animation_player = NodePath("../../../AnimationPlayer")
+anim_on_enter = "hop"
+loop_mode = 0
+on_finished = 1
+disabled = false
+debug_mode = false
+target_path = NodePath("")
 timed = false
 next_state = NodePath("")
 

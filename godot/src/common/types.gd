@@ -12,6 +12,7 @@ enum BugType {
 	Worm,
 	Cockroach,
 }
+enum HopDirection{LEFT=-1, RIGHT=1}
 
 
 func key_of(value) -> String:

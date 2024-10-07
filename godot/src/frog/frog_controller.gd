@@ -154,6 +154,10 @@ func _input(_e):
 func get_body()->CharacterBody2D:
 	return get_parent() as CharacterBody2D
 
+func set_auto_acc(dir:float, value=max_acceleration):
+	acc.x = sign(dir)*value
+	check_direction_change(sign(dir))
+	
 func set_x_acc():
 	acc.x = 0
 	var input = Input.get_axis(input_left, input_right)
@@ -193,11 +197,12 @@ func check_just_started_falling()->bool:
 		return true
 	return false
 	
-func check_just_hit_ground()->bool:
+func check_just_hit_ground(do_emit:=true)->bool:
 		# Check if we just hit the ground this frame
 	if not _was_on_ground and is_feet_on_ground():
-		current_jump_type = JumpType.NONE	
-		hit_ground.emit()
+		current_jump_type = JumpType.NONE
+		if do_emit:	
+			hit_ground.emit()
 		return true
 	else:
 		return false

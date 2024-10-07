@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://2cukog0h3mes"]
+[gd_scene load_steps=18 format=3 uid="uid://dgoqdd67h2s5y"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_5oqte"]
 [ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="2_nqrvd"]

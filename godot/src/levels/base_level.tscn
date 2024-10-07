@@ -26,10 +26,10 @@ scroll_scale = Vector2(0, 0)
 repeat_size = Vector2(3840, 0)
 
 [node name="TextureRect" type="TextureRect" parent="BG"]
-offset_left = -1654.0
-offset_top = -467.0
-offset_right = 2186.0
-offset_bottom = 1693.0
+offset_left = 19.0
+offset_top = -487.0
+offset_right = 3859.0
+offset_bottom = 2827.0
 texture = ExtResource("1_shssx")
 
 [node name="MG" type="Parallax2D" parent="."]
@@ -37,10 +37,10 @@ scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(3840, 0)
 
 [node name="TextureRect" type="TextureRect" parent="MG"]
-offset_left = -1654.0
-offset_top = -467.0
-offset_right = 2186.0
-offset_bottom = 1693.0
+offset_left = 19.0
+offset_top = -487.0
+offset_right = 3859.0
+offset_bottom = 2827.0
 texture = ExtResource("2_wx1s1")
 
 [node name="FG" type="Parallax2D" parent="."]
@@ -48,10 +48,10 @@ scroll_scale = Vector2(0.6, 0.6)
 repeat_size = Vector2(3840, 0)
 
 [node name="TextureRect" type="TextureRect" parent="FG"]
-offset_left = -1654.0
-offset_top = -467.0
-offset_right = 2186.0
-offset_bottom = 1693.0
+offset_left = 19.0
+offset_top = -487.0
+offset_right = 3859.0
+offset_bottom = 2827.0
 texture = ExtResource("3_f1ro6")
 
 [node name="Scenery" type="Node2D" parent="."]
