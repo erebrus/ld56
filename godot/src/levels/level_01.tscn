@@ -330,12 +330,5 @@ curve = SubResource("Curve2D_kjq0r")
 position = Vector2(1382, 1547)
 swing_gravity = 1000
 
-[node name="Camera2D" parent="Frog" index="12"]
-limit_left = 0
-limit_bottom = 1700
-
-[node name="Eagle" parent="." index="9"]
-scroll_offset = Vector2(-832, 6)
-
 [node name="NextLevel" parent="." index="12" instance=ExtResource("14_2skva")]
 position = Vector2(12682, 1212)

@@ -447,12 +447,8 @@ position = Vector2(20422, 1318)
 position = Vector2(356, 496)
 swing_gravity = 1000
 
-[node name="Camera2D" parent="Frog" index="12"]
-limit_left = 0
-limit_bottom = 1700
+[node name="Camera2D" parent="." index="7"]
+limit_right = 20700
 
-[node name="Eagle" parent="." index="8"]
-scroll_offset = Vector2(-832, 6)
-
-[node name="music" parent="." index="10"]
+[node name="music" parent="." index="11"]
 stream = SubResource("AudioStreamSynchronized_4awan")
