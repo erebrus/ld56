@@ -135,6 +135,7 @@ offset_right = 0.0
 offset_bottom = -962.0
 
 [node name="Almanac" parent="HUD" instance=ExtResource("10_5wjr6")]
+unique_name_in_owner = true
 
 [node name="ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_eodqv")

@@ -7,6 +7,7 @@ extends Node2D
 @onready var music: AudioStreamPlayer = $music
 @onready var black_overlay: ColorRect = $HUD/BlackOverlay
 @onready var camera: Camera2D = %Camera2D
+@onready var almanac: Control = %Almanac
 
 @export var tense_timeout =  5
 var debug:=false
@@ -27,7 +28,7 @@ func _ready() -> void:
 	Events.eagle_incoming.connect(_on_eagle_incoming)
 	Events.eagle_left.connect(_on_eagle_left)
 	Events.game_lost.connect(_on_game_lost)
-	
+
 	
 	
 func _on_eagle_incoming():
@@ -77,7 +78,9 @@ func _input(event: InputEvent) -> void:
 		Events.combo_achieved.emit(4)
 	if Input.is_action_just_pressed("next_level"):
 		Events.reached_level_end.emit()
-		
+	if event.is_action_pressed("almanac"):
+		almanac.visible = not almanac.visible	
+		frog.energy_timer.paused=almanac.visible
 		
 func _on_reached_level_end():
 	frog.do_auto_hop(Types.HopDirection.RIGHT, 7500)
