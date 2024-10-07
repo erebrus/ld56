@@ -5,6 +5,9 @@
 
 [node name="Combo" type="VBoxContainer"]
 script = ExtResource("1_1whvg")
+bug1 = 2
+bug2 = 2
+bug3 = 2
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 2

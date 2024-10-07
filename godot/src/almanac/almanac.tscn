@@ -153,15 +153,12 @@ theme_override_constants/separation = 50
 layout_mode = 2
 title = "Triple Trouble"
 description = "Replenish extra energy"
-bug1 = 2
 bug2 = 3
-bug3 = 2
 
 [node name="GourmetKebab" parent="Combos/VBoxContainer/HBoxContainer/LeftPage" instance=ExtResource("12_nvp7d")]
 layout_mode = 2
 title = "Gourmet Kebab"
 description = "Triple Jump"
-bug1 = 2
 bug2 = 4
 bug3 = 5
 
@@ -183,6 +180,7 @@ layout_mode = 2
 title = "Take It Slow"
 description = "Freeze Energy Depletion"
 bug1 = 5
+bug2 = 0
 bug3 = 6
 
 [node name="Combo" parent="Combos/VBoxContainer/HBoxContainer/RightPage" instance=ExtResource("12_nvp7d")]
@@ -191,6 +189,7 @@ title = "Crunchy Sandwitch"
 description = "All bugs stop moving"
 bug1 = 6
 bug2 = 7
+bug3 = 0
 
 [node name="DebuffButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(275, 0)
