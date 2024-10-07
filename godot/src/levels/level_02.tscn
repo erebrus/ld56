@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bayfc11f0g7xn"]
+[gd_scene load_steps=55 format=3 uid="uid://bayfc11f0g7xn"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_d2fqf"]
 [ext_resource type="Texture2D" uid="uid://b8b5jgthrtj4s" path="res://assets/gfx/environment/Vine.png" id="3_ce5te"]
@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://bewxal3nv2w8g" path="res://src/bugs/snail.tscn" id="19_pbicw"]
 [ext_resource type="PackedScene" uid="uid://c3tps7ghn0dhi" path="res://src/bugs/worms.tscn" id="20_7jyby"]
 [ext_resource type="AudioStream" uid="uid://0iujfpk6p3nb" path="res://assets/music/Bugs_Driven_Cutie_Hide.mp3" id="20_u408f"]
+[ext_resource type="PackedScene" uid="uid://b4iyiw0vgavq6" path="res://src/world/platforms/mushroom_platform_a.tscn" id="24_frwhi"]
+[ext_resource type="PackedScene" uid="uid://ddv7gymgo7qom" path="res://src/world/platforms/mushroom_platform_b.tscn" id="25_52lmk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acc83"]
 size = Vector2(531, 3167.5)
@@ -198,6 +200,9 @@ stream_1/volume = -60.0
 
 [node name="Level_02" instance=ExtResource("1_d2fqf")]
 
+[node name="Leaf" parent="TheRealGround" index="6" instance=ExtResource("8_wgidt")]
+position = Vector2(7950, 764)
+
 [node name="decorations" type="Node2D" parent="Scenery" index="0"]
 
 [node name="Vine2" type="Sprite2D" parent="Scenery/decorations" index="0"]
@@ -347,6 +352,18 @@ position = Vector2(4259, 1204)
 position = Vector2(10945, 725)
 scale = Vector2(1.5, 1.5)
 
+[node name="MushroomPlatformA" parent="Scenery/Platforms" index="33" instance=ExtResource("24_frwhi")]
+position = Vector2(6918, 837)
+
+[node name="MushroomPlatformB" parent="Scenery/Platforms" index="34" instance=ExtResource("25_52lmk")]
+position = Vector2(7579, 1530)
+
+[node name="MushroomPlatformA2" parent="Scenery/Platforms" index="35" instance=ExtResource("24_frwhi")]
+position = Vector2(2211, 1550)
+
+[node name="Leaf10" parent="Scenery/Platforms" index="36" instance=ExtResource("8_wgidt")]
+position = Vector2(11402, 958)
+
 [node name="Mushrooms" type="Node2D" parent="Scenery" index="3"]
 
 [node name="Mushroom" parent="Scenery/Mushrooms" index="0" instance=ExtResource("14_pfmk0")]
@@ -375,6 +392,9 @@ position = Vector2(4483, 462)
 
 [node name="Mushroom9" parent="Scenery/Mushrooms" index="8" instance=ExtResource("14_pfmk0")]
 position = Vector2(9676, 327)
+
+[node name="Mushroom10" parent="Scenery/Mushrooms" index="9" instance=ExtResource("14_pfmk0")]
+position = Vector2(5668, 792)
 
 [node name="Moth2" parent="Bugs" index="0" instance=ExtResource("10_0wvdk")]
 position = Vector2(3470, -154)
@@ -542,8 +562,13 @@ curve = SubResource("Curve2D_ymibe")
 position = Vector2(971, 1551)
 swing_gravity = 1000
 
+[node name="HealthComponent" parent="Frog" index="9"]
+max_energy = 200.0
+
 [node name="music" parent="." index="9"]
 stream = SubResource("AudioStreamSynchronized_6xx52")
 
 [node name="NextLevel" parent="." index="10" instance=ExtResource("18_ixeje")]
 position = Vector2(12833, -364)
+
+[editable path="Frog"]
