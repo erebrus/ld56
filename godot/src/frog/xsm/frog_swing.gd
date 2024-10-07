@@ -11,7 +11,7 @@ var last_velocity:Vector2
 
 func _on_enter(args) -> void:
 	super._on_enter(args)
-	
+	get_ctl().jumps_left=get_ctl().max_jump_amount
 	gravity = get_body().swing_gravity * Vector2.DOWN
 	speed = get_body().swing_speed * Vector2.RIGHT
 	last_velocity = get_body().velocity
@@ -40,5 +40,5 @@ func _on_tongue_detached() -> void:
 	get_ctl().set_x_acc()
 	get_ctl().acc.x*=abs(last_velocity.x)/max_x_speeed *acc_x_factor
 	#Logger.info("acc %s" % get_ctl().acc)
-	#change_state("fall")
-	get_ctl().jump()
+	# because we are on air, this jump would be considered a double jump otherwise
+	get_ctl().ground_jump()
