@@ -1,6 +1,6 @@
 class_name MusicManager extends Node
 
-@export var music_bus_volume:=-7.0
+@export var music_bus_volume:=-10.0
 @export var ambient_volume:=0
 @onready var menu_music: AudioStreamPlayer = $menu_music
 @onready var game_music: AudioStreamPlayer = $game_music
