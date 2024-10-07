@@ -1,13 +1,13 @@
 extends Panel
 
 const textures={
-	Types.BugType.Slug:  preload("res://assets/gfx/ui/bug_icons/slug_icon.png"),
-	Types.BugType.Beetle:preload("res://assets/gfx/ui/bug_icons/beetle_icon.png"),
-	Types.BugType.Fly:preload("res://assets/gfx/ui/bug_icons/fly_icon.png"),
-	Types.BugType.Moth:preload("res://assets/gfx/ui/bug_icons/moth_icon.png"),
-	Types.BugType.Snail:preload("res://assets/gfx/ui/bug_icons/snail_icon.png"),
-	Types.BugType.Worm:preload("res://assets/gfx/ui/bug_icons/worm_icon.png"),
-	Types.BugType.Cockroach:preload("res://assets/gfx/ui/bug_icons/cockroach_icon.png")
+	Types.BugType.Slug:  preload("res://assets/gfx/ui/ComboIcons/Slug_HUD.png"),
+	Types.BugType.Beetle:preload("res://assets/gfx/ui/ComboIcons/Beetle_HUD.png"),
+	Types.BugType.Fly:preload("res://assets/gfx/ui/ComboIcons/Fly_HUD.png"),
+	Types.BugType.Moth:preload("res://assets/gfx/ui/ComboIcons/Moth_HUD.png"),
+	Types.BugType.Snail:preload("res://assets/gfx/ui/ComboIcons/Snail_HUD.png"),
+	Types.BugType.Worm:preload("res://assets/gfx/ui/ComboIcons/Worm_HUD.png"),
+	Types.BugType.Cockroach:preload("res://assets/gfx/ui/ComboIcons/Roach_HUD.png")
 
 }
 
