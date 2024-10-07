@@ -20,6 +20,7 @@ signal energy_changed(value:float)
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var debufs: Node = %Debufs
+@onready var auto_hop: XSMFrogAutoHop = %auto_hop
 
 var state_name:String
 var max_heal=100
@@ -64,8 +65,14 @@ func _on_generic_controller_forward(method_name: String, args = null):
 			
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("dead"):
-		_on_health_component_died()
-		
+		#_on_health_component_died()
+		xsm.change_state("auto_hop")
+
+func do_auto_hop(direction:Types.HopDirection, acc):
+	auto_hop.direction=direction
+	auto_hop.acc=acc
+	xsm.change_state("auto_hop")
+	
 func _on_controller_jumped(_is_ground_jump: bool) -> void:
 	xsm.change_state("jump")
 

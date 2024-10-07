@@ -1,20 +1,26 @@
-[gd_scene load_steps=66 format=3 uid="uid://b5lgniaadan1y"]
+[gd_scene load_steps=73 format=3 uid="uid://b5lgniaadan1y"]
 
 [ext_resource type="Script" path="res://src/frog/frog.gd" id="1_mohle"]
 [ext_resource type="Script" path="res://src/frog/frog_controller.gd" id="2_mpehw"]
 [ext_resource type="PackedScene" uid="uid://bajmr10nfg8pe" path="res://src/frog/head/head.tscn" id="2_pyle1"]
 [ext_resource type="Script" path="res://addons/xsm/state.gd" id="2_ucc1o"]
-[ext_resource type="Texture2D" uid="uid://dvimrkcaapjag" path="res://assets/gfx/player/dead body/dead body.png" id="3_luruj"]
+[ext_resource type="Texture2D" uid="uid://dn3tx3017axd4" path="res://assets/gfx/player/goofy af death animation/1.png" id="3_tgs73"]
 [ext_resource type="Script" path="res://src/frog/xsm/frog_idle.gd" id="4_sbak6"]
+[ext_resource type="Texture2D" uid="uid://uxxerhext64r" path="res://assets/gfx/player/goofy af death animation/2.png" id="4_xxt34"]
 [ext_resource type="Texture2D" uid="uid://dc5gdocr7wibq" path="res://assets/gfx/player/jump/5.png" id="5_4cau3"]
 [ext_resource type="Script" path="res://src/frog/xsm/frog_hop.gd" id="5_dasfo"]
+[ext_resource type="Texture2D" uid="uid://2lyiarsjklib" path="res://assets/gfx/player/goofy af death animation/3.png" id="5_krs25"]
 [ext_resource type="Script" path="res://src/frog/xsm/frog_jump.gd" id="6_5df1m"]
+[ext_resource type="Texture2D" uid="uid://kkmdrrg6jc6m" path="res://assets/gfx/player/goofy af death animation/4.png" id="6_ik78u"]
 [ext_resource type="Texture2D" uid="uid://bp00xsveur3ff" path="res://assets/gfx/player/walk/1.png" id="6_s2tbk"]
+[ext_resource type="Texture2D" uid="uid://dm18f0s7vrgv2" path="res://assets/gfx/player/goofy af death animation/5.png" id="7_3pfln"]
 [ext_resource type="Script" path="res://src/frog/xsm/frog_fall.gd" id="7_c7jib"]
 [ext_resource type="Texture2D" uid="uid://dft48gk4nlx4d" path="res://assets/gfx/player/walk/2.png" id="7_ho7in"]
 [ext_resource type="Script" path="res://src/frog/xsm/frog_land.gd" id="8_4670w"]
+[ext_resource type="Texture2D" uid="uid://rvenpxdifs66" path="res://assets/gfx/player/goofy af death animation/6.png" id="8_fl0jh"]
 [ext_resource type="Texture2D" uid="uid://bsovwvxwrqxsm" path="res://assets/gfx/player/walk/3.png" id="8_ul0ep"]
 [ext_resource type="Texture2D" uid="uid://tdxhqrvroxc2" path="res://assets/gfx/player/walk/4.png" id="9_ppksw"]
+[ext_resource type="Texture2D" uid="uid://tcqm3cr8ablq" path="res://assets/gfx/player/goofy af death animation/7.png" id="9_usguc"]
 [ext_resource type="Texture2D" uid="uid://iy2nxoiiec8g" path="res://assets/gfx/player/idle/1.png" id="9_ydjvk"]
 [ext_resource type="Texture2D" uid="uid://dxhyypqloyepm" path="res://assets/gfx/player/jump/1.png" id="10_171m6"]
 [ext_resource type="Texture2D" uid="uid://dsqqin6ddr7yl" path="res://assets/gfx/player/idle/2.png" id="10_e3ynl"]
@@ -41,6 +47,7 @@
 [ext_resource type="AudioStream" uid="uid://cf70u60a7hts0" path="res://assets/sfx/MC_Big_Jump_3.wav" id="36_h51po"]
 [ext_resource type="AudioStream" uid="uid://c3s0g26tvdyi0" path="res://assets/sfx/MC_hardlanding_dirt_1.wav" id="37_12bx8"]
 [ext_resource type="AudioStream" uid="uid://brwythwaa35xf" path="res://assets/sfx/MC_hardlanding_dirt_2.wav" id="38_2c6rn"]
+[ext_resource type="Script" path="res://src/frog/xsm/frog_autohop.gd" id="38_y7k0a"]
 [ext_resource type="AudioStream" uid="uid://caehsnllwc636" path="res://assets/sfx/MC_hardlanding_dirt_3.wav" id="39_hxkld"]
 [ext_resource type="AudioStream" uid="uid://dw6hxvt81se" path="res://assets/sfx/MC_Eat_1.wav" id="42_8v0jr"]
 [ext_resource type="AudioStream" uid="uid://6aomblsdvv1r" path="res://assets/sfx/MC_Eat_2.wav" id="43_q5s5p"]
@@ -61,17 +68,35 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_171m6")
+"texture": ExtResource("3_tgs73")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_e7owm")
+"texture": ExtResource("4_xxt34")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_luruj")
+"texture": ExtResource("5_krs25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xxt34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_krs25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ik78u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3pfln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fl0jh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_usguc")
 }],
 "loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -312,7 +337,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("")
+next_state = NodePath("../animations/death")
 
 [node name="swing" type="Node" parent="xsm"]
 script = ExtResource("29_bxkrg")
@@ -324,17 +349,39 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("")
+next_state = NodePath("../animations/death")
 
-[node name="death" type="Node" parent="xsm"]
+[node name="animations" type="Node" parent="xsm"]
+script = ExtResource("2_ucc1o")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("auto_hop")
+
+[node name="death" type="Node" parent="xsm/animations"]
 script = ExtResource("31_tdm7d")
-animation_player = NodePath("../../AnimationPlayer")
+animation_player = NodePath("../../../AnimationPlayer")
 anim_on_enter = "death"
 loop_mode = 0
 on_finished = 0
 disabled = false
 debug_mode = false
-target_path = NodePath("../..")
+target_path = NodePath("../../..")
+timed = false
+next_state = NodePath("..")
+
+[node name="auto_hop" type="Node" parent="xsm/animations"]
+unique_name_in_owner = true
+script = ExtResource("38_y7k0a")
+acc = 7500.0
+animation_player = NodePath("../../../AnimationPlayer")
+anim_on_enter = "hop"
+loop_mode = 0
+on_finished = 1
+disabled = false
+debug_mode = false
+target_path = NodePath("")
 timed = false
 next_state = NodePath("")
 
@@ -356,6 +403,7 @@ target_position = Vector2(0, 10)
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("29_ioey7")
+max_energy = 200.0
 
 [node name="sfx" type="Node2D" parent="."]
 

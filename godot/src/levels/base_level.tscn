@@ -26,10 +26,10 @@ scroll_scale = Vector2(0, 0)
 repeat_size = Vector2(3840, 0)
 
 [node name="TextureRect" type="TextureRect" parent="BG"]
-offset_left = -1654.0
-offset_top = -467.0
-offset_right = 2186.0
-offset_bottom = 1693.0
+offset_left = 19.0
+offset_top = -487.0
+offset_right = 3859.0
+offset_bottom = 2827.0
 texture = ExtResource("1_shssx")
 
 [node name="MG" type="Parallax2D" parent="."]
@@ -37,10 +37,10 @@ scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(3840, 0)
 
 [node name="TextureRect" type="TextureRect" parent="MG"]
-offset_left = -1654.0
-offset_top = -467.0
-offset_right = 2186.0
-offset_bottom = 1693.0
+offset_left = 19.0
+offset_top = -487.0
+offset_right = 3859.0
+offset_bottom = 2827.0
 texture = ExtResource("2_wx1s1")
 
 [node name="FG" type="Parallax2D" parent="."]
@@ -48,10 +48,10 @@ scroll_scale = Vector2(0.6, 0.6)
 repeat_size = Vector2(3840, 0)
 
 [node name="TextureRect" type="TextureRect" parent="FG"]
-offset_left = -1654.0
-offset_top = -467.0
-offset_right = 2186.0
-offset_bottom = 1693.0
+offset_left = 19.0
+offset_top = -487.0
+offset_right = 3859.0
+offset_bottom = 2827.0
 texture = ExtResource("3_f1ro6")
 
 [node name="Scenery" type="Node2D" parent="."]
@@ -91,6 +91,15 @@ offset_bottom = 40.0
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="BlackOverlay" type="ColorRect" parent="HUD"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Eagle" parent="." instance=ExtResource("6_x2vej")]
 
 [node name="ambient" type="AudioStreamPlayer" parent="."]
@@ -99,6 +108,5 @@ volume_db = -3.0
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamSynchronized_2n5mq")
-bus = &"Music"
 
 [connection signal="energy_changed" from="Frog" to="HUD/MarginContainer2/HealthBar" method="_on_frog_energy_changed"]

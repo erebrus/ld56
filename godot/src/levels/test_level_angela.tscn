@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4nmo8op671y0"]
+[gd_scene load_steps=16 format=3 uid="uid://b4nmo8op671y0"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_mccsm"]
 [ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="2_3c14k"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://i1m1wvlfxwsi" path="res://src/world/platforms/flower.tscn" id="6_jovk6"]
 [ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="7_5dfv8"]
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="8_fr1dr"]
+[ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="8_nt54t"]
 [ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="9_4hhpq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf487"]
@@ -118,6 +119,15 @@ position = Vector2(3474, 173)
 [node name="Leaf3" parent="Scenery" index="12" instance=ExtResource("7_5dfv8")]
 position = Vector2(4714, 1060)
 scale = Vector2(0.5, 0.5)
+
+[node name="Mushroom" parent="Scenery" index="13" instance=ExtResource("8_nt54t")]
+position = Vector2(1018, 864)
+
+[node name="Mushroom2" parent="Scenery" index="14" instance=ExtResource("8_nt54t")]
+position = Vector2(1454, 584)
+
+[node name="Mushroom3" parent="Scenery" index="15" instance=ExtResource("8_nt54t")]
+position = Vector2(2014, 400)
 
 [node name="Fly" parent="Bugs" index="0" instance=ExtResource("8_fr1dr")]
 position = Vector2(873, 833)

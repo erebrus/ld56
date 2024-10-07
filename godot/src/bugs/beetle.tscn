@@ -161,7 +161,7 @@ _data = {
 [node name="Beetle" instance=ExtResource("1_drwt0")]
 type = 2
 energy_value = 5.0
-speed = 40.0
+speed = 60.0
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_0oyqd")
