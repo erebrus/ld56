@@ -31,3 +31,11 @@ func key_of(value) -> String:
 	BugType.Worm:preload("res://src/frog/debufs/tongue_debuf.tscn"),
 	BugType.Cockroach:preload("res://src/frog/debufs/ep_max_debuf.tscn")
 }
+
+const COMBOS=[
+	[Types.BugType.Beetle,Types.BugType.Beetle,Types.BugType.Beetle],
+	[Types.BugType.Beetle,Types.BugType.Fly,Types.BugType.Snail],
+	[Types.BugType.Fly,Types.BugType.Fly,Types.BugType.Moth],
+	[Types.BugType.Snail,Types.BugType.Snail,Types.BugType.Moth],
+	[Types.BugType.Beetle,Types.BugType.Snail,Types.BugType.Beetle]
+]
