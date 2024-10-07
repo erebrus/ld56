@@ -27,6 +27,7 @@ closed_texture = ExtResource("2_o2b0p")
 dive_speed = 2000
 
 [node name="Claw" type="PathFollow2D" parent="."]
+position = Vector2(-1920, -1080)
 rotation = 0.651324
 rotates = false
 loop = false
