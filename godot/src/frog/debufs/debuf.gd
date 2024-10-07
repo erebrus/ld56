@@ -37,3 +37,12 @@ func _on_timer_timeout() -> void:
 func extend() ->void:
 	Logger.info("Extending %s " % name)
 	timer.wait_time = timer.time_left+duration
+
+func get_time_left()->float:
+	return timer.time_left
+
+func get_total_time()->float:
+	return timer.wait_time
+	
+func get_percentage_done()->float:
+	return get_time_left()/get_total_time()*100

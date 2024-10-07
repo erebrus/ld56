@@ -1,0 +1,107 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu5fbnrx3t6v7"]
+
+[ext_resource type="Script" path="res://src/end_screens/lose_screen.gd" id="1_4sp8k"]
+[ext_resource type="Theme" uid="uid://dnhwlc57e8luf" path="res://src/start_screen/start_theme.tres" id="1_5tn3a"]
+
+[node name="LoseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4sp8k")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -511.5
+offset_right = 511.5
+offset_bottom = 145.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 250
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_5tn3a")
+theme_override_font_sizes/font_size = 128
+text = "Game Over"
+
+[node name="Spacer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="Reason1" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 0
+theme = ExtResource("1_5tn3a")
+theme_override_font_sizes/font_size = 32
+text = "Oh no! you became a meal! 
+
+To avoid it next time, be sure to hide under something!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Reason2" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 0
+theme = ExtResource("1_5tn3a")
+theme_override_font_sizes/font_size = 32
+text = "Your energy got drained! 
+
+Remember to eat enough bugs!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Spacer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 150
+
+[node name="Tip" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("1_5tn3a")
+theme_override_font_sizes/font_size = 32
+text = "Would you like to try again?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Tip2" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("1_5tn3a")
+theme_override_font_sizes/font_size = 32
+text = "Would you like to try again?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Continue" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -432.5
+offset_top = -77.0
+offset_right = 432.5
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_5tn3a")
+theme_override_font_sizes/font_size = 32
+text = "Press Space to continue"
+horizontal_alignment = 1

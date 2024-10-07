@@ -16,7 +16,7 @@ func _ready():
 func _on_debuf_applied(debuf:Debuf):
 	if not debuf.show_in_ui:
 		return 
-	var icon = get_icon_for_debuf(debuf.name)
+	var icon = get_icon_for_debuf(debuf)
 	if icon:
 		grid.add_child(icon)
 		icon_map[debuf.name]=icon		
@@ -32,11 +32,12 @@ func _on_debuf_cancelled(debuf:Debuf):
 	else:
 		Logger.warn("Tried to remove missing debuf %s" % debuf.name)
 		
-func get_icon_for_debuf(name:String)->DebufIcon:
-	var icon = ICON_SCENE.instantiate()
-	if not name in Types.DEBUF_ICONS:
+func get_icon_for_debuf(debuf:Debuf)->DebufIcon:
+	if not debuf.name in Types.DEBUF_ICONS:
 		return null
-	var texture = Types.DEBUF_ICONS[name]
+	var icon = ICON_SCENE.instantiate()	
+	var texture = Types.DEBUF_ICONS[debuf.name]
+	icon.debuf = debuf
 	icon.texture = texture
 	return icon
 	

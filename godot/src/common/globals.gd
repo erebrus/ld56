@@ -94,8 +94,8 @@ func fade_to_black(black_overlay,duration:float=1):
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)	
 	tween.tween_property(black_overlay, "modulate", Color("ffffffff"), duration)
 	
-func do_lose():
-	Events.game_lost.emit()
+#func do_lose():
+	#Events.game_lost.emit()
 
 func do_win():
 	get_tree().change_scene_to_file(WIN_SCENE_PATH)

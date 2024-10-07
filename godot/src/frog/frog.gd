@@ -106,8 +106,8 @@ func _on_controller_direction_changed() -> void:
 func _on_health_component_died() -> void:
 	xsm.change_state("death")
 	await animation_player.animation_finished
-	Globals.do_lose()
-
+	Events.game_lost.emit(Types.LossType.ENERGY)
+	
 func _on_health_component_energy_changed(value: Variant) -> void:
 	energy_changed.emit(value)
 
