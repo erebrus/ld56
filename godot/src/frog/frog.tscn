@@ -263,6 +263,9 @@ animation = &"idle"
 visible = false
 shooting_mode = 1
 
+[node name="Tongue" parent="Head" index="1"]
+extension_speed = 1500.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(0, -78)
@@ -480,3 +483,5 @@ unique_name_in_owner = true
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="energy_changed" from="HealthComponent" to="." method="_on_health_component_energy_changed"]
 [connection signal="timeout" from="EnergyTimer" to="." method="_on_energy_timer_timeout"]
+
+[editable path="Head"]
