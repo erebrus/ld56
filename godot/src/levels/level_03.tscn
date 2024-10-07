@@ -1106,8 +1106,14 @@ curve = SubResource("Curve2D_6bnn1")
 position = Vector2(356, 496)
 swing_gravity = 1000
 
+[node name="HealthComponent" parent="Frog" index="9"]
+max_energy = 250.0
+
 [node name="Camera2D" parent="." index="5"]
 limit_right = 20700
 
 [node name="music" parent="." index="9"]
 stream = SubResource("AudioStreamSynchronized_4awan")
+
+[editable path="Frog"]
+[editable path="Frog/Head"]
