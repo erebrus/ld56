@@ -22,6 +22,7 @@ offset_bottom = 40.0
 texture = ExtResource("1_jbgwo")
 
 [node name="GreyProgress" type="TextureProgressBar" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 99.0
 offset_top = 47.0
