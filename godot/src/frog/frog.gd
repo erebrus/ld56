@@ -21,6 +21,8 @@ signal energy_changed(value:float)
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var debufs: Node = %Debufs
 @onready var auto_hop: XSMFrogAutoHop = %auto_hop
+@onready var sfx_hard_rock_landing: AudioStreamPlayer2D = $sfx/sfx_hard_rock_landing
+@onready var sfx_hard_landing: AudioStreamPlayer2D = $sfx/sfx_hard_landing
 
 var state_name:String
 var max_heal=100

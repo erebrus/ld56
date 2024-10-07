@@ -2,13 +2,13 @@ extends Node
 
 class_name FrogController
 
+
 signal jump_requested()
 signal jumped(is_ground_jump: bool)
 signal hopped()
 signal hit_ground()
 signal started_falling()
 signal direction_changed()
-
 
 # Set these to the name of your action (in the Input Map)
 ## Name of input action to move up.
@@ -119,7 +119,7 @@ var double_jump_velocity : float
 var hop_velocity : float
 # Multiplies the gravity by this when we release jump
 var release_gravity_multiplier : float
-
+var floor_type:Types.FloorType = Types.FloorType.Grass
 
 var jumps_left : int
 
@@ -190,6 +190,17 @@ func process_movement(delta):
 	#var v = get_body().velocity
 
 	get_body().move_and_slide()
+	var found_rock:=false
+	for sidx in range(get_body().get_slide_collision_count()):
+		var c = get_body().get_slide_collision(sidx).get_collider() 
+		var cn = c.name
+		if c.name.to_lower().begins_with("rock"):
+			found_rock=true
+			break
+	floor_type = Types.FloorType.Rock if found_rock else Types.FloorType.Grass
+ 
+		
+		
 	
 func check_just_started_falling()->bool:
 	if not _was_falling and is_falling():

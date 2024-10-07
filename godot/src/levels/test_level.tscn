@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd7ph3p1q0yhi"]
+
+[ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_c56io"]
+[ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="2_yokkj"]
+[ext_resource type="PackedScene" uid="uid://boenkwcf4c06o" path="res://src/world/platforms/branch.tscn" id="3_f3b5t"]
+
+[node name="TestLevel" instance=ExtResource("1_c56io")]
+
+[node name="rock1" parent="Scenery" index="0" instance=ExtResource("2_yokkj")]
+position = Vector2(1378.62, 1327.63)
+script = null
+
+[node name="Branch" parent="Scenery/rock1" index="2" instance=ExtResource("3_f3b5t")]
+position = Vector2(1224.38, 110.375)
+script = null

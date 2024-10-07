@@ -101,179 +101,228 @@ metadata/_edit_lock_ = true
 [node name="Leaf11" parent="Scenery/Platforms" index="0" instance=ExtResource("8_82h1n")]
 position = Vector2(3486, 1)
 scale = Vector2(0.5, 0.5)
+script = null
 
 [node name="Flower4" parent="Scenery/Platforms" index="1" instance=ExtResource("6_13qk1")]
 position = Vector2(11609, 1812)
+script = null
 
 [node name="LeafVariantFlipped2" parent="Scenery/Platforms" index="2" instance=ExtResource("10_635f3")]
 position = Vector2(13217, -813)
 rotation = 3.14159
 scale = Vector2(1, -1)
+script = null
 
 [node name="LeafVariantFlipped3" parent="Scenery/Platforms" index="3" instance=ExtResource("10_635f3")]
 position = Vector2(13862, -252)
+script = null
 
 [node name="rock1" parent="Scenery/Platforms" index="4" instance=ExtResource("4_3w3t2")]
 position = Vector2(14024, 309)
 rotation = -0.837758
 scale = Vector2(3, 3)
+script = null
 
 [node name="Branch2" parent="Scenery/Platforms" index="5" instance=ExtResource("5_vm8ul")]
 position = Vector2(7661, 1288)
+script = null
 
 [node name="Flower3" parent="Scenery/Platforms" index="6" instance=ExtResource("6_13qk1")]
 position = Vector2(16128, 564)
 scale = Vector2(1.2, 1.2)
+script = null
 
 [node name="rock6" parent="Scenery/Platforms" index="7" instance=ExtResource("7_qlxgg")]
 position = Vector2(11799, 1635)
+script = null
 
 [node name="Flower2" parent="Scenery/Platforms" index="8" instance=ExtResource("6_13qk1")]
 position = Vector2(12488, 458)
 scale = Vector2(-2, 2)
+script = null
 
 [node name="Branch" parent="Scenery/Platforms" index="9" instance=ExtResource("5_vm8ul")]
 position = Vector2(1304, -368)
+script = null
 
 [node name="Branch3" parent="Scenery/Platforms" index="10" instance=ExtResource("5_vm8ul")]
 position = Vector2(17869, 962)
 rotation = -0.719076
 scale = Vector2(2, 2)
+script = null
 
 [node name="Leaf2" parent="Scenery/Platforms" index="11" instance=ExtResource("8_82h1n")]
 position = Vector2(10947, 1017)
 rotation = 0.359538
+script = null
 
 [node name="Leaf9" parent="Scenery/Platforms" index="12" instance=ExtResource("8_82h1n")]
 position = Vector2(18365, -788)
 scale = Vector2(0.7, 0.7)
+script = null
 
 [node name="Leaf4" parent="Scenery/Platforms" index="13" instance=ExtResource("8_82h1n")]
 position = Vector2(8828, 466)
 scale = Vector2(0.25, 0.25)
+script = null
 
 [node name="Leaf3" parent="Scenery/Platforms" index="14" instance=ExtResource("8_82h1n")]
 position = Vector2(7112, 1399)
 scale = Vector2(0.5, 0.5)
+script = null
 
 [node name="LeafVariantFlipped" parent="Scenery/Platforms" index="15" instance=ExtResource("10_635f3")]
 position = Vector2(19370, -202)
 rotation = 3.14159
 scale = Vector2(1, -1)
+script = null
 
 [node name="Leaf8" parent="Scenery/Platforms" index="16" instance=ExtResource("8_82h1n")]
 position = Vector2(18629, 514.999)
 rotation = -0.5044
 scale = Vector2(2, 2)
+script = null
 
 [node name="Leaf7" parent="Scenery/Platforms" index="17" instance=ExtResource("8_82h1n")]
 position = Vector2(13696, 1267)
 scale = Vector2(0.5, 0.5)
+script = null
 
 [node name="Leaf5" parent="Scenery/Platforms" index="18" instance=ExtResource("8_82h1n")]
 position = Vector2(10448, -436)
+script = null
 
 [node name="Leaf6" parent="Scenery/Platforms" index="19" instance=ExtResource("8_82h1n")]
 position = Vector2(3925, 659)
+script = null
 
 [node name="Leaf" parent="Scenery/Platforms" index="20" instance=ExtResource("8_82h1n")]
 position = Vector2(2436, 1366)
+script = null
 
 [node name="LedgePlatform" parent="Scenery/Platforms" index="21" instance=ExtResource("9_8rhp2")]
 position = Vector2(8212, -1000)
+script = null
 
 [node name="LeafVariantFlipped4" parent="Scenery/Platforms" index="22" instance=ExtResource("10_635f3")]
 position = Vector2(5680, -970)
 rotation = 3.14159
 scale = Vector2(2, -2)
+script = null
 
 [node name="rock2" parent="Scenery/Platforms" index="23" instance=ExtResource("7_qlxgg")]
 position = Vector2(14992, 437)
 rotation = -0.541052
 scale = Vector2(2, 2)
+script = null
 
 [node name="rock3" parent="Scenery/Platforms" index="24" instance=ExtResource("7_qlxgg")]
 position = Vector2(15272, 721)
 scale = Vector2(-3, 3)
+script = null
 
 [node name="Flower6" parent="Scenery/Platforms" index="25" instance=ExtResource("6_13qk1")]
 position = Vector2(20237, -115)
+script = null
 
 [node name="LedgePlatform2" parent="Scenery/Platforms" index="26" instance=ExtResource("9_8rhp2")]
 position = Vector2(290, 695)
+script = null
 
 [node name="SproutPlatform" parent="Scenery/Platforms" index="27" instance=ExtResource("11_1qvth")]
 position = Vector2(17334, 669)
 scale = Vector2(2.5, 2.5)
+script = null
 
 [node name="BlueFlower" parent="Scenery/Platforms" index="28" instance=ExtResource("12_3du7s")]
 position = Vector2(10152, 896)
 scale = Vector2(2, 2)
+script = null
 
 [node name="Branch4" parent="Scenery/Platforms" index="29" instance=ExtResource("5_vm8ul")]
 position = Vector2(4142, -499)
+script = null
 
 [node name="LeafVariant" parent="Scenery/Platforms" index="30" instance=ExtResource("13_aegc7")]
 position = Vector2(14878, -736)
+script = null
 
 [node name="BlueFlower2" parent="Scenery/Platforms" index="31" instance=ExtResource("12_3du7s")]
 position = Vector2(8453, 1205)
+script = null
 
 [node name="Flower7" parent="Scenery/Platforms" index="32" instance=ExtResource("6_13qk1")]
 position = Vector2(9420, 580)
 scale = Vector2(1.5, 1.5)
+script = null
 
 [node name="Branch5" parent="Scenery/Platforms" index="33" instance=ExtResource("5_vm8ul")]
 position = Vector2(11147, -983)
+script = null
 
 [node name="LedgePlatform3" parent="Scenery/Platforms" index="34" instance=ExtResource("9_8rhp2")]
 position = Vector2(2509, -592)
+script = null
 
 [node name="Leaf10" parent="Scenery/Platforms" index="35" instance=ExtResource("8_82h1n")]
 position = Vector2(6492, 55)
+script = null
 
 [node name="LedgePlatform4" parent="Scenery/Platforms" index="36" instance=ExtResource("9_8rhp2")]
 position = Vector2(17253, -1039)
+script = null
 
 [node name="BlueFlower3" parent="Scenery/Platforms" index="37" instance=ExtResource("12_3du7s")]
 position = Vector2(3077, 1211)
+script = null
 
 [node name="Flower" parent="Scenery/Platforms" index="38" instance=ExtResource("6_13qk1")]
 position = Vector2(5544, 916)
+script = null
 
 [node name="LeafVariant2" parent="Scenery/Platforms" index="39" instance=ExtResource("13_aegc7")]
 position = Vector2(4605, 950)
+script = null
 
 [node name="Flower5" parent="Scenery/Platforms" index="40" instance=ExtResource("6_13qk1")]
 position = Vector2(913, 1341)
+script = null
 
 [node name="Leaf12" parent="Scenery/Platforms" index="41" instance=ExtResource("8_82h1n")]
 position = Vector2(1498, 1220)
+script = null
 
 [node name="Branch6" parent="Scenery/Platforms" index="42" instance=ExtResource("5_vm8ul")]
 position = Vector2(19052, -986)
+script = null
 
 [node name="LeafVariantFlipped6" parent="Scenery/Platforms" index="43" instance=ExtResource("10_635f3")]
 position = Vector2(6701, -765)
+script = null
 
 [node name="Leaf13" parent="Scenery/Platforms" index="44" instance=ExtResource("8_82h1n")]
 position = Vector2(7477, -872)
 scale = Vector2(0.5, 0.5)
+script = null
 
 [node name="LeafVariantFlipped5" parent="Scenery/Platforms" index="45" instance=ExtResource("10_635f3")]
 position = Vector2(7433, 18)
+script = null
 
 [node name="Flower8" parent="Scenery/Platforms" index="46" instance=ExtResource("6_13qk1")]
 position = Vector2(20350, 521)
+script = null
 
 [node name="LeafVariantFlipped7" parent="Scenery/Platforms" index="47" instance=ExtResource("10_635f3")]
 position = Vector2(20129, 612)
 rotation = -0.47822
 scale = Vector2(0.5, 0.5)
+script = null
 
 [node name="Flower9" parent="Scenery/Platforms" index="48" instance=ExtResource("6_13qk1")]
 position = Vector2(20542, 988)
 scale = Vector2(-1, 1)
+script = null
 
 [node name="Mushrooms" type="Node2D" parent="Scenery" index="3"]
 
