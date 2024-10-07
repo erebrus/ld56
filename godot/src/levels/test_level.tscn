@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://jbwrx60ac223"]
+[gd_scene load_steps=32 format=3 uid="uid://jbwrx60ac223"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_yfdoh"]
 [ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="2_7ar4w"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://s84l8xg2tkdy" path="res://src/world/platforms/sproud_platform.tscn" id="13_qfhfx"]
 [ext_resource type="PackedScene" uid="uid://bc00r0hq8mfh" path="res://src/bugs/cockroach.tscn" id="13_xbqog"]
 [ext_resource type="PackedScene" uid="uid://bewxal3nv2w8g" path="res://src/bugs/snail.tscn" id="14_xxn3m"]
+[ext_resource type="PackedScene" uid="uid://cb7wymgso7xy8" path="res://src/world/end_game_area.tscn" id="14_y53be"]
 [ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="15_e1dv2"]
 [ext_resource type="PackedScene" uid="uid://bhj1t1n07qiw8" path="res://src/world/platforms/leaf_variant.tscn" id="15_ukt0i"]
 [ext_resource type="PackedScene" uid="uid://g0ammwgw85c0" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="16_s1usn"]
@@ -109,7 +110,6 @@ position = Vector2(1346, 520)
 texture = ExtResource("2_7ar4w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass2" index="1"]
-visible = false
 position = Vector2(1353, 618.5)
 shape = SubResource("RectangleShape2D_xf487")
 
@@ -180,6 +180,9 @@ position = Vector2(1429, 521)
 
 [node name="LeafVariantFlipped" parent="Scenery" index="18" instance=ExtResource("16_s1usn")]
 position = Vector2(5819, 1415)
+
+[node name="EndGameArea" parent="Scenery" index="19" instance=ExtResource("14_y53be")]
+position = Vector2(7375, 1331)
 
 [node name="Cockroach" parent="Bugs" index="0" instance=ExtResource("13_xbqog")]
 position = Vector2(6776, 1224)

@@ -34,7 +34,8 @@ func _input(event: InputEvent) -> void:
 	if not debug and Input.is_action_just_pressed("debug"):
 		debug = true
 		Events.debug_toggled.emit(debug)
-	
+	if Input.is_action_just_pressed("dead"):
+		frog._on_health_component_died()
 
 
 func _on_reached_level_end():

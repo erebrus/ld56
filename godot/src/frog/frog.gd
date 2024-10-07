@@ -63,10 +63,7 @@ func _on_generic_controller_forward(method_name: String, args = null):
 			else:
 				state.call(method_name, args)
 			
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("dead"):
-		#_on_health_component_died()
-		xsm.change_state("auto_hop")
+
 
 func do_auto_hop(direction:Types.HopDirection, acc):
 	auto_hop.direction=direction
