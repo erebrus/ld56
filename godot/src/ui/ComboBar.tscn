@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi641rjvj6uib"]
+
+[ext_resource type="Texture2D" uid="uid://bgep1qssiyyxs" path="res://assets/gfx/ui/bug_icons/beetle_icon.png" id="1_se5sk"]
+[ext_resource type="Script" path="res://src/ui/combo_bar.gd" id="1_vtrm4"]
+[ext_resource type="Texture2D" uid="uid://byxa6qc0nuq21" path="res://assets/gfx/ui/bug_icons/cockroach_icon.png" id="2_jabas"]
+[ext_resource type="Texture2D" uid="uid://ti0i1h6qw5cd" path="res://assets/gfx/ui/bug_icons/moth_icon.png" id="3_hjrxa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2raw8"]
+
+[node name="ComboBar" type="Panel"]
+custom_minimum_size = Vector2(350, 64)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1570.0
+offset_bottom = -1016.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2raw8")
+script = ExtResource("1_vtrm4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Combo:"
+
+[node name="Icons" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Icon1" type="TextureRect" parent="HBoxContainer/Icons"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("1_se5sk")
+
+[node name="Icon2" type="TextureRect" parent="HBoxContainer/Icons"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_jabas")
+
+[node name="Icon3" type="TextureRect" parent="HBoxContainer/Icons"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("3_hjrxa")

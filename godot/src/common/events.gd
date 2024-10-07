@@ -17,6 +17,9 @@ signal frog_grabbed
 signal energy_depleted
 signal reached_level_end()
 signal game_lost()
+
+signal combo_achieved(idx:int)
+
 func _ready() -> void:
 	bug_caught.connect(func(type): Logger.info("Caught bug of type: %s" % Types.key_of(type)))
 	eagle_incoming.connect(func(): Logger.info("Eagle incoming!"))
