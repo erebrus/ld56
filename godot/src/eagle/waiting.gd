@@ -5,6 +5,7 @@ extends State
 
 func _on_enter(_args) -> void:
 	target.hide()
+	
 	var time = randf_range(target.min_time_between_fly_bys, target.max_time_between_fly_bys)
 	await get_tree().create_timer(time).timeout
 	target.fly_by()

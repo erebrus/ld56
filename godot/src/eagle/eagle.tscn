@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfsfbydiqr0gr"]
+[gd_scene load_steps=14 format=3 uid="uid://bfsfbydiqr0gr"]
 
 [ext_resource type="Script" path="res://src/eagle/eagle.gd" id="1_2whi5"]
-[ext_resource type="Texture2D" uid="uid://bvjsvy2ponp8o" path="res://assets/gfx/eagle/eagle.png" id="1_6askw"]
+[ext_resource type="Texture2D" uid="uid://dk2bvfybsiqx6" path="res://assets/gfx/eagle/Eagle_Closed.png" id="2_o2b0p"]
+[ext_resource type="Texture2D" uid="uid://bp4fqxb2xi8q6" path="res://assets/gfx/eagle/Eagle_Open.png" id="2_tafyt"]
 [ext_resource type="AudioStream" uid="uid://cqj6yx0c15ugi" path="res://assets/sfx/warning_zero_energy.wav" id="3_7wko3"]
 [ext_resource type="AudioStream" uid="uid://bq0eh7xhsd5fb" path="res://assets/sfx/Bird_dive.wav" id="3_e620g"]
 [ext_resource type="AudioStream" uid="uid://dv1xva0f43gxd" path="res://assets/sfx/Bird_grad.wav" id="5_3jpf0"]
@@ -10,13 +11,32 @@
 [ext_resource type="Script" path="res://src/eagle/flyby.gd" id="8_bkve8"]
 [ext_resource type="Script" path="res://src/eagle/dive.gd" id="9_fx0c1"]
 [ext_resource type="Script" path="res://src/eagle/grab.gd" id="10_0bwhh"]
+[ext_resource type="Script" path="res://src/eagle/leave.gd" id="11_wg8cd"]
 
-[node name="Eagle" type="Node2D"]
+[sub_resource type="Curve2D" id="Curve2D_4ng8i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1920, -1080, -200, -90, 200, 90, -700, -150, -252, -4, 252, 4, 0, 0, -200, 90, 200, -90, 700, -150, 0, 0, 0, 0, 1920, -1080)
+}
+point_count = 5
+
+[node name="Eagle" type="Path2D"]
+curve = SubResource("Curve2D_4ng8i")
 script = ExtResource("1_2whi5")
+open_texture = ExtResource("2_tafyt")
+closed_texture = ExtResource("2_o2b0p")
+dive_speed = 2000
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -144)
-texture = ExtResource("1_6askw")
+[node name="Claw" type="PathFollow2D" parent="."]
+rotation = 0.651324
+rotates = false
+loop = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Claw"]
+unique_name_in_owner = true
+position = Vector2(-121.496, -241.857)
+rotation = -0.651324
+texture = ExtResource("2_o2b0p")
+flip_h = true
 
 [node name="WarningSfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_7wko3")
@@ -57,3 +77,6 @@ script = ExtResource("9_fx0c1")
 
 [node name="grab" type="Node" parent="xsm"]
 script = ExtResource("10_0bwhh")
+
+[node name="leave" type="Node" parent="xsm"]
+script = ExtResource("11_wg8cd")

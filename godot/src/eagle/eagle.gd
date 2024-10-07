@@ -1,20 +1,40 @@
-extends Node2D
+extends Path2D
+
+@export var open_texture: Texture2D
+@export var closed_texture: Texture2D
 
 
 @export var warning_time:= 5.0
 @export var min_time_between_fly_bys:= 30.0
 @export var max_time_between_fly_bys:= 60.0
 @export var dive_speed:= 3000
+@export var grab_start:= 0.40
+@export var grab_end:= 0.43
+
 
 @onready var xsm: State = $xsm
-
+@onready var claw = $Claw
+@onready var sprite = %Sprite2D
 @onready var warning_sfx: AudioStreamPlayer2D = $WarningSfx
 @onready var grab_sfx: AudioStreamPlayer2D = $GrabSfx
 @onready var flyby_sfx: AudioStreamPlayer2D = $FlyBySfx
 
 
+func _ready() -> void:
+	sprite.texture = open_texture
+	
+
+func follow_player(offset: Vector2 = Vector2.ZERO) -> void:
+	global_position = Globals.player.global_position + offset
+	
+
+func move(delta: float) -> void:
+	claw.progress += dive_speed * delta
+	
+
 func fly_by() -> void:
 	Logger.info("Eagle about to attack!")
+	Events.eagle_incoming.emit()
 	warning_sfx.play()
 	await get_tree().create_timer(warning_time).timeout
 	
