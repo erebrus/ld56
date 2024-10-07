@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgf1hf27g5g8p"]
+
+[ext_resource type="Script" path="res://src/almanac/entry.gd" id="1_e5qr0"]
+[ext_resource type="Texture2D" uid="uid://tra7gkkwtg6q" path="res://assets/gfx/ui/DebuffsAlmanc/Beetle_DebuffAlm.png" id="2_idmdc"]
+
+[node name="Entry" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+script = ExtResource("1_e5qr0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_idmdc")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Their streamlined bodies, and hard outer wings, are full of nutrients and will increase your Energy Points. But because they’re feisty creatures, they’ll try to use their legs to get out and therefore deplete your speed."
+autowrap_mode = 3
