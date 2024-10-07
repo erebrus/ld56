@@ -61,6 +61,20 @@ const DEBUF_ICONS={
 	"EpMaxDebuf":preload("res://assets/gfx/ui/DebuffIcons/DecreMaxEP.png"),
 	"EPDebuf":preload("res://assets/gfx/ui/DebuffIcons/IncreasEPspeed.png")
 }
+const GREY_DEBUF_ICONS={
+	#CrunchySandwishBuf:preload("res://src/frog/debufs/crunchy_sandwish_buf.tscn"),
+	#GourmetKebubBuf:preload("res://src/frog/debufs/gourmet_kebub_buf.tscn"),
+	#TakeItSlowBuff:preload("res://src/frog/debufs/take_it_slow_buff.tscn"),
+	#TripleDoubleBuff:preload("res://src/frog/debufs/triple_double_buff.tscn"),
+	#FlyingTasteDebuf:preload("res://src/frog/debufs/flying_taste_debuf.tscn"),	
+	"DoubleJumpDebuf":preload("res://assets/gfx/ui/DebuffIcons/DecreaBigJump2.png"),
+	"TongueDebuf":preload("res://assets/gfx/ui/DebuffIcons/NoTongue2.png"),
+	"SlowdownDebuf":preload("res://assets/gfx/ui/DebuffIcons/Slowdown2.png"),
+	"LessHealDebuf":preload("res://assets/gfx/ui/DebuffIcons/BeetleEPDown2.png"),
+	"InvisibleDebuf":preload("res://assets/gfx/ui/DebuffIcons/Invis_Dbuff2.png"),
+	"EpMaxDebuf":preload("res://assets/gfx/ui/DebuffIcons/DecreMaxEP2.png"),
+	"EPDebuf":preload("res://assets/gfx/ui/DebuffIcons/IncreasEPspeed2.png")
+}
 const BUG_ALMANAC_TEXTURES = {
 	Types.BugType.Slug: preload("res://assets/gfx/ui/ComboIcons/Slug_Almanac.png"),
 	Types.BugType.Beetle: preload("res://assets/gfx/ui/ComboIcons/Beetle_Almanac.png"),
