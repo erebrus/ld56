@@ -23,6 +23,7 @@ signal energy_changed(value:float)
 @onready var auto_hop: XSMFrogAutoHop = %auto_hop
 @onready var sfx_hard_rock_landing: AudioStreamPlayer2D = $sfx/sfx_hard_rock_landing
 @onready var sfx_hard_landing: AudioStreamPlayer2D = $sfx/sfx_hard_landing
+@onready var energy_timer: Timer = $EnergyTimer
 
 var state_name:String
 var max_heal=100
