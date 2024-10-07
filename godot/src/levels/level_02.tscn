@@ -1,24 +1,26 @@
-[gd_scene load_steps=40 format=3 uid="uid://diwai63ca5i2s"]
+[gd_scene load_steps=43 format=3 uid="uid://bayfc11f0g7xn"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_d2fqf"]
 [ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="2_se6ue"]
 [ext_resource type="Texture2D" uid="uid://b8b5jgthrtj4s" path="res://assets/gfx/environment/Vine.png" id="3_ce5te"]
 [ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="4_07tmn"]
-[ext_resource type="PackedScene" uid="uid://dkyx6xyum3prp" path="res://src/bugs/slug.tscn" id="4_shqu2"]
+[ext_resource type="PackedScene" path="res://src/bugs/slug.tscn" id="4_shqu2"]
 [ext_resource type="PackedScene" uid="uid://boenkwcf4c06o" path="res://src/world/platforms/branch.tscn" id="5_0iotf"]
 [ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="5_aqaq6"]
 [ext_resource type="PackedScene" uid="uid://i1m1wvlfxwsi" path="res://src/world/platforms/flower.tscn" id="6_glhnv"]
 [ext_resource type="PackedScene" uid="uid://b7uuo8dxsl8qr" path="res://src/world/platforms/rock_2.tscn" id="7_ws3wu"]
 [ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="8_wgidt"]
-[ext_resource type="PackedScene" uid="uid://br6usfo70b445" path="res://src/world/platforms/rockledge.tscn" id="9_dqqdn"]
-[ext_resource type="PackedScene" uid="uid://dn40sagnjlvbk" path="res://src/bugs/moth.tscn" id="10_0wvdk"]
-[ext_resource type="PackedScene" uid="uid://g0ammwgw85c0" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="10_oe4nu"]
-[ext_resource type="PackedScene" uid="uid://s84l8xg2tkdy" path="res://src/world/platforms/sproud_platform.tscn" id="11_7xt3b"]
-[ext_resource type="PackedScene" uid="uid://cb3kn2b1tbveq" path="res://src/world/platforms/blue_flower.tscn" id="12_fk3r3"]
-[ext_resource type="PackedScene" uid="uid://bhj1t1n07qiw8" path="res://src/world/platforms/leaf_variant.tscn" id="13_fweki"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/rockledge.tscn" id="9_dqqdn"]
+[ext_resource type="PackedScene" path="res://src/bugs/moth.tscn" id="10_0wvdk"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="10_oe4nu"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/sproud_platform.tscn" id="11_7xt3b"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/blue_flower.tscn" id="12_fk3r3"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/leaf_variant.tscn" id="13_fweki"]
 [ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="14_pfmk0"]
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="17_1pv6n"]
-[ext_resource type="PackedScene" uid="uid://daidqd7n3terl" path="res://src/world/next_level.tscn" id="18_ixeje"]
+[ext_resource type="PackedScene" path="res://src/world/next_level.tscn" id="18_ixeje"]
+[ext_resource type="AudioStream" uid="uid://dn184ut238off" path="res://assets/music/Bugs_Driven_Cutie.mp3" id="19_gdoaw"]
+[ext_resource type="AudioStream" uid="uid://0iujfpk6p3nb" path="res://assets/music/Bugs_Driven_Cutie_Hide.mp3" id="20_u408f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf487"]
 size = Vector2(3818, 147)
@@ -133,6 +135,13 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -2, 6, 0, 0, 0, 0, 224, 2, 0, 0, 0, 0, 486, 12, 0, 0, 0, 0, 868, 10, 0, 0, 0, 0, 1200, 14, 0, 0, 0, 0, 918, 12, 0, 0, 0, 0, 612, 6, 0, 0, 0, 0, 270, -2, 0, 0, 0, 0, 70, -8, 0, 0, 0, 0, -2, 6)
 }
 point_count = 10
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_6xx52"]
+stream_count = 2
+stream_0/stream = ExtResource("19_gdoaw")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("20_u408f")
+stream_1/volume = -60.0
 
 [node name="Level_01" instance=ExtResource("1_d2fqf")]
 
@@ -513,6 +522,9 @@ limit_bottom = 1700
 
 [node name="Eagle" parent="." index="8"]
 scroll_offset = Vector2(-832, 6)
+
+[node name="music" parent="." index="10"]
+stream = SubResource("AudioStreamSynchronized_6xx52")
 
 [node name="NextLevel" parent="." index="11" instance=ExtResource("18_ixeje")]
 position = Vector2(12833, -364)

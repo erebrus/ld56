@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dgoqdd67h2s5y"]
+[gd_scene load_steps=21 format=3 uid="uid://doenehifqf0vo"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_5oqte"]
 [ext_resource type="Texture2D" uid="uid://eh6xsfkjilq1" path="res://assets/gfx/environment/bg_ground.png" id="2_nqrvd"]
@@ -9,18 +9,27 @@
 [ext_resource type="PackedScene" uid="uid://i1m1wvlfxwsi" path="res://src/world/platforms/flower.tscn" id="6_13qk1"]
 [ext_resource type="PackedScene" uid="uid://b7uuo8dxsl8qr" path="res://src/world/platforms/rock_2.tscn" id="7_qlxgg"]
 [ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="8_82h1n"]
-[ext_resource type="PackedScene" uid="uid://br6usfo70b445" path="res://src/world/platforms/rockledge.tscn" id="9_8rhp2"]
-[ext_resource type="PackedScene" uid="uid://g0ammwgw85c0" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="10_635f3"]
-[ext_resource type="PackedScene" uid="uid://s84l8xg2tkdy" path="res://src/world/platforms/sproud_platform.tscn" id="11_1qvth"]
-[ext_resource type="PackedScene" uid="uid://cb3kn2b1tbveq" path="res://src/world/platforms/blue_flower.tscn" id="12_3du7s"]
-[ext_resource type="PackedScene" uid="uid://bhj1t1n07qiw8" path="res://src/world/platforms/leaf_variant.tscn" id="13_aegc7"]
-[ext_resource type="PackedScene" uid="uid://daidqd7n3terl" path="res://src/world/next_level.tscn" id="18_ioq1w"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/rockledge.tscn" id="9_8rhp2"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="10_635f3"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/sproud_platform.tscn" id="11_1qvth"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/blue_flower.tscn" id="12_3du7s"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/leaf_variant.tscn" id="13_aegc7"]
+[ext_resource type="AudioStream" uid="uid://c1urhvwgupaox" path="res://assets/music/Oh_My_Fly.mp3" id="15_47tfa"]
+[ext_resource type="AudioStream" uid="uid://bt8irhha06gi4" path="res://assets/music/Oh_My_Fly_Hide.mp3" id="16_asc5w"]
+[ext_resource type="PackedScene" path="res://src/world/next_level.tscn" id="18_ioq1w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf487"]
 size = Vector2(3818, 147)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acc83"]
 size = Vector2(531, 3167.5)
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_4awan"]
+stream_count = 2
+stream_0/stream = ExtResource("15_47tfa")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("16_asc5w")
+stream_1/volume = -60.0
 
 [node name="Level_01" instance=ExtResource("1_5oqte")]
 
@@ -444,6 +453,9 @@ limit_bottom = 1700
 
 [node name="Eagle" parent="." index="8"]
 scroll_offset = Vector2(-832, 6)
+
+[node name="music" parent="." index="10"]
+stream = SubResource("AudioStreamSynchronized_4awan")
 
 [node name="NextLevel" parent="." index="11" instance=ExtResource("18_ioq1w")]
 position = Vector2(18844, 1216)

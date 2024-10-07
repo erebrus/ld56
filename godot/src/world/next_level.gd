@@ -12,6 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	body.do_auto_hop(Types.HopDirection.RIGHT,7500)
-	await get_tree().create_timer(1).timeout
-	Globals.next_level()
+	Events.reached_level_end.emit()

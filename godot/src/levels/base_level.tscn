@@ -90,6 +90,15 @@ offset_bottom = 40.0
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="BlackOverlay" type="ColorRect" parent="HUD"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Eagle" parent="." instance=ExtResource("6_x2vej")]
 
 [node name="ambient" type="AudioStreamPlayer" parent="."]
@@ -98,6 +107,5 @@ volume_db = -3.0
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamSynchronized_2n5mq")
-bus = &"Music"
 
 [connection signal="energy_changed" from="Frog" to="HUD/MarginContainer2/HealthBar" method="_on_frog_energy_changed"]
