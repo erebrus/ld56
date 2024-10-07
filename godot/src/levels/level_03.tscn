@@ -1109,8 +1109,5 @@ swing_gravity = 1000
 [node name="Camera2D" parent="." index="5"]
 limit_right = 20700
 
-[node name="HUD" parent="." index="7"]
-visible = false
-
 [node name="music" parent="." index="9"]
 stream = SubResource("AudioStreamSynchronized_4awan")
