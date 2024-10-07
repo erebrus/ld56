@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgf1hf27g5g8p"]
 
 [ext_resource type="Script" path="res://src/almanac/entry.gd" id="1_e5qr0"]
-[ext_resource type="Texture2D" uid="uid://tra7gkkwtg6q" path="res://assets/gfx/ui/DebuffsAlmanc/Beetle_DebuffAlm.png" id="2_idmdc"]
+[ext_resource type="Texture2D" uid="uid://ddmq1cr5xm7dd" path="res://assets/gfx/ui/DebuffsAlmanc/Beetle_DebuffAlm.png" id="2_idmdc"]
 
 [node name="Entry" type="HBoxContainer"]
 anchors_preset = 15
