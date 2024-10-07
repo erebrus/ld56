@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cmvyygsdlxu3j"]
+[gd_scene load_steps=23 format=3 uid="uid://cmvyygsdlxu3j"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_mwynp"]
 [ext_resource type="Script" path="res://src/levels/tutorial_level.gd" id="2_j47jj"]
@@ -23,9 +23,15 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_8atrd"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -129, 18, 0, 0, 0, 0, 71, 57, 0, 0, 0, 0, 275, 65, 0, 0, 0, 0, 426, 53, 0, 0, 0, 0, 810, -17)
+"points": PackedVector2Array(0, 0, 0, 0, -129, 18, 0, 0, 0, 0, 71, 57, 0, 0, 0, 0, 293, 80, 0, 0, 0, 0, 433, 78, 0, 0, 0, 0, 598, 59)
 }
 point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_xfw1d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -204, 17, 0, 0, 0, 0, 356, 13)
+}
+point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_lqi2n"]
 _data = {
@@ -115,20 +121,26 @@ position = Vector2(5655, 897)
 curve = SubResource("Curve2D_v7ocv")
 
 [node name="Slug" parent="Bugs" index="1" instance=ExtResource("9_jpj2v")]
-position = Vector2(9665, 1421)
+position = Vector2(10788, 1126)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Slug" index="7"]
 position = Vector2(90, 0)
 curve = SubResource("Curve2D_8atrd")
 
-[node name="Fly" parent="Bugs" index="2" instance=ExtResource("10_rm72x")]
+[node name="Beetle3" parent="Bugs" index="2" instance=ExtResource("11_8kdqw")]
+position = Vector2(8538, 1555)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Beetle3" index="7"]
+curve = SubResource("Curve2D_xfw1d")
+
+[node name="Fly" parent="Bugs" index="3" instance=ExtResource("10_rm72x")]
 position = Vector2(9399, 1196)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Fly" index="7"]
 curve = SubResource("Curve2D_lqi2n")
 
-[node name="Beetle" parent="Bugs" index="3" instance=ExtResource("11_8kdqw")]
-position = Vector2(10883, 1159)
+[node name="Beetle" parent="Bugs" index="4" instance=ExtResource("11_8kdqw")]
+position = Vector2(9699, 1430)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Beetle" index="7"]
 position = Vector2(-18, 29)
