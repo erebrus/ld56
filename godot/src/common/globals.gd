@@ -1,7 +1,7 @@
 extends Node
 
 const GAME_SCENE_PATH = "res://src/main.tscn"
-
+const WIN_SCENE_PATH = "res://src/end_screens/win_screen.tscn"
 var master_volume:float = 100
 var music_volume:float = 100
 var sfx_volume:float = 100
@@ -80,9 +80,18 @@ func _init_logger():
 	file_appender.logger_level = Logger.LOG_LEVEL_DEBUG
 	Logger.info("Logger initialized.")
 
-
+func fade_from_black(black_overlay, duration:float=1):
+	black_overlay.modulate=Color("ffffffff")
+	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)	
+	tween.tween_property(black_overlay, "modulate", Color("ffffff00"), duration)
+	
+func fade_to_black(black_overlay,duration:float=1):
+	black_overlay.modulate=Color("ffffff00")
+	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)	
+	tween.tween_property(black_overlay, "modulate", Color("ffffffff"), duration)
+	
 func do_lose():
 	get_tree().quit()
 
 func do_win():
-	get_tree().quit()
+	get_tree().change_scene_to_file(WIN_SCENE_PATH)

@@ -108,8 +108,10 @@ color = Color(0, 0, 0, 1)
 [node name="ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_eodqv")
 volume_db = -3.0
+bus = &"Sound"
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamSynchronized_2n5mq")
+bus = &"Music"
 
 [connection signal="energy_changed" from="Frog" to="HUD/MarginContainer2/HealthBar" method="_on_frog_energy_changed"]
