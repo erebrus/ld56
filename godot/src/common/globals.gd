@@ -45,7 +45,7 @@ func _ready():
 	_init_logger()
 	Logger.info("Starting menu music")
 	music_manager.fade_in_menu_music()
-	music_manager.fade_in_stream(music_manager.get_node("ambient"))
+	music_manager.fade_in_stream(music_manager.get_node("ambient"),Globals.music_manager.ambient_volume)
 
 	#start_game()
 	

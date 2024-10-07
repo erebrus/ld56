@@ -4,7 +4,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.music_manager.fade_in_menu_music()
-	Globals.music_manager.fade_in_stream(Globals.music_manager.get_node("ambient"))
+	Globals.music_manager.fade_in_stream(Globals.music_manager.get_node("ambient"),Globals.music_manager.ambient_volume)
 	Globals.fade_from_black($BlackOverlay)
 
 func _on_timer_timeout() -> void:

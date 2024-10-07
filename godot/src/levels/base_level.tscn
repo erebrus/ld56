@@ -203,7 +203,7 @@ offset_bottom = -962.0
 [node name="ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_eodqv")
 volume_db = -3.0
-bus = &"Sound"
+bus = &"Ambient"
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamSynchronized_2n5mq")
