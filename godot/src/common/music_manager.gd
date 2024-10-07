@@ -3,7 +3,6 @@ class_name MusicManager extends Node
 @export var music_bus_volume:=-9.0
 @onready var menu_music: AudioStreamPlayer = $menu_music
 @onready var game_music: AudioStreamPlayer = $game_music
-@onready var murder_music: AudioStreamPlayer = $murder_music
 
 
 @onready var game_music_stream:AudioStreamSynchronized = game_music.stream
@@ -21,13 +20,6 @@ func fade_in_game_music(time:float=1.0):
 func fade_game_music(time:float=1.0):
 	fade_stream(game_music, time)
 
-
-func fade_in_murder_music(time:float=1.0):
-	fade_in_stream(murder_music, time)
-
-func fade_murder_music(time:float=1.0):
-	fade_stream(murder_music, time)
-		
 func play_music(node:AudioStreamPlayer):
 	if not node.playing:
 		node.play()
@@ -52,14 +44,13 @@ func fade_stream(node:AudioStreamPlayer, duration := 1.0):
 	await tween.finished
 	node.stop()
 
-func _helper_set_volume(volume_db:float, id:int):
-	game_music_stream.set_sync_stream_volume(id, volume_db)
+func _helper_set_volume(volume_db:float, stream:AudioStreamSynchronized, id:int):
+	stream.set_sync_stream_volume(id, volume_db)
 	
-#func change_game_music_to(new_id:Types.GameMusic, time:=1.0):
-	#if new_id == current_game_music_id:
-		#return
-	#var tween = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
-	#tween.tween_method(_helper_set_volume.bind(current_game_music_id),0,-60, time)
-	#tween.parallel().tween_method(_helper_set_volume.bind(new_id),-60,0, time).set_ease(Tween.EASE_OUT)
-	#await tween.finished
-	#current_game_music_id = new_id
+func crossfade_synchronized(stream:AudioStreamSynchronized, new_idx:int, time:=1.0):	
+	var tween = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	tween.tween_method(_helper_set_volume.bind(stream,new_idx),-60,0, time).set_ease(Tween.EASE_OUT)
+	for i in range(stream.stream_count):
+		if i != new_idx:
+			tween.parallel().tween_method(_helper_set_volume.bind(stream, i),0,-60, time)
+	await tween.finished

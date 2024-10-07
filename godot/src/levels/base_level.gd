@@ -8,9 +8,9 @@ extends Node2D
 @onready var black_overlay: ColorRect = $HUD/BlackOverlay
 @onready var camera: Camera2D = %Camera2D
 
+@export var tense_timeout =  5
 var debug:=false
 var camera_follow_player:= true
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.fade_from_black(black_overlay)
@@ -22,8 +22,23 @@ func _ready() -> void:
 	Globals.music_manager.fade_in_stream(music)
 	Events.reached_level_end.connect(_on_reached_level_end)
 	Events.frog_grabbed.connect(func(): camera_follow_player = false)
-	
+	Events.eagle_incoming.connect(_on_eagle_incoming)
+	Events.eagle_left.connect(_on_eagle_left)
 
+func _on_eagle_incoming():
+	Logger.debug("level eagle in")
+	Logger.debug("normal db=%d tense db=%d before incoming" % [music.stream.get_sync_stream_volume(0),music.stream.get_sync_stream_volume(1)])
+	Globals.music_manager.crossfade_synchronized(music.stream,1)
+	
+func _on_eagle_left():
+	Logger.debug("level eagle out")
+	Logger.debug("normal db=%d tense db=%d on left" % [music.stream.get_sync_stream_volume(0),music.stream.get_sync_stream_volume(1)])
+	if camera_follow_player:
+		await get_tree().create_timer(5).timeout
+		Globals.music_manager.crossfade_synchronized(music.stream,0)
+		Logger.debug("normal db=%d tense db=%d after timeout" % [music.stream.get_sync_stream_volume(0),music.stream.get_sync_stream_volume(1)])
+
+	
 func _process(_delta):
 	if camera_follow_player:
 		camera.position = frog.position - Vector2(0, 200)
