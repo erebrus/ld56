@@ -1,17 +1,16 @@
-@tool
-@icon("res://addons/xsm/icons/state.png")
 extends State
 
 func _on_enter(_args) -> void:
-	target.hide()
+	Logger.info("Eagle about to attack!")
+	target.follow_player()
+	Events.eagle_incoming.emit()
+	target.warning_sfx.play()
 	
-	var time = randf_range(target.min_time_between_fly_bys, target.max_time_between_fly_bys)
-	get_tree().create_timer(time).timeout.connect(_on_random_timer_timeout)
-	
+	get_tree().create_timer(target.warning_time).timeout.connect(_on_random_timer_timeout)
 	
 
 func _on_update(_delta) -> void:
-	target.global_position = Globals.player.global_position
+	target.follow_player()
 	
 
 func _on_random_timer_timeout() -> void:

@@ -12,7 +12,7 @@ func _on_update(delta: float) -> void:
 	target.move(delta)
 	
 	if target.claw.progress_ratio >= 1:
-		change_state("waiting")
+		change_state("disabled")
 		
 
 func _on_exit(_args) -> void:
