@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5i48h3g4lo5r"]
+
+[ext_resource type="Script" path="res://src/almanac/combo.gd" id="1_1whvg"]
+[ext_resource type="Texture2D" uid="uid://cq7f3vestvylc" path="res://assets/gfx/ui/ComboIcons/Beetle_Almanac.png" id="2_jn4uq"]
+
+[node name="Combo" type="VBoxContainer"]
+script = ExtResource("1_1whvg")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Triple Trouble"
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 2
+text = "Replenish extra energy"
+
+[node name="Bugs" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Bug1" type="TextureRect" parent="Bugs"]
+layout_mode = 2
+texture = ExtResource("2_jn4uq")
+
+[node name="Bug2" type="TextureRect" parent="Bugs"]
+layout_mode = 2
+texture = ExtResource("2_jn4uq")
+
+[node name="Bug3" type="TextureRect" parent="Bugs"]
+layout_mode = 2
+texture = ExtResource("2_jn4uq")

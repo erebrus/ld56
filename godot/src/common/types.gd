@@ -46,3 +46,12 @@ const COMBOS=[
 	[Types.BugType.Snail,Types.BugType.Snail,Types.BugType.Moth],
 	[Types.BugType.Beetle,Types.BugType.Snail,Types.BugType.Beetle]
 ]
+const BUG_ALMANAC_TEXTURES = {
+	Types.BugType.Slug: preload("res://assets/gfx/ui/ComboIcons/Slug_Almanac.png"),
+	Types.BugType.Beetle: preload("res://assets/gfx/ui/ComboIcons/Beetle_Almanac.png"),
+	Types.BugType.Fly: preload("res://assets/gfx/ui/ComboIcons/Fly_Almanac.png"),
+	Types.BugType.Moth: preload("res://assets/gfx/ui/ComboIcons/Moth_Almanac.png"),
+	Types.BugType.Snail: preload("res://assets/gfx/ui/ComboIcons/Snail_Almanac.png"),
+	Types.BugType.Worm: preload("res://assets/gfx/ui/ComboIcons/Worm_Almanac.png"),
+	Types.BugType.Cockroach: preload("res://assets/gfx/ui/ComboIcons/Roach_Almanac.png"),
+}
