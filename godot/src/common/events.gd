@@ -14,6 +14,7 @@ signal eagle_incoming
 signal eagle_left
 signal frog_grabbed
 
+signal energy_depleted
 signal reached_level_end()
 
 func _ready() -> void:

@@ -27,7 +27,7 @@ func _ready() -> void:
 	xsm.change_state("hidden")
 	tip.area_entered.connect(_on_area_entered)
 	tip.body_entered.connect(_on_body_entered)
-	
+	Events.energy_depleted.connect(_on_energy_depleted)
 
 func shoot(target: Vector2, _player: FrogHead) -> void:
 	caught_bug=null
@@ -57,6 +57,16 @@ func update_rope() -> void:
 	rope.add_point(player.tongue_position - global_position)
 	tip.rotation = (global_position - player.tongue_position).angle()
 
+func _call_state_method(method_name: String, args = null):
+	for  s in xsm.active_states:
+		var state= xsm.get_state(s)
+		if state.has_method(method_name):
+			if args == null:
+				state.call(method_name)
+			else:
+				state.call(method_name, args)
+	
+
 func _on_area_entered(area) -> void:
 	if !is_shooting:
 		return
@@ -74,3 +84,7 @@ func _on_body_entered(body) -> void:
 		catch_bug(body)
 	else: 
 		attach(body.global_position)
+
+func _on_energy_depleted() -> void:
+	_call_state_method("_on_energy_depleted")
+	
