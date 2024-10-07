@@ -62,8 +62,9 @@ texture = ExtResource("3_f1ro6")
 unique_name_in_owner = true
 position = Vector2(278, 700)
 
-[node name="Camera2D" type="Camera2D" parent="Frog"]
-position = Vector2(0, -200)
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(278, 500)
 position_smoothing_enabled = true
 
 [node name="HUD" type="CanvasLayer" parent="."]

@@ -155,12 +155,7 @@ curve = SubResource("Curve2D_srp33")
 [node name="Frog" parent="." index="6"]
 position = Vector2(775, 1485)
 
-[node name="Camera2D" parent="Frog" index="12"]
-limit_left = 0
-limit_right = 7500
-limit_bottom = 1700
-
-[node name="Eagle" parent="." index="8"]
-scroll_offset = Vector2(557, -31)
+[node name="Eagle" parent="." index="9"]
+warning_time = 2.0
 min_time_between_fly_bys = 3.0
 max_time_between_fly_bys = 5.0

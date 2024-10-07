@@ -10,8 +10,14 @@ signal debuf_applied(debuf:Debuf)
 #signal debuf_tick(debuf:Debuf)
 signal debuf_cancelled(debuf:Debuf)
 
+signal eagle_incoming
+signal eagle_left
+signal frog_grabbed
+
 signal reached_level_end()
 
 func _ready() -> void:
 	bug_caught.connect(func(type): Logger.info("Caught bug of type: %s" % Types.key_of(type)))
+	eagle_incoming.connect(func(): Logger.info("Eagle incoming!"))
+	eagle_left.connect(func(): Logger.info("Eagle left"))
 	

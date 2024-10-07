@@ -6,8 +6,11 @@ extends Node2D
 @onready var health_bar: HealthBar = %HealthBar
 @onready var music: AudioStreamPlayer = $music
 @onready var black_overlay: ColorRect = $HUD/BlackOverlay
+@onready var camera: Camera2D = %Camera2D
 
 var debug:=false
+var camera_follow_player:= true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.fade_from_black(black_overlay)
@@ -18,7 +21,14 @@ func _ready() -> void:
 	health_bar.set_max(frog.health_component.max_energy)
 	Globals.music_manager.fade_in_stream(music)
 	Events.reached_level_end.connect(_on_reached_level_end)
+	Events.frog_grabbed.connect(func(): camera_follow_player = false)
 	
+
+func _process(_delta):
+	if camera_follow_player:
+		camera.position = frog.position - Vector2(0, 200)
+	
+
 func _input(event: InputEvent) -> void:
 	if not debug and Input.is_action_just_pressed("debug"):
 		debug = true

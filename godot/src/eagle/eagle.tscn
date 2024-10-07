@@ -1,108 +1,83 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfsfbydiqr0gr"]
+[gd_scene load_steps=14 format=3 uid="uid://bfsfbydiqr0gr"]
 
 [ext_resource type="Script" path="res://src/eagle/eagle.gd" id="1_2whi5"]
-[ext_resource type="Texture2D" uid="uid://bvjsvy2ponp8o" path="res://assets/gfx/eagle/eagle.png" id="1_6askw"]
-[ext_resource type="AudioStream" uid="uid://cwtfuvx388sjm" path="res://assets/sfx/Death_zero_energy.wav" id="3_68rhs"]
-[ext_resource type="AudioStream" uid="uid://tbb7cr7m417p" path="res://assets/sfx/Death_by_predator.wav" id="4_1c6fs"]
+[ext_resource type="Texture2D" uid="uid://dk2bvfybsiqx6" path="res://assets/gfx/eagle/Eagle_Closed.png" id="2_o2b0p"]
+[ext_resource type="Texture2D" uid="uid://bp4fqxb2xi8q6" path="res://assets/gfx/eagle/Eagle_Open.png" id="2_tafyt"]
+[ext_resource type="AudioStream" uid="uid://cqj6yx0c15ugi" path="res://assets/sfx/warning_zero_energy.wav" id="3_7wko3"]
+[ext_resource type="AudioStream" uid="uid://bq0eh7xhsd5fb" path="res://assets/sfx/Bird_dive.wav" id="3_e620g"]
+[ext_resource type="AudioStream" uid="uid://dv1xva0f43gxd" path="res://assets/sfx/Bird_grad.wav" id="5_3jpf0"]
+[ext_resource type="Script" path="res://addons/xsm/state.gd" id="6_drs0q"]
+[ext_resource type="Script" path="res://src/eagle/waiting.gd" id="7_sq710"]
+[ext_resource type="Script" path="res://src/eagle/flyby.gd" id="8_bkve8"]
+[ext_resource type="Script" path="res://src/eagle/dive.gd" id="9_fx0c1"]
+[ext_resource type="Script" path="res://src/eagle/grab.gd" id="10_0bwhh"]
+[ext_resource type="Script" path="res://src/eagle/leave.gd" id="11_wg8cd"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kf7yx"]
-radius = 161.199
-
-[sub_resource type="Animation" id="Animation_kj2vo"]
-resource_name = "fly_by"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Claw:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-779, -0.25, 0, 0.566667, 1094.96, 2699, -0.4, -905.576, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Claw:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat32Array(-53, -0.25, 0, 0.0666667, 64.2708, 59.8705, -0.0333333, -48.5996, 0.166667, 246.243, 487, -0.158476, -6.2002, 0.157937, -3.34708, 59.87, -0.166667, 261.155, 0.0370122, -64.0996, -53, -0.0629878, 57.3298, 0.25, 0),
-"times": PackedFloat32Array(0, 0.1, 0.5, 0.9, 1)
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.995168),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"schedule_next_flyby"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_g2qtp"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Claw:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-779, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Claw:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-53, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_u5qev"]
+[sub_resource type="Curve2D" id="Curve2D_4ng8i"]
 _data = {
-"RESET": SubResource("Animation_g2qtp"),
-"fly_by": SubResource("Animation_kj2vo")
+"points": PackedVector2Array(0, 0, 0, 0, -1920, -1080, -200, -90, 200, 90, -700, -150, -252, -4, 252, 4, 0, 0, -200, 90, 200, -90, 700, -150, 0, 0, 0, 0, 1920, -1080)
 }
+point_count = 5
 
-[node name="Eagle" type="Parallax2D"]
-scroll_scale = Vector2(0, 0)
+[node name="Eagle" type="Path2D"]
+curve = SubResource("Curve2D_4ng8i")
 script = ExtResource("1_2whi5")
+open_texture = ExtResource("2_tafyt")
+closed_texture = ExtResource("2_o2b0p")
+dive_speed = 2000
 
-[node name="Claw" type="Area2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(-779, -53)
-collision_layer = 8
-collision_mask = 2
+[node name="Claw" type="PathFollow2D" parent="."]
+position = Vector2(-1920, -1080)
+rotation = 0.651324
+rotates = false
+loop = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Claw"]
-texture = ExtResource("1_6askw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Claw"]
-position = Vector2(21, 102)
-shape = SubResource("CircleShape2D_kf7yx")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_u5qev")
-}
+position = Vector2(-121.496, -241.857)
+rotation = -0.651324
+texture = ExtResource("2_o2b0p")
+flip_h = true
 
 [node name="WarningSfx" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_68rhs")
+stream = ExtResource("3_7wko3")
 
-[node name="DeathSfx" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_1c6fs")
+[node name="FlyBySfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_e620g")
+
+[node name="GrabSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3jpf0")
+
+[node name="xsm" type="Node" parent="."]
+script = ExtResource("6_drs0q")
+history_size = 0
+disabled = false
+debug_mode = false
+target_path = NodePath("..")
+timed = false
+next_state = NodePath("waiting")
+
+[node name="waiting" type="Node" parent="xsm"]
+script = ExtResource("7_sq710")
+disabled = false
+debug_mode = false
+target_path = NodePath("../..")
+timed = false
+next_state = NodePath("")
+
+[node name="flyby" type="Node" parent="xsm"]
+script = ExtResource("8_bkve8")
+disabled = false
+debug_mode = false
+target_path = NodePath("../..")
+timed = false
+next_state = NodePath("")
+
+[node name="dive" type="Node" parent="xsm"]
+script = ExtResource("9_fx0c1")
+
+[node name="grab" type="Node" parent="xsm"]
+script = ExtResource("10_0bwhh")
+
+[node name="leave" type="Node" parent="xsm"]
+script = ExtResource("11_wg8cd")
