@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Ludum Dare 56"
+config/name="Hop Hop Don't Stop"
 config/version="0.8.1"
 run/main_scene="res://src/start_screen/start_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")

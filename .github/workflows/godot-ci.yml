@@ -6,8 +6,8 @@ on:
 
 env:
   GODOT_VERSION: 4.3.stable
-  EXPORT_NAME: ludumdare56
-  ITCH_GAME: ludum-dare-56
+  EXPORT_NAME: hop-hop-dont-stop
+  ITCH_GAME: hop-hop-dont-stop
   ITCH_USER: erebrus
 
 jobs:
