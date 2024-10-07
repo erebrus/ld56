@@ -5,6 +5,7 @@ extends State
 
 func _on_enter(_args) -> void:
 	target.show()
+	target.follow_player(Vector2(0, -200))
 	
 
 func _on_update(delta: float) -> void:

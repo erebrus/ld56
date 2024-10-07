@@ -1,8 +1,257 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmvyygsdlxu3j"]
+[gd_scene load_steps=20 format=3 uid="uid://cmvyygsdlxu3j"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_mwynp"]
+[ext_resource type="Script" path="res://src/levels/tutorial_level.gd" id="2_j47jj"]
+[ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="2_vja34"]
+[ext_resource type="PackedScene" uid="uid://b7uuo8dxsl8qr" path="res://src/world/platforms/rock_2.tscn" id="3_403ep"]
+[ext_resource type="PackedScene" uid="uid://boenkwcf4c06o" path="res://src/world/platforms/branch.tscn" id="4_d82yh"]
+[ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="5_jynwc"]
+[ext_resource type="PackedScene" uid="uid://br6usfo70b445" path="res://src/world/platforms/rockledge.tscn" id="6_feoob"]
+[ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="7_a3tua"]
+[ext_resource type="PackedScene" uid="uid://i1m1wvlfxwsi" path="res://src/world/platforms/flower.tscn" id="8_6oteu"]
+[ext_resource type="PackedScene" uid="uid://dkyx6xyum3prp" path="res://src/bugs/slug.tscn" id="9_jpj2v"]
+[ext_resource type="PackedScene" uid="uid://daidqd7n3terl" path="res://src/world/next_level.tscn" id="9_ytgtn"]
+[ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="10_rm72x"]
+[ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="11_8kdqw"]
 
-[node name="BaseLevel" instance=ExtResource("1_mwynp")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mj6ik"]
+size = Vector2(531, 2061)
 
-[node name="Frog" parent="." index="6"]
-position = Vector2(776, 1448)
+[sub_resource type="Theme" id="Theme_4c6nq"]
+default_font_size = 32
+
+[sub_resource type="Curve2D" id="Curve2D_8atrd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -129, 18, 0, 0, 0, 0, 71, 57, 0, 0, 0, 0, 275, 65, 0, 0, 0, 0, 426, 53, 0, 0, 0, 0, 810, -17)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_lqi2n"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -9, -3, 0, 0, 0, 0, -473, 71, 0, 0, 0, 0, -545, -148, 0, 0, 0, 0, -256, -309, 0, 0, 0, 0, 367, 212, 0, 0, 0, 0, 765, 333, 0, 0, 0, 0, 880, -22, 0, 0, 0, 0, 565, -80, 0, 0, 0, 0, 48, 76, 0, 0, 0, 0, -9, -3)
+}
+point_count = 10
+
+[sub_resource type="Curve2D" id="Curve2D_rbfvp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -13, -2, 0, 0, 0, 0, 322, 34, 0, 0, 0, 0, 690, -24, 0, 0, 0, 0, 423, 25, 0, 0, 0, 0, 59, -11, 0, 0, 0, 0, -13, -2)
+}
+point_count = 6
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wia2p"]
+size = Vector2(1388, 1373)
+
+[node name="Tutorial" instance=ExtResource("1_mwynp")]
+script = ExtResource("2_j47jj")
+
+[node name="walls" type="Node2D" parent="." index="4"]
+
+[node name="wall" type="StaticBody2D" parent="walls" index="0"]
+position = Vector2(7632, 1316)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/wall" index="0"]
+position = Vector2(8794, -741)
+shape = SubResource("RectangleShape2D_mj6ik")
+
+[node name="wall2" type="StaticBody2D" parent="walls" index="1"]
+position = Vector2(315, 745)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall2" index="0"]
+position = Vector2(-552, -64)
+shape = SubResource("RectangleShape2D_mj6ik")
+metadata/_edit_lock_ = true
+
+[node name="rock1" parent="Scenery" index="0" instance=ExtResource("2_vja34")]
+position = Vector2(-584, 751)
+scale = Vector2(3, 3)
+
+[node name="rock6" parent="Scenery" index="1" instance=ExtResource("3_403ep")]
+position = Vector2(3112, 1411)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="rock8" parent="Scenery" index="2" instance=ExtResource("3_403ep")]
+position = Vector2(6194, 1223)
+rotation = 2.92135
+scale = Vector2(1, -1)
+
+[node name="rock7" parent="Scenery" index="3" instance=ExtResource("3_403ep")]
+position = Vector2(6628, 1317)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Branch" parent="Scenery" index="4" instance=ExtResource("4_d82yh")]
+position = Vector2(4653, 1193)
+
+[node name="Leaf" parent="Scenery" index="5" instance=ExtResource("5_jynwc")]
+position = Vector2(5523, 1062)
+
+[node name="LedgePlatform" parent="Scenery" index="6" instance=ExtResource("6_feoob")]
+position = Vector2(7583, 773)
+
+[node name="LedgePlatform2" parent="Scenery" index="7" instance=ExtResource("6_feoob")]
+position = Vector2(13183, 1013)
+
+[node name="Mushroom" parent="Scenery" index="8" instance=ExtResource("7_a3tua")]
+position = Vector2(7579, 885)
+
+[node name="Mushroom2" parent="Scenery" index="9" instance=ExtResource("7_a3tua")]
+position = Vector2(7900, 718)
+
+[node name="Flower4" parent="Scenery" index="10" instance=ExtResource("8_6oteu")]
+position = Vector2(8464, 1444)
+
+[node name="Flower5" parent="Scenery" index="11" instance=ExtResource("8_6oteu")]
+position = Vector2(13704, 1317)
+
+[node name="Flower6" parent="Scenery" index="12" instance=ExtResource("8_6oteu")]
+position = Vector2(14076, 1581)
+
+[node name="Branch2" parent="Scenery" index="13" instance=ExtResource("4_d82yh")]
+position = Vector2(10058, 1542)
+
+[node name="Branch3" parent="Scenery" index="14" instance=ExtResource("4_d82yh")]
+position = Vector2(11167, 1266)
+scale = Vector2(-1, 1)
+
+[node name="NextLevel" parent="." index="6" instance=ExtResource("9_ytgtn")]
+position = Vector2(15248, 1210)
+
+[node name="Tutorial" type="Control" parent="." index="7"]
+layout_mode = 3
+anchors_preset = 0
+theme = SubResource("Theme_4c6nq")
+
+[node name="Tooltip1" type="Label" parent="Tutorial" index="0"]
+layout_mode = 0
+offset_left = 845.0
+offset_top = 1615.0
+offset_right = 1295.0
+offset_bottom = 1660.0
+text = "Use A and D to move around "
+
+[node name="Tooltip2" type="Label" parent="Tutorial" index="1"]
+layout_mode = 0
+offset_left = 1954.0
+offset_top = 1624.0
+offset_right = 2416.0
+offset_bottom = 1669.0
+text = "Press SPACE to jump one time"
+
+[node name="Tooltip3" type="Label" parent="Tutorial" index="2"]
+layout_mode = 0
+offset_left = 3620.0
+offset_top = 1613.0
+offset_right = 4082.0
+offset_bottom = 1658.0
+text = "Pressing SPACE twice makes you jump higher"
+
+[node name="Tooltip4" type="Label" parent="Tutorial" index="3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 7233.0
+offset_top = 1610.0
+offset_right = 7912.0
+offset_bottom = 1703.0
+text = "Do you see that blue mushroom? You can use your tongue to stick to it and swing!"
+autowrap_mode = 3
+
+[node name="Tooltip5" type="Label" parent="Tutorial" index="4"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 7725.0
+offset_top = 1226.0
+offset_right = 8404.0
+offset_bottom = 1367.0
+text = "Once your tongue sticks to the fungus, you can use W and S to pull yourself up and down. Using A and D allows you to swing"
+autowrap_mode = 3
+
+[node name="Tooltip6" type="Label" parent="Tutorial" index="5"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 8663.0
+offset_top = 1382.0
+offset_right = 9342.0
+offset_bottom = 1523.0
+text = "Remember that your energy is constantly going down. Consume the insects using your tongue to restore it"
+autowrap_mode = 3
+
+[node name="Tooltip7" type="Label" parent="Tutorial" index="6"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 9920.0
+offset_top = 1234.0
+offset_right = 10599.0
+offset_bottom = 1375.0
+text = "All the insects in the jungle are poisonous, eating them will give you different debuffs"
+autowrap_mode = 3
+
+[node name="Tooltip8" type="Label" parent="Tutorial" index="7"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 10780.0
+offset_top = 1405.0
+offset_right = 11459.0
+offset_bottom = 1546.0
+text = "However, a poison in one bug can be a cure for another insect! Combine different bugs, create combos and recieve buffs!"
+autowrap_mode = 3
+
+[node name="Tooltip9" type="Label" parent="Tutorial" index="8"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 12180.0
+offset_top = 1291.0
+offset_right = 12859.0
+offset_bottom = 1432.0
+text = "Did you hear that? You’ve been spotted by the Bird. You need you hide or the predator will eat you! "
+autowrap_mode = 3
+
+[node name="Tooltip10" type="Label" parent="Tutorial" index="9"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 14537.0
+offset_top = 1603.0
+offset_right = 15216.0
+offset_bottom = 1744.0
+text = "Run, find shelter before the hurricane arrives!"
+autowrap_mode = 3
+
+[node name="Slug" parent="Bugs" index="0" instance=ExtResource("9_jpj2v")]
+position = Vector2(9665, 1421)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Slug" index="7"]
+position = Vector2(90, 0)
+curve = SubResource("Curve2D_8atrd")
+
+[node name="Fly" parent="Bugs" index="1" instance=ExtResource("10_rm72x")]
+position = Vector2(9399, 1196)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Fly" index="7"]
+curve = SubResource("Curve2D_lqi2n")
+
+[node name="Beetle" parent="Bugs" index="2" instance=ExtResource("11_8kdqw")]
+position = Vector2(10883, 1159)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Beetle" index="7"]
+position = Vector2(-18, 29)
+curve = SubResource("Curve2D_rbfvp")
+
+[node name="Frog" parent="." index="9"]
+position = Vector2(1051, 1524)
+
+[node name="Camera2D" parent="." index="10"]
+position = Vector2(1053, 1224)
+
+[node name="Eagle" parent="." index="11"]
+warning_time = 10.0
+enabled = false
+
+[node name="TriggerEagle" type="Area2D" parent="." index="15"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerEagle" index="0"]
+position = Vector2(12237, 1051.5)
+shape = SubResource("RectangleShape2D_wia2p")
+
+[connection signal="body_entered" from="TriggerEagle" to="." method="_on_trigger_eagle_body_entered"]

@@ -10,7 +10,7 @@ extends Path2D
 @export var dive_speed:= 3000
 @export var grab_start:= 0.40
 @export var grab_end:= 0.43
-
+@export var enabled:= true
 
 @onready var xsm: State = $xsm
 @onready var claw = $Claw
@@ -22,7 +22,8 @@ extends Path2D
 
 func _ready() -> void:
 	sprite.texture = open_texture
-	
+	if not enabled:
+		xsm.change_state("disabled")
 
 func follow_player(offset: Vector2 = Vector2.ZERO) -> void:
 	global_position = Globals.player.global_position + offset
@@ -34,6 +35,7 @@ func move(delta: float) -> void:
 
 func fly_by() -> void:
 	Logger.info("Eagle about to attack!")
+	follow_player()
 	Events.eagle_incoming.emit()
 	warning_sfx.play()
 	await get_tree().create_timer(warning_time).timeout

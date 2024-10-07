@@ -66,19 +66,8 @@ point_count = 9
 offset_top = -1557.0
 offset_bottom = 1757.0
 
-[node name="Mushrooms" type="Node2D" parent="." index="4"]
-
-[node name="Mushroom" parent="Mushrooms" index="0" instance=ExtResource("11_msv3w")]
-position = Vector2(8764, 352)
-
-[node name="Mushroom2" parent="Mushrooms" index="1" instance=ExtResource("11_msv3w")]
-position = Vector2(10524, 729)
-
-[node name="Mushroom3" parent="Mushrooms" index="2" instance=ExtResource("11_msv3w")]
-position = Vector2(11774, 38)
-
-[node name="Mushroom4" parent="Mushrooms" index="3" instance=ExtResource("11_msv3w")]
-position = Vector2(10520, -24)
+[node name="Scenery" parent="." index="4"]
+position = Vector2(0, -4)
 
 [node name="decorations" type="Node2D" parent="Scenery" index="0"]
 
@@ -200,6 +189,20 @@ scale = Vector2(2, -2)
 position = Vector2(4194, 1030)
 rotation = 3.14159
 scale = Vector2(1, -1)
+
+[node name="Mushrooms" type="Node2D" parent="." index="5"]
+
+[node name="Mushroom" parent="Mushrooms" index="0" instance=ExtResource("11_msv3w")]
+position = Vector2(8764, 352)
+
+[node name="Mushroom2" parent="Mushrooms" index="1" instance=ExtResource("11_msv3w")]
+position = Vector2(10524, 729)
+
+[node name="Mushroom3" parent="Mushrooms" index="2" instance=ExtResource("11_msv3w")]
+position = Vector2(11774, 38)
+
+[node name="Mushroom4" parent="Mushrooms" index="3" instance=ExtResource("11_msv3w")]
+position = Vector2(10520, -24)
 
 [node name="Slug" parent="Bugs" index="0" instance=ExtResource("11_mndri")]
 position = Vector2(8840, 1534)

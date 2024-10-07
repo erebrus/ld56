@@ -38,9 +38,8 @@ repeat_size = Vector2(3840, 0)
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="BG"]
-offset_left = 8.0
 offset_top = -1560.0
-offset_right = 3848.0
+offset_right = 3840.0
 offset_bottom = 1754.0
 texture = ExtResource("1_shssx")
 
@@ -50,9 +49,8 @@ repeat_size = Vector2(3840, 0)
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="MG"]
-offset_left = 427.0
 offset_top = -1560.0
-offset_right = 4267.0
+offset_right = 3840.0
 offset_bottom = 1754.0
 texture = ExtResource("2_wx1s1")
 
@@ -62,9 +60,8 @@ repeat_size = Vector2(3840, 0)
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="FG"]
-offset_left = 464.0
 offset_top = -1560.0
-offset_right = 4304.0
+offset_right = 3840.0
 offset_bottom = 1754.0
 texture = ExtResource("3_f1ro6")
 
@@ -72,7 +69,7 @@ texture = ExtResource("3_f1ro6")
 metadata/_edit_lock_ = true
 
 [node name="grass" type="StaticBody2D" parent="Ground"]
-position = Vector2(568, 1023)
+position = Vector2(0, 1023)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground/grass"]
 position = Vector2(1346, 520)
@@ -84,7 +81,7 @@ position = Vector2(1353, 618.5)
 shape = SubResource("RectangleShape2D_jgh8x")
 
 [node name="grass2" type="StaticBody2D" parent="Ground"]
-position = Vector2(4409, 1023)
+position = Vector2(3840, 1023)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground/grass2"]
 position = Vector2(1346, 520)
@@ -96,7 +93,7 @@ position = Vector2(1353, 618.5)
 shape = SubResource("RectangleShape2D_jgh8x")
 
 [node name="grass3" type="StaticBody2D" parent="Ground"]
-position = Vector2(8208, 1023)
+position = Vector2(7680, 1023)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground/grass3"]
 position = Vector2(1346, 520)
@@ -108,7 +105,7 @@ position = Vector2(1353, 618.5)
 shape = SubResource("RectangleShape2D_jgh8x")
 
 [node name="grass4" type="StaticBody2D" parent="Ground"]
-position = Vector2(11955, 1023)
+position = Vector2(11520, 1023)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground/grass4"]
 position = Vector2(1346, 520)
@@ -120,7 +117,7 @@ position = Vector2(1353, 618.5)
 shape = SubResource("RectangleShape2D_jgh8x")
 
 [node name="grass5" type="StaticBody2D" parent="Ground"]
-position = Vector2(15789, 1022)
+position = Vector2(15360, 1022)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground/grass5"]
 position = Vector2(1346, 520)
@@ -132,7 +129,7 @@ position = Vector2(1353, 618.5)
 shape = SubResource("RectangleShape2D_yqvg6")
 
 [node name="grass6" type="StaticBody2D" parent="Ground"]
-position = Vector2(19569, 1022)
+position = Vector2(19200, 1022)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground/grass6"]
 position = Vector2(1346, 520)
@@ -158,6 +155,8 @@ limit_left = 0
 limit_top = -1600
 limit_bottom = 1700
 position_smoothing_enabled = true
+
+[node name="Eagle" parent="." instance=ExtResource("6_x2vej")]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -197,8 +196,6 @@ offset_left = 1570.0
 offset_top = 54.0
 offset_right = 0.0
 offset_bottom = -962.0
-
-[node name="Eagle" parent="." instance=ExtResource("6_x2vej")]
 
 [node name="ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_eodqv")
