@@ -1,6 +1,7 @@
 extends Node
 
 enum FloorType{Grass, Rock}
+enum LossType {BIRD, ENERGY}
 
 
 enum BugType {
@@ -40,12 +41,26 @@ func key_of(value) -> String:
 	preload("res://src/frog/debufs/crunchy_sandwish_buf.tscn")
 ]
 const COMBOS=[
-	[Types.BugType.Beetle,Types.BugType.Beetle,Types.BugType.Beetle],
-	[Types.BugType.Beetle,Types.BugType.Fly,Types.BugType.Snail],
-	[Types.BugType.Fly,Types.BugType.Fly,Types.BugType.Moth],
-	[Types.BugType.Snail,Types.BugType.Snail,Types.BugType.Moth],
-	[Types.BugType.Beetle,Types.BugType.Snail,Types.BugType.Beetle]
+	[Types.BugType.Beetle,Types.BugType.Fly,Types.BugType.Beetle],
+	[Types.BugType.Beetle,Types.BugType.Moth,Types.BugType.Snail],
+	[Types.BugType.Fly,Types.BugType.Moth,Types.BugType.Cockroach],
+	[Types.BugType.Snail,Types.BugType.Slug,Types.BugType.Worm],
+	[Types.BugType.Worm,Types.BugType.Cockroach,Types.BugType.Slug]
 ]
+const DEBUF_ICONS={
+	#CrunchySandwishBuf:preload("res://src/frog/debufs/crunchy_sandwish_buf.tscn"),
+	#GourmetKebubBuf:preload("res://src/frog/debufs/gourmet_kebub_buf.tscn"),
+	#TakeItSlowBuff:preload("res://src/frog/debufs/take_it_slow_buff.tscn"),
+	#TripleDoubleBuff:preload("res://src/frog/debufs/triple_double_buff.tscn"),
+	#FlyingTasteDebuf:preload("res://src/frog/debufs/flying_taste_debuf.tscn"),	
+	"DoubleJumpDebuf":preload("res://assets/gfx/ui/DebuffIcons/DecreaBigJump.png"),
+	"TongueDebuf":preload("res://assets/gfx/ui/DebuffIcons/NoTongue.png"),
+	"SlowdownDebuf":preload("res://assets/gfx/ui/DebuffIcons/Slowdown.png"),
+	"LessHealDebuf":preload("res://assets/gfx/ui/DebuffIcons/BeetleEPDown.png"),
+	"InvisibleDebuf":preload("res://assets/gfx/ui/DebuffIcons/Invis_Dbuff.png"),
+	"EpMaxDebuf":preload("res://assets/gfx/ui/DebuffIcons/DecreMaxEP.png"),
+	"EPDebuf":preload("res://assets/gfx/ui/DebuffIcons/IncreasEPspeed.png")
+}
 const BUG_ALMANAC_TEXTURES = {
 	Types.BugType.Slug: preload("res://assets/gfx/ui/ComboIcons/Slug_Almanac.png"),
 	Types.BugType.Beetle: preload("res://assets/gfx/ui/ComboIcons/Beetle_Almanac.png"),

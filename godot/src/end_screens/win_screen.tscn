@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0vobmak1lpo1"]
+[gd_scene load_steps=4 format=3 uid="uid://c0vobmak1lpo1"]
 
 [ext_resource type="Script" path="res://src/end_screens/win_screen.gd" id="1_e4pry"]
 [ext_resource type="Texture2D" uid="uid://b4qdj5t4ap3f4" path="res://assets/gfx/screens/EndScreen.png" id="1_qmfq4"]
+[ext_resource type="AudioStream" uid="uid://dhknts4p0lteu" path="res://assets/sfx/MC_Wins.wav" id="3_pda5u"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -32,5 +33,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="mc_win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pda5u")
+autoplay = true
+bus = &"Sound"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

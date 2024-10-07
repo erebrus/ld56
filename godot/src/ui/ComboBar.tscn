@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bi641rjvj6uib"]
+[gd_scene load_steps=13 format=3 uid="uid://bi641rjvj6uib"]
 
-[ext_resource type="Texture2D" uid="uid://bgep1qssiyyxs" path="res://assets/gfx/ui/bug_icons/beetle_icon.png" id="1_se5sk"]
 [ext_resource type="Script" path="res://src/ui/combo_bar.gd" id="1_vtrm4"]
-[ext_resource type="Texture2D" uid="uid://byxa6qc0nuq21" path="res://assets/gfx/ui/bug_icons/cockroach_icon.png" id="2_jabas"]
-[ext_resource type="Texture2D" uid="uid://ti0i1h6qw5cd" path="res://assets/gfx/ui/bug_icons/moth_icon.png" id="3_hjrxa"]
+[ext_resource type="Texture2D" uid="uid://dlnvgbjfoq3g1" path="res://assets/gfx/ui/ComboContainer.png" id="2_rmfhk"]
+[ext_resource type="Texture2D" uid="uid://ctuubvqcc1uwu" path="res://assets/gfx/ui/ComboIcons/Beetle_HUD.png" id="3_a2wmj"]
+[ext_resource type="Texture2D" uid="uid://pvsc7r4rp8kc" path="res://assets/gfx/ui/ComboIcons/Fly_HUD.png" id="4_yc7ih"]
 [ext_resource type="AudioStream" uid="uid://qqhm06jucppr" path="res://assets/sfx/Combos_UI_beetle_added_1.wav" id="5_ddhu5"]
 [ext_resource type="AudioStream" uid="uid://dxbcaktgwkwy5" path="res://assets/sfx/Combos_UI_combo_dropped.wav" id="5_q0m0h"]
+[ext_resource type="Texture2D" uid="uid://cefbrtj708dfy" path="res://assets/gfx/ui/ComboIcons/Moth_HUD.png" id="5_u75ut"]
 [ext_resource type="AudioStream" uid="uid://6lpqgmf6stc3" path="res://assets/sfx/Combos_UI_succesfull_combo.wav" id="6_60l6b"]
 [ext_resource type="AudioStream" uid="uid://ca27sk6rs3ypc" path="res://assets/sfx/Combos_UI_beetle_added_2.wav" id="6_kxmgd"]
 [ext_resource type="AudioStream" uid="uid://ck6s2300r8msj" path="res://assets/sfx/Combos_UI_beetle_added_3.wav" id="7_rt8os"]
@@ -19,22 +20,31 @@ stream_1/stream = ExtResource("6_kxmgd")
 stream_2/stream = ExtResource("7_rt8os")
 
 [node name="ComboBar" type="Panel"]
-custom_minimum_size = Vector2(350, 64)
+custom_minimum_size = Vector2(369, 154)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1570.0
-offset_bottom = -1016.0
+offset_right = -1551.0
+offset_bottom = -926.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_2raw8")
 script = ExtResource("1_vtrm4")
 combo_timeout = 10
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="BG" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("2_rmfhk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 20
@@ -42,49 +52,49 @@ theme_override_constants/margin_bottom = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 374.0
+offset_bottom = 151.0
 theme_override_constants/separation = 10
-
-[node name="Label" type="Label" parent="HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Combo:"
+alignment = 1
 
 [node name="Icons" type="HBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 20
 
 [node name="Icon1" type="TextureRect" parent="HBoxContainer/Icons"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("1_se5sk")
+texture = ExtResource("3_a2wmj")
+stretch_mode = 3
 
 [node name="Icon2" type="TextureRect" parent="HBoxContainer/Icons"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("2_jabas")
+texture = ExtResource("4_yc7ih")
+stretch_mode = 3
 
 [node name="Icon3" type="TextureRect" parent="HBoxContainer/Icons"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("3_hjrxa")
+texture = ExtResource("5_u75ut")
+stretch_mode = 3
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
 [node name="combo_add" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_u3hrj")
-volume_db = -6.0
+volume_db = -16.0
 bus = &"Sound"
 
 [node name="combo_drop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_q0m0h")
+volume_db = -7.0
 bus = &"Sound"
 
 [node name="combo_success" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_60l6b")
-volume_db = -3.0
+volume_db = -10.0
 bus = &"Sound"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -6,6 +6,7 @@
 [node name="TripleDoubleBuff" instance=ExtResource("1_h6g4j")]
 script = ExtResource("2_gd3ny")
 value = 20
+show_in_ui = false
 
 [node name="sfx_off" parent="." index="2"]
 stream = null

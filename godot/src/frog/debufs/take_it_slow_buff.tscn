@@ -5,3 +5,4 @@
 
 [node name="TakeItSlowBuff" instance=ExtResource("1_xjk51")]
 script = ExtResource("2_8uyq2")
+show_in_ui = false

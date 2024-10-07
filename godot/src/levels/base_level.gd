@@ -8,6 +8,7 @@ extends Node2D
 @onready var black_overlay: ColorRect = $HUD/BlackOverlay
 @onready var camera: Camera2D = %Camera2D
 @onready var almanac: Control = %Almanac
+@onready var lose_screen: Control = %LoseScreen
 
 @export var tense_timeout =  5
 var debug:=false
@@ -46,10 +47,11 @@ func _on_eagle_left():
 	else:
 		Globals.fade_to_black(black_overlay)
 
-func _on_game_lost():
-	Globals.fade_to_black(black_overlay)
-	await get_tree().create_timer(2).timeout
-	get_tree().quit()
+func _on_game_lost(type:Types.LossType):
+	lose_screen.show_overlay(type)
+	#Globals.fade_to_black(black_overlay)
+	#await get_tree().create_timer(2).timeout
+	#get_tree().quit()
 
 
 func _process(_delta):
@@ -64,6 +66,8 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("dead"):
 		Events.energy_depleted.emit()
 		frog._on_health_component_died()
+	if Input.is_action_just_pressed("bird_death"):
+		Events.game_lost.emit(Types.LossType.BIRD)
 	if Input.is_action_just_pressed("win"):
 		Globals.do_win()
 	if Input.is_action_just_pressed("buf_1"):

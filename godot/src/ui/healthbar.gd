@@ -9,7 +9,7 @@ func _ready():
 	Events.block_max_hp.connect(func(x):set_block(x))
 
 func _on_frog_energy_changed(value: float) -> void:
-	progress.value = value
+	$Progress.value = value
 
 func set_max(value:float)->void:
 	progress.max_value=value

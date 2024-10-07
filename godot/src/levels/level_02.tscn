@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bayfc11f0g7xn"]
+[gd_scene load_steps=53 format=3 uid="uid://bayfc11f0g7xn"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_d2fqf"]
 [ext_resource type="Texture2D" uid="uid://b8b5jgthrtj4s" path="res://assets/gfx/environment/Vine.png" id="3_ce5te"]
@@ -18,17 +18,14 @@
 [ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="14_pfmk0"]
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="17_1pv6n"]
 [ext_resource type="PackedScene" uid="uid://daidqd7n3terl" path="res://src/world/next_level.tscn" id="18_ixeje"]
+[ext_resource type="PackedScene" uid="uid://bc00r0hq8mfh" path="res://src/bugs/cockroach.tscn" id="18_kad5i"]
 [ext_resource type="AudioStream" uid="uid://dn184ut238off" path="res://assets/music/Bugs_Driven_Cutie.mp3" id="19_gdoaw"]
+[ext_resource type="PackedScene" uid="uid://bewxal3nv2w8g" path="res://src/bugs/snail.tscn" id="19_pbicw"]
+[ext_resource type="PackedScene" uid="uid://c3tps7ghn0dhi" path="res://src/bugs/worms.tscn" id="20_7jyby"]
 [ext_resource type="AudioStream" uid="uid://0iujfpk6p3nb" path="res://assets/music/Bugs_Driven_Cutie_Hide.mp3" id="20_u408f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acc83"]
 size = Vector2(531, 3167.5)
-
-[sub_resource type="Curve2D" id="Curve2D_5p2mr"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -8, 3, 0, 0, 0, 0, -131, 53, 0, 0, 0, 0, -166, 36, 0, 0, 0, 0, 62, 0, 0, 0, 0, 0, 249, -52, 0, 0, 0, 0, 222, -64, 0, 0, 0, 0, 33, -9, 0, 0, 0, 0, -8, 3)
-}
-point_count = 8
 
 [sub_resource type="Curve2D" id="Curve2D_wrfui"]
 _data = {
@@ -42,23 +39,11 @@ _data = {
 }
 point_count = 7
 
-[sub_resource type="Curve2D" id="Curve2D_p07xw"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 9, -13, 0, 0, 0, 0, 194, 119, 0, 0, 0, 0, 439, 48, 0, 0, 0, 0, 624, -245, 0, 0, 0, 0, 402, -356, 0, 0, 0, 0, 527, -214, 0, 0, 0, 0, 419, -29, 0, 0, 0, 0, 93, -292, 0, 0, 0, 0, 9, -13)
-}
-point_count = 9
-
 [sub_resource type="Curve2D" id="Curve2D_06f75"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 56, 5, 0, 0, 0, 0, 165, 9, 0, 0, 0, 0, 374, 7, 0, 0, 0, 0, 228, 4, 0, 0, 0, 0, 37, -3, 0, 0, 0, 0, 11, 0)
 }
 point_count = 7
-
-[sub_resource type="Curve2D" id="Curve2D_r7m0u"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -3, 1, 0, 0, 0, 0, 85, 32, 0, 0, 0, 0, 249, 77, 0, 0, 0, 0, 331, 104, 0, 0, 0, 0, 304, 94, 0, 0, 0, 0, 156, 53, 0, 0, 0, 0, 379, 116, 0, 0, 0, 0, 19, -5, 0, 0, 0, 0, -3, 1)
-}
-point_count = 9
 
 [sub_resource type="Curve2D" id="Curve2D_begb2"]
 _data = {
@@ -77,12 +62,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 5, -11, 0, 0, 0, 0, 643, -449, 0, 0, 0, 0, -68, -573, 0, 0, 0, 0, -680, -386, 0, 0, 0, 0, -166, -386, 0, 0, 0, 0, 78, -446, 0, 0, 0, 0, -626, -221, 0, 0, 0, 0, 107, -284, 0, 0, 0, 0, 5, -11)
 }
 point_count = 9
-
-[sub_resource type="Curve2D" id="Curve2D_h7bpu"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -2, 16, 0, 0, 0, 0, -264, 14, 0, 0, 0, 0, -330, 16, 0, 0, 0, 0, -128, 14, 0, 0, 0, 0, 274, 24, 0, 0, 0, 0, 700, 10, 0, 0, 0, 0, 150, 20, 0, 0, 0, 0, -2, 16)
-}
-point_count = 8
 
 [sub_resource type="Curve2D" id="Curve2D_umi12"]
 _data = {
@@ -125,6 +104,84 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1, -2, 0, 0, 0, 0, 86, 32, 0, 0, 0, 0, 295, 41, 0, 0, 0, 0, 589, 9, 0, 0, 0, 0, 354, 30, 0, 0, 0, 0, 101, 30, 0, 0, 0, 0, 1, -2)
 }
 point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_8k1m5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3, 8, 0, 0, 0, 0, -320, 138, 0, 0, 0, 0, -13, 125, 0, 0, 0, 0, 253, 89, 0, 0, 0, 0, 259, -223, 0, 0, 0, 0, -92, -170, 0, 0, 0, 0, -100, -36, 0, 0, 0, 0, -3, 8)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_qdwi4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -7, 2, 0, 0, 0, 0, -165, 49, 0, 0, 0, 0, 32, 1, 0, 0, 0, 0, 264, -68, 0, 0, 0, 0, 23, -8, 0, 0, 0, 0, -7, 2)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_7wkvl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -15, 12, 0, 0, 0, 0, -265, 120, 0, 0, 0, 0, -397, -45, 0, 0, 0, 0, -305, -248, 0, 0, 0, 0, 23, -335, 0, 0, 0, 0, 226, -85, 0, 0, 0, 0, 110, 67, 0, 0, 0, 0, -240, -98, 0, 0, 0, 0, -34, -191, 0, 0, 0, 0, -15, 12)
+}
+point_count = 10
+
+[sub_resource type="Curve2D" id="Curve2D_q4lnx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 21, 10, 0, 0, 0, 0, -70, 7, 0, 0, 0, 0, 51, 12, 0, 0, 0, 0, -121, 2, 0, 0, 0, 0, 130, 11, 0, 0, 0, 0, -153, 5, 0, 0, 0, 0, 21, 10)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_7sgms"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -80, 11, 0, 0, 0, 0, -156, -7, 0, 0, 0, 0, -33, 19, 0, 0, 0, 0, 103, 9, 0, 0, 0, 0, 202, 11, 0, 0, 0, 0, -1, 20, 0, 0, 0, 0, -80, 11)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_lc7ia"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 14, 5, 0, 0, 0, 0, 203, 9, 0, 0, 0, 0, 449, 9, 0, 0, 0, 0, 568, 9, 0, 0, 0, 0, 327, -6, 0, 0, 0, 0, 67, -2, 0, 0, 0, 0, 14, 5)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_60yta"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -11, -6, 0, 0, 0, 0, -214, 77, 0, 0, 0, 0, -524, 0, 0, 0, 0, 0, -641, -273, 0, 0, 0, 0, -377, -508, 0, 0, 0, 0, 61, -516, 0, 0, 0, 0, 253, -267, 0, 0, 0, 0, 306, -78, 0, 0, 0, 0, 53, -25, 0, 0, 0, 0, -11, -6)
+}
+point_count = 10
+
+[sub_resource type="Curve2D" id="Curve2D_86ja8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3, 8, 0, 0, 0, 0, 93, 38, 0, 0, 0, 0, -55, -1, 0, 0, 0, 0, -197, -41, 0, 0, 0, 0, -323, -73, 0, 0, 0, 0, -71, -11, 0, 0, 0, 0, -3, 8)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_e7bak"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -5, 2, 0, 0, 0, 0, -83, -15, 0, 0, 0, 0, -249, -60, 0, 0, 0, 0, -333, -106, 0, 0, 0, 0, -77, -35, 0, 0, 0, 0, 181, 53, 0, 0, 0, 0, 498, 140, 0, 0, 0, 0, 220, 70, 0, 0, 0, 0, -5, 2)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_imgob"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 2, 0, 0, 0, 0, -87, -5, 0, 0, 0, 0, -171, -35, 0, 0, 0, 0, 54, -2, 0, 0, 0, 0, 190, 9, 0, 0, 0, 0, 333, -11, 0, 0, 0, 0, 96, 4, 0, 0, 0, 0, -1, 2)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_70ol0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 18, 3, 0, 0, 0, 0, -54, 3, 0, 0, 0, 0, 120, 14, 0, 0, 0, 0, -72, 3, 0, 0, 0, 0, 18, 3)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_ctj3i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -5, 7, 0, 0, 0, 0, -197, 19, 0, 0, 0, 0, -625, -16, 0, 0, 0, 0, 37, 12, 0, 0, 0, 0, 436, 27, 0, 0, 0, 0, 806, 24, 0, 0, 0, 0, 342, -6, 0, 0, 0, 0, -5, 7)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_jhx52"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 14, 3, 0, 0, 0, 0, 186, -1, 0, 0, 0, 0, 302, 7, 0, 0, 0, 0, -88, -23, 0, 0, 0, 0, -344, -27, 0, 0, 0, 0, -602, -19, 0, 0, 0, 0, -244, 5, 0, 0, 0, 0, -78, -3, 0, 0, 0, 0, 14, 3)
+}
+point_count = 9
 
 [sub_resource type="Curve2D" id="Curve2D_ymibe"]
 _data = {
@@ -319,109 +376,163 @@ position = Vector2(4483, 462)
 [node name="Mushroom9" parent="Scenery/Mushrooms" index="8" instance=ExtResource("14_pfmk0")]
 position = Vector2(9676, 327)
 
-[node name="Beetle" parent="Bugs" index="0" instance=ExtResource("5_aqaq6")]
-position = Vector2(1948, 882)
-
-[node name="Path2D" type="Path2D" parent="Bugs/Beetle" index="7"]
-curve = SubResource("Curve2D_5p2mr")
-
-[node name="Moth2" parent="Bugs" index="1" instance=ExtResource("10_0wvdk")]
+[node name="Moth2" parent="Bugs" index="0" instance=ExtResource("10_0wvdk")]
 position = Vector2(3470, -154)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Moth2" index="7"]
 curve = SubResource("Curve2D_wrfui")
 
-[node name="Slug" parent="Bugs" index="2" instance=ExtResource("4_shqu2")]
+[node name="Slug" parent="Bugs" index="1" instance=ExtResource("4_shqu2")]
 position = Vector2(4406, 85)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Slug" index="7"]
 curve = SubResource("Curve2D_mdq6y")
 
-[node name="Moth3" parent="Bugs" index="3" instance=ExtResource("10_0wvdk")]
-position = Vector2(5439, 342)
-
-[node name="Path2D" type="Path2D" parent="Bugs/Moth3" index="7"]
-curve = SubResource("Curve2D_p07xw")
-
-[node name="Beetle4" parent="Bugs" index="4" instance=ExtResource("5_aqaq6")]
+[node name="Beetle4" parent="Bugs" index="2" instance=ExtResource("5_aqaq6")]
 position = Vector2(5895, 1345)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Beetle4" index="7"]
 curve = SubResource("Curve2D_06f75")
 
-[node name="Slug2" parent="Bugs" index="5" instance=ExtResource("4_shqu2")]
-position = Vector2(6325, 193)
-
-[node name="Path2D" type="Path2D" parent="Bugs/Slug2" index="7"]
-curve = SubResource("Curve2D_r7m0u")
-
-[node name="Beetle2" parent="Bugs" index="6" instance=ExtResource("5_aqaq6")]
+[node name="Beetle2" parent="Bugs" index="3" instance=ExtResource("5_aqaq6")]
 position = Vector2(6332, -834)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Beetle2" index="7"]
 curve = SubResource("Curve2D_begb2")
 
-[node name="Fly" parent="Bugs" index="7" instance=ExtResource("17_1pv6n")]
+[node name="Fly" parent="Bugs" index="4" instance=ExtResource("17_1pv6n")]
 position = Vector2(5273, -1023)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Fly" index="7"]
 curve = SubResource("Curve2D_iyyna")
 
-[node name="Moth4" parent="Bugs" index="8" instance=ExtResource("10_0wvdk")]
+[node name="Moth4" parent="Bugs" index="5" instance=ExtResource("10_0wvdk")]
 position = Vector2(8386, -722)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Moth4" index="7"]
 curve = SubResource("Curve2D_68bhg")
 
-[node name="Beetle3" parent="Bugs" index="9" instance=ExtResource("5_aqaq6")]
-position = Vector2(9008, 1532)
-
-[node name="Path2D" type="Path2D" parent="Bugs/Beetle3" index="7"]
-curve = SubResource("Curve2D_h7bpu")
-
-[node name="Moth5" parent="Bugs" index="10" instance=ExtResource("10_0wvdk")]
+[node name="Moth5" parent="Bugs" index="6" instance=ExtResource("10_0wvdk")]
 position = Vector2(10238, 171)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Moth5" index="7"]
 curve = SubResource("Curve2D_umi12")
 
-[node name="Moth6" parent="Bugs" index="11" instance=ExtResource("10_0wvdk")]
+[node name="Moth6" parent="Bugs" index="7" instance=ExtResource("10_0wvdk")]
 position = Vector2(10113, -902)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Moth6" index="7"]
 curve = SubResource("Curve2D_nvp7i")
 
-[node name="Fly2" parent="Bugs" index="12" instance=ExtResource("17_1pv6n")]
+[node name="Fly2" parent="Bugs" index="8" instance=ExtResource("17_1pv6n")]
 position = Vector2(10786, -987)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Fly2" index="7"]
 curve = SubResource("Curve2D_0wcf7")
 
-[node name="Slug3" parent="Bugs" index="13" instance=ExtResource("4_shqu2")]
+[node name="Slug3" parent="Bugs" index="9" instance=ExtResource("4_shqu2")]
 position = Vector2(11738, 1509)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Slug3" index="7"]
 curve = SubResource("Curve2D_0qgwh")
 
-[node name="Fly3" parent="Bugs" index="14" instance=ExtResource("17_1pv6n")]
+[node name="Fly3" parent="Bugs" index="10" instance=ExtResource("17_1pv6n")]
 position = Vector2(11749, 607)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Fly3" index="7"]
 curve = SubResource("Curve2D_al5lp")
 
-[node name="Moth" parent="Bugs" index="15" instance=ExtResource("10_0wvdk")]
+[node name="Moth" parent="Bugs" index="11" instance=ExtResource("10_0wvdk")]
 position = Vector2(666, 666)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Moth" index="7"]
 curve = SubResource("Curve2D_sg8yu")
 
-[node name="Slug4" parent="Bugs" index="16" instance=ExtResource("4_shqu2")]
+[node name="Slug4" parent="Bugs" index="12" instance=ExtResource("4_shqu2")]
 position = Vector2(2750, 395)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Slug4" index="7"]
 curve = SubResource("Curve2D_0g1mh")
 
-[node name="Beetle5" parent="Bugs" index="17" instance=ExtResource("5_aqaq6")]
+[node name="Fly4" parent="Bugs" index="13" instance=ExtResource("17_1pv6n")]
+position = Vector2(1223, 926)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Fly4" index="7"]
+curve = SubResource("Curve2D_8k1m5")
+
+[node name="Cockroach" parent="Bugs" index="14" instance=ExtResource("18_kad5i")]
+position = Vector2(1933, 896)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Cockroach" index="7"]
+curve = SubResource("Curve2D_qdwi4")
+
+[node name="Moth3" parent="Bugs" index="15" instance=ExtResource("10_0wvdk")]
+position = Vector2(3619, 966)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Moth3" index="7"]
+curve = SubResource("Curve2D_7wkvl")
+
+[node name="Snail" parent="Bugs" index="16" instance=ExtResource("19_pbicw")]
+position = Vector2(4267, 931)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Snail" index="7"]
+curve = SubResource("Curve2D_q4lnx")
+
+[node name="Snail2" parent="Bugs" index="17" instance=ExtResource("19_pbicw")]
+position = Vector2(3956, 327)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Snail2" index="7"]
+curve = SubResource("Curve2D_7sgms")
+
+[node name="Worms" parent="Bugs" index="18" instance=ExtResource("20_7jyby")]
+position = Vector2(5303, -533)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Worms" index="7"]
+curve = SubResource("Curve2D_lc7ia")
+
+[node name="Fly5" parent="Bugs" index="19" instance=ExtResource("17_1pv6n")]
+position = Vector2(5797, 601)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Fly5" index="7"]
+curve = SubResource("Curve2D_60yta")
+
+[node name="Beetle" parent="Bugs" index="20" instance=ExtResource("5_aqaq6")]
+position = Vector2(6621, 268)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Beetle" index="7"]
+curve = SubResource("Curve2D_86ja8")
+
+[node name="Cockroach2" parent="Bugs" index="21" instance=ExtResource("18_kad5i")]
+position = Vector2(8502, -179)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Cockroach2" index="7"]
+curve = SubResource("Curve2D_e7bak")
+
+[node name="Cockroach3" parent="Bugs" index="22" instance=ExtResource("18_kad5i")]
+position = Vector2(10872, -140)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Cockroach3" index="7"]
+curve = SubResource("Curve2D_imgob")
+
+[node name="Snail3" parent="Bugs" index="23" instance=ExtResource("19_pbicw")]
+position = Vector2(8555, 1156)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Snail3" index="7"]
+curve = SubResource("Curve2D_70ol0")
+
+[node name="Slug2" parent="Bugs" index="24" instance=ExtResource("4_shqu2")]
+position = Vector2(9514, 1557)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Slug2" index="7"]
+curve = SubResource("Curve2D_ctj3i")
+
+[node name="Worms2" parent="Bugs" index="25" instance=ExtResource("20_7jyby")]
+position = Vector2(11132, 1569)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Worms2" index="7"]
+curve = SubResource("Curve2D_jhx52")
+
+[node name="Beetle5" parent="Bugs" index="26" instance=ExtResource("5_aqaq6")]
 position = Vector2(3213, 1542)
 
 [node name="Path2D" type="Path2D" parent="Bugs/Beetle5" index="7"]

@@ -6,3 +6,4 @@
 [node name="FlyingTasteDebuf" instance=ExtResource("1_f7gqn")]
 script = ExtResource("2_38b2t")
 value = 2.0
+show_in_ui = false

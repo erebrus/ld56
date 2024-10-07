@@ -413,7 +413,7 @@ target_position = Vector2(0, 10)
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("29_ioey7")
-max_energy = 200.0
+max_energy = 150.0
 
 [node name="sfx" type="Node2D" parent="."]
 
@@ -439,14 +439,17 @@ bus = &"Sound"
 
 [node name="sfx_tongue_attack" type="AudioStreamPlayer2D" parent="sfx"]
 stream = SubResource("AudioStreamRandomizer_ilc28")
+volume_db = 4.0
 bus = &"Sound"
 
 [node name="sfx_tongue_rope" type="AudioStreamPlayer2D" parent="sfx"]
 stream = SubResource("AudioStreamRandomizer_44nny")
+volume_db = 4.0
 bus = &"Sound"
 
 [node name="sfx_tongue_miss" type="AudioStreamPlayer2D" parent="sfx"]
 stream = SubResource("AudioStreamRandomizer_ggimj")
+volume_db = 4.0
 bus = &"Sound"
 
 [node name="sfx_death" type="AudioStreamPlayer2D" parent="sfx"]

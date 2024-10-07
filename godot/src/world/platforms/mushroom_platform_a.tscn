@@ -6,8 +6,8 @@
 [node name="MushroomPlatformA" instance=ExtResource("1_7bluu")]
 
 [node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1, 1)
 texture = ExtResource("2_4goun")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
-polygon = PackedVector2Array(-89, 34, -89, 13, -66, -16, -36, -29, 0, -34, 37, -30, 66, -18, 94, 15, 94, 36, 28, 60, -20, 60)
-one_way_collision = true
+polygon = PackedVector2Array(-180, 66, -169, 7, -122, -40, -46, -67, 0, -72, 59, -67, 132, -39, 178, 7, 187, 69, 114, 87, 75, 119, -37, 122, -102, 87)
