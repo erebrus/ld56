@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://b5lgniaadan1y"]
+[gd_scene load_steps=74 format=3 uid="uid://b5lgniaadan1y"]
 
 [ext_resource type="Script" path="res://src/frog/frog.gd" id="1_mohle"]
 [ext_resource type="Script" path="res://src/frog/frog_controller.gd" id="2_mpehw"]
@@ -63,6 +63,7 @@
 [ext_resource type="AudioStream" uid="uid://cf300jocm08ih" path="res://assets/sfx/MC_Tongue_Hit_Miss_2.wav" id="53_qmnij"]
 [ext_resource type="AudioStream" uid="uid://bntblipjfkf7a" path="res://assets/sfx/MC_Tongue_Hit_Miss_3.wav" id="54_t1b2p"]
 [ext_resource type="AudioStream" uid="uid://cwtfuvx388sjm" path="res://assets/sfx/Death_zero_energy.wav" id="57_jrolm"]
+[ext_resource type="AudioStream" uid="uid://dhknts4p0lteu" path="res://assets/sfx/MC_Wins.wav" id="64_7gmnc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g36ww"]
 animations = [{
@@ -436,6 +437,11 @@ bus = &"Sound"
 
 [node name="sfx_death" type="AudioStreamPlayer2D" parent="sfx"]
 stream = ExtResource("57_jrolm")
+volume_db = 3.0
+bus = &"Sound"
+
+[node name="sfx_win" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("64_7gmnc")
 volume_db = 3.0
 bus = &"Sound"
 

@@ -245,3 +245,6 @@ swing_gravity = 1000
 limit_left = 0
 limit_right = 7500
 limit_bottom = 1700
+
+[node name="music" parent="." index="10"]
+bus = &"Music"

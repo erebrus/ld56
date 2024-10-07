@@ -28,6 +28,7 @@ func _ready():
 	Events.tongue_attached.connect(_on_tongue_attached)
 	Events.tongue_detached.connect(_on_tongue_detached)
 	Events.debug_toggled.connect(_on_debug_toggled)
+	Events.reached_level_end.connect(func():$sfx/sfx_win.play())
 
 func is_near_floor() -> bool:
 	return rc_down.is_colliding()
