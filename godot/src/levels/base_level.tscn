@@ -1,12 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://cnqbkbby1d1sd"]
+[gd_scene load_steps=15 format=3 uid="uid://cnqbkbby1d1sd"]
 
 [ext_resource type="Script" path="res://src/levels/base_level.gd" id="1_mo5ug"]
 [ext_resource type="PackedScene" uid="uid://b5lgniaadan1y" path="res://src/frog/frog.tscn" id="1_nfuix"]
 [ext_resource type="Texture2D" uid="uid://bpj7fwfxeafy4" path="res://assets/gfx/environment/Background_Back.png" id="1_shssx"]
 [ext_resource type="Texture2D" uid="uid://dqackkt1tgskd" path="res://assets/gfx/environment/Background_Mid.png" id="2_wx1s1"]
 [ext_resource type="Texture2D" uid="uid://d1m5ne1avac35" path="res://assets/gfx/environment/Background_Front.png" id="3_f1ro6"]
-[ext_resource type="Texture2D" uid="uid://btp7ukt44ptqg" path="res://assets/gfx/environment/bg_ground1.png" id="5_r0fns"]
-[ext_resource type="Texture2D" uid="uid://b6r427xl7vl3d" path="res://assets/gfx/environment/bg_ground2.png" id="6_2n5wa"]
+[ext_resource type="PackedScene" uid="uid://b8wiaokjcgunm" path="res://src/world/grass.tscn" id="5_ejkmm"]
 [ext_resource type="PackedScene" uid="uid://c06tqqbevl64b" path="res://src/ui/healthbar.tscn" id="6_16uxq"]
 [ext_resource type="PackedScene" uid="uid://bfsfbydiqr0gr" path="res://src/eagle/eagle.tscn" id="6_x2vej"]
 [ext_resource type="AudioStream" uid="uid://c21xktcb61m7j" path="res://assets/sfx/Amb_rain_forest_loop.mp3" id="7_eodqv"]
@@ -14,9 +13,6 @@
 [ext_resource type="AudioStream" uid="uid://wjyg14aw2lmc" path="res://assets/music/Frogs_Life.mp3" id="9_ojf7k"]
 [ext_resource type="AudioStream" uid="uid://bkdx738wd3yuf" path="res://assets/music/Frogs_Life_Hide.mp3" id="10_2l27k"]
 [ext_resource type="PackedScene" uid="uid://c3evg886be6fd" path="res://src/almanac/almanac.tscn" id="10_5wjr6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgh8x"]
-size = Vector2(3840, 147)
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2n5mq"]
 stream_count = 2
@@ -61,98 +57,25 @@ offset_right = 3840.0
 offset_bottom = 1754.0
 texture = ExtResource("3_f1ro6")
 
-[node name="Ground" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
+[node name="TheRealGround" type="Node2D" parent="."]
 
-[node name="grass" type="StaticBody2D" parent="Ground"]
-position = Vector2(0, 1023)
+[node name="Grass" parent="TheRealGround" instance=ExtResource("5_ejkmm")]
+position = Vector2(0, 1524)
 
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass"]
-position = Vector2(960, 520)
-texture = ExtResource("5_r0fns")
+[node name="Grass2" parent="TheRealGround" instance=ExtResource("5_ejkmm")]
+position = Vector2(3838, 1524)
 
-[node name="Sprite2D2" type="Sprite2D" parent="Ground/grass"]
-position = Vector2(2880, 520)
-texture = ExtResource("6_2n5wa")
+[node name="Grass3" parent="TheRealGround" instance=ExtResource("5_ejkmm")]
+position = Vector2(7676, 1524)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass"]
-position = Vector2(1920, 618.5)
-shape = SubResource("RectangleShape2D_jgh8x")
+[node name="Grass4" parent="TheRealGround" instance=ExtResource("5_ejkmm")]
+position = Vector2(11514, 1524)
 
-[node name="grass2" type="StaticBody2D" parent="Ground"]
-position = Vector2(3840, 1023)
+[node name="Grass5" parent="TheRealGround" instance=ExtResource("5_ejkmm")]
+position = Vector2(15352, 1524)
 
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass2"]
-position = Vector2(960, 520)
-texture = ExtResource("5_r0fns")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Ground/grass2"]
-position = Vector2(2880, 520)
-texture = ExtResource("6_2n5wa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass2"]
-position = Vector2(1920, 618.5)
-shape = SubResource("RectangleShape2D_jgh8x")
-
-[node name="grass3" type="StaticBody2D" parent="Ground"]
-position = Vector2(7680, 1023)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass3"]
-position = Vector2(960, 520)
-texture = ExtResource("5_r0fns")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Ground/grass3"]
-position = Vector2(2880, 520)
-texture = ExtResource("6_2n5wa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass3"]
-position = Vector2(1920, 618.5)
-shape = SubResource("RectangleShape2D_jgh8x")
-
-[node name="grass4" type="StaticBody2D" parent="Ground"]
-position = Vector2(11520, 1023)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass4"]
-position = Vector2(960, 520)
-texture = ExtResource("5_r0fns")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Ground/grass4"]
-position = Vector2(2880, 520)
-texture = ExtResource("6_2n5wa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass4"]
-position = Vector2(1920, 618.5)
-shape = SubResource("RectangleShape2D_jgh8x")
-
-[node name="grass5" type="StaticBody2D" parent="Ground"]
-position = Vector2(15360, 1023)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass5"]
-position = Vector2(960, 520)
-texture = ExtResource("5_r0fns")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Ground/grass5"]
-position = Vector2(2880, 520)
-texture = ExtResource("6_2n5wa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass5"]
-position = Vector2(1920, 618.5)
-shape = SubResource("RectangleShape2D_jgh8x")
-
-[node name="grass6" type="StaticBody2D" parent="Ground"]
-position = Vector2(19200, 1023)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/grass6"]
-position = Vector2(960, 520)
-texture = ExtResource("5_r0fns")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Ground/grass6"]
-position = Vector2(2880, 520)
-texture = ExtResource("6_2n5wa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/grass6"]
-position = Vector2(1920, 618.5)
-shape = SubResource("RectangleShape2D_jgh8x")
+[node name="Grass6" parent="TheRealGround" instance=ExtResource("5_ejkmm")]
+position = Vector2(19190, 1524)
 
 [node name="Scenery" type="Node2D" parent="."]
 
