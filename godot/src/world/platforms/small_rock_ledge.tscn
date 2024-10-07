@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpqp7r3gltf6v"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_ke5ye"]
+[ext_resource type="Texture2D" uid="uid://bgiqd3uw2kwns" path="res://assets/gfx/environment/SmallRockLedge.png" id="2_6mk4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8t7th"]
+size = Vector2(124.518, 17)
+
+[node name="SmallRockLedge" instance=ExtResource("1_ke5ye")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_6mk4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(3.75881, -26.0416)
+rotation = -0.0296628
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8t7th")
+one_way_collision = true
