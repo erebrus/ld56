@@ -12,6 +12,7 @@ extends Bug
 @onready var sting_offset:Vector2=get_node("HurtArea").position
 @onready var sting: Node = $xsm/has_target/sting
 @onready var detection_area: Area2D = $DetectionArea
+@onready var sfx_fly: AudioStreamPlayer2D = $sfx/sfx_fly
 
 
 var target:CharacterBody2D
@@ -50,6 +51,7 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 	if body==target:
 		target=null
 		set_detection_radius(patrol_detection_range)
+		
 		Events.threat_off.emit()
 
 	if xsm.is_active("has_target"):

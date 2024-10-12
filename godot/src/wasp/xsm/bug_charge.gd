@@ -6,6 +6,7 @@ extends StateAnimation
 
 func _on_enter(_args) -> void:
 	target.speed=target.charge_speed
+	target.sfx_fly.pitch_scale=1.1
 	add_timer("charge",charge_time)
 
 func _on_update(_delta) -> void:

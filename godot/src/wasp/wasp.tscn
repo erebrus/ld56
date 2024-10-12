@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ctvu6tarsq4cl"]
+[gd_scene load_steps=24 format=3 uid="uid://ctvu6tarsq4cl"]
 
 [ext_resource type="Script" path="res://src/wasp/wasp.gd" id="1_iub5t"]
 [ext_resource type="Texture2D" uid="uid://c5c05dnf2rtd5" path="res://assets/gfx/bugs/wasp/flying.png" id="1_ltmny"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://src/wasp/xsm/bug_charge.gd" id="8_gaxdi"]
 [ext_resource type="Script" path="res://src/wasp/xsm/bug_sting.gd" id="9_bnxnt"]
 [ext_resource type="Script" path="res://src/wasp/xsm/bug_retreat.gd" id="10_dlugq"]
+[ext_resource type="AudioStream" uid="uid://d2u76q1i7ql3p" path="res://assets/496237__fury12__bee-flying-loop.wav" id="11_cp5vm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74euu"]
 atlas = ExtResource("1_ltmny")
@@ -209,6 +210,14 @@ shape = SubResource("CircleShape2D_mknh7")
 libraries = {
 "": SubResource("AnimationLibrary_bj0li")
 }
+
+[node name="sfx" type="Node2D" parent="."]
+
+[node name="sfx_fly" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("11_cp5vm")
+volume_db = -6.0
+autoplay = true
+bus = &"Sound"
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
