@@ -23,6 +23,9 @@ func on_attack():
 	Logger.info("Attacked")
 	change_state("sting")
 
+func _on_exit(_args):
+	del_timer("charge")
+	
 func _on_timeout(_name) -> void:
 	if _name == "charge":
 		change_state("prepare")

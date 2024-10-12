@@ -26,6 +26,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	target=body
 	if xsm.is_active("no_target"):
+		Logger.info("Changing to prepare")
 		xsm.change_state("prepare")
 	
 
@@ -35,6 +36,7 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 		target=null
 	if xsm.is_active("has_target"):
 		xsm.change_state("move")
+		Logger.info("target gone")
 
 
 func _on_hurt_area_body_entered(body: Node2D) -> void:

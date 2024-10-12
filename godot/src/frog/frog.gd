@@ -171,3 +171,6 @@ func _on_head_shot_missed() -> void:
 func _on_energy_timer_timeout() -> void:
 	if not immune:
 		health_component.on_take_damage(energy_drop_rate)
+
+func on_hurt(dmg:float)->void:
+	health_component.on_take_damage(dmg)

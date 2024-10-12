@@ -6,7 +6,7 @@ class_name XSMFrogJump
 
 var lifted:=false
 func _on_enter(_args) -> void:
-	Logger.info("state:%s " % name)
+	Logger.debug("state:%s " % name)
 	if target:
 		target.state_name=name
 	lifted=false
