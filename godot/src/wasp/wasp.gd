@@ -66,4 +66,5 @@ func _on_hurt_area_body_entered(body: Node2D) -> void:
 
 func catch() -> bool:
 	#xsm.change_state("prepare")
+	#_on_generic_controller_forward("on_stun")
 	return false

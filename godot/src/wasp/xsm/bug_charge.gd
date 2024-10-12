@@ -4,12 +4,16 @@ extends StateAnimation
 
 @export var charge_time:float = 4
 
+var stunned:bool = false
+
 func _on_enter(_args) -> void:
 	target.speed=target.charge_speed
 	target.sfx_fly.pitch_scale=1.1
 	add_timer("charge",charge_time)
 
 func _on_update(_delta) -> void:
+	if stunned:
+		return
 	var bug:Bug = target
 	if bug.target == null:		
 		change_state("move")
@@ -27,6 +31,11 @@ func on_attack():
 func _on_exit(_args):
 	del_timer("charge")
 	
+func on_stun():
+	stunned=true
+	add_timer("stunned",.1)
 func _on_timeout(_name) -> void:
 	if _name == "charge":
 		change_state("prepare")
+	if _name == "stunned":
+		stunned=false
