@@ -2,7 +2,7 @@
 @icon("res://addons/xsm/icons/state_animation.png")
 extends StateAnimation
 
-@export var prepare_time:float=2
+@export var prepare_time:float=1
 
 func _on_enter(_args) -> void:
 	Logger.info("wasp:%s " % name)
