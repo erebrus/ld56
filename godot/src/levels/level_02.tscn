@@ -572,3 +572,4 @@ stream = SubResource("AudioStreamSynchronized_6xx52")
 position = Vector2(12833, -364)
 
 [editable path="Frog"]
+[editable path="Frog/Head"]

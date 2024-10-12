@@ -299,3 +299,4 @@ shape = SubResource("RectangleShape2D_wia2p")
 [connection signal="body_entered" from="TriggerEagle" to="." method="_on_trigger_eagle_body_entered"]
 
 [editable path="Frog"]
+[editable path="Frog/Head"]

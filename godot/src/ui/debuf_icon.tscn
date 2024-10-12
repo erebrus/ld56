@@ -12,6 +12,7 @@ offset_bottom = 52.0
 script = ExtResource("1_kxfsj")
 
 [node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_vet1s")
