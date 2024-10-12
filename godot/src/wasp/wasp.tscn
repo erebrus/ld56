@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ctvu6tarsq4cl"]
+[gd_scene load_steps=23 format=3 uid="uid://ctvu6tarsq4cl"]
 
 [ext_resource type="Script" path="res://src/wasp/wasp.gd" id="1_iub5t"]
 [ext_resource type="Texture2D" uid="uid://c5c05dnf2rtd5" path="res://assets/gfx/bugs/wasp/flying.png" id="1_ltmny"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://src/bugs/xsm/bug_move.gd" id="5_jfpiw"]
 [ext_resource type="Script" path="res://src/wasp/xsm/bug_prepare.gd" id="6_mc2tg"]
 [ext_resource type="Script" path="res://src/wasp/xsm/bug_charge.gd" id="8_gaxdi"]
+[ext_resource type="Script" path="res://src/wasp/xsm/bug_retreat.gd" id="10_dlugq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74euu"]
 atlas = ExtResource("1_ltmny")
@@ -143,6 +144,7 @@ next_state = NodePath("../no_target")
 
 [node name="prepare" type="Node" parent="xsm/has_target"]
 script = ExtResource("6_mc2tg")
+prepare_time = 3.0
 animation_player = NodePath("../../../AnimationPlayer")
 anim_on_enter = "idle"
 loop_mode = 0
@@ -155,6 +157,7 @@ next_state = NodePath("../prepare")
 
 [node name="charge" type="Node" parent="xsm/has_target"]
 script = ExtResource("8_gaxdi")
+charge_time = null
 animation_player = NodePath("../../../AnimationPlayer")
 anim_on_enter = "move"
 loop_mode = 0
@@ -175,7 +178,10 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../prepare")
+next_state = NodePath("../retreat")
+
+[node name="retreat" type="Node" parent="xsm/has_target"]
+script = ExtResource("10_dlugq")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0

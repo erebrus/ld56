@@ -3,7 +3,7 @@ extends Bug
 
 
 @export var patrol_speed:float =100
-@export var charge_speed:float =500 
+@export var charge_speed:float =900 
 @export var attack_damage:float = 20
 
 @onready var sting_offset:Vector2=get_node("HurtArea").position
