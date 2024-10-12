@@ -41,7 +41,7 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 	if xsm.is_active("no_target"):
 		Logger.info("Changing to prepare")
 		set_detection_radius(attack_detection_range)
-
+		Events.threat_on.emit()
 		xsm.change_state("prepare")
 	
 
@@ -50,6 +50,7 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 	if body==target:
 		target=null
 		set_detection_radius(patrol_detection_range)
+		Events.threat_off.emit()
 
 	if xsm.is_active("has_target"):
 		xsm.change_state("move")
@@ -59,3 +60,8 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 func _on_hurt_area_body_entered(body: Node2D) -> void:
 	Logger.info("wasp hurtbox found player")
 	_on_generic_controller_forward("on_attack")
+
+
+func catch() -> bool:
+	#xsm.change_state("prepare")
+	return false
