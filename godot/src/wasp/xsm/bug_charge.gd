@@ -9,9 +9,14 @@ func _on_enter(_args) -> void:
 
 func _on_update(_delta) -> void:
 	var bug:Bug = target
-	if target == null:		
+	if bug.target == null:		
 		change_state("move")
-	bug.direction = sign(target.global_position.x-bug.global_position.x)
-	bug.velocity= bug.global_position.move_toward(target.global_position,bug.speed)
+	bug.direction = sign(bug.target.global_position.x-bug.global_position.x)
+	var target_pos=bug.target.global_position-target.sting_offset+bug.target.sprite_offset
+	bug.velocity= (target_pos - bug.global_position).normalized()*bug.speed
 	bug.move_and_slide()
 		
+
+func on_attack():
+	Logger.info("Attacked")
+	change_state("sting")

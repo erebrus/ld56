@@ -78,3 +78,12 @@ func next_wp():
 	wp_idx += 1
 	if wp_idx>=waypoints.size():
 		wp_idx=0
+
+func _on_generic_controller_forward(method_name: String, args = null):
+	for  s in xsm.active_states:
+		var state= xsm.get_state(s)
+		if state.has_method(method_name):
+			if args == null:
+				state.call(method_name)
+			else:
+				state.call(method_name, args)
