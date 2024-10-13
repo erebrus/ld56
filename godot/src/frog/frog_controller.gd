@@ -190,16 +190,15 @@ func process_movement(delta):
 	#var v = get_body().velocity
 
 	get_body().move_and_slide()
-	var found_rock:=false
-	for sidx in range(get_body().get_slide_collision_count()):
-		var c = get_body().get_slide_collision(sidx).get_collider() 
+	if get_body().get_slide_collision_count():
+		var c = get_body().get_slide_collision(0).get_collider() 
 		var cn = c.name
 		if c.name.to_lower().begins_with("rock"):
-			found_rock=true
-			break
-	floor_type = Types.FloorType.Rock if found_rock else Types.FloorType.Grass
- 
-		
+			floor_type = Types.FloorType.Rock
+		else:
+			Types.FloorType.Grass
+		if c.has_method("on_contact"):
+			c.on_contact()
 		
 	
 func check_just_started_falling()->bool:
