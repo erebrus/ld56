@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://cd7ph3p1q0yhi"]
+[gd_scene load_steps=16 format=3 uid="uid://cd7ph3p1q0yhi"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_c56io"]
 [ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="2_yokkj"]
 [ext_resource type="PackedScene" uid="uid://boenkwcf4c06o" path="res://src/world/platforms/branch.tscn" id="3_f3b5t"]
-[ext_resource type="PackedScene" uid="uid://dkyx6xyum3prp" path="res://src/bugs/slug.tscn" id="4_yqxac"]
+[ext_resource type="PackedScene" uid="uid://bmd536tfchtgq" path="res://src/world/Trampoline.tscn" id="4_7i844"]
+[ext_resource type="PackedScene" path="res://src/bugs/slug.tscn" id="4_yqxac"]
 [ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="5_ww8ov"]
-[ext_resource type="PackedScene" uid="uid://dn40sagnjlvbk" path="res://src/bugs/moth.tscn" id="6_ea8q5"]
+[ext_resource type="PackedScene" path="res://src/bugs/moth.tscn" id="6_ea8q5"]
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="7_74ymq"]
-[ext_resource type="PackedScene" uid="uid://bc00r0hq8mfh" path="res://src/bugs/cockroach.tscn" id="8_02lle"]
+[ext_resource type="PackedScene" path="res://src/bugs/cockroach.tscn" id="8_02lle"]
 
 [sub_resource type="Curve2D" id="Curve2D_ulvv2"]
 _data = {
@@ -58,6 +59,9 @@ script = null
 [node name="rock1" parent="Scenery" index="2" instance=ExtResource("2_yokkj")]
 position = Vector2(1378.62, 1327.63)
 script = null
+
+[node name="Trampoline" parent="Scenery" index="3" instance=ExtResource("4_7i844")]
+position = Vector2(860, 1460)
 
 [node name="Slug" parent="Bugs" index="0" instance=ExtResource("4_yqxac")]
 position = Vector2(395.432, 1535.28)

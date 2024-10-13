@@ -28,6 +28,7 @@ signal energy_changed(value:float)
 var state_name:String
 var max_heal=100
 var immune:=false
+var trampoline_strength:float=0
 
 func _ready():
 	Globals.player = self
@@ -38,6 +39,10 @@ func _ready():
 	Events.debug_toggled.connect(_on_debug_toggled)
 	#Events.reached_level_end.connect(func():$sfx/sfx_win.play())
 	Events.combo_achieved.connect(_on_combo_achieved)
+
+func set_trampoline(v:float):
+	trampoline_strength=v
+	
 func is_near_floor() -> bool:
 	return rc_down.is_colliding()
 	

@@ -279,7 +279,7 @@ func double_jump():
 
 ## Perform a ground jump without checking if the player is able to.
 func ground_jump():
-	get_body().velocity.y = -jump_velocity
+	get_body().velocity.y = -jump_velocity - get_body().trampoline_strength
 	current_jump_type = JumpType.GROUND
 	jumps_left -= 1
 	#coyote_timer.stop()

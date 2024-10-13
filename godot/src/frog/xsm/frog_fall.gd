@@ -36,7 +36,7 @@ func _on_timeout(_name) -> void:
 		soft_land=false
 
 func _on_controller_hit_ground():
-	if soft_land:
+	if soft_land and get_body().trampoline_strength==0:
 		Logger.info("fall hit ground")
 		change_state("idle")
 	else:
