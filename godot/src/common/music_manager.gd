@@ -43,7 +43,7 @@ func fade_stream(node:AudioStreamPlayer, duration := 1.0):
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	tween.tween_property(node,"volume_db",-20 , duration)
 	await tween.finished
-	if node:
+	if node and is_instance_valid(node):
 		node.stop()
 
 func _helper_set_volume(volume_db:float, stream:AudioStreamSynchronized, id:int):
