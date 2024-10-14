@@ -471,6 +471,9 @@ autostart = true
 [node name="Debufs" type="Node" parent="."]
 unique_name_in_owner = true
 
+[node name="DebufAnchor" type="Marker2D" parent="."]
+position = Vector2(2.22566, -164.389)
+
 [connection signal="direction_changed" from="Controller" to="." method="_on_controller_direction_changed"]
 [connection signal="hit_ground" from="Controller" to="." method="_on_controller_hit_ground"]
 [connection signal="hopped" from="Controller" to="." method="_on_controller_hopped"]
