@@ -23,12 +23,11 @@ func _ready():
 	Events.bug_freeze_toggle.connect(func(v): xsm.disabled=v)
 	
 func catch() -> bool:
-	if Globals.rng.randf() > dodge_chance:
+	if not xsm.is_active("dodge"):
 		Events.bug_caught.emit(self)
 		do_death()
 		return true
 	else:
-		do_dodge()
 		return false
 
 func do_death():
@@ -78,3 +77,11 @@ func next_wp():
 	wp_idx += 1
 	if wp_idx>=waypoints.size():
 		wp_idx=0
+
+
+func _on_reaction_area_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	if Globals.rng.randf() < dodge_chance:
+		do_dodge()
+		
+func set_collision(v:bool):
+	$CollisionShape2D.disabled=not v

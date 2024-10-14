@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bi641rjvj6uib"]
+[gd_scene load_steps=13 format=3 uid="uid://bpiob4y1mesw1"]
 
 [ext_resource type="Script" path="res://src/ui/combo_bar.gd" id="1_vtrm4"]
 [ext_resource type="Texture2D" uid="uid://dlnvgbjfoq3g1" path="res://assets/gfx/ui/ComboContainer.png" id="2_rmfhk"]

@@ -42,8 +42,8 @@ func retract() -> void:
 	
 
 func catch_bug(bug: Bug) -> void:
-	caught_bug=bug
-	bug.catch()	
+	if bug.catch():	
+		caught_bug=bug	
 	retract()
 	
 
