@@ -6,6 +6,7 @@ class_name Bug extends CharacterBody2D
 @export var dodge_chance:float = 0
 @export var speed:float = 20
 @export var can_be_caught:=true
+@export var respawn_period:float = 10
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @onready var xsm: State = $xsm
@@ -37,6 +38,7 @@ func catch() -> bool:
 func do_death():
 	visible=false
 	collision_mask=0
+	xsm.disabled= true
 	if sfx_death.stream:
 		sfx_death.play()
 		await sfx_death.finished
@@ -44,7 +46,16 @@ func do_death():
 func free_if_done():
 	if sfx_death.playing:
 		await sfx_death.finished
-	queue_free()
+	if respawn_period<=0:
+		queue_free()
+	else:
+		await get_tree().create_timer(respawn_period).timeout
+		global_position=waypoints[0]
+		wp_idx=0
+		xsm.disabled= false
+		xsm.change_state("idle")
+		collision_mask=4 #TODO use plugin for layers
+		visible = true
 	
 func do_dodge():
 	xsm.change_state("dodge")
