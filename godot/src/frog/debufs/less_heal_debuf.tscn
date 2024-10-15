@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://nvvc25of2bms"]
+[gd_scene load_steps=4 format=3 uid="uid://dumue1jem2mnx"]
 
 [ext_resource type="PackedScene" uid="uid://bv0h252ykncnm" path="res://src/frog/debufs/debuf.tscn" id="1_ff648"]
 [ext_resource type="Script" path="res://src/frog/debufs/less_heal_debuf.gd" id="2_8kuf5"]
@@ -7,6 +7,7 @@
 [node name="LessHealDebuf" instance=ExtResource("1_ff648")]
 script = ExtResource("2_8kuf5")
 value = 2.0
+text = "Less Heal"
 
 [node name="sfx_on" parent="." index="1"]
 stream = ExtResource("3_lxk0i")

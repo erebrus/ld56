@@ -144,6 +144,15 @@ func process_debuf(new_debuf:Debuf):
 			new_debuf.cancel_debuf(self)
 		else:
 			new_debuf.expired.connect(func(debuf):debuf.cancel_debuf(self))
+	spawn_debuf_label(new_debuf)
+
+func spawn_debuf_label(debuf:Debuf):
+	var label = Types.DEBUF_LABEL_SCENE.instantiate()
+	label.text = debuf.name
+	label.anchor = $DebufAnchor
+	get_parent().add_child(label)
+	label.global_position = label.anchor.global_position
+	
 func process_bug(bug:Bug)->void:
 	var heal_value:float = min(max_heal,bug.energy_value)
 	Logger.info("Healing for %.2f" % heal_value)

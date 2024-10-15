@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://nu5dsml6i6b0"]
+[gd_scene load_steps=4 format=3 uid="uid://caqqrdpsem2s4"]
 
 [ext_resource type="PackedScene" uid="uid://bv0h252ykncnm" path="res://src/frog/debufs/debuf.tscn" id="1_nbdjg"]
 [ext_resource type="AudioStream" uid="uid://8s3sftqfthkl" path="res://assets/sfx/Debuf_slowdown.wav" id="2_g6klt"]
@@ -7,6 +7,7 @@
 [node name="SlowdownDebuf" instance=ExtResource("1_nbdjg")]
 script = ExtResource("2_j6qvg")
 value = 5.0
+text = "Slowdown"
 
 [node name="sfx_on" parent="." index="1"]
 stream = ExtResource("2_g6klt")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://l2gm1gfo1250"]
+[gd_scene load_steps=3 format=3 uid="uid://c32iu4i04tta"]
 
 [ext_resource type="PackedScene" uid="uid://bv0h252ykncnm" path="res://src/frog/debufs/debuf.tscn" id="1_h6g4j"]
 [ext_resource type="Script" path="res://src/frog/debufs/triple_double_buff.gd" id="2_gd3ny"]
@@ -7,6 +7,7 @@
 script = ExtResource("2_gd3ny")
 value = 20
 show_in_ui = false
+text = "Triple Jump"
 
 [node name="sfx_off" parent="." index="2"]
 stream = null

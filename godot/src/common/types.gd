@@ -1,6 +1,7 @@
 extends Node
 
 const RAINDROP_SCENE:PackedScene = preload("res://src/world/rain/raindrop.tscn")
+const DEBUF_LABEL_SCENE:PackedScene = preload("res://src/frog/debufs/debuf_label.tscn")
 
 enum FloorType{Grass, Rock}
 enum LossType {BIRD, ENERGY}
