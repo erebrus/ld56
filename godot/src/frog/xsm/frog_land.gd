@@ -3,6 +3,13 @@
 extends XSMFrog
 class_name XSMFrogLand
 
+func _on_anim_finished():
+	if get_body().trampoline_strength>0:
+		get_ctl().reset_jumps_left()
+		get_ctl().ground_jump()
+	else:
+		change_state("idle")
+	
 
 func _on_enter(_args) -> void:
 	Logger.debug("state:%s " % name)
