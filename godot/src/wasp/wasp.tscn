@@ -146,7 +146,6 @@ next_state = NodePath("../no_target")
 
 [node name="prepare" type="Node" parent="xsm/has_target"]
 script = ExtResource("6_mc2tg")
-prepare_time = 3.0
 animation_player = NodePath("../../../AnimationPlayer")
 anim_on_enter = "idle"
 loop_mode = 0
@@ -160,6 +159,7 @@ next_state = NodePath("../prepare")
 [node name="charge" type="Node" parent="xsm/has_target"]
 script = ExtResource("8_gaxdi")
 charge_time = 1.5
+rotation_speed = 1.0
 animation_player = NodePath("../../../AnimationPlayer")
 anim_on_enter = "move"
 loop_mode = 0

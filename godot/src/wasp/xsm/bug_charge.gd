@@ -11,11 +11,14 @@ func _on_enter(_args) -> void:
 	var bug:Bug = target
 	bug.speed=bug.charge_speed
 	bug.sfx_fly.pitch_scale=1.1
-	bug.velocity==Vector2.ZERO
-	#bug.velocity=(bug.target.global_position+bug.target.sprite_offset)-(bug.global_position+bug.sting_offset)*target.speed
-	#Logger.info("charge start angle: %.2f" % rad_to_deg(bug.velocity.angle()))
+	bug.velocity=	_get_direction_to_target()*bug.speed
+	#Logger.info("charge start vector: %s" % bug.velocity)
 	add_timer("charge",charge_time)
 
+func _get_direction_to_target()->Vector2:
+	var bug:Bug = target
+	return ((bug.target.global_position+bug.target.sprite_offset)
+					- (bug.global_position+bug.sting_offset)).normalized()
 func _on_update(_delta) -> void:
 	if stunned:
 		return
@@ -25,10 +28,9 @@ func _on_update(_delta) -> void:
 		return
 	bug.direction = sign(bug.target.global_position.x-bug.global_position.x)
 	
-	var desired_angle=((bug.target.global_position+bug.target.sprite_offset)-(bug.global_position+bug.sting_offset)).angle()
-	var current_angle= desired_angle if bug.velocity==Vector2.ZERO else bug.velocity.angle()
+	var desired_angle=_get_direction_to_target().angle()
+	var current_angle= bug.velocity.angle()
 	var new_angle = rotate_toward(current_angle, desired_angle, rotation_speed*_delta)
-	#Logger.info(" des: %.2f cur: %.2f     new: %.2f" % [rad_to_deg(desired_angle), rad_to_deg(current_angle), rad_to_deg(new_angle)])
 	bug.velocity = Vector2.RIGHT.rotated(new_angle)*bug.speed
 	bug.move_and_slide()
 		
