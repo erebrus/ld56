@@ -19,8 +19,8 @@ func _on_update(_delta) -> void:
 		change_state("move")
 		return
 	bug.direction = sign(bug.target.global_position.x-bug.global_position.x)
-	var target_pos=bug.target.global_position-target.sting_offset+bug.target.sprite_offset
-	bug.velocity= (target_pos - bug.global_position).normalized()*bug.speed
+	var target_vector=(bug.target.global_position+bug.target.sprite_offset)-(bug.global_position+bug.sting_offset)
+	bug.velocity= target_vector.normalized()*bug.speed
 	bug.move_and_slide()
 		
 
@@ -30,10 +30,12 @@ func on_attack():
 
 func _on_exit(_args):
 	del_timer("charge")
+	del_timer("stunned")
 	
 func on_stun():
 	stunned=true
 	add_timer("stunned",.1)
+	
 func _on_timeout(_name) -> void:
 	if _name == "charge":
 		change_state("prepare")

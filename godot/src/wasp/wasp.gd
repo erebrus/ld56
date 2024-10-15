@@ -7,7 +7,7 @@ extends Bug
 @export var attack_damage:float = 20
 
 @export var patrol_detection_range:float = 1000
-@export var attack_detection_range:float = 1500
+@export var attack_detection_range:float = 2000
 
 @onready var sting_offset:Vector2=get_node("HurtArea").position
 @onready var sting: Node = $xsm/has_target/sting
