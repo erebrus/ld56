@@ -3,7 +3,7 @@ extends Bug
 
 
 @export var patrol_speed:float =100
-@export var charge_speed:float =1200 
+@export var charge_speed:float =1500 
 @export var attack_damage:float = 20
 
 @export var patrol_detection_range:float = 1000

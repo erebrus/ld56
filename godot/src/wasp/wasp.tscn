@@ -159,6 +159,7 @@ next_state = NodePath("../prepare")
 
 [node name="charge" type="Node" parent="xsm/has_target"]
 script = ExtResource("8_gaxdi")
+charge_time = 1.5
 animation_player = NodePath("../../../AnimationPlayer")
 anim_on_enter = "move"
 loop_mode = 0
