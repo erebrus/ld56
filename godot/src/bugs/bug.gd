@@ -26,14 +26,12 @@ func _ready():
 	
 func catch() -> bool:
 	if can_be_caught:
-		if Globals.rng.randf() > dodge_chance:
+		if not xsm.is_active("dodge"):
 			Events.bug_caught.emit(self)
 			do_death()
 			return true
 		else:
-			do_dodge()
 			return false
-	return false
 
 func do_death():
 	visible=false
@@ -101,3 +99,10 @@ func _on_generic_controller_forward(method_name: String, args = null):
 				state.call(method_name)
 			else:
 				state.call(method_name, args)
+
+func _on_reaction_area_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	if Globals.rng.randf() < dodge_chance:
+		do_dodge()
+		
+func set_collision(v:bool):
+	$CollisionShape2D.disabled=not v

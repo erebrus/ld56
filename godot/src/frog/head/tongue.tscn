@@ -22,7 +22,7 @@ texture = ExtResource("2_ftwkn")
 texture_mode = 1
 
 [node name="Tip" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 16
 collision_mask = 12
 
 [node name="Sprite2D" type="Sprite2D" parent="Tip"]

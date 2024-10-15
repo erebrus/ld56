@@ -77,6 +77,7 @@ curve = SubResource("Curve2D_ulvv2")
 
 [node name="Beetle" parent="Bugs" index="1" instance=ExtResource("5_ww8ov")]
 position = Vector2(1369, 1254)
+dodge_chance = 0.99
 
 [node name="Path2D" type="Path2D" parent="Bugs/Beetle" index="7"]
 curve = SubResource("Curve2D_70o6d")
