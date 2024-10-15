@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://b5lgniaadan1y"]
+[gd_scene load_steps=79 format=3 uid="uid://b5lgniaadan1y"]
 
 [ext_resource type="Script" path="res://src/frog/frog.gd" id="1_mohle"]
 [ext_resource type="Script" path="res://src/frog/frog_controller.gd" id="2_mpehw"]
@@ -67,6 +67,7 @@
 [ext_resource type="AudioStream" uid="uid://bntblipjfkf7a" path="res://assets/sfx/MC_Tongue_Hit_Miss_3.wav" id="54_t1b2p"]
 [ext_resource type="AudioStream" uid="uid://cwtfuvx388sjm" path="res://assets/sfx/Death_zero_energy.wav" id="57_jrolm"]
 [ext_resource type="AudioStream" uid="uid://dhknts4p0lteu" path="res://assets/sfx/MC_Wins.wav" id="64_7gmnc"]
+[ext_resource type="PackedScene" uid="uid://b6l6ff2tq018x" path="res://src/world/rain/cloud.tscn" id="68_eciff"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g36ww"]
 animations = [{
@@ -470,6 +471,8 @@ autostart = true
 
 [node name="Debufs" type="Node" parent="."]
 unique_name_in_owner = true
+
+[node name="Cloud" parent="." instance=ExtResource("68_eciff")]
 
 [connection signal="direction_changed" from="Controller" to="." method="_on_controller_direction_changed"]
 [connection signal="hit_ground" from="Controller" to="." method="_on_controller_hit_ground"]
