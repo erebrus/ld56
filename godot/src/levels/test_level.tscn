@@ -66,6 +66,9 @@ script = null
 position = Vector2(1378.62, 1327.63)
 script = null
 
+[node name="LeafPlatformSmall" parent="Scenery" index="3" instance=ExtResource("4_kot7o")]
+position = Vector2(996, 1001)
+
 [node name="Slug" parent="Bugs" index="0" instance=ExtResource("4_yqxac")]
 position = Vector2(395.432, 1535.28)
 
