@@ -32,7 +32,7 @@ func catch() -> bool:
 			return true
 		else:
 			return false
-
+	return false
 func do_death():
 	visible=false
 	collision_mask=0

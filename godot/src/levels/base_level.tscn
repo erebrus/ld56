@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c06tqqbevl64b" path="res://src/ui/healthbar.tscn" id="6_16uxq"]
 [ext_resource type="PackedScene" uid="uid://bfsfbydiqr0gr" path="res://src/eagle/eagle.tscn" id="6_x2vej"]
 [ext_resource type="AudioStream" uid="uid://c21xktcb61m7j" path="res://assets/sfx/Amb_rain_forest_loop.mp3" id="7_eodqv"]
-[ext_resource type="PackedScene" uid="uid://bi641rjvj6uib" path="res://src/ui/ComboBar.tscn" id="7_s8mqr"]
+[ext_resource type="PackedScene" uid="uid://bpiob4y1mesw1" path="res://src/ui/ComboBar.tscn" id="7_s8mqr"]
 [ext_resource type="PackedScene" path="res://src/ui/debuf_panel.tscn" id="9_hty2t"]
 [ext_resource type="AudioStream" uid="uid://wjyg14aw2lmc" path="res://assets/music/Frogs_Life.mp3" id="9_ojf7k"]
 [ext_resource type="AudioStream" uid="uid://bkdx738wd3yuf" path="res://assets/music/Frogs_Life_Hide.mp3" id="10_2l27k"]

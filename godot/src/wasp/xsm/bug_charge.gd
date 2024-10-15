@@ -9,6 +9,9 @@ var stunned:bool = false
 func _on_enter(_args) -> void:
 	Logger.info("wasp:%s " % name)
 	var bug:Bug = target
+	if bug.target == null:		
+		change_state("move")
+		return
 	bug.speed=bug.charge_speed
 	bug.sfx_fly.pitch_scale=1.1
 	bug.velocity=	_get_direction_to_target()*bug.speed
@@ -17,6 +20,7 @@ func _on_enter(_args) -> void:
 
 func _get_direction_to_target()->Vector2:
 	var bug:Bug = target
+	
 	return ((bug.target.global_position+bug.target.sprite_offset)
 					- (bug.global_position+bug.sting_offset)).normalized()
 func _on_update(_delta) -> void:
