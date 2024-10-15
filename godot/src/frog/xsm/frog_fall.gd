@@ -37,7 +37,7 @@ func _on_timeout(_name) -> void:
 
 func _on_controller_hit_ground():
 	if soft_land:
-		Logger.info("fall hit ground")
+		Logger.trace("fall hit ground")
 		change_state("idle")
 	else:
 		change_state("land")
