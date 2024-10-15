@@ -13,6 +13,9 @@ extends Node2D
 @export var tense_timeout =  5
 var debug:=false
 var camera_follow_player:= true
+
+var threats:=0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.fade_from_black(black_overlay)
@@ -29,23 +32,30 @@ func _ready() -> void:
 	Events.eagle_incoming.connect(_on_eagle_incoming)
 	Events.eagle_left.connect(_on_eagle_left)
 	Events.game_lost.connect(_on_game_lost)
-
-	
+	Events.threat_on.connect(func(): update_threats(1))
+	Events.threat_off.connect(func(): update_threats(-1))
 	
 func _on_eagle_incoming():
 	Logger.debug("level eagle in")
-	Logger.debug("normal db=%d tense db=%d before incoming" % [music.stream.get_sync_stream_volume(0),music.stream.get_sync_stream_volume(1)])
+	update_threats(1)
 	Globals.music_manager.crossfade_synchronized(music.stream,1)
 	
 func _on_eagle_left():
 	Logger.debug("level eagle out")
-	Logger.debug("normal db=%d tense db=%d on left" % [music.stream.get_sync_stream_volume(0),music.stream.get_sync_stream_volume(1)])
 	if camera_follow_player:
 		await get_tree().create_timer(5).timeout
-		Globals.music_manager.crossfade_synchronized(music.stream,0)
-		Logger.debug("normal db=%d tense db=%d after timeout" % [music.stream.get_sync_stream_volume(0),music.stream.get_sync_stream_volume(1)])
+		update_threats(-1)
 	else:
 		Globals.fade_to_black(black_overlay)
+
+func update_threats(delta:int):
+	threats+=delta
+	if threats == 1:
+		Logger.info("tense music")
+		Globals.music_manager.crossfade_synchronized(music.stream,1)
+	elif threats==0:
+		Logger.info("normal music")
+		Globals.music_manager.crossfade_synchronized(music.stream,0)
 
 func _on_game_lost(type:Types.LossType):
 	lose_screen.show_overlay(type)

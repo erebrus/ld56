@@ -13,6 +13,8 @@ signal debuf_cancelled(debuf:Debuf)
 signal eagle_incoming
 signal eagle_left
 signal frog_grabbed
+signal threat_on()
+signal threat_off()
 
 signal energy_depleted
 signal reached_level_end()

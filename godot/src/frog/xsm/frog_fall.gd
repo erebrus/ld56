@@ -6,7 +6,7 @@ class_name XSMFrogFall
 @export var no_stop_land_time:=.3
 var soft_land:=true
 func _on_enter(_args) -> void:
-	Logger.info("state:%s %d " % [name, Time.get_ticks_msec()])
+	Logger.debug("state:%s %d " % [name, Time.get_ticks_msec()])
 	if target:
 		target.state_name=name
 	add_timer("land", no_stop_land_time)
@@ -37,7 +37,7 @@ func _on_timeout(_name) -> void:
 
 func _on_controller_hit_ground():
 	if soft_land:
-		Logger.info("fall hit ground")
+		Logger.trace("fall hit ground")
 		change_state("idle")
 	else:
 		change_state("land")

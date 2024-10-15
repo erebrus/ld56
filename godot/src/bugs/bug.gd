@@ -5,11 +5,12 @@ class_name Bug extends CharacterBody2D
 @export var energy_value:float = 10
 @export var dodge_chance:float = 0
 @export var speed:float = 20
-
+@export var can_be_caught:=true
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @onready var xsm: State = $xsm
 @onready var sfx_death: AudioStreamPlayer2D = $sfx_death
+
 
 var direction = 1 if Globals.rng.randf()>.5 else -1:
 	set(v):
@@ -23,13 +24,15 @@ func _ready():
 	Events.bug_freeze_toggle.connect(func(v): xsm.disabled=v)
 	
 func catch() -> bool:
-	if Globals.rng.randf() > dodge_chance:
-		Events.bug_caught.emit(self)
-		do_death()
-		return true
-	else:
-		do_dodge()
-		return false
+	if can_be_caught:
+		if Globals.rng.randf() > dodge_chance:
+			Events.bug_caught.emit(self)
+			do_death()
+			return true
+		else:
+			do_dodge()
+			return false
+	return false
 
 func do_death():
 	visible=false
@@ -78,3 +81,12 @@ func next_wp():
 	wp_idx += 1
 	if wp_idx>=waypoints.size():
 		wp_idx=0
+
+func _on_generic_controller_forward(method_name: String, args = null):
+	for  s in xsm.active_states:
+		var state= xsm.get_state(s)
+		if state.has_method(method_name):
+			if args == null:
+				state.call(method_name)
+			else:
+				state.call(method_name, args)

@@ -5,15 +5,15 @@ class_name XSMFrogLand
 
 
 func _on_enter(_args) -> void:
-	Logger.info("state:%s " % name)
+	Logger.debug("state:%s " % name)
 	if target:
 		target.state_name=name
 	if get_ctl().floor_type==Types.FloorType.Grass:
 		get_body().sfx_hard_landing.play()
-		Logger.info("Landed on grass")
+		Logger.debug("Landed on grass")
 	else:
 		get_body().sfx_hard_rock_landing.play()
-		Logger.info("Landed on rock")
+		Logger.debug("Landed on rock")
 
 		
 	#get_ctl().acc.x=0

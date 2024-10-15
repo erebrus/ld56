@@ -24,7 +24,7 @@ signal energy_changed(value:float)
 @onready var sfx_hard_rock_landing: AudioStreamPlayer2D = $sfx/sfx_hard_rock_landing
 @onready var sfx_hard_landing: AudioStreamPlayer2D = $sfx/sfx_hard_landing
 @onready var energy_timer: Timer = $EnergyTimer
-
+@onready var sprite_offset=$AnimatedSprite2D.position
 var state_name:String
 var max_heal=100
 var immune:=false
@@ -171,3 +171,6 @@ func _on_head_shot_missed() -> void:
 func _on_energy_timer_timeout() -> void:
 	if not immune:
 		health_component.on_take_damage(energy_drop_rate)
+
+func on_hurt(dmg:float)->void:
+	health_component.on_take_damage(dmg)
