@@ -86,6 +86,23 @@ tracks/2/keys = {
 "values": [Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_ghoh7"]
+resource_name = "dodge"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 0.307786, 3.4822),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -50), Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_r1dwy"]
 resource_name = "idle"
 tracks/0/type = "value"
@@ -163,23 +180,6 @@ tracks/2/keys = {
 "values": [0, 1, 2]
 }
 
-[sub_resource type="Animation" id="Animation_ghoh7"]
-resource_name = "dodge"
-length = 0.5
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 0.307786, 3.4822),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -50), Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c6fxo"]
 _data = {
 "RESET": SubResource("Animation_p7wxp"),
@@ -191,6 +191,7 @@ _data = {
 [node name="Beetle" instance=ExtResource("1_drwt0")]
 type = 2
 energy_value = 5.0
+dodge_chance = 0.3
 speed = 60.0
 
 [node name="AnimatedSprite2D" parent="." index="1"]
@@ -208,9 +209,6 @@ anim_on_enter = "move"
 loop_mode = 0
 on_finished = 1
 next_state = NodePath("../move")
-
-[node name="dodge" parent="xsm" index="2"]
-animation_player = NodePath("")
 
 [node name="sfx_death" parent="." index="3"]
 stream = SubResource("AudioStreamRandomizer_1qudq")

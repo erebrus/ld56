@@ -62,6 +62,21 @@ stream_0/stream = ExtResource("3_p0s32")
 stream_1/stream = ExtResource("4_5ectv")
 stream_2/stream = ExtResource("5_owxnf")
 
+[sub_resource type="Animation" id="Animation_mtnjl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_1j6ny"]
 resource_name = "dodge"
 length = 0.5
@@ -143,21 +158,6 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_mtnjl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g3eiv"]
 _data = {
 "RESET": SubResource("Animation_mtnjl"),
@@ -169,6 +169,7 @@ _data = {
 [node name="Fly" instance=ExtResource("1_u4u8t")]
 type = 3
 energy_value = 2.0
+dodge_chance = 0.2
 speed = 250.0
 
 [node name="CollisionShape2D" parent="." index="0"]
