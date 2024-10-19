@@ -153,7 +153,7 @@ func process_debuf(new_debuf:Debuf):
 
 func spawn_debuf_label(debuf:Debuf):
 	var label = Types.DEBUF_LABEL_SCENE.instantiate()
-	label.text = debuf.name
+	label.text = debuf.text
 	label.anchor = $DebufAnchor
 	get_parent().add_child(label)
 	label.global_position = label.anchor.global_position
