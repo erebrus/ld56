@@ -9,7 +9,8 @@ class_name Platform
 
 var collapsing:=false
 func _ready():
-	timer.wait_time = support_time
+	if timer:
+		timer.wait_time = support_time
 	
 func on_contact():
 	if collapsible and not collapsing:
