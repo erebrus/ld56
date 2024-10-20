@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb3kn2b1tbveq"]
+[gd_scene load_steps=3 format=3 uid="uid://obaalh3nrjem"]
 
 [ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_j0hli"]
 [ext_resource type="Texture2D" uid="uid://h61y1wbjcgjw" path="res://assets/gfx/environment/blueflowerplatform.png" id="2_b13as"]
