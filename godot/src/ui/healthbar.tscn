@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c06tqqbevl64b"]
+[gd_scene load_steps=6 format=3 uid="uid://c06tqqbevl64b"]
 
 [ext_resource type="Script" path="res://src/ui/healthbar.gd" id="1_6oxel"]
-[ext_resource type="Texture2D" uid="uid://bpaj0twqvqt6o" path="res://assets/gfx/ui/EnergyBar.png" id="1_jbgwo"]
-[ext_resource type="Texture2D" uid="uid://dyvujrtlcdfwn" path="res://assets/gfx/ui/EnergyFill.png" id="2_6rdb5"]
-[ext_resource type="Texture2D" uid="uid://earqed0d8hwx" path="res://assets/gfx/ui/EnergyFill_Grey.png" id="3_a5dno"]
+[ext_resource type="Texture2D" uid="uid://chrgcqopqysk6" path="res://assets/gfx/ui/EnergyBar_2.png" id="2_hh8pe"]
+[ext_resource type="Texture2D" uid="uid://dnc1kjsy6ida" path="res://assets/gfx/ui/EnergyFill_Grey_2.png" id="3_k4iwg"]
+[ext_resource type="Texture2D" uid="uid://dj5y5vbkna5tu" path="res://assets/gfx/ui/EnergyFill_2.png" id="4_870ou"]
+[ext_resource type="Texture2D" uid="uid://b5chfw020pi77" path="res://assets/gfx/ui/EnergyBarTop.png" id="5_tj1o4"]
 
 [node name="HealthBar" type="Control"]
 custom_minimum_size = Vector2(595, 196)
@@ -19,26 +20,33 @@ script = ExtResource("1_6oxel")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_jbgwo")
+texture = ExtResource("2_hh8pe")
 
 [node name="GreyProgress" type="TextureProgressBar" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 99.0
-offset_top = 47.0
-offset_right = 339.0
-offset_bottom = 89.0
+offset_left = 149.0
+offset_top = 96.0
+offset_right = 400.0
+offset_bottom = 143.0
 max_value = 150.0
 value = 100.0
 fill_mode = 1
-texture_progress = ExtResource("3_a5dno")
+texture_progress = ExtResource("3_k4iwg")
 
 [node name="Progress" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 99.0
-offset_top = 47.0
-offset_right = 339.0
-offset_bottom = 89.0
+offset_left = 148.0
+offset_top = 97.0
+offset_right = 399.0
+offset_bottom = 144.0
 max_value = 150.0
 value = 100.0
-texture_progress = ExtResource("2_6rdb5")
+texture_progress = ExtResource("4_870ou")
+
+[node name="TopPart" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_tj1o4")
+metadata/_edit_lock_ = true
