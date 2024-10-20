@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmd536tfchtgq"]
+
+[ext_resource type="Script" path="res://src/world/trampoline.gd" id="1_1cyc0"]
+[ext_resource type="Texture2D" uid="uid://cgdppxubuvc3e" path="res://assets/gfx/environment/MushroomPlatform1.png" id="1_8qhu7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vv8cv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8qhu7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_liiug"]
+size = Vector2(196, 80)
+
+[node name="Trampoline" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_1cyc0")
+strength = 1500.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vv8cv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-177, 68, -183, 30, -134, -33, 127, -36, 183, 22, 184, 68, 81, 115, 81, 115, -55, 115)
+
+[node name="CaptureArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaptureArea"]
+position = Vector2(1, -30)
+shape = SubResource("RectangleShape2D_liiug")
+
+[connection signal="body_entered" from="CaptureArea" to="." method="_on_capture_area_body_entered"]
+[connection signal="body_exited" from="CaptureArea" to="." method="_on_capture_area_body_exited"]

@@ -24,10 +24,11 @@ signal energy_changed(value:float)
 @onready var sfx_hard_rock_landing: AudioStreamPlayer2D = $sfx/sfx_hard_rock_landing
 @onready var sfx_hard_landing: AudioStreamPlayer2D = $sfx/sfx_hard_landing
 @onready var energy_timer: Timer = $EnergyTimer
-
+@onready var sprite_offset=$AnimatedSprite2D.position
 var state_name:String
 var max_heal=100
 var immune:=false
+var trampoline_strength:float=0
 
 func _ready():
 	Globals.player = self
@@ -38,6 +39,10 @@ func _ready():
 	Events.debug_toggled.connect(_on_debug_toggled)
 	#Events.reached_level_end.connect(func():$sfx/sfx_win.play())
 	Events.combo_achieved.connect(_on_combo_achieved)
+
+func set_trampoline(v:float):
+	trampoline_strength=v
+	
 func is_near_floor() -> bool:
 	return rc_down.is_colliding()
 	
@@ -144,6 +149,15 @@ func process_debuf(new_debuf:Debuf):
 			new_debuf.cancel_debuf(self)
 		else:
 			new_debuf.expired.connect(func(debuf):debuf.cancel_debuf(self))
+	spawn_debuf_label(new_debuf)
+
+func spawn_debuf_label(debuf:Debuf):
+	var label = Types.DEBUF_LABEL_SCENE.instantiate()
+	label.text = debuf.text
+	label.anchor = $DebufAnchor
+	get_parent().add_child(label)
+	label.global_position = label.anchor.global_position
+	
 func process_bug(bug:Bug)->void:
 	var heal_value:float = min(max_heal,bug.energy_value)
 	Logger.info("Healing for %.2f" % heal_value)
@@ -171,3 +185,6 @@ func _on_head_shot_missed() -> void:
 func _on_energy_timer_timeout() -> void:
 	if not immune:
 		health_component.on_take_damage(energy_drop_rate)
+
+func on_hurt(dmg:float)->void:
+	health_component.on_take_damage(dmg)

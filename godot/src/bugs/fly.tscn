@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://duxcjbsoqoa2n"]
+[gd_scene load_steps=20 format=3 uid="uid://duxcjbsoqoa2n"]
 
 [ext_resource type="PackedScene" uid="uid://b7ocbogo3h056" path="res://src/bugs/bug.tscn" id="1_u4u8t"]
 [ext_resource type="Texture2D" uid="uid://bk253d7evx1nt" path="res://assets/gfx/bugs/fly/1.png" id="3_05kff"]
@@ -61,6 +61,37 @@ streams_count = 3
 stream_0/stream = ExtResource("3_p0s32")
 stream_1/stream = ExtResource("4_5ectv")
 stream_2/stream = ExtResource("5_owxnf")
+
+[sub_resource type="Animation" id="Animation_mtnjl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1j6ny"]
+resource_name = "dodge"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 0.307786, 3.4822),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -50), Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_24mtn"]
 resource_name = "idle"
@@ -129,6 +160,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g3eiv"]
 _data = {
+"RESET": SubResource("Animation_mtnjl"),
+"dodge": SubResource("Animation_1j6ny"),
 "idle": SubResource("Animation_24mtn"),
 "move": SubResource("Animation_6u6gg")
 }
@@ -136,13 +169,13 @@ _data = {
 [node name="Fly" instance=ExtResource("1_u4u8t")]
 type = 3
 energy_value = 2.0
+dodge_chance = 0.2
 speed = 250.0
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_bxn0i")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
-position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_tsxt0")
 animation = &"idle"
 frame_progress = 0.0528743
@@ -155,11 +188,13 @@ next_state = NodePath("idle")
 anim_on_enter = "idle"
 loop_mode = 0
 on_finished = 1
+next_state = NodePath("../move")
 
 [node name="move" parent="xsm" index="1"]
 anim_on_enter = "move"
 loop_mode = 0
 on_finished = 1
+next_state = NodePath("../dodge")
 
 [node name="sfx_death" parent="." index="3"]
 stream = SubResource("AudioStreamRandomizer_qmv1m")

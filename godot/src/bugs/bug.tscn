@@ -1,13 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7ocbogo3h056"]
+[gd_scene load_steps=8 format=3 uid="uid://b7ocbogo3h056"]
 
 [ext_resource type="Script" path="res://src/bugs/bug.gd" id="1_q0jaa"]
 [ext_resource type="Script" path="res://addons/xsm/state.gd" id="3_3w72b"]
-[ext_resource type="Script" path="res://addons/xsm/state_animation.gd" id="4_mu2lb"]
 [ext_resource type="Script" path="res://src/bugs/xsm/bug_idle.gd" id="4_w2ehl"]
+[ext_resource type="Script" path="res://src/bugs/xsm/bug_dodge.gd" id="5_3bthn"]
 [ext_resource type="Script" path="res://src/bugs/xsm/bug_move.gd" id="5_lo3dr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4u5hm"]
 radius = 19.105
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ykon"]
+radius = 120.0
 
 [node name="Bug" type="CharacterBody2D"]
 collision_layer = 4
@@ -51,7 +54,7 @@ timed = false
 next_state = NodePath("")
 
 [node name="dodge" type="Node" parent="xsm"]
-script = ExtResource("4_mu2lb")
+script = ExtResource("5_3bthn")
 animation_player = NodePath("../../AnimationPlayer")
 anim_on_enter = "dodge"
 loop_mode = 0
@@ -73,3 +76,12 @@ bus = &"Sound"
 [node name="sfx_dodge" type="AudioStreamPlayer2D" parent="."]
 max_distance = 800.0
 bus = &"Sound"
+
+[node name="ReactionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReactionArea"]
+shape = SubResource("CircleShape2D_0ykon")
+
+[connection signal="area_shape_entered" from="ReactionArea" to="." method="_on_reaction_area_area_shape_entered"]

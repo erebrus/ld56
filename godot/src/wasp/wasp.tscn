@@ -1,0 +1,226 @@
+[gd_scene load_steps=24 format=3 uid="uid://ctvu6tarsq4cl"]
+
+[ext_resource type="Script" path="res://src/wasp/wasp.gd" id="1_iub5t"]
+[ext_resource type="Texture2D" uid="uid://c5c05dnf2rtd5" path="res://assets/gfx/bugs/wasp/flying.png" id="1_ltmny"]
+[ext_resource type="Script" path="res://addons/xsm/state.gd" id="3_ul28q"]
+[ext_resource type="Script" path="res://src/wasp/xsm/bug_no_target.gd" id="4_d6hnb"]
+[ext_resource type="Script" path="res://src/bugs/xsm/bug_idle.gd" id="4_je6v0"]
+[ext_resource type="Script" path="res://src/bugs/xsm/bug_move.gd" id="5_jfpiw"]
+[ext_resource type="Script" path="res://src/wasp/xsm/bug_prepare.gd" id="6_mc2tg"]
+[ext_resource type="Script" path="res://src/wasp/xsm/bug_charge.gd" id="8_gaxdi"]
+[ext_resource type="Script" path="res://src/wasp/xsm/bug_sting.gd" id="9_bnxnt"]
+[ext_resource type="Script" path="res://src/wasp/xsm/bug_retreat.gd" id="10_dlugq"]
+[ext_resource type="AudioStream" uid="uid://d2u76q1i7ql3p" path="res://assets/496237__fury12__bee-flying-loop.wav" id="11_cp5vm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74euu"]
+atlas = ExtResource("1_ltmny")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g137"]
+atlas = ExtResource("1_ltmny")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j88ny"]
+atlas = ExtResource("1_ltmny")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov0wh"]
+atlas = ExtResource("1_ltmny")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lyks0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74euu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g137")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j88ny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov0wh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5xv0k"]
+radius = 82.0
+height = 216.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aichg"]
+radius = 1347.09
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mknh7"]
+radius = 19.0263
+
+[sub_resource type="Animation" id="Animation_y4fj4"]
+resource_name = "idle"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_0vi7n"]
+resource_name = "move"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_4fcm5"]
+resource_name = "sting"
+length = 0.3
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bj0li"]
+_data = {
+"idle": SubResource("Animation_y4fj4"),
+"move": SubResource("Animation_0vi7n"),
+"sting": SubResource("Animation_4fcm5")
+}
+
+[node name="Wasp" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_iub5t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_lyks0")
+frame_progress = 0.177767
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, -24)
+shape = SubResource("CapsuleShape2D_5xv0k")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="xsm" type="Node" parent="."]
+script = ExtResource("3_ul28q")
+history_size = 0
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("no_target/idle")
+
+[node name="no_target" type="Node" parent="xsm"]
+script = ExtResource("4_d6hnb")
+disabled = false
+debug_mode = false
+target_path = NodePath("../..")
+timed = false
+next_state = NodePath("../no_target")
+
+[node name="idle" type="Node" parent="xsm/no_target"]
+script = ExtResource("4_je6v0")
+animation_player = NodePath("../../../AnimationPlayer")
+anim_on_enter = "idle"
+loop_mode = 0
+on_finished = 1
+disabled = false
+debug_mode = false
+target_path = NodePath("../../..")
+timed = false
+next_state = NodePath("")
+
+[node name="move" type="Node" parent="xsm/no_target"]
+script = ExtResource("5_jfpiw")
+animation_player = NodePath("../../../AnimationPlayer")
+anim_on_enter = "move"
+loop_mode = 0
+on_finished = 1
+disabled = false
+debug_mode = false
+target_path = NodePath("../../..")
+timed = false
+next_state = NodePath("")
+
+[node name="has_target" type="Node" parent="xsm"]
+script = ExtResource("3_ul28q")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("../no_target")
+
+[node name="prepare" type="Node" parent="xsm/has_target"]
+script = ExtResource("6_mc2tg")
+animation_player = NodePath("../../../AnimationPlayer")
+anim_on_enter = "idle"
+loop_mode = 0
+on_finished = 1
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("../prepare")
+
+[node name="charge" type="Node" parent="xsm/has_target"]
+script = ExtResource("8_gaxdi")
+charge_time = 1.5
+rotation_speed = 1.0
+animation_player = NodePath("../../../AnimationPlayer")
+anim_on_enter = "move"
+loop_mode = 0
+on_finished = 1
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("../prepare")
+
+[node name="sting" type="Node" parent="xsm/has_target"]
+script = ExtResource("9_bnxnt")
+animation_player = NodePath("../../../AnimationPlayer")
+anim_on_enter = "sting"
+loop_mode = 0
+on_finished = 1
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+
+[node name="retreat" type="Node" parent="xsm/has_target"]
+script = ExtResource("10_dlugq")
+animation_player = NodePath("../../../AnimationPlayer")
+anim_on_enter = ""
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_aichg")
+
+[node name="HurtArea" type="Area2D" parent="."]
+position = Vector2(0, 75)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea"]
+shape = SubResource("CircleShape2D_mknh7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bj0li")
+}
+
+[node name="sfx" type="Node2D" parent="."]
+
+[node name="sfx_fly" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("11_cp5vm")
+volume_db = -6.0
+autoplay = true
+bus = &"Sound"
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="HurtArea" to="." method="_on_hurt_area_body_entered"]

@@ -6,6 +6,7 @@ signal expired(debuf:Debuf)
 @export var show_in_ui:=true
 @export var immediate:=false
 @export var duration:float = 5
+@export var text:String
 @onready var timer: Timer = $Timer
 @onready var sfx_on: AudioStreamPlayer = $sfx_on
 @onready var sfx_off: AudioStreamPlayer = $sfx_off

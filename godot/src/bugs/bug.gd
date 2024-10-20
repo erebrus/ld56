@@ -5,11 +5,13 @@ class_name Bug extends CharacterBody2D
 @export var energy_value:float = 10
 @export var dodge_chance:float = 0
 @export var speed:float = 20
-
+@export var can_be_caught:=true
+@export var respawn_period:float = 10
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @onready var xsm: State = $xsm
 @onready var sfx_death: AudioStreamPlayer2D = $sfx_death
+
 
 var direction = 1 if Globals.rng.randf()>.5 else -1:
 	set(v):
@@ -23,17 +25,18 @@ func _ready():
 	Events.bug_freeze_toggle.connect(func(v): xsm.disabled=v)
 	
 func catch() -> bool:
-	if Globals.rng.randf() > dodge_chance:
-		Events.bug_caught.emit(self)
-		do_death()
-		return true
-	else:
-		do_dodge()
-		return false
-
+	if can_be_caught:
+		if not xsm.is_active("dodge"):
+			Events.bug_caught.emit(self)
+			do_death()
+			return true
+		else:
+			return false
+	return false
 func do_death():
 	visible=false
 	collision_mask=0
+	xsm.disabled= true
 	if sfx_death.stream:
 		sfx_death.play()
 		await sfx_death.finished
@@ -41,7 +44,16 @@ func do_death():
 func free_if_done():
 	if sfx_death.playing:
 		await sfx_death.finished
-	queue_free()
+	if respawn_period<=0:
+		queue_free()
+	else:
+		await get_tree().create_timer(respawn_period).timeout
+		global_position=waypoints[0]
+		wp_idx=0
+		xsm.disabled= false
+		xsm.change_state("idle")
+		collision_mask=4 #TODO use plugin for layers
+		visible = true
 	
 func do_dodge():
 	xsm.change_state("dodge")
@@ -78,3 +90,19 @@ func next_wp():
 	wp_idx += 1
 	if wp_idx>=waypoints.size():
 		wp_idx=0
+
+func _on_generic_controller_forward(method_name: String, args = null):
+	for  s in xsm.active_states:
+		var state= xsm.get_state(s)
+		if state.has_method(method_name):
+			if args == null:
+				state.call(method_name)
+			else:
+				state.call(method_name, args)
+
+func _on_reaction_area_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	if Globals.rng.randf() < dodge_chance:
+		do_dodge()
+		
+func set_collision(v:bool):
+	$CollisionShape2D.disabled=not v
