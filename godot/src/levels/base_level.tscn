@@ -108,7 +108,7 @@ visible = false
 offset_right = 200.0
 offset_bottom = 200.0
 theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 120
+theme_override_constants/margin_top = 200
 
 [node name="DebufPanel" parent="HUD/MarginContainer3" instance=ExtResource("9_hty2t")]
 layout_mode = 2
