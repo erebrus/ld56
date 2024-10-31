@@ -6,47 +6,50 @@
 [ext_resource type="Texture2D" uid="uid://dj5y5vbkna5tu" path="res://assets/gfx/ui/EnergyFill_2.png" id="4_870ou"]
 [ext_resource type="Texture2D" uid="uid://b5chfw020pi77" path="res://assets/gfx/ui/EnergyBarTop.png" id="5_tj1o4"]
 
-[node name="HealthBar" type="Control"]
+[node name="HealthBar" type="MarginContainer"]
 custom_minimum_size = Vector2(595, 196)
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -109.5
+offset_right = 297.5
+offset_bottom = 109.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = -80
 script = ExtResource("1_6oxel")
 
 [node name="BG" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("2_hh8pe")
+
+[node name="Progress" type="TextureProgressBar" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 150.0
+value = 100.0
+texture_under = ExtResource("2_hh8pe")
+texture_progress = ExtResource("4_870ou")
 
 [node name="GreyProgress" type="TextureProgressBar" parent="."]
 visible = false
-layout_mode = 0
-offset_left = 149.0
-offset_top = 96.0
-offset_right = 400.0
-offset_bottom = 143.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 max_value = 150.0
-value = 100.0
+value = 150.0
 fill_mode = 1
 texture_progress = ExtResource("3_k4iwg")
 
-[node name="Progress" type="TextureProgressBar" parent="."]
-layout_mode = 0
-offset_left = 148.0
-offset_top = 97.0
-offset_right = 399.0
-offset_bottom = 144.0
-max_value = 150.0
-value = 100.0
-texture_progress = ExtResource("4_870ou")
-
 [node name="TopPart" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("5_tj1o4")
-metadata/_edit_lock_ = true

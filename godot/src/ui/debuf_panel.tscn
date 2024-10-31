@@ -4,48 +4,42 @@
 [ext_resource type="PackedScene" uid="uid://d2o28eerfitbo" path="res://src/ui/debuf_icon.tscn" id="1_rhvpp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3fh2u"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
 
-[node name="DebufPanel" type="Panel"]
-custom_minimum_size = Vector2(300, 200)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1620.0
-offset_bottom = -880.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="DebufPanel" type="PanelContainer"]
+offset_right = 320.0
+offset_bottom = 129.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_3fh2u")
 script = ExtResource("1_aapaq")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 20
-
-[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 5
 
-[node name="DebufIcon" parent="MarginContainer/GridContainer" instance=ExtResource("1_rhvpp")]
+[node name="DebufIcon" parent="GridContainer" instance=ExtResource("1_rhvpp")]
 layout_mode = 2
 
-[node name="DebufIcon2" parent="MarginContainer/GridContainer" instance=ExtResource("1_rhvpp")]
+[node name="DebufIcon2" parent="GridContainer" instance=ExtResource("1_rhvpp")]
 layout_mode = 2
 
-[node name="DebufIcon3" parent="MarginContainer/GridContainer" instance=ExtResource("1_rhvpp")]
+[node name="DebufIcon3" parent="GridContainer" instance=ExtResource("1_rhvpp")]
 layout_mode = 2
 
-[node name="DebufIcon4" parent="MarginContainer/GridContainer" instance=ExtResource("1_rhvpp")]
+[node name="DebufIcon4" parent="GridContainer" instance=ExtResource("1_rhvpp")]
 layout_mode = 2
 
-[node name="DebufIcon5" parent="MarginContainer/GridContainer" instance=ExtResource("1_rhvpp")]
+[node name="DebufIcon5" parent="GridContainer" instance=ExtResource("1_rhvpp")]
 layout_mode = 2
 
-[node name="DebufIcon6" parent="MarginContainer/GridContainer" instance=ExtResource("1_rhvpp")]
+[node name="DebufIcon6" parent="GridContainer" instance=ExtResource("1_rhvpp")]
 layout_mode = 2

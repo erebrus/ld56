@@ -68,7 +68,7 @@ unique_name_in_owner = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+[node name="BottomRight" type="MarginContainer" parent="HUD"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -82,18 +82,26 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/margin_left = 10
 
-[node name="Version" type="Label" parent="HUD/MarginContainer"]
+[node name="Version" type="Label" parent="HUD/BottomRight"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0.0.0"
 
-[node name="MarginContainer2" type="MarginContainer" parent="HUD"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TopLeft" type="MarginContainer" parent="HUD"]
+offset_right = 615.0
+offset_bottom = 352.0
+theme_override_constants/margin_left = 20
 
-[node name="HealthBar" parent="HUD/MarginContainer2" instance=ExtResource("6_16uxq")]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/TopLeft"]
+layout_mode = 2
+
+[node name="HealthBar" parent="HUD/TopLeft/VBoxContainer" instance=ExtResource("6_16uxq")]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="DebufPanel" parent="HUD/TopLeft/VBoxContainer" instance=ExtResource("9_hty2t")]
+layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="ComboBar" parent="HUD" instance=ExtResource("7_s8mqr")]
 offset_left = 1536.0
@@ -104,15 +112,6 @@ offset_bottom = -916.0
 [node name="Almanac" parent="HUD" instance=ExtResource("10_5wjr6")]
 unique_name_in_owner = true
 visible = false
-
-[node name="MarginContainer3" type="MarginContainer" parent="HUD"]
-offset_right = 200.0
-offset_bottom = 200.0
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 200
-
-[node name="DebufPanel" parent="HUD/MarginContainer3" instance=ExtResource("9_hty2t")]
-layout_mode = 2
 
 [node name="LoseScreen" parent="HUD" instance=ExtResource("10_c2si1")]
 unique_name_in_owner = true
@@ -137,4 +136,4 @@ bus = &"Ambient"
 stream = SubResource("AudioStreamSynchronized_2n5mq")
 bus = &"Music"
 
-[connection signal="energy_changed" from="Frog" to="HUD/MarginContainer2/HealthBar" method="_on_frog_energy_changed"]
+[connection signal="energy_changed" from="Frog" to="HUD/TopLeft/VBoxContainer/HealthBar" method="_on_frog_energy_changed"]

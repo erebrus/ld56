@@ -1,4 +1,4 @@
-extends Control
+extends MarginContainer
 class_name HealthBar
 
 @onready var progress: TextureProgressBar = $Progress

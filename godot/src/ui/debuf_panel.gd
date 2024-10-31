@@ -1,7 +1,7 @@
-extends Panel
+extends PanelContainer
 
 const ICON_SCENE:PackedScene = preload("res://src/ui/debuf_icon.tscn")
-@onready var grid: GridContainer = $MarginContainer/GridContainer
+@onready var grid: GridContainer = %GridContainer
 
 var icon_map={}
 func _ready():
