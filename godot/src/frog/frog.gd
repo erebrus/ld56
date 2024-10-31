@@ -51,11 +51,12 @@ func is_under_cover() -> bool:
 	return rc_up.is_colliding()
 	
 
-func _on_debug_toggled(debug:bool):
-		HyperLog.text("position", self)
-		HyperLog.text("state_name", self)
-		HyperLog.text("controller:acc", self)
-		HyperLog.text("controller:debug_on_ground", self)
+func _on_debug_toggled(_debug:bool):
+	HyperLog.text("position", self)
+	HyperLog.text("state_name", self)
+	HyperLog.text("controller:acc", self)
+	HyperLog.text("controller:debug_on_ground", self)
+	
 #
 #func _process(delta: float) -> void:
 	#sprite.offset.x = 0 if not sprite.flip_h else +400

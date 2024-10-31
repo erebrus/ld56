@@ -1,6 +1,5 @@
-extends "res://src/levels/base_level.gd"
+extends GameLevel
 
-@onready var eagle = $Eagle
 
 func _ready():
 	super._ready()

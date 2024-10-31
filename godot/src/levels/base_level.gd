@@ -1,4 +1,4 @@
-extends Node2D
+class_name GameLevel extends Node2D
 
 @onready var version: Label = %Version
 @onready var ambient: AudioStreamPlayer = $ambient
@@ -9,18 +9,18 @@ extends Node2D
 @onready var camera: Camera2D = %Camera2D
 @onready var almanac: Control = %Almanac
 @onready var lose_screen: Control = %LoseScreen
-
+@onready var eagle = %Eagle
 @export var tense_timeout =  5
-var debug:=false
 var camera_follow_player:= true
 
 var threats:=0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.level = self
 	Globals.fade_from_black(black_overlay)
 	version.text=ProjectSettings.get_setting("application/config/version") # Replace with function body.
-	version.visible=Globals.debug_build
+	version.visible=Debug.debug_build
 	ambient.play()
 	#frog.health_component.max_changed.connect(func (x):health_bar.set_max(x);Logger.info("Changing healthbar"))
 	health_bar.set_max(frog.health_component.max_energy)
@@ -70,30 +70,8 @@ func _process(_delta):
 	
 
 func _input(event: InputEvent) -> void:
-	if not debug and Input.is_action_just_pressed("debug"):
-		debug = true
-		Events.debug_toggled.emit(debug)
-	if Input.is_action_just_pressed("dead"):
-		Events.energy_depleted.emit()
-		frog._on_health_component_died()
-	if Input.is_action_just_pressed("bird_death"):
-		Events.game_lost.emit(Types.LossType.BIRD)
-	if Input.is_action_just_pressed("win"):
-		Globals.do_win()
-	if Input.is_action_just_pressed("buf_1"):
-		Events.combo_achieved.emit(0)
-	if Input.is_action_just_pressed("buf_2"):
-		Events.combo_achieved.emit(1)
-	if Input.is_action_just_pressed("buf_3"):
-		Events.combo_achieved.emit(2)
-	if Input.is_action_just_pressed("buf_4"):
-		Events.combo_achieved.emit(3)
-	if Input.is_action_just_pressed("buf_5"):
-		Events.combo_achieved.emit(4)
-	if Input.is_action_just_pressed("next_level"):
-		Events.reached_level_end.emit()
 	if event.is_action_pressed("almanac"):
-		almanac.visible = not almanac.visible	
+		almanac.visible = not almanac.visible
 		frog.energy_timer.paused=almanac.visible
 		
 func _on_reached_level_end():

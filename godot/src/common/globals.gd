@@ -38,7 +38,7 @@ var sound_on:=true:
 @onready var music_manager: MusicManager = $MusicManager
 
 var player: Frog
-
+var level: GameLevel
 
 func _ready():
 	rng.randomize()
@@ -69,10 +69,8 @@ func next_level():
 		do_win()
 	else:
 		get_tree().change_scene_to_packed(levels[current_level])
-
 	
 
-	
 func _init_logger():
 	Logger.set_logger_level(Logger.LOG_LEVEL_INFO)
 	Logger.set_logger_format(Logger.LOG_FORMAT_MORE)

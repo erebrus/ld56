@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" path="res://src/levels/base_level.gd" id="1_mo5ug"]
 [ext_resource type="PackedScene" uid="uid://b5lgniaadan1y" path="res://src/frog/frog.tscn" id="1_nfuix"]
-[ext_resource type="PackedScene" path="res://src/levels/background.tscn" id="2_6kg0q"]
-[ext_resource type="PackedScene" path="res://src/world/grass.tscn" id="5_ejkmm"]
+[ext_resource type="PackedScene" uid="uid://cr32fdxdvmlqy" path="res://src/levels/background.tscn" id="2_6kg0q"]
+[ext_resource type="PackedScene" uid="uid://b8wiaokjcgunm" path="res://src/world/grass.tscn" id="5_ejkmm"]
 [ext_resource type="PackedScene" uid="uid://c06tqqbevl64b" path="res://src/ui/healthbar.tscn" id="6_16uxq"]
 [ext_resource type="PackedScene" uid="uid://bfsfbydiqr0gr" path="res://src/eagle/eagle.tscn" id="6_x2vej"]
 [ext_resource type="AudioStream" uid="uid://c21xktcb61m7j" path="res://assets/sfx/Amb_rain_forest_loop.mp3" id="7_eodqv"]
 [ext_resource type="PackedScene" uid="uid://bpiob4y1mesw1" path="res://src/ui/ComboBar.tscn" id="7_s8mqr"]
-[ext_resource type="PackedScene" path="res://src/ui/debuf_panel.tscn" id="9_hty2t"]
+[ext_resource type="PackedScene" uid="uid://chmb87l45qxc7" path="res://src/ui/debuf_panel.tscn" id="9_hty2t"]
 [ext_resource type="AudioStream" uid="uid://wjyg14aw2lmc" path="res://assets/music/Frogs_Life.mp3" id="9_ojf7k"]
 [ext_resource type="AudioStream" uid="uid://bkdx738wd3yuf" path="res://assets/music/Frogs_Life_Hide.mp3" id="10_2l27k"]
 [ext_resource type="PackedScene" uid="uid://c3evg886be6fd" path="res://src/almanac/almanac.tscn" id="10_5wjr6"]
-[ext_resource type="PackedScene" path="res://src/end_screens/LoseScreen.tscn" id="10_c2si1"]
+[ext_resource type="PackedScene" uid="uid://cu5fbnrx3t6v7" path="res://src/end_screens/LoseScreen.tscn" id="10_c2si1"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2n5mq"]
 stream_count = 2
@@ -64,6 +64,7 @@ limit_bottom = 1700
 position_smoothing_enabled = true
 
 [node name="Eagle" parent="." instance=ExtResource("6_x2vej")]
+unique_name_in_owner = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
