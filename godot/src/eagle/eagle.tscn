@@ -40,15 +40,18 @@ rotation = -0.651324
 texture = ExtResource("2_o2b0p")
 flip_h = true
 
-[node name="WarningSfx" type="AudioStreamPlayer2D" parent="."]
+[node name="WarningSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_7wko3")
 volume_db = 12.0
+bus = &"Sound"
 
-[node name="FlyBySfx" type="AudioStreamPlayer2D" parent="."]
+[node name="FlyBySfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_e620g")
+bus = &"Sound"
 
-[node name="GrabSfx" type="AudioStreamPlayer2D" parent="."]
+[node name="GrabSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_3jpf0")
+bus = &"Sound"
 
 [node name="xsm" type="Node" parent="."]
 script = ExtResource("6_drs0q")
@@ -61,9 +64,19 @@ next_state = NodePath("waiting")
 
 [node name="disabled" type="Node" parent="xsm"]
 script = ExtResource("13_nwk32")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("../waiting")
 
 [node name="waiting" type="Node" parent="xsm"]
 script = ExtResource("7_sq710")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("../flyby")
 
 [node name="flyby" type="Node" parent="xsm"]
 script = ExtResource("8_bkve8")
@@ -71,13 +84,28 @@ disabled = false
 debug_mode = false
 target_path = NodePath("../..")
 timed = false
-next_state = NodePath("")
+next_state = NodePath("../dive")
 
 [node name="dive" type="Node" parent="xsm"]
 script = ExtResource("9_fx0c1")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("../grab")
 
 [node name="grab" type="Node" parent="xsm"]
 script = ExtResource("10_0bwhh")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("../leave")
 
 [node name="leave" type="Node" parent="xsm"]
 script = ExtResource("11_wg8cd")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")

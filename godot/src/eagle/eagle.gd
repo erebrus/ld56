@@ -15,9 +15,9 @@ extends Path2D
 @onready var xsm: State = $xsm
 @onready var claw = $Claw
 @onready var sprite = %Sprite2D
-@onready var warning_sfx: AudioStreamPlayer2D = $WarningSfx
-@onready var grab_sfx: AudioStreamPlayer2D = $GrabSfx
-@onready var flyby_sfx: AudioStreamPlayer2D = $FlyBySfx
+@onready var warning_sfx: AudioStreamPlayer = $WarningSfx
+@onready var grab_sfx: AudioStreamPlayer = $GrabSfx
+@onready var flyby_sfx: AudioStreamPlayer = $FlyBySfx
 
 
 func _ready() -> void:
