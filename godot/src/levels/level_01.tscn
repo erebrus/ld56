@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="11_d42lr"]
 [ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="11_msv3w"]
 [ext_resource type="PackedScene" uid="uid://g0ammwgw85c0" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="12_o3e6v"]
-[ext_resource type="PackedScene" uid="uid://bewxal3nv2w8g" path="res://src/bugs/snail.tscn" id="13_62tsv"]
+[ext_resource type="PackedScene" uid="uid://dvonu3ghfpb3y" path="res://src/bugs/snail.tscn" id="13_62tsv"]
 [ext_resource type="PackedScene" uid="uid://daidqd7n3terl" path="res://src/world/next_level.tscn" id="14_2skva"]
-[ext_resource type="PackedScene" uid="uid://dn40sagnjlvbk" path="res://src/bugs/moth.tscn" id="14_mcv6n"]
+[ext_resource type="PackedScene" uid="uid://c6d7ntmkxq2eg" path="res://src/bugs/moth.tscn" id="14_mcv6n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acc83"]
 size = Vector2(531, 2061)
