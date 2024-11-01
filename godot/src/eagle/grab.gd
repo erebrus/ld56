@@ -1,3 +1,4 @@
+@tool
 extends State
 
 var grab_sound_played:= false
