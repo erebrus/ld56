@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtisfe47xbx30"]
+
+[ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_0tuie"]
+[ext_resource type="PackedScene" uid="uid://dsa4q1xpbweyr" path="res://src/world/platforms/leaf_platform_small.tscn" id="2_6m2a1"]
+
+[node name="BaseLevel" instance=ExtResource("1_0tuie")]
+
+[node name="LeafPlatformSmall" parent="Scenery" index="0" instance=ExtResource("2_6m2a1")]
+position = Vector2(934, 1269)
+
+[node name="LeafPlatformSmall2" parent="Scenery" index="1" instance=ExtResource("2_6m2a1")]
+position = Vector2(1340, 1041)
+
+[node name="LeafPlatformSmall3" parent="Scenery" index="2" instance=ExtResource("2_6m2a1")]
+position = Vector2(1775, 827)
+
+[node name="LeafPlatformSmall4" parent="Scenery" index="3" instance=ExtResource("2_6m2a1")]
+position = Vector2(2203, 634)

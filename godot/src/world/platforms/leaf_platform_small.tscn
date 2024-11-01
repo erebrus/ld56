@@ -1,11 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://dsa4q1xpbweyr"]
 
-[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_2ibip"]
+[ext_resource type="PackedScene" uid="uid://bv5tsmkanbut" path="res://src/world/platforms/collapsible_platform.tscn" id="1_2ibip"]
 [ext_resource type="Texture2D" uid="uid://bls3vbqvlwp8r" path="res://assets/gfx/environment/LeafPlatformSmall.png" id="2_cc442"]
 
-[sub_resource type="Animation" id="Animation_qq30o"]
-resource_name = "reset"
-length = 0.2
+[sub_resource type="Animation" id="Animation_ttmhp"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -13,10 +12,10 @@ tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 4
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-1.5708, 0.0]
+"values": [0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -25,10 +24,10 @@ tracks/1/path = NodePath("CollisionPolygon2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_uxkfv"]
@@ -60,8 +59,9 @@ tracks/1/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_ttmhp"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_qq30o"]
+resource_name = "reset"
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -69,10 +69,10 @@ tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 4
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [-1.5708, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -81,10 +81,10 @@ tracks/1/path = NodePath("CollisionPolygon2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 2),
 "update": 1,
-"values": [false]
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bghqk"]
@@ -95,7 +95,6 @@ _data = {
 }
 
 [node name="LeafPlatformSmall" instance=ExtResource("1_2ibip")]
-collapsible = true
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(189, 29)
@@ -111,8 +110,3 @@ one_way_collision = true
 libraries = {
 "": SubResource("AnimationLibrary_bghqk")
 }
-
-[node name="Timer" type="Timer" parent="." index="3"]
-one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
