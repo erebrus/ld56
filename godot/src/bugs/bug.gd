@@ -100,7 +100,7 @@ func _on_generic_controller_forward(method_name: String, args = null):
 			else:
 				state.call(method_name, args)
 
-func _on_reaction_area_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_reaction_area_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if Globals.rng.randf() < dodge_chance:
 		do_dodge()
 		

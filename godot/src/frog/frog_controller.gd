@@ -154,7 +154,7 @@ func _input(_e):
 func get_body()->CharacterBody2D:
 	return get_parent() as CharacterBody2D
 
-func set_auto_acc(dir:float, value=max_acceleration):
+func set_auto_acc(dir:float, value:float = max_acceleration):
 	acc.x = sign(dir)*value
 	check_direction_change(sign(dir))
 	
@@ -192,11 +192,11 @@ func process_movement(delta):
 	get_body().move_and_slide()
 	if get_body().get_slide_collision_count():
 		var c = get_body().get_slide_collision(0).get_collider() 
-		var cn = c.name
+		
 		if c.name.to_lower().begins_with("rock"):
 			floor_type = Types.FloorType.Rock
 		else:
-			Types.FloorType.Grass
+			floor_type = Types.FloorType.Grass 
 		if c.has_method("on_contact"):
 			c.on_contact()
 		

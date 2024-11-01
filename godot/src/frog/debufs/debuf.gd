@@ -11,7 +11,7 @@ signal expired(debuf:Debuf)
 @onready var sfx_on: AudioStreamPlayer = $sfx_on
 @onready var sfx_off: AudioStreamPlayer = $sfx_off
 
-func apply_debuf(frog):
+func apply_debuf(_frog):
 	timer.wait_time = duration
 	if not immediate:
 		timer.start()
@@ -20,7 +20,7 @@ func apply_debuf(frog):
 	Logger.info("applying %s" % name)
 	Events.debuf_applied.emit(self)
 	
-func cancel_debuf(frog):
+func cancel_debuf(_frog):
 	
 	Logger.info("canceling %s" % name)
 	if not immediate:

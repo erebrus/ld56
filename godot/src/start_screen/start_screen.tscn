@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://chee1wf730wys" path="res://assets/gfx/ui/ToggleOFF.png" id="4_8qm1j"]
 [ext_resource type="PackedScene" uid="uid://chr06igj83yd1" path="res://src/start_screen/start_frog.tscn" id="4_514m2"]
 [ext_resource type="Texture2D" uid="uid://w5am6nqn8pe7" path="res://assets/gfx/ui/MenuBG.png" id="4_fsuor"]
-[ext_resource type="Theme" uid="uid://dnhwlc57e8luf" path="res://src/start_screen/start_theme.tres" id="4_gg3b2"]
+[ext_resource type="Theme" uid="uid://cligsckk5w2oh" path="res://src/start_screen/start_theme.tres" id="4_gg3b2"]
 [ext_resource type="AudioStream" uid="uid://cmj2ydubdosa8" path="res://assets/sfx/Ui_general_big.wav" id="4_lp8qy"]
 [ext_resource type="Texture2D" uid="uid://cj7nu1gj8n70x" path="res://assets/gfx/ui/ToggleON.png" id="5_ao7ca"]
-[ext_resource type="PackedScene" uid="uid://bewxal3nv2w8g" path="res://src/bugs/snail.tscn" id="8_33bx1"]
-[ext_resource type="PackedScene" uid="uid://dn40sagnjlvbk" path="res://src/bugs/moth.tscn" id="8_wm3fe"]
+[ext_resource type="PackedScene" uid="uid://dvonu3ghfpb3y" path="res://src/bugs/snail.tscn" id="8_33bx1"]
+[ext_resource type="PackedScene" uid="uid://c6d7ntmkxq2eg" path="res://src/bugs/moth.tscn" id="8_wm3fe"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mm3h4"]
 texture = ExtResource("4_fsuor")
