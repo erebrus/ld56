@@ -15,24 +15,28 @@ extends VBoxContainer
 @export var bug1: Types.BugType:
 	set(value):
 		bug1 = value
-		if $Bugs/Bug1:
-			$Bugs/Bug1.texture = Types.BUG_ALMANAC_TEXTURES[bug1]
+		if bug1_node:
+			bug1_node.texture = Types.BUG_ALMANAC_TEXTURES[bug1]
 		
 
 @export var bug2: Types.BugType:
 	set(value):
 		bug2 = value
-		if $Bugs/Bug2:
-			$Bugs/Bug2.texture = Types.BUG_ALMANAC_TEXTURES[bug2]
+		if bug2_node:
+			bug2_node.texture = Types.BUG_ALMANAC_TEXTURES[bug2]
 
 
 @export var bug3: Types.BugType:
 	set(value):
 		bug3 = value
-		if $Bugs/Bug3:
-			$Bugs/Bug3.texture = Types.BUG_ALMANAC_TEXTURES[bug3]
+		if bug3_node:
+			bug3_node.texture = Types.BUG_ALMANAC_TEXTURES[bug3]
+
+@onready var bug1_node: TextureRect = %Bug1
+@onready var bug2_node: TextureRect = %Bug2
+@onready var bug3_node: TextureRect = %Bug3
 
 func _ready() -> void:
-	$Bugs/Bug1.texture = Types.BUG_ALMANAC_TEXTURES[bug1]
-	$Bugs/Bug2.texture = Types.BUG_ALMANAC_TEXTURES[bug2]
-	$Bugs/Bug3.texture = Types.BUG_ALMANAC_TEXTURES[bug3]
+	bug1_node.texture = Types.BUG_ALMANAC_TEXTURES[bug1]
+	bug2_node.texture = Types.BUG_ALMANAC_TEXTURES[bug2]
+	bug3_node.texture = Types.BUG_ALMANAC_TEXTURES[bug3]
