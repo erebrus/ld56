@@ -561,15 +561,10 @@ curve = SubResource("Curve2D_ymibe")
 [node name="Frog" parent="." index="4"]
 position = Vector2(971, 1551)
 swing_gravity = 1000
-
-[node name="HealthComponent" parent="Frog" index="9"]
-max_energy = 200.0
+max_energy = 200
 
 [node name="music" parent="." index="9"]
 stream = SubResource("AudioStreamSynchronized_6xx52")
 
 [node name="NextLevel" parent="." index="10" instance=ExtResource("18_ixeje")]
 position = Vector2(12833, -364)
-
-[editable path="Frog"]
-[editable path="Frog/Head"]

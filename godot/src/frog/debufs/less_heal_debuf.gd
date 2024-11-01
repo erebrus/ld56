@@ -1,12 +1,12 @@
 extends Debuf
 
-@export var value:float=2
+@export var value:float=1
 
 
-func apply_debuf(frog):
+func apply_debuf(frog: Frog):
 	super.apply_debuf(frog)
-	frog.max_heal=1
+	frog.health_component.max_heal=value
 	
-func cancel_debuf(frog):
+func cancel_debuf(frog: Frog):
 	super.cancel_debuf(frog)
-	frog.max_heal=frog.health_component.max_energy
+	frog.health_component.max_heal=frog.health_component.max_energy

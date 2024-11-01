@@ -16,6 +16,8 @@ signal frog_grabbed
 signal threat_on()
 signal threat_off()
 
+signal energy_changed(value:float)
+signal max_energy_changed(value:float)
 signal energy_depleted
 signal reached_level_end()
 signal game_lost(cause: Types.LossType)
