@@ -18,7 +18,7 @@ signal threat_off()
 
 signal energy_depleted
 signal reached_level_end()
-signal game_lost()
+signal game_lost(cause: Types.LossType)
 
 signal combo_achieved(idx:int)
 

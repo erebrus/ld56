@@ -16,3 +16,4 @@ func _on_update(delta) -> void:
 	
 	if target.claw.progress_ratio >= 1:
 		Events.game_lost.emit(Types.LossType.BIRD)
+		change_state("disabled")

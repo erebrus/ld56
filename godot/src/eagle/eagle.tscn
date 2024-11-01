@@ -68,7 +68,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../waiting")
+next_state = NodePath("")
 
 [node name="waiting" type="Node" parent="xsm"]
 script = ExtResource("7_sq710")
@@ -76,7 +76,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../flyby")
+next_state = NodePath("")
 
 [node name="flyby" type="Node" parent="xsm"]
 script = ExtResource("8_bkve8")
@@ -84,7 +84,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("../..")
 timed = false
-next_state = NodePath("../dive")
+next_state = NodePath("")
 
 [node name="dive" type="Node" parent="xsm"]
 script = ExtResource("9_fx0c1")
@@ -92,7 +92,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../grab")
+next_state = NodePath("")
 
 [node name="grab" type="Node" parent="xsm"]
 script = ExtResource("10_0bwhh")
@@ -100,7 +100,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../leave")
+next_state = NodePath("")
 
 [node name="leave" type="Node" parent="xsm"]
 script = ExtResource("11_wg8cd")
