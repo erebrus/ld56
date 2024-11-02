@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SS2D_Material_Shape" load_steps=19 format=3 uid="uid://crolyglr6eg8j"]
+[gd_resource type="Resource" script_class="SS2D_Material_Shape" load_steps=27 format=3 uid="uid://crolyglr6eg8j"]
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="1_seakm"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="2_yitpg"]
@@ -16,9 +16,41 @@
 [ext_resource type="Texture2D" uid="uid://boiq16mwa81rb" path="res://assets/gfx/environment/ground/inner_corner_01.png" id="11_cfqxc"]
 [ext_resource type="Texture2D" uid="uid://cri5eis07qsc3" path="res://assets/gfx/environment/ground/outer_corner_01.png" id="12_o6axk"]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_gqyma"]
+diffuse_texture = ExtResource("3_libi2")
+texture_repeat = 2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nkl4e"]
+diffuse_texture = ExtResource("4_5mqla")
+texture_repeat = 2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_33u44"]
+diffuse_texture = ExtResource("4_n0xeq")
+texture_repeat = 2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jyjwh"]
+diffuse_texture = ExtResource("6_asm8m")
+texture_repeat = 2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rr626"]
+diffuse_texture = ExtResource("7_0muey")
+texture_repeat = 2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w031f"]
+diffuse_texture = ExtResource("8_cm86u")
+texture_repeat = 2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tmvns"]
+diffuse_texture = ExtResource("9_wmev2")
+texture_repeat = 2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_728uo"]
+diffuse_texture = ExtResource("10_8k1nk")
+texture_repeat = 2
+
 [sub_resource type="Resource" id="Resource_b0wvp"]
 script = ExtResource("2_yitpg")
-textures = Array[Texture2D]([ExtResource("3_libi2"), ExtResource("4_5mqla"), ExtResource("4_n0xeq"), ExtResource("6_asm8m"), ExtResource("7_0muey"), ExtResource("8_cm86u"), ExtResource("9_wmev2"), ExtResource("10_8k1nk")])
+textures = Array[Texture2D]([ExtResource("7_0muey"), ExtResource("8_cm86u"), ExtResource("9_wmev2"), ExtResource("10_8k1nk"), SubResource("CanvasTexture_gqyma"), SubResource("CanvasTexture_nkl4e"), SubResource("CanvasTexture_33u44"), SubResource("CanvasTexture_jyjwh"), SubResource("CanvasTexture_rr626"), SubResource("CanvasTexture_w031f"), SubResource("CanvasTexture_tmvns"), SubResource("CanvasTexture_728uo")])
 textures_corner_outer = Array[Texture2D]([ExtResource("12_o6axk")])
 textures_corner_inner = Array[Texture2D]([ExtResource("11_cfqxc")])
 textures_taper_left = Array[Texture2D]([])
