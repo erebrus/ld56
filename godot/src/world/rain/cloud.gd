@@ -9,7 +9,7 @@ func _ready() -> void:
 	schedule_drop()
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	pass
 	
 func generate_drop():

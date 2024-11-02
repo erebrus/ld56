@@ -20,6 +20,6 @@ func show_overlay(type:Types.LossType):
 			tip_2.visible=true
 	visible=true
 	
-func _input(e):
-	if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_cancel")) and visible:
+func _input(e: InputEvent):
+	if (e.is_action_pressed("ui_accept") or e.is_action_pressed("ui_cancel")) and visible:
 		Globals.show_start_screen()

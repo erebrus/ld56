@@ -1,3 +1,4 @@
+@tool
 extends TongeState
 
 var direction: Vector2

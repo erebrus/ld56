@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu5fbnrx3t6v7"]
 
 [ext_resource type="Script" path="res://src/end_screens/lose_screen.gd" id="1_4sp8k"]
-[ext_resource type="Theme" uid="uid://dnhwlc57e8luf" path="res://src/start_screen/start_theme.tres" id="1_5tn3a"]
+[ext_resource type="Theme" uid="uid://cligsckk5w2oh" path="res://src/start_screen/start_theme.tres" id="1_5tn3a"]
 
 [node name="LoseScreen" type="ColorRect"]
 anchors_preset = 15

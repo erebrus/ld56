@@ -67,7 +67,6 @@ func matches(combo:Array)->bool:
 			if combo[i]!=bugs[i]:
 				return false
 	return true
-	_reset_combo()
 	
 func check_combo()->bool:
 	for i in range(bugs.size()):

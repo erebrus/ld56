@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://br6usfo70b445" path="res://src/world/platforms/rockledge.tscn" id="6_feoob"]
 [ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="7_a3tua"]
 [ext_resource type="PackedScene" uid="uid://i1m1wvlfxwsi" path="res://src/world/platforms/flower.tscn" id="8_6oteu"]
-[ext_resource type="PackedScene" uid="uid://dkyx6xyum3prp" path="res://src/bugs/slug.tscn" id="9_jpj2v"]
+[ext_resource type="PackedScene" uid="uid://bexhfhawpoxgk" path="res://src/bugs/slug.tscn" id="9_jpj2v"]
 [ext_resource type="PackedScene" uid="uid://daidqd7n3terl" path="res://src/world/next_level.tscn" id="9_ytgtn"]
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="10_rm72x"]
 [ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="11_8kdqw"]
@@ -274,9 +274,7 @@ autowrap_mode = 3
 
 [node name="Frog" parent="." index="6"]
 position = Vector2(1051, 1524)
-
-[node name="HealthComponent" parent="Frog" index="9"]
-max_energy = 500.0
+max_energy = 500
 
 [node name="NextLevel" parent="." index="7" instance=ExtResource("9_ytgtn")]
 position = Vector2(15248, 1210)
@@ -297,6 +295,3 @@ position = Vector2(12237, 1051.5)
 shape = SubResource("RectangleShape2D_wia2p")
 
 [connection signal="body_entered" from="TriggerEagle" to="." method="_on_trigger_eagle_body_entered"]
-
-[editable path="Frog"]
-[editable path="Frog/Head"]

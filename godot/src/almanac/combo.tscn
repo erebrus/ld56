@@ -22,13 +22,16 @@ text = "Replenish extra energy"
 layout_mode = 2
 
 [node name="Bug1" type="TextureRect" parent="Bugs"]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_jn4uq")
 
 [node name="Bug2" type="TextureRect" parent="Bugs"]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_jn4uq")
 
 [node name="Bug3" type="TextureRect" parent="Bugs"]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_jn4uq")

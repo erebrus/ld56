@@ -16,6 +16,7 @@ texture = ExtResource("2_axq3c")
 unique_name_in_owner = true
 visible = true
 position = Vector2(15, -67)
+extension_speed = 1500.0
 
 [node name="Guide" type="Line2D" parent="."]
 visible = false

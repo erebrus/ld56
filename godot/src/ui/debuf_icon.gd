@@ -10,5 +10,5 @@ var texture:Texture:
 		$BG.texture=t
 		$Progress.texture_progress=t
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Progress.value=debuf.get_percentage_done()

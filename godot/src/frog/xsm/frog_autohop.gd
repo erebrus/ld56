@@ -4,7 +4,7 @@ extends XSMFrog
 class_name XSMFrogAutoHop
 
 @export  var acc:float=15000
-@export var direction:Types.HopDirection = 1
+@export var direction:Types.HopDirection = Types.HopDirection.RIGHT
 func _on_enter(_args) -> void:
 	Logger.info("state:%s " % name)
 	if target:

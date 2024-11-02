@@ -7,7 +7,13 @@ signal energy_changed(value:float)
 @export var swing_speed:= 5
 @export var reel_speed:= 20
 @export var energy_drop_rate:float = 2
-
+@export var max_energy:=100:
+	set(value):
+		max_energy = value
+		if health_component:
+			health_component.max_energy = max_energy
+			health_component.energy = max_energy
+	
 
 @onready var controller: FrogController = $Controller
 @onready var xsm: State = $xsm
@@ -25,14 +31,17 @@ signal energy_changed(value:float)
 @onready var sfx_hard_landing: AudioStreamPlayer2D = $sfx/sfx_hard_landing
 @onready var energy_timer: Timer = $EnergyTimer
 @onready var sprite_offset=$AnimatedSprite2D.position
+
 var state_name:String
-var max_heal=100
 var immune:=false
 var trampoline_strength:float=0
 
 func _ready():
 	Globals.player = self
 	
+	health_component.max_energy = max_energy
+	health_component.energy = max_energy
+			
 	velocity.y=1
 	Events.tongue_attached.connect(_on_tongue_attached)
 	Events.tongue_detached.connect(_on_tongue_detached)
@@ -160,9 +169,7 @@ func spawn_debuf_label(debuf:Debuf):
 	label.global_position = label.anchor.global_position
 	
 func process_bug(bug:Bug)->void:
-	var heal_value:float = min(max_heal,bug.energy_value)
-	Logger.info("Healing for %.2f" % heal_value)
-	health_component.on_heal(heal_value)
+	health_component.on_heal(bug.energy_value)
 	var scene:PackedScene = Types.DEBUF_MAP[bug.type]
 	var new_debuf:Debuf = scene.instantiate() as Debuf
 	process_debuf(new_debuf)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv5tsmkanbut"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_pqefi"]
+[ext_resource type="Script" path="res://src/world/platforms/collapsible_platform.gd" id="2_al13p"]
+
+[node name="CollapsiblePlatform" instance=ExtResource("1_pqefi")]
+script = ExtResource("2_al13p")
+support_time = 0.5
+recover_time = 2.0
+
+[node name="Timer" type="Timer" parent="." index="2"]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

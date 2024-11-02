@@ -22,34 +22,21 @@ grow_vertical = 2
 theme_override_constants/margin_left = -80
 script = ExtResource("1_6oxel")
 
-[node name="BG" type="TextureRect" parent="."]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_hh8pe")
-
 [node name="Progress" type="TextureProgressBar" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-max_value = 150.0
 value = 100.0
 texture_under = ExtResource("2_hh8pe")
 texture_progress = ExtResource("4_870ou")
+texture_progress_offset = Vector2(148, 97)
 
 [node name="GreyProgress" type="TextureProgressBar" parent="."]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-max_value = 150.0
-value = 150.0
+value = 30.0
 fill_mode = 1
+texture_over = ExtResource("5_tj1o4")
 texture_progress = ExtResource("3_k4iwg")
-
-[node name="TopPart" type="TextureRect" parent="."]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("5_tj1o4")
+texture_progress_offset = Vector2(148, 97)
