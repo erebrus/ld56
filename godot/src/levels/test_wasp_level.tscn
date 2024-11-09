@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci64ocue1coib"]
+
+[ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_urp8v"]
+[ext_resource type="PackedScene" uid="uid://ctvu6tarsq4cl" path="res://src/wasp/wasp.tscn" id="2_fno5c"]
+
+[node name="BaseLevel" instance=ExtResource("1_urp8v")]
+
+[node name="Wasp" parent="." index="6" instance=ExtResource("2_fno5c")]
+position = Vector2(2009, 1306)
