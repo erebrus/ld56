@@ -29,6 +29,7 @@ signal energy_changed(value:float)
 @onready var auto_hop: XSMFrogAutoHop = %auto_hop
 @onready var sfx_hard_rock_landing: AudioStreamPlayer2D = $sfx/sfx_hard_rock_landing
 @onready var sfx_hard_landing: AudioStreamPlayer2D = $sfx/sfx_hard_landing
+@onready var sfx_swing: AudioStreamPlayer2D = $sfx/sfx_tongue_rope
 @onready var energy_timer: Timer = $EnergyTimer
 @onready var sprite_offset=$AnimatedSprite2D.position
 
@@ -42,7 +43,7 @@ func _ready():
 	
 	health_component.max_energy = max_energy
 	health_component.energy = max_energy
-			
+	
 	velocity.y=1
 	Events.tongue_attached.connect(_on_tongue_attached)
 	Events.tongue_detached.connect(_on_tongue_detached)

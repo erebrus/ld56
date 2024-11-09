@@ -5,6 +5,7 @@ extends XSMFrogRope
 var gravity: Vector2
 var speed: Vector2
 var last_velocity:Vector2
+var has_played_sfx: bool = false
 
 @export var acc_x_factor:float = 2.0
 @export var max_x_speeed:float = 750
@@ -24,8 +25,24 @@ func _on_update(delta: float) -> void:
 	var direction = get_body().global_position.direction_to(anchor)
 	var tangent = direction.normalized().rotated(PI/2)
 	var length = velocity.dot(tangent)
-	last_velocity = length * tangent
-	var motion = last_velocity * delta
+	var new_velocity = length * tangent
+	var new_direction = length / abs(length) * tangent
+	
+	if (last_velocity == Vector2.ZERO and new_velocity != Vector2.ZERO) or last_velocity.dot(new_velocity) < 0:
+		# changed directions
+		has_played_sfx = false
+	
+	if not has_played_sfx and abs(new_direction.dot(Vector2.RIGHT)) > 0.9:
+		has_played_sfx = true
+		var rope_length = get_body().global_position.distance_to(anchor)
+		var max_rope_length = get_body().head.tongue.max_length
+		var volume_factor = rope_length / max_rope_length
+	
+		target.sfx_swing.volume_db = linear_to_db(db_to_linear(6) * volume_factor) 
+		target.sfx_swing.play()
+		
+	var motion = new_velocity * delta
+	last_velocity = new_velocity
 	
 	_update_rope_length(delta)
 	_move(motion)
