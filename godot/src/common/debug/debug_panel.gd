@@ -7,8 +7,8 @@ func _ready() -> void:
 	hide()
 	for i in Types.BugType:
 		%Debuffs.add_item(i, Types.BugType[i])
-	for i in Types.COMBOS.size():
-		%Combos.add_item(str(i), i)
+	for i in Types.Combos.keys():
+		%Combos.add_item(str(i), Types.Combos[i])
 	
 
 func _input(event: InputEvent) -> void:

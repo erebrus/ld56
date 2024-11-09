@@ -22,7 +22,7 @@ signal energy_depleted
 signal reached_level_end()
 signal game_lost(cause: Types.LossType)
 
-signal combo_achieved(idx:int)
+signal combo_achieved(idx:Types.Combos)
 
 signal bug_freeze_toggle(val:bool)
 signal block_max_hp(val:float)

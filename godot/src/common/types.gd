@@ -36,6 +36,8 @@ func key_of(value) -> String:
 	BugType.Worm:preload("res://src/frog/debufs/tongue_debuf.tscn"),
 	BugType.Cockroach:preload("res://src/frog/debufs/ep_max_debuf.tscn")
 }
+
+enum Combos {TRIPLE_DOUBLE, GOURMET_KEBUB, FLYING_TASTE, TAKE_IT_SLOW, CRUNCHY_SANDWICH}
 @onready var COMBO_BUFS=[
 	preload("res://src/frog/debufs/triple_double_buff.tscn"),
 	preload("res://src/frog/debufs/gourmet_kebub_buf.tscn"),
@@ -43,13 +45,15 @@ func key_of(value) -> String:
 	preload("res://src/frog/debufs/take_it_slow_buff.tscn"),
 	preload("res://src/frog/debufs/crunchy_sandwish_buf.tscn")
 ]
-const COMBOS=[
-	[Types.BugType.Beetle,Types.BugType.Fly,Types.BugType.Beetle],
-	[Types.BugType.Beetle,Types.BugType.Moth,Types.BugType.Snail],
-	[Types.BugType.Fly,Types.BugType.Moth,Types.BugType.Cockroach],
-	[Types.BugType.Snail,Types.BugType.Slug,Types.BugType.Worm],
-	[Types.BugType.Worm,Types.BugType.Cockroach,Types.BugType.Slug]
-]
+var COMBO_BUGS={
+	Combos.TRIPLE_DOUBLE:[Types.BugType.Beetle,Types.BugType.Fly,Types.BugType.Beetle],
+	Combos.GOURMET_KEBUB:[Types.BugType.Beetle,Types.BugType.Moth,Types.BugType.Snail],
+	Combos.FLYING_TASTE: [Types.BugType.Fly,Types.BugType.Moth,Types.BugType.Cockroach],
+	Combos.TAKE_IT_SLOW: [Types.BugType.Snail,Types.BugType.Slug,Types.BugType.Worm],
+	Combos.CRUNCHY_SANDWICH:[Types.BugType.Worm,Types.BugType.Cockroach,Types.BugType.Slug]	
+}
+	
+
 const DEBUF_ICONS={
 	#CrunchySandwishBuf:preload("res://src/frog/debufs/crunchy_sandwish_buf.tscn"),
 	#GourmetKebubBuf:preload("res://src/frog/debufs/gourmet_kebub_buf.tscn"),
@@ -78,7 +82,7 @@ const GREY_DEBUF_ICONS={
 	"EpMaxDebuf":preload("res://assets/gfx/ui/DebuffIcons/DecreMaxEP2.png"),
 	"EPDebuf":preload("res://assets/gfx/ui/DebuffIcons/IncreasEPspeed2.png")
 }
-const BUG_ALMANAC_TEXTURES = {
+var BUG_ALMANAC_TEXTURES = {
 	Types.BugType.Slug: preload("res://assets/gfx/ui/ComboIcons/Slug_Almanac.png"),
 	Types.BugType.Beetle: preload("res://assets/gfx/ui/ComboIcons/Beetle_Almanac.png"),
 	Types.BugType.Fly: preload("res://assets/gfx/ui/ComboIcons/Fly_Almanac.png"),
