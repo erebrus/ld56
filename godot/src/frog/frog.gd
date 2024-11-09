@@ -13,7 +13,7 @@ signal energy_changed(value:float)
 		if health_component:
 			health_component.max_energy = max_energy
 			health_component.energy = max_energy
-	
+
 
 @onready var controller: FrogController = $Controller
 @onready var xsm: State = $xsm
@@ -21,8 +21,8 @@ signal energy_changed(value:float)
 @onready var rc_down: RayCast2D = $rc_down
 @onready var rc_up: RayCast2D = $rc_up
 
-@onready var head: FrogHead = $Head
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var head: FrogHead = $FrogBody/Head
+@onready var sprite: AnimatedSprite2D = $FrogBody/AnimatedSprite2D
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var debufs: Node = %Debufs
@@ -31,7 +31,9 @@ signal energy_changed(value:float)
 @onready var sfx_hard_landing: AudioStreamPlayer2D = $sfx/sfx_hard_landing
 @onready var sfx_swing: AudioStreamPlayer2D = $sfx/sfx_tongue_rope
 @onready var energy_timer: Timer = $EnergyTimer
-@onready var sprite_offset=$AnimatedSprite2D.position
+@onready var sprite_offset=sprite.position
+@onready var debuff_animation_player: AnimationPlayer = $Debuffs/AnimationPlayer
+
 
 var state_name:String
 var is_dead:=false
@@ -169,7 +171,7 @@ func process_debuf(new_debuf:Debuf):
 func spawn_debuf_label(debuf:Debuf):
 	var label = Types.DEBUF_LABEL_SCENE.instantiate()
 	label.text = debuf.text
-	label.anchor = $DebufAnchor
+	label.anchor = %DebufAnchor
 	get_parent().add_child(label)
 	label.global_position = label.anchor.global_position
 	

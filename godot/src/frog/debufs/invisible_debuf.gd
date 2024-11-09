@@ -1,10 +1,10 @@
 extends Debuf
 class_name InvisibleDebuf
 
-func apply_debuf(frog):
+func apply_debuf(frog: Frog):
 	super.apply_debuf(frog)
-	frog.visible=false
+	frog.debuff_animation_player.play("debuff_animations/invisible")
 	
-func cancel_debuf(frog):
+func cancel_debuf(frog: Frog):
 	super.cancel_debuf(frog)
-	frog.visible=true
+	frog.debuff_animation_player.play_backwards("debuff_animations/invisible")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://b5lgniaadan1y"]
+[gd_scene load_steps=81 format=3 uid="uid://b5lgniaadan1y"]
 
 [ext_resource type="Script" path="res://src/frog/frog.gd" id="1_mohle"]
 [ext_resource type="Script" path="res://src/frog/frog_controller.gd" id="2_mpehw"]
@@ -68,6 +68,7 @@
 [ext_resource type="AudioStream" uid="uid://cwtfuvx388sjm" path="res://assets/sfx/Death_zero_energy.wav" id="57_jrolm"]
 [ext_resource type="AudioStream" uid="uid://dhknts4p0lteu" path="res://assets/sfx/MC_Wins.wav" id="64_7gmnc"]
 [ext_resource type="PackedScene" uid="uid://b6l6ff2tq018x" path="res://src/world/rain/cloud.tscn" id="68_7oghs"]
+[ext_resource type="AnimationLibrary" uid="uid://ylwfrucbrvxn" path="res://src/frog/debufs/debuff_animations.tres" id="68_rxylw"]
 [ext_resource type="PackedScene" uid="uid://chmb87l45qxc7" path="res://src/ui/debuf_panel.tscn" id="69_oucn3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g36ww"]
@@ -256,14 +257,16 @@ max_jump_amount = 2
 max_acceleration = 15000
 friction = 30
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="FrogBody" type="Node2D" parent="."]
+
+[node name="Head" parent="FrogBody" instance=ExtResource("2_pyle1")]
+visible = false
+shooting_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FrogBody"]
 position = Vector2(4, -78)
 sprite_frames = SubResource("SpriteFrames_g36ww")
 animation = &"idle"
-
-[node name="Head" parent="." instance=ExtResource("2_pyle1")]
-visible = false
-shooting_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -466,11 +469,19 @@ bus = &"Sound"
 [node name="EnergyTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="Debufs" type="Node" parent="."]
+[node name="Debuffs" type="Node2D" parent="."]
+
+[node name="Debufs" type="Node" parent="Debuffs"]
 unique_name_in_owner = true
 
-[node name="DebufAnchor" type="Marker2D" parent="."]
+[node name="DebufAnchor" type="Marker2D" parent="Debuffs"]
+unique_name_in_owner = true
 position = Vector2(117, -147)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Debuffs"]
+libraries = {
+"debuff_animations": ExtResource("68_rxylw")
+}
 
 [node name="Cloud" parent="." instance=ExtResource("68_7oghs")]
 start_y = -1500
@@ -498,9 +509,9 @@ layout_mode = 2
 [connection signal="jump_requested" from="Controller" to="." method="_on_controller_jump_requested"]
 [connection signal="jumped" from="Controller" to="." method="_on_controller_jumped"]
 [connection signal="started_falling" from="Controller" to="." method="_on_controller_started_falling"]
-[connection signal="shot_finished" from="Head" to="." method="_on_head_shot_finished"]
-[connection signal="shot_missed" from="Head" to="." method="_on_head_shot_missed"]
-[connection signal="shot_started" from="Head" to="." method="_on_head_shot_started"]
+[connection signal="shot_finished" from="FrogBody/Head" to="." method="_on_head_shot_finished"]
+[connection signal="shot_missed" from="FrogBody/Head" to="." method="_on_head_shot_missed"]
+[connection signal="shot_started" from="FrogBody/Head" to="." method="_on_head_shot_started"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="energy_changed" from="HealthComponent" to="." method="_on_health_component_energy_changed"]
 [connection signal="timeout" from="EnergyTimer" to="." method="_on_energy_timer_timeout"]
