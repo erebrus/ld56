@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://b5lgniaadan1y"]
+[gd_scene load_steps=80 format=3 uid="uid://b5lgniaadan1y"]
 
 [ext_resource type="Script" path="res://src/frog/frog.gd" id="1_mohle"]
 [ext_resource type="Script" path="res://src/frog/frog_controller.gd" id="2_mpehw"]
@@ -68,6 +68,7 @@
 [ext_resource type="AudioStream" uid="uid://cwtfuvx388sjm" path="res://assets/sfx/Death_zero_energy.wav" id="57_jrolm"]
 [ext_resource type="AudioStream" uid="uid://dhknts4p0lteu" path="res://assets/sfx/MC_Wins.wav" id="64_7gmnc"]
 [ext_resource type="PackedScene" uid="uid://b6l6ff2tq018x" path="res://src/world/rain/cloud.tscn" id="68_7oghs"]
+[ext_resource type="PackedScene" uid="uid://chmb87l45qxc7" path="res://src/ui/debuf_panel.tscn" id="69_oucn3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g36ww"]
 animations = [{
@@ -469,11 +470,27 @@ autostart = true
 unique_name_in_owner = true
 
 [node name="DebufAnchor" type="Marker2D" parent="."]
-position = Vector2(2.22566, -164.389)
+position = Vector2(117, -147)
 
 [node name="Cloud" parent="." instance=ExtResource("68_7oghs")]
 start_y = -1500
 width = 1000.0
+
+[node name="UI" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 170
+
+[node name="DebufPanel" parent="UI" instance=ExtResource("69_oucn3")]
+layout_mode = 2
 
 [connection signal="direction_changed" from="Controller" to="." method="_on_controller_direction_changed"]
 [connection signal="hit_ground" from="Controller" to="." method="_on_controller_hit_ground"]

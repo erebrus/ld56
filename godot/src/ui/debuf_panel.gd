@@ -1,7 +1,7 @@
 extends PanelContainer
 
 const ICON_SCENE:PackedScene = preload("res://src/ui/debuf_icon.tscn")
-@onready var grid: GridContainer = %GridContainer
+@onready var grid: Container = %DebuffContainer
 
 var icon_map={}
 func _ready():
@@ -36,8 +36,9 @@ func get_icon_for_debuf(debuf:Debuf)->DebufIcon:
 	if not debuf.name in Types.DEBUF_ICONS:
 		return null
 	var icon = ICON_SCENE.instantiate()	
-	var texture = Types.DEBUF_ICONS[debuf.name]
+	
+	icon.texture_progress = Types.DEBUF_ICONS[debuf.name]
+	icon.texture_under = Types.GREY_DEBUF_ICONS[debuf.name]
 	icon.debuf = debuf
-	icon.texture = texture
 	return icon
 	

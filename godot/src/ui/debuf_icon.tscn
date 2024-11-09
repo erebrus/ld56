@@ -1,27 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2o28eerfitbo"]
+[gd_scene load_steps=4 format=3 uid="uid://d2o28eerfitbo"]
 
 [ext_resource type="Script" path="res://src/ui/debuf_icon.gd" id="1_kxfsj"]
-[ext_resource type="Texture2D" uid="uid://d0bh71hyynj7u" path="res://assets/gfx/ui/DebuffIcons/BeetleDodgeUP.png" id="1_vet1s"]
+[ext_resource type="Texture2D" uid="uid://5n7vohikmp7s" path="res://assets/gfx/ui/DebuffIcons/decrease_jump_on.png" id="1_rke2j"]
+[ext_resource type="Texture2D" uid="uid://c14xjutfit5eh" path="res://assets/gfx/ui/DebuffIcons/decrease_jump_off.png" id="2_vm2ta"]
 
-[node name="DebufIcon" type="Control"]
+[node name="DebufIcon" type="TextureProgressBar"]
 custom_minimum_size = Vector2(52, 52)
-layout_mode = 3
-anchors_preset = 0
 offset_right = 52.0
 offset_bottom = 52.0
-script = ExtResource("1_kxfsj")
-
-[node name="BG" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_vet1s")
-
-[node name="Progress" type="TextureProgressBar" parent="."]
-modulate = Color(0.412152, 0.412152, 0.412152, 1)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 value = 1.0
-fill_mode = 4
-texture_progress = ExtResource("1_vet1s")
+fill_mode = 3
+texture_under = ExtResource("1_rke2j")
+texture_progress = ExtResource("2_vm2ta")
+script = ExtResource("1_kxfsj")
