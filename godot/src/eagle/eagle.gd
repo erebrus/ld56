@@ -40,8 +40,9 @@ func trigger_now() -> void:
 func fly_by() -> void:
 	Logger.info("Eagle attacking!")
 	flyby_sfx.play()
-	if Globals.player.is_under_cover():
+	if Globals.player.is_under_cover() or Globals.player.is_dead:
 		xsm.change_state("flyby")
 	else:
+		Globals.player.is_dead = true
 		xsm.change_state("dive")
 	

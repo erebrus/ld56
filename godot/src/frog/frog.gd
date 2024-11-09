@@ -33,6 +33,7 @@ signal energy_changed(value:float)
 @onready var sprite_offset=$AnimatedSprite2D.position
 
 var state_name:String
+var is_dead:=false
 var immune:=false
 var trampoline_strength:float=0
 
@@ -119,6 +120,9 @@ func _on_controller_direction_changed() -> void:
 	
 
 func _on_health_component_died() -> void:
+	if is_dead:
+		return
+	is_dead = true
 	xsm.change_state("death")
 	await animation_player.animation_finished
 	Events.game_lost.emit(Types.LossType.ENERGY)

@@ -67,7 +67,9 @@ func point_at(target: Vector2) -> void:
 func shoot() -> void:
 	if tongue.is_shooting:
 		return
-
+	
+	if Globals.player != null and Globals.player.is_dead:
+		return
 	
 	match shooting_mode:
 		Mode.LastDirection:
