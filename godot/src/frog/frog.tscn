@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://b5lgniaadan1y"]
+[gd_scene load_steps=83 format=3 uid="uid://b5lgniaadan1y"]
 
 [ext_resource type="Script" path="res://src/frog/frog.gd" id="1_mohle"]
 [ext_resource type="Script" path="res://src/frog/frog_controller.gd" id="2_mpehw"]
@@ -68,7 +68,9 @@
 [ext_resource type="AudioStream" uid="uid://cwtfuvx388sjm" path="res://assets/sfx/Death_zero_energy.wav" id="57_jrolm"]
 [ext_resource type="AudioStream" uid="uid://dhknts4p0lteu" path="res://assets/sfx/MC_Wins.wav" id="64_7gmnc"]
 [ext_resource type="PackedScene" uid="uid://b6l6ff2tq018x" path="res://src/world/rain/cloud.tscn" id="68_7oghs"]
+[ext_resource type="Texture2D" uid="uid://debso7nt1wyjw" path="res://assets/gfx/player/shield.png" id="68_mh123"]
 [ext_resource type="AnimationLibrary" uid="uid://ylwfrucbrvxn" path="res://src/frog/debufs/debuff_animations.tres" id="68_rxylw"]
+[ext_resource type="Script" path="res://src/frog/no_tongue_shield.gd" id="69_gi33w"]
 [ext_resource type="PackedScene" uid="uid://chmb87l45qxc7" path="res://src/ui/debuf_panel.tscn" id="69_oucn3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g36ww"]
@@ -477,6 +479,13 @@ unique_name_in_owner = true
 [node name="DebufAnchor" type="Marker2D" parent="Debuffs"]
 unique_name_in_owner = true
 position = Vector2(117, -147)
+
+[node name="NoTongueShield" type="Sprite2D" parent="Debuffs"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -78)
+texture = ExtResource("68_mh123")
+script = ExtResource("69_gi33w")
+rotation_speed = 2.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Debuffs"]
 libraries = {
