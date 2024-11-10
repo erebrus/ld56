@@ -73,7 +73,8 @@ func check_combo()->bool:
 		if bugs[i]==null:
 			return false
 	for combo_key in Types.Combos.keys():
-		var combo = Types.COMBO_BUGS[combo_key]
+		var key = Types.Combos[combo_key]
+		var combo = Types.COMBO_BUGS[key]
 		if matches(combo):
 			Events.combo_achieved.emit(combo_key)
 			$combo_success.play()
