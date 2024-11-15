@@ -48,13 +48,16 @@ func _ready() -> void:
 	guide.add_point(Vector2.ZERO)
 	guide.add_point(Vector2(50, 0))
 	
-	remove_child(tongue)
-	# TODO: better way to get character's parent?
-	var player = get_parent()
-	var player_container = player.get_parent()
-	await player_container.ready
-	player_container.add_child(tongue)
-	#player_container.move_child(tongue,  player.get_index()) # tongue behind player
+	
+	var level = get_parent()
+	while level != null and level is not GameLevel:
+		level = level.get_parent()
+	
+	if level != null:
+		remove_child(tongue)
+		await level.ready
+		level.add_child(tongue)
+		#player_container.move_child(tongue,  player.get_index()) # tongue behind player
 	
 
 func point_at(target: Vector2) -> void:
