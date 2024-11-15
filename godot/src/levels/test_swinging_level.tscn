@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://burowlmmb2b87"]
+
+[ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_7kcrp"]
+[ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="2_gquog"]
+
+[node name="BaseLevel" instance=ExtResource("1_7kcrp")]
+
+[node name="Mushroom" parent="Scenery" index="0" instance=ExtResource("2_gquog")]
+position = Vector2(773, 1217)
+
+[node name="Mushroom2" parent="Scenery" index="1" instance=ExtResource("2_gquog")]
+position = Vector2(1132, 1073)
+
+[node name="Mushroom3" parent="Scenery" index="2" instance=ExtResource("2_gquog")]
+position = Vector2(1450, 953)
+
+[node name="Mushroom4" parent="Scenery" index="3" instance=ExtResource("2_gquog")]
+position = Vector2(1816, 791)
+
+[node name="Mushroom5" parent="Scenery" index="4" instance=ExtResource("2_gquog")]
+position = Vector2(2152, 641)

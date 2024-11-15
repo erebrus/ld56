@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://src/eagle/eagle.gd" id="1_2whi5"]
 [ext_resource type="Texture2D" uid="uid://dk2bvfybsiqx6" path="res://assets/gfx/eagle/Eagle_Closed.png" id="2_o2b0p"]
 [ext_resource type="Texture2D" uid="uid://bp4fqxb2xi8q6" path="res://assets/gfx/eagle/Eagle_Open.png" id="2_tafyt"]
-[ext_resource type="AudioStream" uid="uid://cqj6yx0c15ugi" path="res://assets/sfx/warning_zero_energy.wav" id="3_7wko3"]
 [ext_resource type="AudioStream" uid="uid://bq0eh7xhsd5fb" path="res://assets/sfx/Bird_dive.wav" id="3_e620g"]
+[ext_resource type="AudioStream" uid="uid://c1505rdmw52dt" path="res://assets/sfx/Bird_warning.wav" id="4_vpxpa"]
 [ext_resource type="AudioStream" uid="uid://dv1xva0f43gxd" path="res://assets/sfx/Bird_grad.wav" id="5_3jpf0"]
 [ext_resource type="Script" path="res://addons/xsm/state.gd" id="6_drs0q"]
 [ext_resource type="Script" path="res://src/eagle/waiting.gd" id="7_sq710"]
@@ -41,8 +41,8 @@ texture = ExtResource("2_o2b0p")
 flip_h = true
 
 [node name="WarningSfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_7wko3")
-volume_db = 12.0
+stream = ExtResource("4_vpxpa")
+volume_db = 6.0
 bus = &"Sound"
 
 [node name="FlyBySfx" type="AudioStreamPlayer" parent="."]

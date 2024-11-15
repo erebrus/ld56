@@ -1,4 +1,3 @@
-@tool
 extends TongeState
 
 func _ready():

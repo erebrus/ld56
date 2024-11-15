@@ -1,15 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://dama0h74olyv3"]
+[gd_scene load_steps=13 format=3 uid="uid://dama0h74olyv3"]
 
 [ext_resource type="Script" path="res://src/frog/head/tongue.gd" id="1_5vlru"]
 [ext_resource type="Texture2D" uid="uid://dg4guhimgot0c" path="res://assets/gfx/player/frog_tongue.png" id="2_ftwkn"]
 [ext_resource type="Texture2D" uid="uid://ddegkcp3xk7eg" path="res://assets/gfx/player/frog_tongue_tip.png" id="3_d22lr"]
 [ext_resource type="Script" path="res://addons/xsm/state.gd" id="4_55qrh"]
+[ext_resource type="AudioStream" uid="uid://btyr6d7dohpol" path="res://assets/sfx/MC_swing_attach_1.wav" id="4_wcqlm"]
+[ext_resource type="AudioStream" uid="uid://djfddf70qjnka" path="res://assets/sfx/MC_swing_attach_2.wav" id="5_bjmd1"]
 [ext_resource type="Script" path="res://src/frog/head/xsm/hidden.gd" id="5_relmv"]
 [ext_resource type="Script" path="res://src/frog/head/xsm/extending.gd" id="6_40080"]
 [ext_resource type="Script" path="res://src/frog/head/xsm/retracting.gd" id="7_f3s4g"]
-[ext_resource type="Script" path="res://src/frog/head/attached.gd" id="8_axmxl"]
+[ext_resource type="Script" path="res://src/frog/head/xsm/attached.gd" id="8_axmxl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m0j2s"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_smick"]
+streams_count = 2
+stream_0/stream = ExtResource("4_wcqlm")
+stream_1/stream = ExtResource("5_bjmd1")
 
 [node name="Tongue" type="Node2D"]
 visible = false
@@ -30,6 +37,9 @@ texture = ExtResource("3_d22lr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tip"]
 shape = SubResource("CircleShape2D_m0j2s")
+
+[node name="AttachSfx" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_smick")
 
 [node name="xsm" type="Node" parent="."]
 script = ExtResource("4_55qrh")

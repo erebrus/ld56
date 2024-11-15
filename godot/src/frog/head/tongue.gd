@@ -20,7 +20,7 @@ var caught_bug:Bug
 
 @onready var rope: Line2D = $Rope
 @onready var tip: Area2D = $Tip
-
+@onready var attach_sfx: AudioStreamPlayer2D = $AttachSfx
 
 
 func _ready() -> void:
@@ -50,6 +50,7 @@ func catch_bug(bug: Bug) -> void:
 
 func attach(anchor: Vector2) -> void:
 	global_position = anchor
+	attach_sfx.play()
 	xsm.change_state("attached")
 	
 
