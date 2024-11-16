@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://csoue4mqa4ixc"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_p8np2"]
+[ext_resource type="Texture2D" uid="uid://dqhs3big3pq61" path="res://assets/gfx/environment/SlantedLeaf.png" id="2_f45i4"]
+
+[node name="SlantedLeaf" instance=ExtResource("1_p8np2")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_f45i4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-369, 301, 89, 244, 377, -179, 324, -303, 169, -302, 31, -152)
+one_way_collision = true

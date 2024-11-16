@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://o0aipi6loyn0"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_3pu1k"]
+[ext_resource type="Texture2D" uid="uid://5lqdg50awew6" path="res://assets/gfx/environment/SmallRockPlatform.png" id="2_rvsn5"]
+
+[node name="SmallRockPlatform" instance=ExtResource("1_3pu1k")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_rvsn5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-258, 204, 239, 170, 170, -8, 148, -235, -3, -205, -57, -163, -128, 30, -239, 79)

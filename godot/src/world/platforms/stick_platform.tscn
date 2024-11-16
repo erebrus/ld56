@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://g5hbfav65aah"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_30bbi"]
+[ext_resource type="Texture2D" uid="uid://cjop5is4ane8" path="res://assets/gfx/environment/StickPlatform.png" id="2_871tb"]
+
+[node name="StickPlatform" instance=ExtResource("1_30bbi")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_871tb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-571, 26, -495, 13, -271, 9, -37, -15, 587, -113, 537, -78, -37, 28, -271, 56, -570, 65)
+one_way_collision = true
