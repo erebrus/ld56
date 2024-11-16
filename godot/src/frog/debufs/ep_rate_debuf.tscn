@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://belngx4s6w3tm"]
 
 [ext_resource type="PackedScene" uid="uid://bv0h252ykncnm" path="res://src/frog/debufs/debuf.tscn" id="1_qtghr"]
-[ext_resource type="Script" path="res://src/frog/debufs/ep_debuf.gd" id="2_glces"]
+[ext_resource type="Script" path="res://src/frog/debufs/ep_rate_debuf.gd" id="2_glces"]
 [ext_resource type="AudioStream" uid="uid://drirlg8gd0kts" path="res://assets/sfx/Debuf_Depleting_increase.wav" id="3_3weyi"]
 
 [node name="EPDebuf" instance=ExtResource("1_qtghr")]
