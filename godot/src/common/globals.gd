@@ -19,29 +19,7 @@ var debug_build := true
 var in_game:=false
 var in_dialogue:=false
 var rng = RandomNumberGenerator.new()
-var music_on:=true:
-	set(v):
-		music_on=v
-		Logger.info("music %s" % [music_on])
-		var sfx_index= AudioServer.get_bus_index("Music")
-		AudioServer.set_bus_volume_db(sfx_index, music_manager.music_bus_volume if music_on else -60.0)
-	
 
-var sound_on:=true:
-	set(v):
-		sound_on = v
-		Logger.info("sound %s" % [sound_on])
-		var sfx_index= AudioServer.get_bus_index("Sound")
-		AudioServer.set_bus_volume_db(sfx_index, 0 if sound_on else -60)
-	
-
-var ambient_on:=true:
-	set(v):
-		ambient_on = v
-		Logger.info("ambient sound %s" % [ambient_on])
-		var sfx_index= AudioServer.get_bus_index("Ambient")
-		AudioServer.set_bus_volume_db(sfx_index, 0 if ambient_on else -60)
-	
 
 @onready var music_manager: MusicManager = $MusicManager
 

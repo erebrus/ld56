@@ -51,7 +51,6 @@ func _should_queue_damage() -> bool:
 
 func _on_frog_energy_changed(value: float) -> void:
 	if progress:
-		var previous_value = progress.value
 		progress.value = value
 		
 		if _should_queue_damage():
