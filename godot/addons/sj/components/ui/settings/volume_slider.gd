@@ -37,7 +37,7 @@ func _ready() -> void:
 	assert(max_value == 1, "Range should be between 0 and 1")
 	
 	value_changed.connect(_on_volume_changed)
-	_on_volume_changed(value)
+	value = db_to_linear(AudioServer.get_bus_volume_db(bus_index))
 	
 
 func _on_volume_changed(linear_volume: float) -> void:
