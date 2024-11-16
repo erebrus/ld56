@@ -33,6 +33,7 @@ signal energy_changed(value:float)
 @onready var energy_timer: Timer = $EnergyTimer
 @onready var sprite_offset=sprite.position
 @onready var debuff_animation_player: AnimationPlayer = $Debuffs/AnimationPlayer
+@onready var dirt_particles: GPUParticles2D = %DirtParticles
 
 
 var state_name:String
