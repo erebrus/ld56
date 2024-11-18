@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=4 format=3 uid="uid://ylwfrucbrvxn"]
+[gd_resource type="AnimationLibrary" load_steps=5 format=3 uid="uid://ylwfrucbrvxn"]
 
 [sub_resource type="Animation" id="Animation_4png7"]
 resource_name = "RESET"
@@ -25,6 +25,39 @@ tracks/1/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../UI:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FrogBody:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../FrogBody:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_7817o"]
 resource_name = "invisible"
@@ -36,6 +69,17 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.166667, -0.218553, 0.5, -0.133333, 0.258456, 0.266667, -0.637956, 0.2, -0.15488, 1.664, 0.0666667, -0.703161, 0, -0.2, 1.28966, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.7, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../UI:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 422064083, -2012973824),
 "points": PackedFloat32Array(1, -0.25, 0, 0.166667, -0.218553, 0.5, -0.133333, 0.258456, 0.266667, -0.637956, 0.2, -0.15488, 1.664, 0.0666667, -0.703161, 0, -0.2, 1.28966, 0.25, 0),
 "times": PackedFloat32Array(0, 0.3, 0.7, 1)
 }
@@ -54,9 +98,25 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.7, 1)
 }
 
+[sub_resource type="Animation" id="Animation_8ybai"]
+resource_name = "squish"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FrogBody:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.266667, -0.518331, 0.6, -0.1, -0.228746, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
 [resource]
 _data = {
 "RESET": SubResource("Animation_4png7"),
 "invisible": SubResource("Animation_7817o"),
-"no_tongue": SubResource("Animation_m32oe")
+"no_tongue": SubResource("Animation_m32oe"),
+"squish": SubResource("Animation_8ybai")
 }
