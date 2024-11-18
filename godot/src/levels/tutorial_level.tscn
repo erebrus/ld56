@@ -285,8 +285,6 @@ position = Vector2(1053, 1224)
 
 [node name="Cloud" parent="Clouds" index="0" instance=ExtResource("15_gmybi")]
 position = Vector2(3308, -260)
-count_per_interval = Vector2i(1, 2)
-wait_between_drops = true
 
 [node name="Eagle" parent="." index="10"]
 warning_time = 10.0

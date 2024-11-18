@@ -9,7 +9,8 @@ extends Area2D
 @export var detection_area_size:Vector2:
 	set(_size):
 		detection_area_size=_size
-		update_shape()
+		#await get_tree().process_frame
+		#update_shape()
 		
 @export var interval:=Vector2(.2,1)
 @export var count_per_interval:=Vector2i(1,2)
@@ -23,6 +24,7 @@ func _ready() -> void:
 	
 	if not Engine.is_editor_hint():
 		$Line2D.queue_free()
+		update_shape()
 	await get_tree().process_frame
 	active = not get_overlapping_bodies().is_empty()
 		
@@ -43,7 +45,7 @@ func generate_drop():
 	rd.visible=false	
 
 	get_parent().get_parent().add_child(rd)	
-	rd.global_position=Vector2(global_position.x+randf_range(-1,1)*width,global_position.y)
+	rd.global_position=Vector2(global_position.x+randf_range(-1,1)*width/2.0,global_position.y)
 	rd.visible=true
 	if not Engine.is_editor_hint():
 		Logger.debug("drop at %s" % rd.global_position )

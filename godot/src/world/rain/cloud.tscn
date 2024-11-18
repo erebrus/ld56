@@ -9,8 +9,6 @@ size = Vector2(2500, 2000)
 collision_mask = 2
 script = ExtResource("1_jw58u")
 detection_area_size = Vector2(2500, 2000)
-count_per_interval = null
-wait_between_drops = null
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.359081
