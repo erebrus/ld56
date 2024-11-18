@@ -283,7 +283,12 @@ position = Vector2(15248, 1210)
 [node name="Camera2D" parent="." index="8"]
 position = Vector2(1053, 1224)
 
-[node name="Eagle" parent="." index="9"]
+[node name="Cloud" parent="Clouds" index="0" instance=ExtResource("15_gmybi")]
+position = Vector2(3308, -260)
+count_per_interval = Vector2i(1, 2)
+wait_between_drops = true
+
+[node name="Eagle" parent="." index="10"]
 warning_time = 10.0
 enabled = false
 
@@ -294,11 +299,5 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerEagle" index="0"]
 position = Vector2(12237, 1051.5)
 shape = SubResource("RectangleShape2D_wia2p")
-
-[node name="Cloud" parent="." index="14" instance=ExtResource("15_gmybi")]
-position = Vector2(4408, -432)
-area_size = Vector2(5000, 2000)
-interval = Vector2(0.2, 0.5)
-count_per_interval = Vector2i(1, 3)
 
 [connection signal="body_entered" from="TriggerEagle" to="." method="_on_trigger_eagle_body_entered"]

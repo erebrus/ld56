@@ -63,6 +63,8 @@ limit_top = -1600
 limit_bottom = 1700
 position_smoothing_enabled = true
 
+[node name="Clouds" type="Node2D" parent="."]
+
 [node name="Eagle" parent="." instance=ExtResource("6_x2vej")]
 unique_name_in_owner = true
 

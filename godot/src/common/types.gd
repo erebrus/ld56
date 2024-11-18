@@ -1,5 +1,7 @@
 extends Node
 
+const RAIN_DAMAGE= 5
+
 const RAINDROP_SCENE:PackedScene = preload("res://src/world/rain/raindrop.tscn")
 const DEBUF_LABEL_SCENE:PackedScene = preload("res://src/frog/debuf_label.tscn")
 
