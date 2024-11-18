@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cmvyygsdlxu3j"]
+[gd_scene load_steps=24 format=3 uid="uid://cmvyygsdlxu3j"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_mwynp"]
 [ext_resource type="Script" path="res://src/levels/tutorial_level.gd" id="2_j47jj"]
@@ -6,14 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://b7uuo8dxsl8qr" path="res://src/world/platforms/rock_2.tscn" id="3_403ep"]
 [ext_resource type="PackedScene" uid="uid://boenkwcf4c06o" path="res://src/world/platforms/branch.tscn" id="4_d82yh"]
 [ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="5_jynwc"]
-[ext_resource type="PackedScene" uid="uid://br6usfo70b445" path="res://src/world/platforms/rockledge.tscn" id="6_feoob"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/rockledge.tscn" id="6_feoob"]
 [ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="7_a3tua"]
 [ext_resource type="PackedScene" uid="uid://i1m1wvlfxwsi" path="res://src/world/platforms/flower.tscn" id="8_6oteu"]
 [ext_resource type="PackedScene" uid="uid://bexhfhawpoxgk" path="res://src/bugs/slug.tscn" id="9_jpj2v"]
-[ext_resource type="PackedScene" uid="uid://daidqd7n3terl" path="res://src/world/next_level.tscn" id="9_ytgtn"]
+[ext_resource type="PackedScene" path="res://src/world/next_level.tscn" id="9_ytgtn"]
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="10_rm72x"]
 [ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="11_8kdqw"]
 [ext_resource type="FontFile" uid="uid://b46k1dayka58c" path="res://assets/fonts/jack-armstrong-bold.ttf" id="14_7mo8o"]
+[ext_resource type="PackedScene" uid="uid://b6l6ff2tq018x" path="res://src/world/rain/cloud.tscn" id="15_gmybi"]
 
 [sub_resource type="Curve2D" id="Curve2D_v7ocv"]
 _data = {
@@ -293,5 +294,11 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerEagle" index="0"]
 position = Vector2(12237, 1051.5)
 shape = SubResource("RectangleShape2D_wia2p")
+
+[node name="Cloud" parent="." index="14" instance=ExtResource("15_gmybi")]
+position = Vector2(4408, -432)
+area_size = Vector2(5000, 2000)
+interval = Vector2(0.2, 0.5)
+count_per_interval = Vector2i(1, 3)
 
 [connection signal="body_entered" from="TriggerEagle" to="." method="_on_trigger_eagle_body_entered"]

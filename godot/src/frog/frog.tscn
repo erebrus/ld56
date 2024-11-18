@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://b5lgniaadan1y"]
+[gd_scene load_steps=84 format=3 uid="uid://b5lgniaadan1y"]
 
 [ext_resource type="Script" path="res://src/frog/frog.gd" id="1_mohle"]
 [ext_resource type="Script" path="res://src/frog/frog_controller.gd" id="2_mpehw"]
@@ -67,7 +67,6 @@
 [ext_resource type="AudioStream" uid="uid://bntblipjfkf7a" path="res://assets/sfx/MC_Tongue_Hit_Miss_3.wav" id="54_t1b2p"]
 [ext_resource type="AudioStream" uid="uid://cwtfuvx388sjm" path="res://assets/sfx/Death_zero_energy.wav" id="57_jrolm"]
 [ext_resource type="AudioStream" uid="uid://dhknts4p0lteu" path="res://assets/sfx/MC_Wins.wav" id="64_7gmnc"]
-[ext_resource type="PackedScene" uid="uid://b6l6ff2tq018x" path="res://src/world/rain/cloud.tscn" id="68_7oghs"]
 [ext_resource type="Texture2D" uid="uid://debso7nt1wyjw" path="res://assets/gfx/player/shield.png" id="68_mh123"]
 [ext_resource type="AnimationLibrary" uid="uid://ylwfrucbrvxn" path="res://src/frog/debufs/debuff_animations.tres" id="68_rxylw"]
 [ext_resource type="Script" path="res://src/frog/no_tongue_shield.gd" id="69_gi33w"]
@@ -266,6 +265,7 @@ collision_layer = 2
 script = ExtResource("1_mohle")
 swing_gravity = 3000
 reel_speed = 100
+energy_drop_rate = 0.0
 
 [node name="Controller" type="Node" parent="."]
 script = ExtResource("2_mpehw")
@@ -540,10 +540,6 @@ draw_order = 2
 libraries = {
 "debuff_animations": ExtResource("68_rxylw")
 }
-
-[node name="Cloud" parent="." instance=ExtResource("68_7oghs")]
-start_y = -1500
-width = 1000.0
 
 [connection signal="direction_changed" from="Controller" to="." method="_on_controller_direction_changed"]
 [connection signal="hit_ground" from="Controller" to="." method="_on_controller_hit_ground"]

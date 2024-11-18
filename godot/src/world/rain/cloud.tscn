@@ -1,11 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6l6ff2tq018x"]
+[gd_scene load_steps=3 format=3 uid="uid://b6l6ff2tq018x"]
 
 [ext_resource type="Script" path="res://src/world/rain/cloud.gd" id="1_jw58u"]
 
-[node name="Cloud" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b01kh"]
+size = Vector2(4000, 4000)
+
+[node name="Cloud" type="Area2D" groups=["clouds"]]
 script = ExtResource("1_jw58u")
+area_size = Vector2(0, 0)
+count_per_interval = null
+wait_between_drops = null
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.359081
 one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b01kh")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)
+width = 50.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
