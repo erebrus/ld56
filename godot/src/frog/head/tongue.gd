@@ -5,6 +5,7 @@ signal retracted
 signal missed
 
 @export var max_length:= 500
+@export var enable_length:=120
 @export var extension_speed:= 1000.0
 @export var retraction_speed:= 2000.0
 
@@ -16,7 +17,6 @@ var is_shooting: bool:
 	
 var caught_bug:Bug
 @onready var xsm: State = $xsm
-@onready var squared_length = pow(max_length, 2)
 
 @onready var rope: Line2D = $Rope
 @onready var tip: Area2D = $Tip
@@ -58,6 +58,10 @@ func update_rope() -> void:
 	rope.remove_point(1)
 	rope.add_point(player.tongue_position - global_position)
 	tip.rotation = (global_position - player.tongue_position).angle()
+	var sticking_disabled = rope.points[0].distance_squared_to(rope.points[1]) < pow(enable_length, 2)
+	var collision_shape = tip.get_node("CollisionShape2D")
+	collision_shape.disabled = sticking_disabled
+	
 
 func _call_state_method(method_name: String, args = null):
 	for  s in xsm.active_states:

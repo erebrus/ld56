@@ -150,7 +150,7 @@ func _input(event: InputEvent) -> void:
 		var mouse_position = get_global_mouse_position()
 		point_at(mouse_position)
 		
-	if can_shoot and event.is_action_pressed("left_click"):
+	if event.is_action_pressed("left_click"):
 		shoot()
 	
 

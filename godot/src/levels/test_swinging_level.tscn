@@ -8,14 +8,20 @@
 [node name="Mushroom" parent="Scenery" index="0" instance=ExtResource("2_gquog")]
 position = Vector2(773, 1217)
 
-[node name="Mushroom2" parent="Scenery" index="1" instance=ExtResource("2_gquog")]
+[node name="Mushroom6" parent="Scenery" index="1" instance=ExtResource("2_gquog")]
+position = Vector2(463, 1393)
+
+[node name="Mushroom7" parent="Scenery" index="2" instance=ExtResource("2_gquog")]
+position = Vector2(234, 1463)
+
+[node name="Mushroom2" parent="Scenery" index="3" instance=ExtResource("2_gquog")]
 position = Vector2(1132, 1073)
 
-[node name="Mushroom3" parent="Scenery" index="2" instance=ExtResource("2_gquog")]
+[node name="Mushroom3" parent="Scenery" index="4" instance=ExtResource("2_gquog")]
 position = Vector2(1450, 953)
 
-[node name="Mushroom4" parent="Scenery" index="3" instance=ExtResource("2_gquog")]
+[node name="Mushroom4" parent="Scenery" index="5" instance=ExtResource("2_gquog")]
 position = Vector2(1816, 791)
 
-[node name="Mushroom5" parent="Scenery" index="4" instance=ExtResource("2_gquog")]
+[node name="Mushroom5" parent="Scenery" index="6" instance=ExtResource("2_gquog")]
 position = Vector2(2152, 641)
