@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvx7hm0rtwvt2"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_pxn7e"]
+[ext_resource type="Texture2D" uid="uid://b7hvcxy2g0xp8" path="res://assets/gfx/environment/LittleMush2.png" id="2_tvoyb"]
+
+[node name="LittleMush2Platform" instance=ExtResource("1_pxn7e")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_tvoyb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-18, 36, 19, 35, 23, 17, 47, 9, 44, -9, 23, -26, -26, -26, -45, -8, -48, 10, -24, 17)

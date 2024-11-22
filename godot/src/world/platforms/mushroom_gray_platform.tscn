@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://fl51qf0p7lrn"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_x6iyg"]
+[ext_resource type="Texture2D" uid="uid://buuryakc5cgph" path="res://assets/gfx/environment/MushroomGray.png" id="2_dgmpd"]
+
+[node name="MushroomGrayPlatform" instance=ExtResource("1_x6iyg")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_dgmpd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-218, -122, 205, -130, 222, -87, 123, -37, 93, 113, -69, 113, -96, -23, -227, -73)
