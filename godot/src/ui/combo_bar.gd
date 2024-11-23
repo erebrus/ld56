@@ -7,7 +7,8 @@ const textures={
 	Types.BugType.Moth:preload("res://assets/gfx/ui/ComboIcons/Moth_HUD.png"),
 	Types.BugType.Snail:preload("res://assets/gfx/ui/ComboIcons/Snail_HUD.png"),
 	Types.BugType.Worm:preload("res://assets/gfx/ui/ComboIcons/Worm_HUD.png"),
-	Types.BugType.Cockroach:preload("res://assets/gfx/ui/ComboIcons/Roach_HUD.png")
+	Types.BugType.Cockroach:preload("res://assets/gfx/ui/ComboIcons/Roach_HUD.png"),
+	Types.BugType.Spider:preload("res://assets/gfx/ui/ComboIcons/Spider_HUD.png"),
 
 }
 

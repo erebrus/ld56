@@ -1,7 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://burowlmmb2b87"]
+[gd_scene load_steps=13 format=3 uid="uid://burowlmmb2b87"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_7kcrp"]
 [ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="2_gquog"]
+[ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="3_dtuuq"]
+[ext_resource type="PackedScene" uid="uid://dgdclxelmj7jn" path="res://src/bugs/cockroach.tscn" id="4_vstks"]
+[ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="5_0206p"]
+[ext_resource type="PackedScene" uid="uid://c6d7ntmkxq2eg" path="res://src/bugs/moth.tscn" id="6_f1cpw"]
+[ext_resource type="PackedScene" uid="uid://bexhfhawpoxgk" path="res://src/bugs/slug.tscn" id="7_vhr8g"]
+[ext_resource type="PackedScene" uid="uid://dvonu3ghfpb3y" path="res://src/bugs/snail.tscn" id="8_tc5p8"]
+[ext_resource type="PackedScene" uid="uid://jhhf6qvos6uq" path="res://src/bugs/spider.tscn" id="9_ika23"]
+[ext_resource type="PackedScene" uid="uid://b01m31jxwex47" path="res://src/bugs/worms.tscn" id="10_c4fc5"]
+
+[sub_resource type="Curve2D" id="Curve2D_wwnlc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -100, 30, 0, 0, 0, 0, 108, 24, 0, 0, 0, 0, -371, 37)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_s1f86"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -300, 0, 0, 0, 0, 0, -250, 0, 0, 0, 0, 0, -220, 0, 0, 0, 0, 0, -180, 0, 0, 0, 0, 0, -110, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 60, 0, 0, 0, 0, 0, 120)
+}
+point_count = 9
 
 [node name="BaseLevel" instance=ExtResource("1_7kcrp")]
 
@@ -25,3 +45,51 @@ position = Vector2(1816, 791)
 
 [node name="Mushroom5" parent="Scenery" index="6" instance=ExtResource("2_gquog")]
 position = Vector2(2152, 641)
+
+[node name="Beetle" parent="Bugs" index="0" instance=ExtResource("3_dtuuq")]
+position = Vector2(796, 1569)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Beetle" index="8"]
+curve = SubResource("Curve2D_wwnlc")
+
+[node name="Cockroach" parent="Bugs" index="1" instance=ExtResource("4_vstks")]
+position = Vector2(1080, 1566)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Cockroach" index="8"]
+curve = SubResource("Curve2D_wwnlc")
+
+[node name="Fly" parent="Bugs" index="2" instance=ExtResource("5_0206p")]
+position = Vector2(1225, 1341)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Fly" index="8"]
+curve = SubResource("Curve2D_wwnlc")
+
+[node name="Moth" parent="Bugs" index="3" instance=ExtResource("6_f1cpw")]
+position = Vector2(1507, 1336)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Moth" index="8"]
+curve = SubResource("Curve2D_wwnlc")
+
+[node name="Slug" parent="Bugs" index="4" instance=ExtResource("7_vhr8g")]
+position = Vector2(1658, 1572)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Slug" index="8"]
+curve = SubResource("Curve2D_wwnlc")
+
+[node name="Snail" parent="Bugs" index="5" instance=ExtResource("8_tc5p8")]
+position = Vector2(1371, 1582)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Snail" index="8"]
+curve = SubResource("Curve2D_wwnlc")
+
+[node name="Spider" parent="Bugs" index="6" instance=ExtResource("9_ika23")]
+position = Vector2(953, 1345)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Spider" index="7"]
+curve = SubResource("Curve2D_s1f86")
+
+[node name="Worms" parent="Bugs" index="7" instance=ExtResource("10_c4fc5")]
+position = Vector2(504, 1562)
+
+[node name="Path2D" type="Path2D" parent="Bugs/Worms" index="8"]
+curve = SubResource("Curve2D_wwnlc")
