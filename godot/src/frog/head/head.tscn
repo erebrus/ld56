@@ -18,6 +18,9 @@ visible = true
 position = Vector2(15, -67)
 extension_speed = 1500.0
 
+[node name="TonguePosition" type="Marker2D" parent="."]
+position = Vector2(15, -67)
+
 [node name="Guide" type="Line2D" parent="."]
 visible = false
 

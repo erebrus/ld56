@@ -15,8 +15,8 @@ var head: FrogHead:
 
 
 func hide_if_retracted() -> void:
-	if target.global_position.distance_squared_to(head.tongue_position) < 10:
-		target.global_position = head.tongue_position
+	if target.global_position.distance_squared_to(head.tongue_marker.global_position) < 10:
+		target.global_position = head.tongue_marker.global_position
 		change_state("hidden")
 		return
 	

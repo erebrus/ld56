@@ -136,7 +136,7 @@ func _on_health_component_energy_changed(value: Variant) -> void:
 
 
 func _on_tongue_attached(to: Vector2) -> void:
-	_on_generic_controller_forward("_on_tongue_attached", to - (head.tongue_position - global_position))
+	_on_generic_controller_forward("_on_tongue_attached", to - (head.tongue_marker.global_position - global_position))
 	
 
 func _on_tongue_detached() -> void:

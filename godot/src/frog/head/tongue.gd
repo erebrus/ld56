@@ -15,6 +15,8 @@ var is_shooting: bool:
 	get:
 		return visible
 	
+
+
 var caught_bug:Bug
 @onready var xsm: State = $xsm
 
@@ -32,7 +34,7 @@ func _ready() -> void:
 func shoot(target: Vector2, _player: FrogHead) -> void:
 	caught_bug=null
 	player = _player
-	global_position = player.tongue_position
+	global_position = player.tongue_marker.global_position
 	
 	xsm.change_state("extending", target)
 	
@@ -56,11 +58,16 @@ func attach(anchor: Vector2) -> void:
 
 func update_rope() -> void:
 	rope.remove_point(1)
-	rope.add_point(player.tongue_position - global_position)
-	tip.rotation = (global_position - player.tongue_position).angle()
+	rope.add_point(player.tongue_marker.global_position - global_position)
+	tip.rotation = (global_position - player.tongue_marker.global_position).angle()
 	var sticking_disabled = rope.points[0].distance_squared_to(rope.points[1]) < pow(enable_length, 2)
 	var collision_shape = tip.get_node("CollisionShape2D")
 	collision_shape.disabled = sticking_disabled
+	
+
+func set_size(size: float) -> void:
+	tip.scale *= size
+	rope.width *= size
 	
 
 func _call_state_method(method_name: String, args = null):

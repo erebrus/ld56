@@ -19,8 +19,8 @@ var flip_h: bool = false:
 		flip_h = value
 		head_sprite.flip_h = flip_h
 		rotation = 2 * PI - rotation
-		start_tongue_position.x = -start_tongue_position.x
-		guide.position = start_tongue_position
+		tongue_marker.position.x *= -1
+		guide.position = tongue_marker.position
 		guide.points[1].x = -guide.points[1].x
 	
 	
@@ -28,15 +28,10 @@ var max_angle: float = deg_to_rad(280)
 var min_angle: float = deg_to_rad(15)
 var angle: float
 
-var tongue_position: Vector2:
-	get:
-		return global_position + start_tongue_position
-	
 
 @onready var head_sprite = %Sprite2D
 @onready var tongue = %Tongue
-
-@onready var start_tongue_position = tongue.position
+@onready var tongue_marker = $TonguePosition
 
 @onready var guide: Line2D = $Guide
 var can_shoot:bool = true
@@ -44,7 +39,8 @@ var can_shoot:bool = true
 
 func _ready() -> void:
 	hide()
-	guide.position = start_tongue_position
+	tongue_marker.position = tongue.position
+	guide.position = tongue.position
 	guide.add_point(Vector2.ZERO)
 	guide.add_point(Vector2(50, 0))
 	
@@ -105,7 +101,7 @@ func _shoot_at_angle(shoot_angle: float):
 
 func _shoot_at_mouse_raw():
 	Logger.info("Shooting at target %s" % get_global_mouse_position())
-	tongue.shoot(tongue_position.direction_to(get_global_mouse_position()), self)
+	tongue.shoot(tongue_marker.global_position.direction_to(get_global_mouse_position()), self)
 	
 
 func _shoot_at_mouse_limited() -> bool:
@@ -121,7 +117,7 @@ func _shoot_at_mouse_limited() -> bool:
 	
 
 func angle_to_point(target: Vector2) -> float:
-	var tmp = tongue_position.angle_to_point(target)
+	var tmp = tongue_marker.global_position.angle_to_point(target)
 	tmp = fposmod(tmp, 2*PI)
 	Logger.trace("Angle: %.4fº" % rad_to_deg(tmp))
 	if flip_h:
