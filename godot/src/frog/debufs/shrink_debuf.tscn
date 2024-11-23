@@ -9,6 +9,7 @@ script = ExtResource("2_6b5b4")
 acceleration_factor = 0.8
 shrink_factor = 0.6
 duration = 30.0
+text = "itty bitty"
 
 [node name="sfx_on" parent="." index="1"]
 stream = ExtResource("3_uqprw")

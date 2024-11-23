@@ -22,6 +22,8 @@ signal direction_changed()
 ## Name of input action to jump.
 @export var input_jump : String = "jump"
 
+@export var input_factor: float = 1
+
 
 const DEFAULT_HOP_HEIGHT = 80
 const DEFAULT_MAX_JUMP_HEIGHT = 150
@@ -160,7 +162,7 @@ func set_auto_acc(dir:float, value:float = max_acceleration):
 	
 func set_x_acc():
 	acc.x = 0
-	var input = Input.get_axis(input_left, input_right)
+	var input = Input.get_axis(input_left, input_right) * input_factor
 	if sign(input)==sign(acc.x) and abs(acc.x) > max_acceleration:
 		return
 	acc.x = sign(input)*max_acceleration

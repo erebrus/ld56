@@ -29,7 +29,8 @@ func key_of(value) -> String:
 	return str(value)
 
 @onready var DEBUF_MAP = {
-	BugType.Slug: preload("res://src/frog/debufs/shrink_debuf.tscn"),
+	BugType.Slug: preload("res://src/frog/debufs/reverse_inputs_debuf.tscn"),
+	#BugType.Slug: preload("res://src/frog/debufs/shrink_debuf.tscn"),
 	#BugType.Slug:  preload("res://src/frog/debufs/double_jump_debuf.tscn"),
 	BugType.Spider:preload("res://src/frog/debufs/damage_debuf.tscn"),
 	BugType.Beetle:preload("res://src/frog/debufs/ep_rate_debuf.tscn"),
