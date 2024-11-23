@@ -88,7 +88,7 @@ _data = {
 "splash": SubResource("Animation_tr530")
 }
 
-[node name="Raindrop" type="CharacterBody2D"]
+[node name="Raindrop3" type="CharacterBody2D"]
 collision_layer = 32
 collision_mask = 3
 script = ExtResource("1_4ohj8")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://fr8a4lbxh0js"]
+
+[ext_resource type="PackedScene" uid="uid://bsvfh3bfo6b40" path="res://src/world/platforms/platform.tscn" id="1_d87ho"]
+[ext_resource type="Texture2D" uid="uid://bpsa7htfu05wg" path="res://assets/gfx/environment/LeafMonstera.png" id="2_6rf0v"]
+
+[node name="LeafMonsteraPlatform" instance=ExtResource("1_d87ho")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_6rf0v")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-466, -16, -148, 74, 212, 70, 488, -19, 412, -112, -399, -119, -448, -81)
+one_way_collision = true

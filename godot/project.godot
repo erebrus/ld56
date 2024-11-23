@@ -42,6 +42,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/gs_logger/plugin.cfg", "res://addons/hyperlog/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/xsm/plugin.cfg")
 
+[global_group]
+
+clouds=""
+
 [input]
 
 move_left={
@@ -96,6 +100,7 @@ almanac={
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemies"
 2d_physics/layer_4="tongue grab"
+2d_physics/layer_6="rain"
 
 [rendering]
 
