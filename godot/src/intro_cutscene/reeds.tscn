@@ -1,0 +1,59 @@
+[gd_scene load_steps=14 format=3 uid="uid://dhajqde2d844s"]
+
+[ext_resource type="Material" uid="uid://bnhkduxby4rie" path="res://src/intro_cutscene/big_tree_wind.tres" id="1_ka0ov"]
+[ext_resource type="Texture2D" uid="uid://du47j0u1bj5nf" path="res://assets/gfx/screens/intro/reeds/reeds_01.PNG" id="2_uoeoi"]
+[ext_resource type="Texture2D" uid="uid://cmn3l6h7mxwvx" path="res://assets/gfx/screens/intro/reeds/reeds_02.PNG" id="3_l3eoa"]
+[ext_resource type="Texture2D" uid="uid://oqoo852g33wx" path="res://assets/gfx/screens/intro/reeds/reeds_03.PNG" id="4_t35fx"]
+[ext_resource type="Texture2D" uid="uid://2shtfpvqpw34" path="res://assets/gfx/screens/intro/reeds/reeds_04.PNG" id="5_sf4qs"]
+[ext_resource type="Texture2D" uid="uid://sy5uwiub6b08" path="res://assets/gfx/screens/intro/reeds/reeds_05.PNG" id="6_qcv0k"]
+[ext_resource type="Texture2D" uid="uid://yr87mecys6aq" path="res://assets/gfx/screens/intro/reeds/reeds_06.PNG" id="7_888uw"]
+[ext_resource type="Texture2D" uid="uid://2isls8u48v7c" path="res://assets/gfx/screens/intro/reeds/reeds_07.PNG" id="8_a0u5q"]
+[ext_resource type="Texture2D" uid="uid://b5tvcw0d46qag" path="res://assets/gfx/screens/intro/reeds/reeds_08.PNG" id="9_uij3c"]
+[ext_resource type="Texture2D" uid="uid://dqv40ahjdljic" path="res://assets/gfx/screens/intro/reeds/reeds_09.PNG" id="10_pt07e"]
+[ext_resource type="Texture2D" uid="uid://km7ofgpysn2y" path="res://assets/gfx/screens/intro/reeds/reeds_10.PNG" id="11_4apjb"]
+[ext_resource type="Texture2D" uid="uid://51digg28f7tt" path="res://assets/gfx/screens/intro/reeds/reeds_11.PNG" id="12_3r4jb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54tgx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uoeoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l3eoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t35fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sf4qs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qcv0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_888uw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a0u5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uij3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pt07e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4apjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3r4jb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Reeds" type="AnimatedSprite2D"]
+material = ExtResource("1_ka0ov")
+sprite_frames = SubResource("SpriteFrames_54tgx")

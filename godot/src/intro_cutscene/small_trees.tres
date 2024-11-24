@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://fruoiun05eeh"]
+
+[ext_resource type="Texture2D" uid="uid://dcynkx2ceow3h" path="res://assets/gfx/screens/intro/small_trees/small_tree_01.PNG" id="1_sqkaf"]
+[ext_resource type="Texture2D" uid="uid://cfsikpfg0wff3" path="res://assets/gfx/screens/intro/small_trees/small_tree_02.PNG" id="2_wge5h"]
+[ext_resource type="Texture2D" uid="uid://be310enpydt84" path="res://assets/gfx/screens/intro/small_trees/small_tree_03.PNG" id="3_40xgg"]
+[ext_resource type="Texture2D" uid="uid://dy2ohjydjeu6a" path="res://assets/gfx/screens/intro/small_trees/small_tree_04.PNG" id="4_b6tv7"]
+[ext_resource type="Texture2D" uid="uid://crofapt48ctw" path="res://assets/gfx/screens/intro/small_trees/small_tree_05.PNG" id="5_bk6kp"]
+[ext_resource type="Texture2D" uid="uid://dhqqie14j13s1" path="res://assets/gfx/screens/intro/small_trees/small_tree_06.PNG" id="6_new4f"]
+[ext_resource type="Texture2D" uid="uid://bcn1peg245saa" path="res://assets/gfx/screens/intro/small_trees/small_tree_07.PNG" id="7_7b20k"]
+[ext_resource type="Texture2D" uid="uid://bju474p1edlaa" path="res://assets/gfx/screens/intro/small_trees/small_tree_08.PNG" id="8_gn0a8"]
+[ext_resource type="Texture2D" uid="uid://b4glwsmhe2m1u" path="res://assets/gfx/screens/intro/small_trees/small_tree_09.PNG" id="9_rqvko"]
+[ext_resource type="Texture2D" uid="uid://c2rnblgr8hjvs" path="res://assets/gfx/screens/intro/small_trees/small_tree_10.PNG" id="10_plitp"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sqkaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wge5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_40xgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b6tv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bk6kp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_new4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7b20k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gn0a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rqvko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_plitp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpko1e0hdpwd"]
+
+[ext_resource type="Material" uid="uid://bnhkduxby4rie" path="res://src/intro_cutscene/big_tree_wind.tres" id="1_2o72g"]
+[ext_resource type="SpriteFrames" uid="uid://b63ie8igfotjp" path="res://src/intro_cutscene/big_trees.tres" id="2_dvso7"]
+
+[node name="BigTree" type="AnimatedSprite2D"]
+material = ExtResource("1_2o72g")
+sprite_frames = ExtResource("2_dvso7")

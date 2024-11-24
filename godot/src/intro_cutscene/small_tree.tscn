@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqsa6a7i5c1n1"]
+
+[ext_resource type="Material" uid="uid://dkbptrucqrr0h" path="res://src/intro_cutscene/small_tree_wind.tres" id="1_sdvxr"]
+[ext_resource type="SpriteFrames" uid="uid://fruoiun05eeh" path="res://src/intro_cutscene/small_trees.tres" id="2_1aa1f"]
+
+[node name="SmallTree" type="AnimatedSprite2D"]
+material = ExtResource("1_sdvxr")
+sprite_frames = ExtResource("2_1aa1f")

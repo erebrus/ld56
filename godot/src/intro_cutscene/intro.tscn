@@ -1,0 +1,486 @@
+[gd_scene load_steps=12 format=3 uid="uid://vs4v66uacpt1"]
+
+[ext_resource type="Texture2D" uid="uid://ddwq6iiyi2pva" path="res://assets/gfx/screens/intro/background.png" id="1_65avb"]
+[ext_resource type="PackedScene" uid="uid://dqsa6a7i5c1n1" path="res://src/intro_cutscene/small_tree.tscn" id="2_vhr6j"]
+[ext_resource type="Texture2D" uid="uid://y0uwtk0aakuk" path="res://assets/gfx/screens/intro/far_hill.png" id="2_y3o65"]
+[ext_resource type="Texture2D" uid="uid://1mgyn2ibd0re" path="res://assets/gfx/screens/intro/near_hill.png" id="5_ffs87"]
+[ext_resource type="PackedScene" uid="uid://bpko1e0hdpwd" path="res://src/intro_cutscene/big_tree.tscn" id="5_gecql"]
+[ext_resource type="Texture2D" uid="uid://di77u8jtjfqv6" path="res://assets/gfx/screens/intro/pond.png" id="6_12orp"]
+[ext_resource type="PackedScene" uid="uid://dhajqde2d844s" path="res://src/intro_cutscene/reeds.tscn" id="7_o6bik"]
+
+[sub_resource type="Animation" id="Animation_qsv6r"]
+resource_name = "scene1"
+length = 4.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scene1/CanvasModulate:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.7, -0.00118136, 0.218969, -0.133333, 0.00258225, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scene1/CanvasModulate:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.766667, -0.00118136, 0.185198, -0.133333, 0.00180773, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scene1/CanvasModulate:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.7, 0.00128615, 0.373707, -0.166667, -0.00163776, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 3)
+}
+
+[sub_resource type="Animation" id="Animation_hhf3j"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyl8w"]
+_data = {
+"RESET": SubResource("Animation_hhf3j"),
+"scene1": SubResource("Animation_qsv6r")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6rdka"]
+
+[node name="Intro" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hyl8w")
+}
+
+[node name="Scene1" type="Node2D" parent="."]
+
+[node name="BG" type="TextureRect" parent="Scene1"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_65avb")
+
+[node name="FarHill" type="TextureRect" parent="Scene1"]
+offset_top = 2.0
+offset_right = 1920.0
+offset_bottom = 1082.0
+texture = ExtResource("2_y3o65")
+
+[node name="SmallTrees" type="Node2D" parent="Scene1"]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_6rdka")
+
+[node name="Tree" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(81, 361)
+frame = 9
+
+[node name="Tree2" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(572, 330)
+frame = 7
+
+[node name="Tree30" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(1690, 301)
+scale = Vector2(0.638686, 0.576087)
+frame = 7
+flip_h = true
+
+[node name="Tree20" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(86, 504)
+scale = Vector2(0.733577, 0.815217)
+frame = 7
+flip_h = true
+
+[node name="Tree14" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(30, 361)
+frame = 7
+
+[node name="Tree3" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(299, 353)
+
+[node name="Tree17" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(167.75, 328.5)
+scale = Vector2(0.879562, 0.831522)
+frame = 6
+flip_h = true
+
+[node name="Tree4" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(394, 378)
+frame = 2
+
+[node name="Tree22" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(394, 378)
+frame = 2
+
+[node name="Tree5" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(509, 336)
+
+[node name="Tree32" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(1348.75, 308.5)
+scale = Vector2(0.718978, 0.63587)
+
+[node name="Tree33" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(1515, 307)
+scale = Vector2(0.718978, 0.63587)
+frame = 4
+
+[node name="Tree34" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(1705, 332)
+scale = Vector2(0.718978, 0.63587)
+frame = 4
+
+[node name="Tree35" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(1221, 405)
+scale = Vector2(0.718978, 0.63587)
+frame = 4
+
+[node name="Tree36" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(1221, 405)
+scale = Vector2(0.718978, 0.63587)
+frame = 4
+
+[node name="Tree6" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(630, 371)
+frame = 3
+
+[node name="Tree15" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(117, 327)
+frame = 3
+flip_h = true
+
+[node name="Tree28" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(1844, 277)
+frame = 3
+flip_h = true
+
+[node name="Tree7" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(796, 341)
+frame = 2
+
+[node name="Tree31" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(1576, 324)
+scale = Vector2(0.791971, 0.755435)
+frame = 2
+
+[node name="Tree8" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(938, 392)
+frame = 5
+
+[node name="Tree16" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(186, 399)
+frame = 5
+
+[node name="Tree9" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(254, 446)
+frame = 3
+flip_h = true
+
+[node name="Tree26" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(1105, 408)
+frame = 3
+flip_h = true
+
+[node name="Tree10" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(27, 454)
+frame = 1
+flip_h = true
+
+[node name="Tree11" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(123, 445)
+frame = 8
+
+[node name="Tree18" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(575, 415)
+frame = 8
+flip_h = true
+
+[node name="Tree12" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(333, 427)
+frame = 6
+
+[node name="Tree13" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(741, 373)
+frame = 1
+
+[node name="Tree23" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(842, 379)
+frame = 9
+
+[node name="Tree29" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(1237, 299)
+frame = 9
+
+[node name="Tree37" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(1302, 342)
+scale = Vector2(0.923358, 0.88587)
+frame = 6
+
+[node name="Tree21" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(274, 331)
+frame = 1
+
+[node name="Tree27" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(1431, 327)
+frame = 1
+
+[node name="Tree19" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(390, 461)
+scale = Vector2(0.806569, 0.75)
+frame = 7
+
+[node name="Tree24" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(498, 423)
+scale = Vector2(0.806569, 0.75)
+frame = 4
+flip_h = true
+
+[node name="Tree25" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
+position = Vector2(476.125, 474.5)
+scale = Vector2(0.644161, 0.63587)
+frame = 8
+flip_h = true
+
+[node name="NearHill" type="TextureRect" parent="Scene1"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_ffs87")
+metadata/_edit_lock_ = true
+
+[node name="BigTrees" type="Node2D" parent="Scene1"]
+y_sort_enabled = true
+
+[node name="Node2D" type="Node2D" parent="Scene1/BigTrees"]
+
+[node name="BigTree0_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(1700, 272)
+scale = Vector2(0.6, 0.6)
+
+[node name="BigTree1_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(1394, 345)
+scale = Vector2(0.6, 0.6)
+frame = 1
+
+[node name="BigTree1_2" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(1777, 264)
+scale = Vector2(0.486916, 0.545614)
+frame = 1
+
+[node name="BigTree2_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(1565, 298)
+scale = Vector2(0.6, 0.6)
+frame = 2
+
+[node name="BigTree3_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(1864, 381)
+scale = Vector2(0.6, 0.6)
+frame = 3
+
+[node name="BigTree3_3" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(187, 474)
+scale = Vector2(0.6, 0.6)
+frame = 3
+flip_h = true
+
+[node name="BigTree3_2" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(271, 488.9)
+scale = Vector2(0.6, 0.416228)
+frame = 3
+
+[node name="BigTree4_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(1246, 340)
+scale = Vector2(0.6, 0.6)
+frame = 4
+
+[node name="BigTree4_2" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(403, 429)
+scale = Vector2(0.6, 0.6)
+frame = 4
+flip_h = true
+
+[node name="BigTree5_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(1046, 352)
+scale = Vector2(0.6, 0.6)
+frame = 5
+
+[node name="BigTree5_2" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(12, 478)
+scale = Vector2(0.6, 0.6)
+frame = 5
+
+[node name="BigTree6_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(886, 360)
+scale = Vector2(0.6, 0.6)
+frame = 6
+
+[node name="BigTree7_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(727, 365)
+scale = Vector2(0.6, 0.6)
+frame = 7
+
+[node name="BigTree7_2" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(124, 527)
+scale = Vector2(0.377103, 0.337281)
+frame = 7
+
+[node name="BigTree8_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(1700, 272)
+scale = Vector2(0.6, 0.6)
+frame = 8
+
+[node name="BigTree8_2" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
+position = Vector2(573, 419)
+scale = Vector2(0.528972, 0.536842)
+frame = 8
+
+[node name="Node2D2" type="Node2D" parent="Scene1/BigTrees"]
+y_sort_enabled = true
+
+[node name="BigTree0_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(1261, 488)
+scale = Vector2(0.8, 0.8)
+
+[node name="BigTree1_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(732, 478)
+scale = Vector2(0.8, 0.8)
+frame = 1
+
+[node name="BigTree1_2" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(38.0001, 666)
+scale = Vector2(0.8, 0.8)
+frame = 1
+
+[node name="BigTree2_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(1363, 533)
+scale = Vector2(0.8, 0.8)
+frame = 2
+
+[node name="BigTree3_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(1622, 404)
+scale = Vector2(0.8, 0.8)
+frame = 3
+
+[node name="BigTree3_3" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(1534, 430)
+scale = Vector2(0.534112, 0.519079)
+frame = 3
+flip_h = true
+
+[node name="BigTree3_2" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(836, 467)
+scale = Vector2(0.727103, 0.665351)
+frame = 3
+
+[node name="BigTree4_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(1836, 468)
+scale = Vector2(0.8, 0.8)
+frame = 4
+
+[node name="BigTree4_2" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(320, 597)
+scale = Vector2(0.8, 0.8)
+frame = 4
+
+[node name="BigTree5_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(1130, 401)
+scale = Vector2(0.8, 0.8)
+frame = 5
+
+[node name="BigTree5_2" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(1309, 408)
+scale = Vector2(0.8, 0.8)
+frame = 5
+
+[node name="BigTree6_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(573, 475)
+scale = Vector2(0.72243, 0.60614)
+frame = 6
+
+[node name="BigTree7_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(1941, 576)
+scale = Vector2(0.8, 0.8)
+frame = 7
+flip_h = true
+
+[node name="BigTree7_2" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(1488, 428)
+scale = Vector2(0.65, 0.647807)
+frame = 7
+
+[node name="BigTree8_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(1713, 507)
+scale = Vector2(0.8, 0.8)
+frame = 8
+
+[node name="BigTree8_2" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
+position = Vector2(1009, 398)
+scale = Vector2(0.8, 0.8)
+frame = 8
+flip_h = true
+
+[node name="Pond" type="TextureRect" parent="Scene1"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("6_12orp")
+metadata/_edit_lock_ = true
+
+[node name="Reeds" type="Node2D" parent="Scene1"]
+
+[node name="Reeds1" parent="Scene1/Reeds" instance=ExtResource("7_o6bik")]
+position = Vector2(1819, 651)
+
+[node name="Reeds2" parent="Scene1/Reeds" instance=ExtResource("7_o6bik")]
+position = Vector2(1692, 636)
+frame = 1
+
+[node name="Reeds3" parent="Scene1/Reeds" instance=ExtResource("7_o6bik")]
+position = Vector2(1587, 623)
+frame = 2
+
+[node name="Reeds4" parent="Scene1/Reeds" instance=ExtResource("7_o6bik")]
+position = Vector2(1879, 667)
+frame = 3
+
+[node name="Reeds5" parent="Scene1/Reeds" instance=ExtResource("7_o6bik")]
+position = Vector2(1483, 612)
+frame = 4
+
+[node name="Reeds12" parent="Scene1/Reeds" instance=ExtResource("7_o6bik")]
+position = Vector2(830, 563)
+frame = 4
+
+[node name="Reeds6" parent="Scene1/Reeds" instance=ExtResource("7_o6bik")]
+position = Vector2(1417, 604)
+frame = 5
+
+[node name="Reeds7" parent="Scene1/Reeds" instance=ExtResource("7_o6bik")]
+position = Vector2(1325, 616)
+frame = 6
+flip_h = true
+
+[node name="Reeds8" parent="Scene1/Reeds" instance=ExtResource("7_o6bik")]
+position = Vector2(1226, 662)
+frame = 7
+
+[node name="Reeds9" parent="Scene1/Reeds" instance=ExtResource("7_o6bik")]
+position = Vector2(1153, 589)
+frame = 8
+
+[node name="Reeds10" parent="Scene1/Reeds" instance=ExtResource("7_o6bik")]
+position = Vector2(1060, 613)
+frame = 9
+
+[node name="Reeds11" parent="Scene1/Reeds" instance=ExtResource("7_o6bik")]
+position = Vector2(953, 600)
+frame = 10
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Scene1"]
+color = Color(0.218969, 0.185198, 0.373707, 1)
