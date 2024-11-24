@@ -19,7 +19,7 @@ func _on_enter(args) -> void:
 	
 
 func _on_update(delta: float) -> void:
-	var input = Input.get_axis("move_left", "move_right")
+	var input = Input.get_axis("move_left", "move_right") * get_ctl().input_factor
 	
 	var velocity = last_velocity + gravity * delta + input * speed
 	var direction = get_body().global_position.direction_to(anchor)
