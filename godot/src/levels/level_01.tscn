@@ -1,19 +1,20 @@
-[gd_scene load_steps=31 format=3 uid="uid://bajrj1qpyvp16"]
+[gd_scene load_steps=32 format=3 uid="uid://bajrj1qpyvp16"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_1orqk"]
+[ext_resource type="PackedScene" path="res://src/world/grass.tscn" id="2_l88ql"]
 [ext_resource type="PackedScene" uid="uid://boenkwcf4c06o" path="res://src/world/platforms/branch.tscn" id="3_m6781"]
 [ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="4_xmgx1"]
 [ext_resource type="PackedScene" uid="uid://b7uuo8dxsl8qr" path="res://src/world/platforms/rock_2.tscn" id="5_nmy6l"]
 [ext_resource type="PackedScene" uid="uid://i1m1wvlfxwsi" path="res://src/world/platforms/flower.tscn" id="6_kor0l"]
 [ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="7_v3wlw"]
 [ext_resource type="Texture2D" uid="uid://b8b5jgthrtj4s" path="res://assets/gfx/environment/Vine.png" id="8_35nry"]
-[ext_resource type="PackedScene" uid="uid://br6usfo70b445" path="res://src/world/platforms/rockledge.tscn" id="8_k5vyn"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/rockledge.tscn" id="8_k5vyn"]
 [ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="10_eddgy"]
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="11_d42lr"]
 [ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="11_msv3w"]
-[ext_resource type="PackedScene" uid="uid://g0ammwgw85c0" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="12_o3e6v"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="12_o3e6v"]
 [ext_resource type="PackedScene" uid="uid://dvonu3ghfpb3y" path="res://src/bugs/snail.tscn" id="13_62tsv"]
-[ext_resource type="PackedScene" uid="uid://daidqd7n3terl" path="res://src/world/next_level.tscn" id="14_2skva"]
+[ext_resource type="PackedScene" path="res://src/world/next_level.tscn" id="14_2skva"]
 [ext_resource type="PackedScene" uid="uid://c6d7ntmkxq2eg" path="res://src/bugs/moth.tscn" id="14_mcv6n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acc83"]
@@ -104,6 +105,24 @@ _data = {
 point_count = 9
 
 [node name="Level_01" instance=ExtResource("1_1orqk")]
+
+[node name="Grass" parent="TheRealGround" index="0" instance=ExtResource("2_l88ql")]
+position = Vector2(0, 1524)
+
+[node name="Grass2" parent="TheRealGround" index="1" instance=ExtResource("2_l88ql")]
+position = Vector2(3838, 1524)
+
+[node name="Grass3" parent="TheRealGround" index="2" instance=ExtResource("2_l88ql")]
+position = Vector2(7676, 1524)
+
+[node name="Grass4" parent="TheRealGround" index="3" instance=ExtResource("2_l88ql")]
+position = Vector2(11514, 1524)
+
+[node name="Grass5" parent="TheRealGround" index="4" instance=ExtResource("2_l88ql")]
+position = Vector2(15352, 1524)
+
+[node name="Grass6" parent="TheRealGround" index="5" instance=ExtResource("2_l88ql")]
+position = Vector2(19190, 1524)
 
 [node name="Scenery" parent="." index="2"]
 position = Vector2(0, -4)

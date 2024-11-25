@@ -1,6 +1,7 @@
-[gd_scene load_steps=55 format=3 uid="uid://bayfc11f0g7xn"]
+[gd_scene load_steps=56 format=3 uid="uid://bayfc11f0g7xn"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_d2fqf"]
+[ext_resource type="PackedScene" path="res://src/world/grass.tscn" id="3_5cqth"]
 [ext_resource type="Texture2D" uid="uid://b8b5jgthrtj4s" path="res://assets/gfx/environment/Vine.png" id="3_ce5te"]
 [ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="4_07tmn"]
 [ext_resource type="PackedScene" uid="uid://bexhfhawpoxgk" path="res://src/bugs/slug.tscn" id="4_shqu2"]
@@ -9,22 +10,22 @@
 [ext_resource type="PackedScene" uid="uid://i1m1wvlfxwsi" path="res://src/world/platforms/flower.tscn" id="6_glhnv"]
 [ext_resource type="PackedScene" uid="uid://b7uuo8dxsl8qr" path="res://src/world/platforms/rock_2.tscn" id="7_ws3wu"]
 [ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="8_wgidt"]
-[ext_resource type="PackedScene" uid="uid://br6usfo70b445" path="res://src/world/platforms/rockledge.tscn" id="9_dqqdn"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/rockledge.tscn" id="9_dqqdn"]
 [ext_resource type="PackedScene" uid="uid://c6d7ntmkxq2eg" path="res://src/bugs/moth.tscn" id="10_0wvdk"]
-[ext_resource type="PackedScene" uid="uid://g0ammwgw85c0" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="10_oe4nu"]
-[ext_resource type="PackedScene" uid="uid://s84l8xg2tkdy" path="res://src/world/platforms/sproud_platform.tscn" id="11_7xt3b"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="10_oe4nu"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/sproud_platform.tscn" id="11_7xt3b"]
 [ext_resource type="PackedScene" uid="uid://obaalh3nrjem" path="res://src/world/platforms/blue_flower.tscn" id="12_fk3r3"]
-[ext_resource type="PackedScene" uid="uid://bhj1t1n07qiw8" path="res://src/world/platforms/leaf_variant.tscn" id="13_fweki"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/leaf_variant.tscn" id="13_fweki"]
 [ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="14_pfmk0"]
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="17_1pv6n"]
-[ext_resource type="PackedScene" uid="uid://daidqd7n3terl" path="res://src/world/next_level.tscn" id="18_ixeje"]
+[ext_resource type="PackedScene" path="res://src/world/next_level.tscn" id="18_ixeje"]
 [ext_resource type="PackedScene" uid="uid://dgdclxelmj7jn" path="res://src/bugs/cockroach.tscn" id="18_kad5i"]
 [ext_resource type="AudioStream" uid="uid://dn184ut238off" path="res://assets/music/Bugs_Driven_Cutie.mp3" id="19_gdoaw"]
 [ext_resource type="PackedScene" uid="uid://dvonu3ghfpb3y" path="res://src/bugs/snail.tscn" id="19_pbicw"]
 [ext_resource type="PackedScene" uid="uid://b01m31jxwex47" path="res://src/bugs/worms.tscn" id="20_7jyby"]
 [ext_resource type="AudioStream" uid="uid://0iujfpk6p3nb" path="res://assets/music/Bugs_Driven_Cutie_Hide.mp3" id="20_u408f"]
-[ext_resource type="PackedScene" uid="uid://b4iyiw0vgavq6" path="res://src/world/platforms/mushroom_platform_a.tscn" id="24_frwhi"]
-[ext_resource type="PackedScene" uid="uid://ddv7gymgo7qom" path="res://src/world/platforms/mushroom_platform_b.tscn" id="25_52lmk"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/mushroom_platform_a.tscn" id="24_frwhi"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/mushroom_platform_b.tscn" id="25_52lmk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acc83"]
 size = Vector2(531, 3167.5)
@@ -200,8 +201,26 @@ stream_1/volume = -60.0
 
 [node name="Level_02" instance=ExtResource("1_d2fqf")]
 
-[node name="Leaf" parent="TheRealGround" index="6" instance=ExtResource("8_wgidt")]
+[node name="Leaf" parent="TheRealGround" index="0" instance=ExtResource("8_wgidt")]
 position = Vector2(7950, 764)
+
+[node name="Grass" parent="TheRealGround" index="1" instance=ExtResource("3_5cqth")]
+position = Vector2(0, 1524)
+
+[node name="Grass2" parent="TheRealGround" index="2" instance=ExtResource("3_5cqth")]
+position = Vector2(3838, 1524)
+
+[node name="Grass3" parent="TheRealGround" index="3" instance=ExtResource("3_5cqth")]
+position = Vector2(7676, 1524)
+
+[node name="Grass4" parent="TheRealGround" index="4" instance=ExtResource("3_5cqth")]
+position = Vector2(11514, 1524)
+
+[node name="Grass5" parent="TheRealGround" index="5" instance=ExtResource("3_5cqth")]
+position = Vector2(15352, 1524)
+
+[node name="Grass6" parent="TheRealGround" index="6" instance=ExtResource("3_5cqth")]
+position = Vector2(19190, 1524)
 
 [node name="decorations" type="Node2D" parent="Scenery" index="0"]
 
@@ -563,8 +582,8 @@ position = Vector2(971, 1551)
 swing_gravity = 1000
 max_energy = 200
 
-[node name="music" parent="." index="9"]
-stream = SubResource("AudioStreamSynchronized_6xx52")
-
 [node name="NextLevel" parent="." index="10" instance=ExtResource("18_ixeje")]
 position = Vector2(12833, -364)
+
+[node name="music" parent="." index="11"]
+stream = SubResource("AudioStreamSynchronized_6xx52")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=89 format=3 uid="uid://dgoqdd67h2s5y"]
+[gd_scene load_steps=88 format=3 uid="uid://dgoqdd67h2s5y"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_5oqte"]
+[ext_resource type="PackedScene" path="res://src/world/grass.tscn" id="2_skadk"]
 [ext_resource type="Texture2D" uid="uid://b8b5jgthrtj4s" path="res://assets/gfx/environment/Vine.png" id="3_or122"]
 [ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="4_3w3t2"]
 [ext_resource type="PackedScene" uid="uid://cgtoy5qx3tbji" path="res://src/world/mushroom/mushroom.tscn" id="4_ocil8"]
@@ -8,19 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://i1m1wvlfxwsi" path="res://src/world/platforms/flower.tscn" id="6_13qk1"]
 [ext_resource type="PackedScene" uid="uid://b7uuo8dxsl8qr" path="res://src/world/platforms/rock_2.tscn" id="7_qlxgg"]
 [ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="8_82h1n"]
-[ext_resource type="PackedScene" uid="uid://br6usfo70b445" path="res://src/world/platforms/rockledge.tscn" id="9_8rhp2"]
-[ext_resource type="PackedScene" uid="uid://g0ammwgw85c0" path="res://src/world/platforms/leaf_variant_flipped.tscn" id="10_635f3"]
-[ext_resource type="PackedScene" uid="uid://s84l8xg2tkdy" path="res://src/world/platforms/sproud_platform.tscn" id="11_1qvth"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/rockledge.tscn" id="9_8rhp2"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/sproud_platform.tscn" id="11_1qvth"]
 [ext_resource type="PackedScene" uid="uid://obaalh3nrjem" path="res://src/world/platforms/blue_flower.tscn" id="12_3du7s"]
-[ext_resource type="PackedScene" uid="uid://bhj1t1n07qiw8" path="res://src/world/platforms/leaf_variant.tscn" id="13_aegc7"]
-[ext_resource type="PackedScene" uid="uid://bpqp7r3gltf6v" path="res://src/world/platforms/small_rock_ledge.tscn" id="13_uewmx"]
-[ext_resource type="PackedScene" uid="uid://b4iyiw0vgavq6" path="res://src/world/platforms/mushroom_platform_a.tscn" id="14_rlbpf"]
-[ext_resource type="PackedScene" uid="uid://cb7wymgso7xy8" path="res://src/world/end_game_area.tscn" id="15_7rmnv"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/small_rock_ledge.tscn" id="13_uewmx"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/mushroom_platform_a.tscn" id="14_rlbpf"]
+[ext_resource type="PackedScene" path="res://src/world/end_game_area.tscn" id="15_7rmnv"]
 [ext_resource type="AudioStream" uid="uid://c1urhvwgupaox" path="res://assets/music/Oh_My_Fly.mp3" id="15_47tfa"]
 [ext_resource type="PackedScene" uid="uid://duxcjbsoqoa2n" path="res://src/bugs/fly.tscn" id="15_bubfy"]
-[ext_resource type="PackedScene" uid="uid://ddv7gymgo7qom" path="res://src/world/platforms/mushroom_platform_b.tscn" id="15_f1ser"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/mushroom_platform_b.tscn" id="15_f1ser"]
 [ext_resource type="AudioStream" uid="uid://bt8irhha06gi4" path="res://assets/music/Oh_My_Fly_Hide.mp3" id="16_asc5w"]
-[ext_resource type="PackedScene" uid="uid://dsa4q1xpbweyr" path="res://src/world/platforms/leaf_platform_small.tscn" id="16_tnxch"]
+[ext_resource type="PackedScene" path="res://src/world/platforms/leaf_variant.tscn" id="16_tnxch"]
 [ext_resource type="PackedScene" uid="uid://c41fukcg1ahwd" path="res://src/bugs/beetle.tscn" id="16_xok3x"]
 [ext_resource type="PackedScene" uid="uid://dvonu3ghfpb3y" path="res://src/bugs/snail.tscn" id="17_c0ukp"]
 [ext_resource type="PackedScene" uid="uid://c6d7ntmkxq2eg" path="res://src/bugs/moth.tscn" id="18_i8mr7"]
@@ -394,6 +393,24 @@ stream_1/volume = -60.0
 
 [node name="Level_03" instance=ExtResource("1_5oqte")]
 
+[node name="Grass" parent="TheRealGround" index="0" instance=ExtResource("2_skadk")]
+position = Vector2(0, 1524)
+
+[node name="Grass2" parent="TheRealGround" index="1" instance=ExtResource("2_skadk")]
+position = Vector2(3838, 1524)
+
+[node name="Grass3" parent="TheRealGround" index="2" instance=ExtResource("2_skadk")]
+position = Vector2(7676, 1524)
+
+[node name="Grass4" parent="TheRealGround" index="3" instance=ExtResource("2_skadk")]
+position = Vector2(11514, 1524)
+
+[node name="Grass5" parent="TheRealGround" index="4" instance=ExtResource("2_skadk")]
+position = Vector2(15352, 1524)
+
+[node name="Grass6" parent="TheRealGround" index="5" instance=ExtResource("2_skadk")]
+position = Vector2(19190, 1524)
+
 [node name="decorations" type="Node2D" parent="Scenery" index="0"]
 
 [node name="Vine" type="Sprite2D" parent="Scenery/decorations" index="0"]
@@ -467,13 +484,13 @@ metadata/_edit_lock_ = true
 position = Vector2(11609, 1812)
 script = null
 
-[node name="LeafVariantFlipped2" parent="Scenery/Platforms" index="1" instance=ExtResource("10_635f3")]
+[node name="LeafVariantFlipped2" parent="Scenery/Platforms" index="1" instance=ExtResource("16_tnxch")]
 position = Vector2(13217, -813)
 rotation = 3.14159
 scale = Vector2(1, -1)
 script = null
 
-[node name="LeafVariantFlipped3" parent="Scenery/Platforms" index="2" instance=ExtResource("10_635f3")]
+[node name="LeafVariantFlipped3" parent="Scenery/Platforms" index="2" instance=ExtResource("16_tnxch")]
 position = Vector2(13862, -252)
 script = null
 
@@ -517,7 +534,7 @@ position = Vector2(18365, -788)
 scale = Vector2(0.7, 0.7)
 script = null
 
-[node name="LeafVariantFlipped" parent="Scenery/Platforms" index="11" instance=ExtResource("10_635f3")]
+[node name="LeafVariantFlipped" parent="Scenery/Platforms" index="11" instance=ExtResource("16_tnxch")]
 position = Vector2(19370, -202)
 rotation = 3.14159
 scale = Vector2(1, -1)
@@ -550,7 +567,7 @@ script = null
 position = Vector2(8212, -1000)
 script = null
 
-[node name="LeafVariantFlipped4" parent="Scenery/Platforms" index="18" instance=ExtResource("10_635f3")]
+[node name="LeafVariantFlipped4" parent="Scenery/Platforms" index="18" instance=ExtResource("16_tnxch")]
 position = Vector2(5680, -970)
 rotation = 3.14159
 scale = Vector2(2, -2)
@@ -589,7 +606,7 @@ script = null
 position = Vector2(4142, -499)
 script = null
 
-[node name="LeafVariant" parent="Scenery/Platforms" index="26" instance=ExtResource("13_aegc7")]
+[node name="LeafVariant" parent="Scenery/Platforms" index="26" instance=ExtResource("16_tnxch")]
 position = Vector2(14878, -736)
 script = null
 
@@ -626,7 +643,7 @@ script = null
 position = Vector2(5544, 916)
 script = null
 
-[node name="LeafVariant2" parent="Scenery/Platforms" index="35" instance=ExtResource("13_aegc7")]
+[node name="LeafVariant2" parent="Scenery/Platforms" index="35" instance=ExtResource("16_tnxch")]
 position = Vector2(4605, 950)
 script = null
 
@@ -642,7 +659,7 @@ script = null
 position = Vector2(19052, -986)
 script = null
 
-[node name="LeafVariantFlipped6" parent="Scenery/Platforms" index="39" instance=ExtResource("10_635f3")]
+[node name="LeafVariantFlipped6" parent="Scenery/Platforms" index="39" instance=ExtResource("16_tnxch")]
 position = Vector2(6701, -765)
 script = null
 
@@ -651,7 +668,7 @@ position = Vector2(7477, -872)
 scale = Vector2(0.5, 0.5)
 script = null
 
-[node name="LeafVariantFlipped5" parent="Scenery/Platforms" index="41" instance=ExtResource("10_635f3")]
+[node name="LeafVariantFlipped5" parent="Scenery/Platforms" index="41" instance=ExtResource("16_tnxch")]
 position = Vector2(7433, 18)
 script = null
 
@@ -659,7 +676,7 @@ script = null
 position = Vector2(20350, 521)
 script = null
 
-[node name="LeafVariantFlipped7" parent="Scenery/Platforms" index="43" instance=ExtResource("10_635f3")]
+[node name="LeafVariantFlipped7" parent="Scenery/Platforms" index="43" instance=ExtResource("16_tnxch")]
 position = Vector2(20129, 612)
 rotation = -0.47822
 scale = Vector2(0.5, 0.5)
@@ -1110,5 +1127,5 @@ max_energy = 250
 [node name="Camera2D" parent="." index="5"]
 limit_right = 20700
 
-[node name="music" parent="." index="9"]
+[node name="music" parent="." index="10"]
 stream = SubResource("AudioStreamSynchronized_4awan")

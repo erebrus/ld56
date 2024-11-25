@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cnqbkbby1d1sd"]
+[gd_scene load_steps=14 format=3 uid="uid://cnqbkbby1d1sd"]
 
 [ext_resource type="Script" path="res://src/levels/base_level.gd" id="1_mo5ug"]
 [ext_resource type="PackedScene" uid="uid://b5lgniaadan1y" path="res://src/frog/frog.tscn" id="1_nfuix"]
 [ext_resource type="PackedScene" path="res://src/levels/background.tscn" id="2_6kg0q"]
-[ext_resource type="PackedScene" path="res://src/world/grass.tscn" id="5_ejkmm"]
 [ext_resource type="PackedScene" uid="uid://c06tqqbevl64b" path="res://src/ui/healthbar.tscn" id="6_16uxq"]
 [ext_resource type="PackedScene" uid="uid://bfsfbydiqr0gr" path="res://src/eagle/eagle.tscn" id="6_x2vej"]
 [ext_resource type="AudioStream" uid="uid://c21xktcb61m7j" path="res://assets/sfx/Amb_rain_forest_loop.mp3" id="7_eodqv"]
@@ -21,31 +20,13 @@ stream_0/volume = 0.0
 stream_1/stream = ExtResource("10_2l27k")
 stream_1/volume = -60.0
 
-[node name="BaseLevel" type="Node2D"]
+[node name="BaseLevel2" type="Node2D"]
 script = ExtResource("1_mo5ug")
 
 [node name="Background" parent="." instance=ExtResource("2_6kg0q")]
 
 [node name="TheRealGround" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
-
-[node name="Grass" parent="TheRealGround" instance=ExtResource("5_ejkmm")]
-position = Vector2(0, 1524)
-
-[node name="Grass2" parent="TheRealGround" instance=ExtResource("5_ejkmm")]
-position = Vector2(3838, 1524)
-
-[node name="Grass3" parent="TheRealGround" instance=ExtResource("5_ejkmm")]
-position = Vector2(7676, 1524)
-
-[node name="Grass4" parent="TheRealGround" instance=ExtResource("5_ejkmm")]
-position = Vector2(11514, 1524)
-
-[node name="Grass5" parent="TheRealGround" instance=ExtResource("5_ejkmm")]
-position = Vector2(15352, 1524)
-
-[node name="Grass6" parent="TheRealGround" instance=ExtResource("5_ejkmm")]
-position = Vector2(19190, 1524)
 
 [node name="Scenery" type="Node2D" parent="."]
 

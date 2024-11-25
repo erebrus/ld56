@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://cmvyygsdlxu3j"]
+[gd_scene load_steps=25 format=3 uid="uid://cmvyygsdlxu3j"]
 
 [ext_resource type="PackedScene" uid="uid://cnqbkbby1d1sd" path="res://src/levels/base_level.tscn" id="1_mwynp"]
 [ext_resource type="Script" path="res://src/levels/tutorial_level.gd" id="2_j47jj"]
 [ext_resource type="PackedScene" uid="uid://de6fb0rb66mjw" path="res://src/world/platforms/rock_1.tscn" id="2_vja34"]
+[ext_resource type="PackedScene" path="res://src/world/grass.tscn" id="3_4hd8a"]
 [ext_resource type="PackedScene" uid="uid://b7uuo8dxsl8qr" path="res://src/world/platforms/rock_2.tscn" id="3_403ep"]
 [ext_resource type="PackedScene" uid="uid://boenkwcf4c06o" path="res://src/world/platforms/branch.tscn" id="4_d82yh"]
 [ext_resource type="PackedScene" uid="uid://b6jmiosb7trxh" path="res://src/world/platforms/leaf.tscn" id="5_jynwc"]
@@ -61,6 +62,24 @@ size = Vector2(1388, 1373)
 
 [node name="Tutorial" instance=ExtResource("1_mwynp")]
 script = ExtResource("2_j47jj")
+
+[node name="Grass" parent="TheRealGround" index="0" instance=ExtResource("3_4hd8a")]
+position = Vector2(0, 1524)
+
+[node name="Grass2" parent="TheRealGround" index="1" instance=ExtResource("3_4hd8a")]
+position = Vector2(3838, 1524)
+
+[node name="Grass3" parent="TheRealGround" index="2" instance=ExtResource("3_4hd8a")]
+position = Vector2(7676, 1524)
+
+[node name="Grass4" parent="TheRealGround" index="3" instance=ExtResource("3_4hd8a")]
+position = Vector2(11514, 1524)
+
+[node name="Grass5" parent="TheRealGround" index="4" instance=ExtResource("3_4hd8a")]
+position = Vector2(15352, 1524)
+
+[node name="Grass6" parent="TheRealGround" index="5" instance=ExtResource("3_4hd8a")]
+position = Vector2(19190, 1524)
 
 [node name="rock1" parent="Scenery" index="0" instance=ExtResource("2_vja34")]
 position = Vector2(-584, 751)
