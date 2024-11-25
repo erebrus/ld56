@@ -28,6 +28,8 @@ script = ExtResource("1_mo5ug")
 [node name="TheRealGround" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
+[node name="Clouds" type="Node2D" parent="."]
+
 [node name="Scenery" type="Node2D" parent="."]
 
 [node name="Bugs" type="Node2D" parent="."]
@@ -43,8 +45,6 @@ limit_left = 0
 limit_top = -1600
 limit_bottom = 1700
 position_smoothing_enabled = true
-
-[node name="Clouds" type="Node2D" parent="."]
 
 [node name="Eagle" parent="." instance=ExtResource("6_x2vej")]
 unique_name_in_owner = true

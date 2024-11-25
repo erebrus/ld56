@@ -10,7 +10,8 @@ extends Area2D
 	set(_size):
 		detection_area_size=_size
 		#await get_tree().process_frame
-		#update_shape()
+		if Engine.is_editor_hint():
+			update_shape()
 		
 @export var interval:=Vector2(.2,1)
 @export var count_per_interval:=Vector2i(1,2)
@@ -22,12 +23,13 @@ var active := false
 
 func _ready() -> void:
 	
+
+	await get_tree().process_frame
+	active = not get_overlapping_bodies().is_empty()
 	if not Engine.is_editor_hint():
 		$Line2D.queue_free()
 		update_shape()
-	await get_tree().process_frame
-	active = not get_overlapping_bodies().is_empty()
-		
+			
 func update_shape():
 	$CollisionShape2D.shape = RectangleShape2D.new()
 	$CollisionShape2D.shape.size=detection_area_size
