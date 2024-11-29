@@ -5,4 +5,5 @@
 [resource]
 shader = ExtResource("1_7oqsa")
 shader_parameter/speed = 2.0
-shader_parameter/strength = 10.0
+shader_parameter/strength = 8.0
+shader_parameter/extra = 0.0

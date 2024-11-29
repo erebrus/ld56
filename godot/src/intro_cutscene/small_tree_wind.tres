@@ -6,3 +6,4 @@
 shader = ExtResource("1_kyycw")
 shader_parameter/speed = 2.0
 shader_parameter/strength = 5.0
+shader_parameter/extra = 0.0

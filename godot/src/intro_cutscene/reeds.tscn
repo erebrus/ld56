@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://dhajqde2d844s"]
 
-[ext_resource type="Material" uid="uid://bnhkduxby4rie" path="res://src/intro_cutscene/big_tree_wind.tres" id="1_ka0ov"]
+[ext_resource type="Material" uid="uid://bikgaw6dj4b2y" path="res://src/intro_cutscene/reeds_wind.tres" id="1_fn52k"]
 [ext_resource type="Texture2D" uid="uid://du47j0u1bj5nf" path="res://assets/gfx/screens/intro/reeds/reeds_01.PNG" id="2_uoeoi"]
 [ext_resource type="Texture2D" uid="uid://cmn3l6h7mxwvx" path="res://assets/gfx/screens/intro/reeds/reeds_02.PNG" id="3_l3eoa"]
 [ext_resource type="Texture2D" uid="uid://oqoo852g33wx" path="res://assets/gfx/screens/intro/reeds/reeds_03.PNG" id="4_t35fx"]
@@ -55,5 +55,5 @@ animations = [{
 }]
 
 [node name="Reeds" type="AnimatedSprite2D"]
-material = ExtResource("1_ka0ov")
+material = ExtResource("1_fn52k")
 sprite_frames = SubResource("SpriteFrames_54tgx")

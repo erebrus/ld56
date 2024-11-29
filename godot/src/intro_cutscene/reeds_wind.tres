@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bikgaw6dj4b2y"]
+
+[ext_resource type="Shader" path="res://src/intro_cutscene/wind.gdshader" id="1_72awb"]
+
+[resource]
+shader = ExtResource("1_72awb")
+shader_parameter/speed = 2.0
+shader_parameter/strength = 10.0
+shader_parameter/extra = 0.0
