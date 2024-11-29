@@ -24,3 +24,8 @@ extends Node2D
 		small_tree_material.set_shader_parameter("strength", strength * 0.2)
 		big_tree_material.set_shader_parameter("strength", strength * 0.5)
 		reed_material.set_shader_parameter("strength", strength)
+
+func _ready() -> void:
+	await $AnimationPlayer.animation_finished
+	Globals.start_game()
+	

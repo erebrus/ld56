@@ -64,3 +64,7 @@ func _on_trigger_debuff_pressed():
 func _on_trigger_combo_pressed():
 	var combo = %Combos.get_selected_id()
 	Events.combo_achieved.emit(combo)
+
+
+func _on_show_intro_pressed():
+	get_tree().change_scene_to_packed(load("res://src/intro_cutscene/intro.tscn"))

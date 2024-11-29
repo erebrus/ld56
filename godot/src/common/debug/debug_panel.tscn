@@ -83,6 +83,11 @@ layout_mode = 2
 focus_mode = 0
 text = "Trigger Combo"
 
+[node name="ShowIntro" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Show Intro"
+
 [connection signal="pressed" from="VBoxContainer/ShowFrogDebug" to="." method="_on_show_frog_debug_pressed"]
 [connection signal="pressed" from="VBoxContainer/GiveEnergy" to="." method="_on_give_energy_pressed"]
 [connection signal="pressed" from="VBoxContainer/TriggerBird" to="." method="_on_trigger_bird_pressed"]
@@ -93,3 +98,4 @@ text = "Trigger Combo"
 [connection signal="pressed" from="VBoxContainer/WinGame" to="." method="_on_win_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/TriggerDebuff" to="." method="_on_trigger_debuff_pressed"]
 [connection signal="pressed" from="VBoxContainer/TriggerCombo" to="." method="_on_trigger_combo_pressed"]
+[connection signal="pressed" from="VBoxContainer/ShowIntro" to="." method="_on_show_intro_pressed"]
