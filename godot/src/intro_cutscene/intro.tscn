@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://vs4v66uacpt1"]
+[gd_scene load_steps=21 format=3 uid="uid://vs4v66uacpt1"]
 
 [ext_resource type="Texture2D" uid="uid://ddwq6iiyi2pva" path="res://assets/gfx/screens/intro/background.png" id="1_65avb"]
 [ext_resource type="Script" path="res://src/intro_cutscene/intro.gd" id="1_iflt7"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cxoea2km1qw2f" path="res://assets/gfx/screens/intro/clouds/cloud_1.PNG" id="8_ukquh"]
 [ext_resource type="Texture2D" uid="uid://du7t5sjrvef0f" path="res://assets/gfx/screens/intro/clouds/cloud_2.PNG" id="9_rxjgy"]
 [ext_resource type="Texture2D" uid="uid://djm7w2o2hfyln" path="res://assets/gfx/screens/intro/clouds/cloud_3.PNG" id="10_qtkll"]
+[ext_resource type="Texture2D" uid="uid://75vbv3ic6xou" path="res://assets/gfx/screens/intro/leaf.png" id="15_fvcy0"]
 
 [sub_resource type="Animation" id="Animation_hhf3j"]
 length = 0.001
@@ -31,7 +32,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_qsv6r"]
 resource_name = "scene1"
-length = 9.0
+length = 12.0
 step = 0.1
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -42,7 +43,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.7, -0.00118136, 0.218969, -0.133333, 0.00258225, 0.25, 0),
-"times": PackedFloat32Array(0, 3.5, 6)
+"times": PackedFloat32Array(0, 5.5, 8)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -53,7 +54,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.766667, -0.00118136, 0.185198, -0.133333, 0.00180773, 0.25, 0),
-"times": PackedFloat32Array(0, 3.5, 6)
+"times": PackedFloat32Array(0, 5.5, 8)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -64,7 +65,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.7, 0.00128615, 0.373707, -0.166667, -0.00163776, 0.25, 0),
-"times": PackedFloat32Array(0, 3.5, 6)
+"times": PackedFloat32Array(0, 5.5, 8)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -75,7 +76,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(-636, -0.25, 0, 0.25, 0, -636, -0.25, 0, 0.433333, 567.658, 1800, -1.89622, 6.38782, 0.25, 0),
-"times": PackedFloat32Array(0, 2.5, 8)
+"times": PackedFloat32Array(0, 4.5, 10)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -86,7 +87,7 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(-602, -0.25, 0, 0.25, 0, -602, -0.25, 0, 0.266667, 475.974, 1200, -2.29622, -13.7152, 0.25, 0),
-"times": PackedFloat32Array(0, 3, 8)
+"times": PackedFloat32Array(0, 5, 10)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
@@ -97,7 +98,7 @@ tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(-784, -0.25, 0, 0.25, 0, -784, -0.25, 0, 0.23536, 210.116, 200, -1.6545, -30.6768, 0.25, 0),
-"times": PackedFloat32Array(0, 3.5, 8)
+"times": PackedFloat32Array(0, 5.5, 10)
 }
 tracks/6/type = "bezier"
 tracks/6/imported = false
@@ -108,7 +109,7 @@ tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(-636, -0.25, 0, 0.25, 0, -636, -0.25, 0, 0.23536, 223.293, 378, -1.91241, -2.72784, 0.25, 0),
-"times": PackedFloat32Array(0, 2.5, 8)
+"times": PackedFloat32Array(0, 4.5, 10)
 }
 tracks/7/type = "bezier"
 tracks/7/imported = false
@@ -119,7 +120,7 @@ tracks/7/loop_wrap = true
 tracks/7/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(-784, -0.25, 0, 0.25, 0, -784, -0.25, 0, 0.268693, 514.562, 1200, -1.91241, -18.8405, 0.25, 0),
-"times": PackedFloat32Array(0, 2.5, 8)
+"times": PackedFloat32Array(0, 4.5, 10)
 }
 tracks/8/type = "bezier"
 tracks/8/imported = false
@@ -128,9 +129,9 @@ tracks/8/path = NodePath(".:wind")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"handle_modes": PackedInt32Array(0, 3, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0.415361, -0.25, 0, 0.25, 0, 0.415361, -0.25, 0, 0.25, 0, 50, -0.2, -0.835743, 0.681769, 3.16685, 0, -0.2, 8.46763, 0.6, 0.415361, 50, -0.2, -1.05337, 0.681769, 3.16685, 0, -0.188489, 7.59712, 0.588926, 0.274162, 50, -0.2, -1.05337, 1.37571, 0.299171, 0, -0.424288, 9.83308, 0.575788, -0.0444682),
-"times": PackedFloat32Array(0, 1, 2, 3.3, 4.3, 6, 7, 9)
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.415361, -0.25, 0, 0.25, 0, 0.415361, -0.25, 0, 0.25, 0, 36.179, -0.2, -0.835743, 0.681769, 3.16685, 15, -0.2, 8.46763, 0.6, 0.415361, 50, -0.2, -1.05337, 0.5, -0.63726, 25, -0.860483, 36.4034, 0.588926, 0.274162, 60, -0.2, -1.05337, 1.37571, 0.299171, 60, -0.960484, 4.18286, 0.575788, -0.0444682),
+"times": PackedFloat32Array(0, 3, 4, 5.4, 6.3, 8, 9, 11)
 }
 tracks/9/type = "bezier"
 tracks/9/imported = false
@@ -139,9 +140,9 @@ tracks/9/path = NodePath(".:shakiness")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.0292701, 0.810626, 4, -0.0251622, -0.645555, 0.235225, -0.0977478, 2, -0.170569, 1.22563, 0.25, 0, 2, -0.25, 0, 0.104091, 1.08928, 5, -0.0979166, -1.19915, 0.5, 0.232727, 2, -0.277837, 2.10698, 0.25, 0, 2, -0.25, 0, 0.109655, 1.4807, 6, -0.139135, -1.30588, 0.500983, 0.103244, 2, -0.222341, 2.61583, 0.25, 0),
-"times": PackedFloat32Array(0, 1.9, 2, 2.6, 4, 4.3, 5.5, 6.7, 7, 8.5)
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.0292701, 0.810626, 5, -0.0979166, -1.19915, 0.5, 0.232727, 6.50232, -0.139135, -1.30588, 0.500983, 0.103244, 6, -0.30024, 0.50232, 0.25, 0),
+"times": PackedFloat32Array(0, 3.9, 6.3, 9.3, 11)
 }
 tracks/10/type = "bezier"
 tracks/10/imported = false
@@ -150,9 +151,33 @@ tracks/10/path = NodePath(".:strength")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.0921822, -0.265243, 5, -0.0316124, 0.607917, 0.495634, 0.0579824, 10, -0.162949, -0.265243, 0.25, 0, 10, -0.25, 0, 0.0921822, -0.265243, 5, -0.0316124, 0.607917, 1.02918, -0.0205603, 10, -0.162949, -0.265243, 0.25, 0, 10, -0.25, 0, 0.214036, -0.0711479, 5, -0.0316124, 0.607917, 1.31404, 0.044138, 10, -0.162949, -0.265243, 0.25, 0),
-"times": PackedFloat32Array(0, 1.9, 2, 2.6, 4, 4.3, 5.5, 6.7, 7, 8.5)
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.981746, -0.0654392, 5, -0.618254, 0.237465, 1.02918, -0.0205603, 7.2937, -0.0316124, 0.607917, 1.31404, 0.044138, 5, -0.162949, -0.265243, 0.25, 0),
+"times": PackedFloat32Array(0, 3.9, 6.3, 9, 11)
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Scene1/GPUParticles2D:amount")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [16, 16, 32]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Scene1/GPUParticles2D:process_material:initial_velocity")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(250, 300), Vector2(250, 300), Vector2(500, 600)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hyl8w"]
@@ -163,12 +188,44 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6rdka"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vl4we"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 400, 1)
+angle_min = 1.07288e-05
+angle_max = 360.0
+spread = 0.0
+initial_velocity_min = 250.0
+initial_velocity_max = 300.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+orbit_velocity_min = -0.0199999
+orbit_velocity_max = 0.0200001
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = -2.23517e-05
+gravity = Vector3(0, 0, 0)
+scale_min = 0.9
+scale_max = 1.1
+hue_variation_min = -2.23517e-08
+hue_variation_max = 0.15
+turbulence_enabled = true
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 0.05
+turbulence_noise_speed = Vector3(10, 0, 0)
+turbulence_noise_speed_random = 0.0
+turbulence_influence_min = 0.001
+turbulence_influence_max = 0.001
+turbulence_initial_displacement_min = 1.49012e-06
+turbulence_initial_displacement_max = 1.49012e-06
+
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_iflt7")
 small_tree_material = ExtResource("2_pjvdq")
 big_tree_material = ExtResource("3_panis")
 reed_material = ExtResource("2_h13et")
-strength = 5.0
+shakiness = 4.28357
+strength = 5.39678
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -598,24 +655,31 @@ frame = 10
 [node name="Clouds" type="Node2D" parent="Scene1"]
 
 [node name="Cloud5" type="Sprite2D" parent="Scene1/Clouds"]
-position = Vector2(1200, 58)
+position = Vector2(130.656, 58)
 texture = ExtResource("9_rxjgy")
 
 [node name="Cloud1" type="Sprite2D" parent="Scene1/Clouds"]
-position = Vector2(1800, 128)
+position = Vector2(425.309, 128)
 texture = ExtResource("8_ukquh")
 
 [node name="Cloud2" type="Sprite2D" parent="Scene1/Clouds"]
-position = Vector2(1200, 158)
+position = Vector2(124.97, 158)
 texture = ExtResource("9_rxjgy")
 
 [node name="Cloud3" type="Sprite2D" parent="Scene1/Clouds"]
-position = Vector2(200, 218)
+position = Vector2(-569.153, 218)
 texture = ExtResource("10_qtkll")
 
 [node name="Cloud4" type="Sprite2D" parent="Scene1/Clouds"]
-position = Vector2(378, 62)
+position = Vector2(-180.392, 62)
 texture = ExtResource("8_ukquh")
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Scene1"]
+position = Vector2(0, 810)
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_vl4we")
+texture = ExtResource("15_fvcy0")
+lifetime = 30.0
+
 [node name="CanvasModulate" type="CanvasModulate" parent="Scene1"]
-color = Color(0.218969, 0.185198, 0.373707, 1)
+color = Color(0.922583, 0.925509, 0.937811, 1)
