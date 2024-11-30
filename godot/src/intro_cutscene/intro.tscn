@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://vs4v66uacpt1"]
+[gd_scene load_steps=37 format=3 uid="uid://vs4v66uacpt1"]
 
 [ext_resource type="Texture2D" uid="uid://ddwq6iiyi2pva" path="res://assets/gfx/screens/intro/background.png" id="1_65avb"]
 [ext_resource type="Script" path="res://src/intro_cutscene/intro.gd" id="1_iflt7"]
@@ -17,13 +17,18 @@
 [ext_resource type="Texture2D" uid="uid://b3py7bhyew7js" path="res://assets/gfx/screens/intro/frogs/frog_3_01.png" id="10_auy5b"]
 [ext_resource type="Texture2D" uid="uid://djm7w2o2hfyln" path="res://assets/gfx/screens/intro/clouds/cloud_3.PNG" id="10_qtkll"]
 [ext_resource type="Texture2D" uid="uid://75vbv3ic6xou" path="res://assets/gfx/screens/intro/leaf.png" id="15_fvcy0"]
-[ext_resource type="Texture2D" uid="uid://derydb2png0ha" path="res://assets/gfx/screens/intro/frogs/frog_2_01.png" id="16_cf6do"]
 [ext_resource type="Texture2D" uid="uid://iy2nxoiiec8g" path="res://assets/gfx/player/idle/1.png" id="17_uqnnr"]
 [ext_resource type="Texture2D" uid="uid://dsqqin6ddr7yl" path="res://assets/gfx/player/idle/2.png" id="18_4wnpg"]
 [ext_resource type="Texture2D" uid="uid://sojk5mhktaqk" path="res://assets/gfx/player/idle/3.png" id="19_gjp7i"]
 [ext_resource type="Texture2D" uid="uid://v3anpcbg15c4" path="res://assets/gfx/player/idle/4.png" id="20_fco2y"]
 [ext_resource type="Texture2D" uid="uid://cpdto5kkpxvco" path="res://assets/gfx/player/idle/5.png" id="21_57hjo"]
 [ext_resource type="Texture2D" uid="uid://ytrwpp3guvba" path="res://assets/gfx/player/idle/6.png" id="22_n78ag"]
+[ext_resource type="Texture2D" uid="uid://c17c201sjvafj" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_1.PNG" id="23_4gx7k"]
+[ext_resource type="Texture2D" uid="uid://b6h70s5jmo0x8" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_2.PNG" id="24_hhbqa"]
+[ext_resource type="Texture2D" uid="uid://bkx750ojtx8ft" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_3.PNG" id="25_vmw8q"]
+[ext_resource type="Texture2D" uid="uid://b1wx7skc756h1" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_4.PNG" id="26_udnjn"]
+[ext_resource type="Texture2D" uid="uid://csrwdnk261ihk" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_5.PNG" id="27_r875t"]
+[ext_resource type="Texture2D" uid="uid://delts56fy3af0" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/skipping.PNG" id="28_5sq3u"]
 
 [sub_resource type="Animation" id="Animation_68aux"]
 length = 0.001
@@ -77,10 +82,30 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_cf6do")
+"texture": ExtResource("23_4gx7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hhbqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_vmw8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_udnjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_r875t")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_5sq3u")
+}],
+"loop": true,
+"name": &"skipping",
 "speed": 5.0
 }]
 
@@ -171,7 +196,6 @@ frame = 7
 
 [node name="Tree3" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
 position = Vector2(296, 408)
-frame = 0
 
 [node name="Tree17" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
 position = Vector2(164.75, 383.5)
@@ -189,12 +213,10 @@ frame = 2
 
 [node name="Tree5" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
 position = Vector2(506, 391)
-frame = 0
 
 [node name="Tree32" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
 position = Vector2(1345.75, 363.5)
 scale = Vector2(0.718978, 0.63587)
-frame = 0
 
 [node name="Tree33" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
 position = Vector2(1512, 362)
@@ -584,6 +606,7 @@ autoplay = "default"
 [node name="Frog2" type="AnimatedSprite2D" parent="Scene1"]
 position = Vector2(630, 993)
 sprite_frames = SubResource("SpriteFrames_rnnle")
+autoplay = "default"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Scene1"]
 position = Vector2(0, 810)
