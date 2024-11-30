@@ -1,0 +1,206 @@
+[gd_resource type="Animation" format=3 uid="uid://j0qcryoxfjyb"]
+
+[resource]
+resource_name = "scene1"
+length = 12.0
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scene1/CanvasModulate:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.7, -0.00118136, 0.218969, -0.133333, 0.00258225, 0.25, 0),
+"times": PackedFloat32Array(0, 5.5, 8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scene1/CanvasModulate:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.766667, -0.00118136, 0.185198, -0.133333, 0.00180773, 0.25, 0),
+"times": PackedFloat32Array(0, 5.5, 8)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scene1/CanvasModulate:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.7, 0.00128615, 0.373707, -0.166667, -0.00163776, 0.25, 0),
+"times": PackedFloat32Array(0, 5.5, 8)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scene1/Clouds/Cloud1:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-636, -0.25, 0, 0.25, 0, -636, -0.25, 0, 0.433333, 567.658, 1800, -1.89622, 6.38782, 0.25, 0),
+"times": PackedFloat32Array(0, 4.5, 10)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scene1/Clouds/Cloud2:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-602, -0.25, 0, 0.25, 0, -602, -0.25, 0, 0.266667, 475.974, 1200, -2.29622, -13.7152, 0.25, 0),
+"times": PackedFloat32Array(0, 5, 10)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scene1/Clouds/Cloud3:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-784, -0.25, 0, 0.25, 0, -784, -0.25, 0, 0.23536, 210.116, 200, -1.6545, -30.6768, 0.25, 0),
+"times": PackedFloat32Array(0, 5.5, 10)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scene1/Clouds/Cloud4:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-636, -0.25, 0, 0.25, 0, -636, -0.25, 0, 0.23536, 223.293, 378, -1.91241, -2.72784, 0.25, 0),
+"times": PackedFloat32Array(0, 4.5, 10)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Scene1/Clouds/Cloud5:position:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-784, -0.25, 0, 0.25, 0, -784, -0.25, 0, 0.268693, 514.562, 1200, -1.91241, -18.8405, 0.25, 0),
+"times": PackedFloat32Array(0, 4.5, 10)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:wind")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.415361, -0.25, 0, 0.25, 0, 0.415361, -0.25, 0, 0.25, 0, 36.179, -0.2, -0.835743, 0.681769, 3.16685, 15, -0.2, 8.46763, 0.6, 0.415361, 50, -0.2, -1.05337, 0.5, -0.63726, 25, -0.860483, 36.4034, 0.588926, 0.274162, 60, -0.2, -1.05337, 1.37571, 0.299171, 60, -0.960484, 4.18286, 0.575788, -0.0444682),
+"times": PackedFloat32Array(0, 3, 4, 5.4, 6.3, 8, 9, 11)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:shakiness")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.0292701, 0.810626, 5, -0.0979166, -1.19915, 0.5, 0.232727, 6.50232, -0.139135, -1.30588, 0.500983, 0.103244, 6, -0.30024, 0.50232, 0.25, 0),
+"times": PackedFloat32Array(0, 3.9, 6.3, 9.3, 11)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:strength")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.981746, -0.0654392, 5, -0.618254, 0.237465, 1.02918, -0.0205603, 7.2937, -0.0316124, 0.607917, 1.31404, 0.044138, 5, -0.162949, -0.265243, 0.25, 0),
+"times": PackedFloat32Array(0, 3.9, 6.3, 9, 11)
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Scene1/GPUParticles2D:amount")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [16, 16, 32]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Scene1/GPUParticles2D:process_material:initial_velocity")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(250, 300), Vector2(250, 300), Vector2(500, 600)]
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Scene1/Frog2:position:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(630, -0.25, 0, 0.25, 0, 630, -0.25, 0, 1.36831, 3.9895, 900, -1.54879, -41.2969, 2.2946, -11.1675, 1250, -1.3054, -44.7714, 0.994604, 34.3239, 2200, -0.805396, -80.5886, 0.572626, 56.3972),
+"times": PackedFloat32Array(0, 3, 5.3, 8.4, 9.8)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Scene1/BigTrees/Frog3:position:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(372, -0.25, 0, 0.25, 0, 372, -0.25, 0, 0.310637, 167.166, 1040, -0.289363, -135.635, 0.210637, 178.208, 1419.16, -0.1, -48.3318, 0.25, 0),
+"times": PackedFloat32Array(0, 6, 7.3, 7.8)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Scene1/BigTrees/Frog3:position:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0, 0, 3, 0),
+"points": PackedFloat32Array(820, -0.25, 0, 0.25, 0, 820, -0.25, 0, 0.210637, -107.331, 572, -0.289363, 37.3631, 0.289363, -37.3631, 498.955, -0.120691, 26.5805, 0.25, 0),
+"times": PackedFloat32Array(0, 6, 7.3, 7.8)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Scene1/BigTrees/Frog3:scale:x")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.6, -0.0116084, 0.5, -0.2, 0.100251, 0.6, -0.0381763, 0.4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 6, 7.3, 9)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Scene1/BigTrees/Frog3:scale:y")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.6, -0.0116084, 0.5, -0.2, 0.100251, 0.6, -0.0381763, 0.4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 6, 7.3, 9)
+}

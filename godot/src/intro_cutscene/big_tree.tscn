@@ -1,8 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpko1e0hdpwd"]
+[gd_scene load_steps=4 format=3 uid="uid://bpko1e0hdpwd"]
 
 [ext_resource type="Material" uid="uid://bnhkduxby4rie" path="res://src/intro_cutscene/big_tree_wind.tres" id="1_2o72g"]
+[ext_resource type="Script" path="res://src/intro_cutscene/tree.gd" id="1_o4gff"]
 [ext_resource type="SpriteFrames" uid="uid://b63ie8igfotjp" path="res://src/intro_cutscene/big_trees.tres" id="2_dvso7"]
 
-[node name="BigTree" type="AnimatedSprite2D"]
+[node name="BigTree" type="Node2D"]
+script = ExtResource("1_o4gff")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 material = ExtResource("1_2o72g")
+position = Vector2(-21, -180)
 sprite_frames = ExtResource("2_dvso7")

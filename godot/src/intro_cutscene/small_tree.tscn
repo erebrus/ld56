@@ -1,8 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqsa6a7i5c1n1"]
+[gd_scene load_steps=4 format=3 uid="uid://dqsa6a7i5c1n1"]
 
+[ext_resource type="Script" path="res://src/intro_cutscene/tree.gd" id="1_fdndy"]
 [ext_resource type="Material" uid="uid://dkbptrucqrr0h" path="res://src/intro_cutscene/small_tree_wind.tres" id="1_sdvxr"]
 [ext_resource type="SpriteFrames" uid="uid://fruoiun05eeh" path="res://src/intro_cutscene/small_trees.tres" id="2_1aa1f"]
 
-[node name="SmallTree" type="AnimatedSprite2D"]
+[node name="SmallTree" type="Node2D"]
+script = ExtResource("1_fdndy")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 material = ExtResource("1_sdvxr")
+position = Vector2(-3, -72)
 sprite_frames = ExtResource("2_1aa1f")

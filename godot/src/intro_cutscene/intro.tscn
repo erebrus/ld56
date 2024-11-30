@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://vs4v66uacpt1"]
+[gd_scene load_steps=32 format=3 uid="uid://vs4v66uacpt1"]
 
 [ext_resource type="Texture2D" uid="uid://ddwq6iiyi2pva" path="res://assets/gfx/screens/intro/background.png" id="1_65avb"]
 [ext_resource type="Script" path="res://src/intro_cutscene/intro.gd" id="1_iflt7"]
@@ -9,184 +9,80 @@
 [ext_resource type="Material" uid="uid://bnhkduxby4rie" path="res://src/intro_cutscene/big_tree_wind.tres" id="3_panis"]
 [ext_resource type="Texture2D" uid="uid://1mgyn2ibd0re" path="res://assets/gfx/screens/intro/near_hill.png" id="5_ffs87"]
 [ext_resource type="PackedScene" uid="uid://bpko1e0hdpwd" path="res://src/intro_cutscene/big_tree.tscn" id="5_gecql"]
+[ext_resource type="Animation" uid="uid://j0qcryoxfjyb" path="res://src/intro_cutscene/scene1.tres" id="5_ntjr5"]
 [ext_resource type="Texture2D" uid="uid://di77u8jtjfqv6" path="res://assets/gfx/screens/intro/pond.png" id="6_12orp"]
 [ext_resource type="PackedScene" uid="uid://dhajqde2d844s" path="res://src/intro_cutscene/reeds.tscn" id="7_o6bik"]
 [ext_resource type="Texture2D" uid="uid://cxoea2km1qw2f" path="res://assets/gfx/screens/intro/clouds/cloud_1.PNG" id="8_ukquh"]
 [ext_resource type="Texture2D" uid="uid://du7t5sjrvef0f" path="res://assets/gfx/screens/intro/clouds/cloud_2.PNG" id="9_rxjgy"]
+[ext_resource type="Texture2D" uid="uid://b3py7bhyew7js" path="res://assets/gfx/screens/intro/frogs/frog_3_01.png" id="10_auy5b"]
 [ext_resource type="Texture2D" uid="uid://djm7w2o2hfyln" path="res://assets/gfx/screens/intro/clouds/cloud_3.PNG" id="10_qtkll"]
 [ext_resource type="Texture2D" uid="uid://75vbv3ic6xou" path="res://assets/gfx/screens/intro/leaf.png" id="15_fvcy0"]
+[ext_resource type="Texture2D" uid="uid://derydb2png0ha" path="res://assets/gfx/screens/intro/frogs/frog_2_01.png" id="16_cf6do"]
+[ext_resource type="Texture2D" uid="uid://iy2nxoiiec8g" path="res://assets/gfx/player/idle/1.png" id="17_uqnnr"]
+[ext_resource type="Texture2D" uid="uid://dsqqin6ddr7yl" path="res://assets/gfx/player/idle/2.png" id="18_4wnpg"]
+[ext_resource type="Texture2D" uid="uid://sojk5mhktaqk" path="res://assets/gfx/player/idle/3.png" id="19_gjp7i"]
+[ext_resource type="Texture2D" uid="uid://v3anpcbg15c4" path="res://assets/gfx/player/idle/4.png" id="20_fco2y"]
+[ext_resource type="Texture2D" uid="uid://cpdto5kkpxvco" path="res://assets/gfx/player/idle/5.png" id="21_57hjo"]
+[ext_resource type="Texture2D" uid="uid://ytrwpp3guvba" path="res://assets/gfx/player/idle/6.png" id="22_n78ag"]
 
-[sub_resource type="Animation" id="Animation_hhf3j"]
+[sub_resource type="Animation" id="Animation_68aux"]
 length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:wind")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_qsv6r"]
-resource_name = "scene1"
-length = 12.0
-step = 0.1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Scene1/CanvasModulate:color:r")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.7, -0.00118136, 0.218969, -0.133333, 0.00258225, 0.25, 0),
-"times": PackedFloat32Array(0, 5.5, 8)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Scene1/CanvasModulate:color:g")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.766667, -0.00118136, 0.185198, -0.133333, 0.00180773, 0.25, 0),
-"times": PackedFloat32Array(0, 5.5, 8)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Scene1/CanvasModulate:color:b")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.7, 0.00128615, 0.373707, -0.166667, -0.00163776, 0.25, 0),
-"times": PackedFloat32Array(0, 5.5, 8)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Scene1/Clouds/Cloud1:position:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-636, -0.25, 0, 0.25, 0, -636, -0.25, 0, 0.433333, 567.658, 1800, -1.89622, 6.38782, 0.25, 0),
-"times": PackedFloat32Array(0, 4.5, 10)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Scene1/Clouds/Cloud2:position:x")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-602, -0.25, 0, 0.25, 0, -602, -0.25, 0, 0.266667, 475.974, 1200, -2.29622, -13.7152, 0.25, 0),
-"times": PackedFloat32Array(0, 5, 10)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Scene1/Clouds/Cloud3:position:x")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-784, -0.25, 0, 0.25, 0, -784, -0.25, 0, 0.23536, 210.116, 200, -1.6545, -30.6768, 0.25, 0),
-"times": PackedFloat32Array(0, 5.5, 10)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Scene1/Clouds/Cloud4:position:x")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-636, -0.25, 0, 0.25, 0, -636, -0.25, 0, 0.23536, 223.293, 378, -1.91241, -2.72784, 0.25, 0),
-"times": PackedFloat32Array(0, 4.5, 10)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Scene1/Clouds/Cloud5:position:x")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-784, -0.25, 0, 0.25, 0, -784, -0.25, 0, 0.268693, 514.562, 1200, -1.91241, -18.8405, 0.25, 0),
-"times": PackedFloat32Array(0, 4.5, 10)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath(".:wind")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0.415361, -0.25, 0, 0.25, 0, 0.415361, -0.25, 0, 0.25, 0, 36.179, -0.2, -0.835743, 0.681769, 3.16685, 15, -0.2, 8.46763, 0.6, 0.415361, 50, -0.2, -1.05337, 0.5, -0.63726, 25, -0.860483, 36.4034, 0.588926, 0.274162, 60, -0.2, -1.05337, 1.37571, 0.299171, 60, -0.960484, 4.18286, 0.575788, -0.0444682),
-"times": PackedFloat32Array(0, 3, 4, 5.4, 6.3, 8, 9, 11)
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath(".:shakiness")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat32Array(2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.0292701, 0.810626, 5, -0.0979166, -1.19915, 0.5, 0.232727, 6.50232, -0.139135, -1.30588, 0.500983, 0.103244, 6, -0.30024, 0.50232, 0.25, 0),
-"times": PackedFloat32Array(0, 3.9, 6.3, 9.3, 11)
-}
-tracks/10/type = "bezier"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath(".:strength")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.981746, -0.0654392, 5, -0.618254, 0.237465, 1.02918, -0.0205603, 7.2937, -0.0316124, 0.607917, 1.31404, 0.044138, 5, -0.162949, -0.265243, 0.25, 0),
-"times": PackedFloat32Array(0, 3.9, 6.3, 9, 11)
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Scene1/GPUParticles2D:amount")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 4, 6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [16, 16, 32]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Scene1/GPUParticles2D:process_material:initial_velocity")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 4, 6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(250, 300), Vector2(250, 300), Vector2(500, 600)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hyl8w"]
 _data = {
-"RESET": SubResource("Animation_hhf3j"),
-"scene1": SubResource("Animation_qsv6r")
+"RESET": SubResource("Animation_68aux"),
+"scene1": ExtResource("5_ntjr5")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6rdka"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8oxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_auy5b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_crxc4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_uqnnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4wnpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gjp7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_fco2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_57hjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_n78ag")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnnle"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_cf6do")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vl4we"]
 particle_flag_rotate_y = true
@@ -224,8 +120,7 @@ script = ExtResource("1_iflt7")
 small_tree_material = ExtResource("2_pjvdq")
 big_tree_material = ExtResource("3_panis")
 reed_material = ExtResource("2_h13et")
-shakiness = 4.28357
-strength = 5.39678
+wind = 0.415361
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -251,170 +146,172 @@ y_sort_enabled = true
 material = SubResource("ShaderMaterial_6rdka")
 
 [node name="Tree" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(81, 361)
+position = Vector2(78, 417)
 frame = 9
 
 [node name="Tree2" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(572, 330)
+position = Vector2(569, 385)
 frame = 7
 
 [node name="Tree30" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(1690, 301)
+position = Vector2(1687, 356)
 scale = Vector2(0.638686, 0.576087)
 frame = 7
 flip_h = true
 
 [node name="Tree20" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(86, 504)
-scale = Vector2(0.733577, 0.815217)
+position = Vector2(83, 559)
+scale = Vector2(0.734, -0.815)
 frame = 7
 flip_h = true
 
 [node name="Tree14" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(30, 361)
+position = Vector2(27, 416)
 frame = 7
 
 [node name="Tree3" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(299, 353)
+position = Vector2(296, 408)
+frame = 0
 
 [node name="Tree17" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(167.75, 328.5)
+position = Vector2(164.75, 383.5)
 scale = Vector2(0.879562, 0.831522)
 frame = 6
 flip_h = true
 
 [node name="Tree4" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(394, 378)
+position = Vector2(391, 433)
 frame = 2
 
 [node name="Tree22" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(394, 378)
+position = Vector2(391, 433)
 frame = 2
 
 [node name="Tree5" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(509, 336)
+position = Vector2(506, 391)
+frame = 0
 
 [node name="Tree32" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(1348.75, 308.5)
+position = Vector2(1345.75, 363.5)
 scale = Vector2(0.718978, 0.63587)
+frame = 0
 
 [node name="Tree33" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(1515, 307)
+position = Vector2(1512, 362)
 scale = Vector2(0.718978, 0.63587)
 frame = 4
 
 [node name="Tree34" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(1705, 332)
+position = Vector2(1702, 387)
 scale = Vector2(0.718978, 0.63587)
 frame = 4
 
 [node name="Tree35" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(1221, 405)
+position = Vector2(1218, 460)
 scale = Vector2(0.718978, 0.63587)
 frame = 4
 
 [node name="Tree36" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(1221, 405)
+position = Vector2(1218, 460)
 scale = Vector2(0.718978, 0.63587)
 frame = 4
 
 [node name="Tree6" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(630, 371)
+position = Vector2(627, 426)
 frame = 3
 
 [node name="Tree15" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(117, 327)
+position = Vector2(114, 382)
 frame = 3
 flip_h = true
 
 [node name="Tree28" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(1844, 277)
+position = Vector2(1841, 332)
 frame = 3
 flip_h = true
 
 [node name="Tree7" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(796, 341)
+position = Vector2(793, 396)
 frame = 2
 
 [node name="Tree31" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(1576, 324)
+position = Vector2(1573, 379)
 scale = Vector2(0.791971, 0.755435)
 frame = 2
 
 [node name="Tree8" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(938, 392)
+position = Vector2(935, 447)
 frame = 5
 
 [node name="Tree16" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(186, 399)
+position = Vector2(183, 454)
 frame = 5
 
 [node name="Tree9" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(254, 446)
+position = Vector2(251, 501)
 frame = 3
 flip_h = true
 
 [node name="Tree26" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(1105, 408)
+position = Vector2(1102, 463)
 frame = 3
-flip_h = true
 
 [node name="Tree10" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(27, 454)
+position = Vector2(24, 509)
 frame = 1
 flip_h = true
 
 [node name="Tree11" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(123, 445)
+position = Vector2(120, 500)
 frame = 8
 
 [node name="Tree18" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(575, 415)
+position = Vector2(572, 470)
 frame = 8
 flip_h = true
 
 [node name="Tree12" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(333, 427)
+position = Vector2(330, 482)
 frame = 6
 
 [node name="Tree13" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(741, 373)
+position = Vector2(738, 428)
 frame = 1
 
 [node name="Tree23" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(842, 379)
+position = Vector2(839, 434)
 frame = 9
 
 [node name="Tree29" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(1237, 299)
+position = Vector2(1234, 354)
 frame = 9
 
 [node name="Tree37" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(1302, 342)
+position = Vector2(1299, 397)
 scale = Vector2(0.923358, 0.88587)
 frame = 6
 
 [node name="Tree21" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(274, 331)
+position = Vector2(271, 386)
 frame = 1
 
 [node name="Tree27" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(1431, 327)
+position = Vector2(1428, 382)
 frame = 1
 
 [node name="Tree19" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(390, 461)
+position = Vector2(387, 516)
 scale = Vector2(0.806569, 0.75)
 frame = 7
 
 [node name="Tree24" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(498, 423)
+position = Vector2(495, 478)
 scale = Vector2(0.806569, 0.75)
 frame = 4
 flip_h = true
 
 [node name="Tree25" parent="Scene1/SmallTrees" instance=ExtResource("2_vhr6j")]
-position = Vector2(476.125, 474.5)
+position = Vector2(473.125, 529.5)
 scale = Vector2(0.644161, 0.63587)
 frame = 8
 flip_h = true
@@ -431,167 +328,171 @@ y_sort_enabled = true
 [node name="Node2D" type="Node2D" parent="Scene1/BigTrees"]
 
 [node name="BigTree0_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(1700, 272)
+position = Vector2(1701, 335)
 scale = Vector2(0.6, 0.6)
 
 [node name="BigTree1_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(1394, 345)
+position = Vector2(1395, 408)
 scale = Vector2(0.6, 0.6)
 frame = 1
 
 [node name="BigTree1_2" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(1777, 264)
+position = Vector2(1778, 327)
 scale = Vector2(0.486916, 0.545614)
 frame = 1
 
 [node name="BigTree2_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(1565, 298)
+position = Vector2(1566, 361)
 scale = Vector2(0.6, 0.6)
 frame = 2
 
 [node name="BigTree3_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(1864, 381)
+position = Vector2(1865, 444)
 scale = Vector2(0.6, 0.6)
 frame = 3
 
 [node name="BigTree3_3" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(187, 474)
+position = Vector2(188, 537)
 scale = Vector2(0.6, 0.6)
 frame = 3
 flip_h = true
 
 [node name="BigTree3_2" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(271, 488.9)
+position = Vector2(272, 551.9)
 scale = Vector2(0.6, 0.416228)
 frame = 3
 
 [node name="BigTree4_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(1246, 340)
+position = Vector2(1247, 403)
 scale = Vector2(0.6, 0.6)
 frame = 4
 
 [node name="BigTree4_2" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(403, 429)
+position = Vector2(404, 492)
 scale = Vector2(0.6, 0.6)
 frame = 4
 flip_h = true
 
 [node name="BigTree5_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(1046, 352)
+position = Vector2(1047, 415)
 scale = Vector2(0.6, 0.6)
 frame = 5
 
 [node name="BigTree5_2" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(12, 478)
+position = Vector2(13, 541)
 scale = Vector2(0.6, 0.6)
 frame = 5
 
 [node name="BigTree6_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(886, 360)
+position = Vector2(887, 423)
 scale = Vector2(0.6, 0.6)
 frame = 6
 
 [node name="BigTree7_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(727, 365)
+position = Vector2(728, 428)
 scale = Vector2(0.6, 0.6)
 frame = 7
 
 [node name="BigTree7_2" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(124, 527)
+position = Vector2(125, 590)
 scale = Vector2(0.377103, 0.337281)
 frame = 7
 
 [node name="BigTree8_1" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(1700, 272)
+position = Vector2(1701, 335)
 scale = Vector2(0.6, 0.6)
 frame = 8
 
 [node name="BigTree8_2" parent="Scene1/BigTrees/Node2D" instance=ExtResource("5_gecql")]
-position = Vector2(573, 419)
+position = Vector2(574, 482)
 scale = Vector2(0.528972, 0.536842)
 frame = 8
+
+[node name="Frog3" type="AnimatedSprite2D" parent="Scene1/BigTrees"]
+position = Vector2(372, 820)
+sprite_frames = SubResource("SpriteFrames_t8oxh")
 
 [node name="Node2D2" type="Node2D" parent="Scene1/BigTrees"]
 y_sort_enabled = true
 
 [node name="BigTree0_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(1261, 488)
+position = Vector2(1281, 554)
 scale = Vector2(0.8, 0.8)
 
 [node name="BigTree1_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(732, 478)
+position = Vector2(752, 544)
 scale = Vector2(0.8, 0.8)
 frame = 1
 
 [node name="BigTree1_2" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(38.0001, 666)
+position = Vector2(58, 732)
 scale = Vector2(0.8, 0.8)
 frame = 1
 
 [node name="BigTree2_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(1363, 533)
+position = Vector2(1383, 599)
 scale = Vector2(0.8, 0.8)
 frame = 2
 
 [node name="BigTree3_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(1622, 404)
+position = Vector2(1642, 470)
 scale = Vector2(0.8, 0.8)
 frame = 3
 
 [node name="BigTree3_3" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(1534, 430)
+position = Vector2(1554, 496)
 scale = Vector2(0.534112, 0.519079)
 frame = 3
 flip_h = true
 
 [node name="BigTree3_2" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(836, 467)
+position = Vector2(856, 533)
 scale = Vector2(0.727103, 0.665351)
 frame = 3
 
 [node name="BigTree4_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(1836, 468)
+position = Vector2(1856, 534)
 scale = Vector2(0.8, 0.8)
 frame = 4
 
 [node name="BigTree4_2" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(320, 597)
+position = Vector2(340, 663)
 scale = Vector2(0.8, 0.8)
 frame = 4
 
 [node name="BigTree5_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(1130, 401)
+position = Vector2(1150, 467)
 scale = Vector2(0.8, 0.8)
 frame = 5
 
 [node name="BigTree5_2" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(1309, 408)
+position = Vector2(1329, 474)
 scale = Vector2(0.8, 0.8)
 frame = 5
 
 [node name="BigTree6_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(573, 475)
+position = Vector2(593, 541)
 scale = Vector2(0.72243, 0.60614)
 frame = 6
 
 [node name="BigTree7_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(1941, 576)
+position = Vector2(1961, 642)
 scale = Vector2(0.8, 0.8)
 frame = 7
 flip_h = true
 
 [node name="BigTree7_2" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(1488, 428)
+position = Vector2(1508, 494)
 scale = Vector2(0.65, 0.647807)
 frame = 7
 
 [node name="BigTree8_1" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(1713, 507)
+position = Vector2(1733, 573)
 scale = Vector2(0.8, 0.8)
 frame = 8
 
 [node name="BigTree8_2" parent="Scene1/BigTrees/Node2D2" instance=ExtResource("5_gecql")]
-position = Vector2(1009, 398)
+position = Vector2(1029, 464)
 scale = Vector2(0.8, 0.8)
 frame = 8
 flip_h = true
@@ -655,24 +556,34 @@ frame = 10
 [node name="Clouds" type="Node2D" parent="Scene1"]
 
 [node name="Cloud5" type="Sprite2D" parent="Scene1/Clouds"]
-position = Vector2(130.656, 58)
+position = Vector2(-784, 58)
 texture = ExtResource("9_rxjgy")
 
 [node name="Cloud1" type="Sprite2D" parent="Scene1/Clouds"]
-position = Vector2(425.309, 128)
+position = Vector2(-636, 128)
 texture = ExtResource("8_ukquh")
 
 [node name="Cloud2" type="Sprite2D" parent="Scene1/Clouds"]
-position = Vector2(124.97, 158)
+position = Vector2(-602, 158)
 texture = ExtResource("9_rxjgy")
 
 [node name="Cloud3" type="Sprite2D" parent="Scene1/Clouds"]
-position = Vector2(-569.153, 218)
+position = Vector2(-784, 218)
 texture = ExtResource("10_qtkll")
 
 [node name="Cloud4" type="Sprite2D" parent="Scene1/Clouds"]
-position = Vector2(-180.392, 62)
+position = Vector2(-636, 62)
 texture = ExtResource("8_ukquh")
+
+[node name="Frog1" type="AnimatedSprite2D" parent="Scene1"]
+position = Vector2(216, 877)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_crxc4")
+autoplay = "default"
+
+[node name="Frog2" type="AnimatedSprite2D" parent="Scene1"]
+position = Vector2(630, 993)
+sprite_frames = SubResource("SpriteFrames_rnnle")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Scene1"]
 position = Vector2(0, 810)
@@ -682,4 +593,4 @@ texture = ExtResource("15_fvcy0")
 lifetime = 30.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Scene1"]
-color = Color(0.922583, 0.925509, 0.937811, 1)
+position = Vector2(0, -2)
