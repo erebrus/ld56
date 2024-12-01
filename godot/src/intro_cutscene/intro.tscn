@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://vs4v66uacpt1"]
+[gd_scene load_steps=30 format=3 uid="uid://vs4v66uacpt1"]
 
 [ext_resource type="Texture2D" uid="uid://ddwq6iiyi2pva" path="res://assets/gfx/screens/intro/background.png" id="1_65avb"]
 [ext_resource type="Script" path="res://src/intro_cutscene/intro.gd" id="1_iflt7"]
@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://dhajqde2d844s" path="res://src/intro_cutscene/reeds.tscn" id="7_o6bik"]
 [ext_resource type="Texture2D" uid="uid://cxoea2km1qw2f" path="res://assets/gfx/screens/intro/clouds/cloud_1.PNG" id="8_ukquh"]
 [ext_resource type="Texture2D" uid="uid://du7t5sjrvef0f" path="res://assets/gfx/screens/intro/clouds/cloud_2.PNG" id="9_rxjgy"]
-[ext_resource type="Texture2D" uid="uid://b3py7bhyew7js" path="res://assets/gfx/screens/intro/frogs/frog_3_01.png" id="10_auy5b"]
 [ext_resource type="Texture2D" uid="uid://djm7w2o2hfyln" path="res://assets/gfx/screens/intro/clouds/cloud_3.PNG" id="10_qtkll"]
+[ext_resource type="PackedScene" uid="uid://do82tc01kcykx" path="res://src/intro_cutscene/orange_frog.tscn" id="11_owx4q"]
 [ext_resource type="Texture2D" uid="uid://75vbv3ic6xou" path="res://assets/gfx/screens/intro/leaf.png" id="15_fvcy0"]
 [ext_resource type="Texture2D" uid="uid://iy2nxoiiec8g" path="res://assets/gfx/player/idle/1.png" id="17_uqnnr"]
 [ext_resource type="Texture2D" uid="uid://dsqqin6ddr7yl" path="res://assets/gfx/player/idle/2.png" id="18_4wnpg"]
@@ -23,12 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://v3anpcbg15c4" path="res://assets/gfx/player/idle/4.png" id="20_fco2y"]
 [ext_resource type="Texture2D" uid="uid://cpdto5kkpxvco" path="res://assets/gfx/player/idle/5.png" id="21_57hjo"]
 [ext_resource type="Texture2D" uid="uid://ytrwpp3guvba" path="res://assets/gfx/player/idle/6.png" id="22_n78ag"]
-[ext_resource type="Texture2D" uid="uid://c17c201sjvafj" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_1.PNG" id="23_4gx7k"]
-[ext_resource type="Texture2D" uid="uid://b6h70s5jmo0x8" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_2.PNG" id="24_hhbqa"]
-[ext_resource type="Texture2D" uid="uid://bkx750ojtx8ft" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_3.PNG" id="25_vmw8q"]
-[ext_resource type="Texture2D" uid="uid://b1wx7skc756h1" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_4.PNG" id="26_udnjn"]
-[ext_resource type="Texture2D" uid="uid://csrwdnk261ihk" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_5.PNG" id="27_r875t"]
-[ext_resource type="Texture2D" uid="uid://delts56fy3af0" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/skipping.PNG" id="28_5sq3u"]
+[ext_resource type="PackedScene" uid="uid://dcg8uj2udn2ln" path="res://src/intro_cutscene/lily_pad_frog.tscn" id="23_cyfps"]
 
 [sub_resource type="Animation" id="Animation_68aux"]
 length = 0.001
@@ -40,17 +35,6 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6rdka"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_t8oxh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_auy5b")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_crxc4"]
 animations = [{
@@ -75,37 +59,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rnnle"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("23_4gx7k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_hhbqa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_vmw8q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_udnjn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_r875t")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("28_5sq3u")
-}],
-"loop": true,
-"name": &"skipping",
 "speed": 5.0
 }]
 
@@ -430,9 +383,7 @@ position = Vector2(574, 482)
 scale = Vector2(0.528972, 0.536842)
 frame = 8
 
-[node name="Frog3" type="AnimatedSprite2D" parent="Scene1/BigTrees"]
-position = Vector2(372, 820)
-sprite_frames = SubResource("SpriteFrames_t8oxh")
+[node name="OrangeFrog" parent="Scene1/BigTrees" instance=ExtResource("11_owx4q")]
 
 [node name="Node2D2" type="Node2D" parent="Scene1/BigTrees"]
 y_sort_enabled = true
@@ -602,11 +553,9 @@ position = Vector2(216, 877)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_crxc4")
 autoplay = "default"
+frame_progress = 0.3087
 
-[node name="Frog2" type="AnimatedSprite2D" parent="Scene1"]
-position = Vector2(630, 993)
-sprite_frames = SubResource("SpriteFrames_rnnle")
-autoplay = "default"
+[node name="LilyPadFrog" parent="Scene1" instance=ExtResource("23_cyfps")]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Scene1"]
 position = Vector2(0, 810)

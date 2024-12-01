@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://do82tc01kcykx"]
+
+[ext_resource type="Texture2D" uid="uid://b0f2haq03jeko" path="res://assets/gfx/screens/intro/orange_frog/idle_1.PNG" id="1_m1565"]
+[ext_resource type="Texture2D" uid="uid://d2ymo8rhpkbvb" path="res://assets/gfx/screens/intro/orange_frog/idle_2.PNG" id="2_lhogl"]
+[ext_resource type="Texture2D" uid="uid://t7pq4sifubno" path="res://assets/gfx/screens/intro/orange_frog/idle_3.PNG" id="3_4nm4r"]
+[ext_resource type="Texture2D" uid="uid://dalpm61l6edlh" path="res://assets/gfx/screens/intro/orange_frog/jump_1.PNG" id="4_em1ma"]
+[ext_resource type="Texture2D" uid="uid://c0nkn2e30nm1w" path="res://assets/gfx/screens/intro/orange_frog/jump_2.PNG" id="5_c35tw"]
+[ext_resource type="Texture2D" uid="uid://e07ac15o2a5b" path="res://assets/gfx/screens/intro/orange_frog/jump_3.PNG" id="6_tdjog"]
+[ext_resource type="Texture2D" uid="uid://sh5vmwsxrmby" path="res://assets/gfx/screens/intro/orange_frog/jump_4.PNG" id="7_xetav"]
+[ext_resource type="Texture2D" uid="uid://dqyxvlhqtqcj8" path="res://assets/gfx/screens/intro/orange_frog/jump_5.PNG" id="8_o2w0g"]
+[ext_resource type="Texture2D" uid="uid://drnc6pxj30tbd" path="res://assets/gfx/screens/intro/orange_frog/scared.PNG" id="9_12fbg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8oxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m1565")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lhogl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4nm4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lhogl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_em1ma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c35tw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tdjog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xetav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o2w0g")
+}],
+"loop": true,
+"name": &"running",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_12fbg")
+}],
+"loop": true,
+"name": &"scared",
+"speed": 5.0
+}]
+
+[node name="OrangeFrog" type="AnimatedSprite2D"]
+position = Vector2(372, 810)
+sprite_frames = SubResource("SpriteFrames_t8oxh")
+autoplay = "default"
+frame_progress = 0.542248

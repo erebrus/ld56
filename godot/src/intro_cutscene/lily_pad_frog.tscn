@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcg8uj2udn2ln"]
+
+[ext_resource type="Texture2D" uid="uid://c17c201sjvafj" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_1.PNG" id="1_6jq6y"]
+[ext_resource type="Texture2D" uid="uid://b6h70s5jmo0x8" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_2.PNG" id="2_knt67"]
+[ext_resource type="Texture2D" uid="uid://bkx750ojtx8ft" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_3.PNG" id="3_hi0g6"]
+[ext_resource type="Texture2D" uid="uid://b1wx7skc756h1" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_4.PNG" id="4_2a2ny"]
+[ext_resource type="Texture2D" uid="uid://csrwdnk261ihk" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/idle_5.PNG" id="5_ep2qm"]
+[ext_resource type="Texture2D" uid="uid://delts56fy3af0" path="res://assets/gfx/screens/intro/frogs/lilypad_frog/skipping.PNG" id="6_h58lv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnnle"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6jq6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_knt67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hi0g6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2a2ny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ep2qm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_h58lv")
+}],
+"loop": true,
+"name": &"skipping",
+"speed": 5.0
+}]
+
+[node name="LilyPadFrog" type="AnimatedSprite2D"]
+position = Vector2(630, 993)
+sprite_frames = SubResource("SpriteFrames_rnnle")
+autoplay = "default"
+frame_progress = 0.801059
